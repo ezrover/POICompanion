@@ -1,6 +1,6 @@
 # Agent Registry - 43 Agents Available
 
-Generated: 2025-08-14T17:31:55.593Z
+Generated: 2025-08-14T18:05:28.992Z
 
 ## ⚠️ IMPORTANT: How to Use These Agents
 
@@ -354,16 +354,15 @@ You are a world-class Senior Frontend Developer with deep expertise in React, Ty
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js` |
-| Performance Analysis | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
 | Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
 node /mcp/model-optimizer/index.js train --data={dataset}
-node /mcp/performance-profiler/index.js benchmark --model={name}
-node /mcp/schema-validato
+Use mcp__poi-companion__performance_profile MCP tool benchmark --
 
 [... truncated for brevity - see full prompt in agent file ...]
 ```
@@ -1068,20 +1067,17 @@ You are a world-class Customer Success Champion with deep expertise in user onbo
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
-| Code Generation | `code-generator` | `node /mcp/code-generator/index.js` |
+| Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
+| Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool` |
 | Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
 
 ### **General Workflow:**
 ```bash
 # Use MCP tools instead of direct commands
-node /mcp/task-manager/index.js create --task={description}
-node /mcp/doc-processor/index.js generate
-node /mcp/code-generator/index.js create --template={type}
-```
-
-**Remember: Dire
+Use mcp__poi-companion__task_manage MCP tool create --task={description}
+Use mcp__poi-companion__doc_process MCP tool generate
+Use mcp__poi-comp
 
 [... truncated for brevity - see full prompt in agent file ...]
 ```
@@ -1279,16 +1275,15 @@ You are a world-class AI/ML Model Optimization expert specializing in on-device 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js` |
-| Performance Analysis | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
 | Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
 node /mcp/model-optimizer/index.js train --data={dataset}
-node /mcp/performance-profiler/index.js benchmark --model={name}
-node /mcp/schema-va
+Use mcp__poi-companion__performance_profile MCP tool benchm
 
 [... truncated for brevity - see full prompt in agent file ...]
 ```
@@ -1322,16 +1317,15 @@ node /mcp/schema-va
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js` |
-| Performance Analysis | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
 | Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
 node /mcp/model-optimizer/index.js train --data={dataset}
-node /mcp/performance-profiler/index.js benchmark --model={name}
-node /mcp/schema-validato
+Use mcp__poi-companion__performance_profile MCP tool benchmark --
 
 [... truncated for brevity - see full prompt in agent file ...]
 ```
@@ -1430,20 +1424,17 @@ You are a world-class Data Intelligence Architect with deep expertise in real-ti
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
-| Code Generation | `code-generator` | `node /mcp/code-generator/index.js` |
+| Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
+| Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool` |
 | Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
 
 ### **General Workflow:**
 ```bash
 # Use MCP tools instead of direct commands
-node /mcp/task-manager/index.js create --task={description}
-node /mcp/doc-processor/index.js generate
-node /mcp/code-generator/index.js create --template={type}
-```
-
-**Remember: Dire
+Use mcp__poi-companion__task_manage MCP tool create --task={description}
+Use mcp__poi-companion__doc_process MCP tool generate
+Use mcp__poi-comp
 
 [... truncated for brevity - see full prompt in agent file ...]
 ```
@@ -1537,16 +1528,15 @@ You are a world-class Senior Database Architect and Developer with 15+ years of 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js` |
-| Performance Analysis | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
 | Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
 node /mcp/model-optimizer/index.js train --data={dataset}
-node /mcp/performance-profiler/index.js benchmark --model={name}
-node /mcp/schema-va
+Use mcp__poi-companion__performance_profile MCP tool benchm
 
 [... truncated for brevity - see full prompt in agent file ...]
 ```
