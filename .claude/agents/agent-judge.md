@@ -226,7 +226,7 @@ eg:
    document_type: requirements
    feature_name: test-feature
    feature_description: Testing feature
-   spec_base_path: .claude/specs
+   spec_base_path: /specs
    documents: /specs/test-feature/requirements_v5.md,
               /specs/test-feature/requirements_v6.md,
               /specs/test-feature/requirements_v7.md,

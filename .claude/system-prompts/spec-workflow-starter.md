@@ -41,7 +41,7 @@ When the user describes a new feature: (user_input: feature description)
    - [ ] Design Document
    - [ ] Task Planning
 3. Read language_preference from ~/.claude/CLAUDE.md (to pass to corresponding sub-agents in the process)
-4. Create directory structure: {spec_base_path:.claude/specs}/{feature_name}/
+4. Create directory structure: {spec_base_path:/specs}/{feature_name}/
 
 ### 1. Requirement Gathering
 
@@ -133,9 +133,9 @@ stateDiagram-v2
 
 | 功能                           | sub agent                           | path                                                         |
 | ------------------------------ | ----------------------------------- | ------------------------------------------------------------ |
-| Requirement Gathering          | spec-requirements(support parallel) | .claude/specs/{feature_name}/requirements.md                 |
-| Create Feature Design Document | spec-design(support parallel)       | .claude/specs/{feature_name}/design.md                       |
-| Create Task List               | spec-tasks(support parallel)        | .claude/specs/{feature_name}/tasks.md                        |
+| Requirement Gathering          | spec-requirements(support parallel) | /specs/{feature_name}/requirements.md                 |
+| Create Feature Design Document | spec-design(support parallel)       | /specs/{feature_name}/design.md                       |
+| Create Task List               | spec-tasks(support parallel)        | /specs/{feature_name}/tasks.md                        |
 | Judge(optional)                | spec-judge(support parallel)        | no doc, only call when user need to judge the spec documents |
 | Impl Task(optional)            | spec-impl(support parallel)         | no doc, only use when user requests parallel execution (>=2) |
 | Test(optional)                 | spec-test(single call)              | no need to focus on, belongs to code resources               |

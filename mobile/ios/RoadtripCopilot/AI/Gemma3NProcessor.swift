@@ -23,6 +23,10 @@ class Gemma3NProcessor: ObservableObject {  // Keep class name for compatibility
     private let modelQueue = DispatchQueue(label: "com.roadtripcopilot.gemma3n", qos: .userInitiated)
     private var loadingTask: Task<Void, Error>?
     
+    // Gemini API fallback
+    private let geminiService = GeminiAPIService.shared
+    private var useCloudFallback = false
+    
     // MARK: - Model Variants
     enum ModelVariant: String, CaseIterable {
         case TinyLlama = "tinyllama"  // 500MB quantized model
@@ -229,8 +233,14 @@ class Gemma3NProcessor: ObservableObject {  // Keep class name for compatibility
     
     // MARK: - Inference
     func processDiscovery(input: DiscoveryInput) async throws -> DiscoveryResult {
+        // Check if this is a complex task that needs cloud processing
+        if shouldUseCloudForTask(input) {
+            return try await processWithGemini(input)
+        }
+        
         guard let model = model else {
-            throw ModelError.modelNotLoaded
+            // Fallback to Gemini if model not loaded
+            return try await processWithGemini(input)
         }
         
         let startTime = CFAbsoluteTimeGetCurrent()
@@ -355,6 +365,184 @@ class Gemma3NProcessor: ObservableObject {  // Keep class name for compatibility
         isModelLoaded = false
         loadingProgress = 0.0
         currentMemoryUsage = 0.0
+    }
+    
+    // MARK: - Cloud Fallback Methods
+    
+    private func shouldUseCloudForTask(_ input: DiscoveryInput) -> Bool {
+        // Use cloud for complex tasks
+        if let context = input.context {
+            let complexKeywords = ["social media", "reviews", "recommendations", "itinerary", "analyze", "distill", "extract"]
+            for keyword in complexKeywords {
+                if context.lowercased().contains(keyword) {
+                    return true
+                }
+            }
+        }
+        
+        // Use cloud if there are multiple images or audio reviews
+        if let images = input.images, images.count > 2 {
+            return true
+        }
+        
+        if let audioReviews = input.audioReviews, !audioReviews.isEmpty {
+            return true
+        }
+        
+        return false
+    }
+    
+    private func processWithGemini(_ input: DiscoveryInput) async throws -> DiscoveryResult {
+        print("🌩️ Using Gemini API for complex task processing")
+        
+        // Handle different types of complex queries
+        if let context = input.context?.lowercased() {
+            if context.contains("social media") || context.contains("comments") {
+                // Process social media comments
+                let comments = extractComments(from: context)
+                let insights = try await geminiService.distillSocialMediaComments(
+                    comments: comments,
+                    location: input.poiName,
+                    category: input.category
+                )
+                
+                return DiscoveryResult(
+                    isNewDiscovery: true,
+                    confidence: 0.95,
+                    podcastScript: formatInsightsAsPodcast(insights),
+                    revenueEstimate: Double(insights.recommendations.count) * 0.5,
+                    contentScore: min(10.0, Double(insights.hiddenGems.count) + 5)
+                )
+            } else if context.contains("itinerary") {
+                // Generate itinerary
+                let itinerary = try await geminiService.generateItinerary(
+                    location: input.poiName,
+                    duration: "3 days",
+                    interests: [input.category],
+                    budget: nil
+                )
+                
+                return DiscoveryResult(
+                    isNewDiscovery: false,
+                    confidence: 0.90,
+                    podcastScript: formatItineraryAsPodcast(itinerary),
+                    revenueEstimate: Double(itinerary.days.count) * 2.0,
+                    contentScore: 8.0
+                )
+            } else if context.contains("reviews") {
+                // Analyze reviews
+                let reviews = extractReviews(from: context)
+                let analysis = try await geminiService.analyzeReviews(
+                    reviews: reviews,
+                    poiName: input.poiName
+                )
+                
+                return DiscoveryResult(
+                    isNewDiscovery: false,
+                    confidence: 0.88,
+                    podcastScript: formatAnalysisAsPodcast(analysis),
+                    revenueEstimate: 3.0,
+                    contentScore: 7.5
+                )
+            }
+        }
+        
+        // Default: Extract POI recommendations
+        let recommendations = try await geminiService.extractPOIRecommendations(
+            text: input.context ?? "",
+            location: input.poiName,
+            preferences: [input.category]
+        )
+        
+        return DiscoveryResult(
+            isNewDiscovery: !recommendations.isEmpty,
+            confidence: 0.85,
+            podcastScript: formatRecommendationsAsPodcast(recommendations, location: input.poiName),
+            revenueEstimate: Double(recommendations.count) * 1.0,
+            contentScore: min(9.0, Double(recommendations.count) * 1.5)
+        )
+    }
+    
+    // Helper methods for formatting
+    private func extractComments(from text: String) -> [String] {
+        // Simple extraction - split by common delimiters
+        return text.components(separatedBy: CharacterSet(charactersIn: ".,;!?\n"))
+            .filter { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+    }
+    
+    private func extractReviews(from text: String) -> [String] {
+        return extractComments(from: text)
+    }
+    
+    private func formatInsightsAsPodcast(_ insights: DistilledInsights) -> String {
+        var script = "Based on social media insights, here's what people are saying:\n\n"
+        
+        if !insights.recommendations.isEmpty {
+            script += "Top recommendations include: \(insights.recommendations.prefix(3).joined(separator: ", ")). "
+        }
+        
+        if !insights.hiddenGems.isEmpty {
+            script += "Hidden gems to explore: \(insights.hiddenGems.prefix(2).joined(separator: " and ")). "
+        }
+        
+        if !insights.tips.isEmpty {
+            script += "Pro tips: \(insights.tips.first ?? "Check local recommendations"). "
+        }
+        
+        return script
+    }
+    
+    private func formatItineraryAsPodcast(_ itinerary: TravelItinerary) -> String {
+        var script = "Here's your personalized itinerary:\n\n"
+        
+        for (index, day) in itinerary.days.prefix(3).enumerated() {
+            script += "\(day.title): "
+            script += day.activities.prefix(3).joined(separator: ". ")
+            script += "\n\n"
+        }
+        
+        if let transport = itinerary.transportation {
+            script += "Transportation tip: \(transport). "
+        }
+        
+        return script
+    }
+    
+    private func formatAnalysisAsPodcast(_ analysis: ReviewAnalysis) -> String {
+        return """
+        Review Analysis for this location:
+        
+        Overall sentiment: \(analysis.sentiment)
+        
+        What people love: \(analysis.positives.prefix(3).joined(separator: ", "))
+        
+        Common concerns: \(analysis.negatives.prefix(2).joined(separator: " and "))
+        
+        Best for: \(analysis.bestFor)
+        
+        Summary: \(analysis.summary)
+        """
+    }
+    
+    private func formatRecommendationsAsPodcast(_ recommendations: [POIRecommendation], location: String) -> String {
+        guard !recommendations.isEmpty else {
+            return "Exploring \(location) - a wonderful destination with many attractions to discover!"
+        }
+        
+        var script = "Discovered \(recommendations.count) great places in \(location):\n\n"
+        
+        for (index, poi) in recommendations.prefix(5).enumerated() {
+            script += "\(index + 1). \(poi.name)"
+            if let category = poi.category {
+                script += " (\(category))"
+            }
+            if let reason = poi.reason {
+                script += " - \(reason)"
+            }
+            script += "\n"
+        }
+        
+        return script
     }
     
     // MARK: - Error Handling

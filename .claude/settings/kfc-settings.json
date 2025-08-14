@@ -1,6 +1,6 @@
 {
   "paths": {
-    "specs": ".claude/specs",
+    "specs": "/specs",
     "steering": ".claude/steering",
     "settings": ".claude/settings"
   },

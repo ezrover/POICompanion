@@ -22,11 +22,11 @@ eg:
    document_type: requirements
    feature_name: test-feature
    feature_description: 测试
-   spec_base_path: .claude/specs
-   documents: .claude/specs/test-feature/requirements_v5.md,
-              .claude/specs/test-feature/requirements_v6.md,
-              .claude/specs/test-feature/requirements_v7.md,
-              .claude/specs/test-feature/requirements_v8.md
+   spec_base_path: /specs
+   documents: /specs/test-feature/requirements_v5.md,
+              /specs/test-feature/requirements_v6.md,
+              /specs/test-feature/requirements_v7.md,
+              /specs/test-feature/requirements_v8.md
 ```
 
 ## PREREQUISITES
@@ -121,4 +121,4 @@ summary: 简要总结并包含评分，例如：
 
 - The model MUST use the user's language preference
 - Only delete the specific documents you evaluated - use explicit filenames (e.g., `rm requirements_v1.md requirements_v2.md`), never use wildcards (e.g., `rm requirements_v*.md`)
-- Generate final_document_path with a random 4-digit suffix (e.g., `.claude/specs/test-feature/requirements_v1234.md`)
+- Generate final_document_path with a random 4-digit suffix (e.g., `/specs/test-feature/requirements_v1234.md`)
