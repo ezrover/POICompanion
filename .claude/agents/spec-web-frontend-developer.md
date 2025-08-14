@@ -1484,7 +1484,7 @@ The model MUST deliver world-class web applications that set new standards for f
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js react` |
+| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js (pending MCP integration) react` |
 | Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool tsx` |
 | Build Management | `build-master` | `Use mcp__poi-companion__build_coordinate MCP tool web` |
 | Accessibility | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool web` |
@@ -1493,7 +1493,7 @@ The model MUST deliver world-class web applications that set new standards for f
 ### **Web Development Workflow:**
 ```bash
 # Web app development
-node /mcp/ui-generator/index.js react --component={name}
+node /mcp/ui-generator/index.js (pending MCP integration) react --component={name}
 Use mcp__poi-companion__code_generate MCP tool tsx --hooks
 Use mcp__poi-companion__build_coordinate MCP tool optimize --web
 Use mcp__poi-companion__accessibility_check MCP tool audit --web

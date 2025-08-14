@@ -252,7 +252,7 @@ ALWAYS leverage these local MCP tools to enhance Android development efficiency 
 
 #### **🚨 BEFORE EVERY CODE DELIVERY (MANDATORY - NO EXCEPTIONS):**
 1. **Build Verification**: Ensure Android app builds successfully using mobile-build-verifier
-2. **Crash Validation**: MANDATORY use of `android-emulator-manager.js validate` command
+2. **Crash Validation**: MANDATORY use of `mcp__poi-companion__android_emulator_test validate` command
 3. **App Launch Test**: Verify app launches without crashes or permission errors
 4. **Feature Testing**: Test specific functionality you implemented
 5. **UI Validation**: Verify accessibility and element interactions
@@ -264,7 +264,7 @@ ALWAYS leverage these local MCP tools to enhance Android development efficiency 
 11. **Cross-Platform Coordination**: Verify iOS equivalent works identically
 
 #### **🚨 CRITICAL: VALIDATION FAILURE = TASK FAILURE**
-- If `android-emulator-manager.js validate` fails, the implementation is INCOMPLETE
+- If `mcp__poi-companion__android_emulator_test validate` fails, the implementation is INCOMPLETE
 - ALL crashes and permission errors must be fixed before code can be delivered
 - NO exceptions or shortcuts allowed in validation protocol
 - Validation failure requires immediate fix and revalidation
@@ -275,22 +275,22 @@ ALWAYS leverage these local MCP tools to enhance Android development efficiency 
 Use mcp__poi-companion__mobile_build_verify MCP tool android
 
 # 2. MANDATORY: Crash validation (MUST PASS)
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/android-emulator-manager/index.js validate
+Use mcp__poi-companion__android_emulator_test tool validate
 
 # 3. Enhanced feature testing (if validation passes)
-node android-emulator-manager.js full
+Use mcp__poi-companion__android_emulator_test tool with action: "lost-lake-test"
 
 # 4. Test specific Android functionality
-node android-emulator-manager.js test  # Runs automated UI test
+Use mcp__poi-companion__android_emulator_test tool with action: "lost-lake-test"  # Runs automated UI test
 
 # 5. Validate Android Auto integration (if applicable)
-node android-emulator-manager.js screenshot android-auto-test.png
+node mcp__poi-companion__android_emulator_test screenshot android-auto-test.png
 
 # 6. Verify specific UI elements work
-node android-emulator-manager.js info  # Get device/app info
+node mcp__poi-companion__android_emulator_test info  # Get device/app info
 
 # 7. Take final validation screenshot
-node android-emulator-manager.js screenshot validation-proof.png
+node mcp__poi-companion__android_emulator_test screenshot validation-proof.png
 ```
 
 #### **🚨 VALIDATION EXIT CODES:**
@@ -320,7 +320,7 @@ node android-emulator-manager.js screenshot validation-proof.png
 
 ```bash
 # 🧪 COMPLETE USER FLOW TESTING
-node android-emulator-manager.js lost-lake-test
+Use mcp__poi-companion__android_emulator_test tool with action: "lost-lake-test"
 # Tests complete Lost Lake Oregon flow:
 # 1. Tap destination input field
 # 2. Type "Lost Lake, Oregon" 
@@ -330,7 +330,7 @@ node android-emulator-manager.js lost-lake-test
 # 6. Generate comprehensive test report with screenshots
 
 # 🔘 BUTTON AND ELEMENT VALIDATION
-node android-emulator-manager.js validate-buttons
+Use mcp__poi-companion__android_emulator_test tool with action: "validate-components"-buttons
 # Validates all interactive elements:
 # - Button visibility and accessibility
 # - Proper click targets (min 48dp)
@@ -338,7 +338,7 @@ node android-emulator-manager.js validate-buttons
 # - Platform parity with iOS button design
 
 # 📱 UI ELEMENT DISCOVERY AND ANALYSIS
-node android-emulator-manager.js get-elements
+node mcp__poi-companion__android_emulator_test get-elements
 # Lists all interactive elements on screen:
 # - Element types, labels, and coordinates
 # - Accessibility compliance status
@@ -346,9 +346,9 @@ node android-emulator-manager.js get-elements
 # - UI hierarchy analysis for automation compatibility
 
 # 🎯 ELEMENT-SPECIFIC TESTING (Advanced)
-node android-emulator-manager.js tap "Where would you like to go?"  # Test specific element
-node android-emulator-manager.js type "Test Destination"            # Test text input
-node android-emulator-manager.js screenshot feature-test.png        # Document results
+node mcp__poi-companion__android_emulator_test tap "Where would you like to go?"  # Test specific element
+node mcp__poi-companion__android_emulator_test type "Test Destination"            # Test text input
+node mcp__poi-companion__android_emulator_test screenshot feature-test.png        # Document results
 ```
 
 **AUTOMATED TESTING REQUIREMENTS FOR ANDROID FEATURES:**
@@ -367,35 +367,35 @@ cd /Users/naderrahimizad/Projects/AI/POICompanion/mcp
 node android-project-manager/index.js init --project=roadtrip-copilot
 
 # 2. MANDATORY: Verify iOS parity compatibility
-node mobile-build-verifier/index.js both --parity-check
+node mcp__poi-companion__mobile_build_verify both --parity-check
 
 # 3. Analyze existing Android AND iOS codebases for parity
 node mobile-file-manager/index.js scan --platform=both --parity-analysis
 
 # 4. Set up dependency management with cross-platform coordination
-node dependency-manager/index.js android-setup --ios-compatibility-check
+node mcp__poi-companion__dependency_manage android-setup --ios-compatibility-check
 
 # 5. MANDATORY: Platform parity validation
-node mobile-build-verifier/index.js parity-validation --features=voice,ui,navigation
+node mcp__poi-companion__mobile_build_verify parity-validation --features=voice,ui,navigation
 ```
 
 #### **Development Workflow Integration**
 ```bash
 # Real-time Android development support
 # 1. Generate Android boilerplate components
-node code-generator/index.js android --component=[Activity|Fragment|Composable]
+node mcp__poi-companion__code_generate android --component=[Activity|Fragment|Composable]
 
 # 2. Continuous build verification
-node mobile-build-verifier/index.js android-watch
+node mcp__poi-companion__mobile_build_verify android-watch
 
 # 3. Real-time code quality monitoring
-node mobile-linter/index.js android --auto-fix
+node mcp__poi-companion__mobile_lint_check android --auto-fix
 
 # 4. Performance monitoring during development
-node performance-profiler/index.js android-profile
+node mcp__poi-companion__performance_profile android-profile
 
 # 5. Continuous testing execution
-node mobile-test-runner/index.js android --watch
+node mcp__poi-companion__mobile_test_run android --watch
 ```
 
 #### **UI/UX Development Automation**
@@ -405,27 +405,27 @@ node mobile-test-runner/index.js android --watch
 node ui-generator/index.js android-compose --theme=material3
 
 # 2. Validate accessibility compliance
-node accessibility-checker/index.js android --wcag=AA
+node mcp__poi-companion__accessibility_check android --wcag=AA
 
 # 3. Generate and verify app icons
 node mobile-icon-generator/index.js android --adaptive
 node mobile-icon-verifier/index.js android-icons
 
 # 4. Design system consistency checks
-node design-system-manager/index.js android-validate
+node mcp__poi-companion__design_system_manage android-validate
 ```
 
 #### **Build and Deployment Automation**
 ```bash
 # Android build pipeline automation
 # 1. Multi-variant build coordination
-node build-master/index.js android --variants=debug,release,automotive
+node mcp__poi-companion__build_coordinate android --variants=debug,release,automotive
 
 # 2. Comprehensive build verification
-node mobile-build-verifier/index.js android-full-build
+node mcp__poi-companion__mobile_build_verify android-full-build
 
 # 3. Test automation across devices
-node mobile-test-runner/index.js android-devices
+node mcp__poi-companion__mobile_test_run android-devices
 ```
 
 ### Android Development MCP Integration Examples
@@ -2065,27 +2065,27 @@ fun AutomotivePOICard(
 | Lint | `ktlint` | `mobile-linter` | `Use mcp__poi-companion__mobile_lint_check MCP tool android --auto-fix` |
 | Performance | Manual profiling | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool android` |
 | Accessibility | Manual checks | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool android` |
-| Project Files | Edit build.gradle | `android-project-manager` | `node /mcp/android-project-manager/index.js add-deps` |
-| File Operations | Direct I/O | `mobile-file-manager` | `node /mcp/mobile-file-manager/index.js android` |
+| Project Files | Edit build.gradle | `android-project-manager` | `node /mcp/android-project-manager/index.js (pending MCP integration) add-deps` |
+| File Operations | Direct I/O | `mobile-file-manager` | `node /mcp/mobile-file-manager/index.js (pending MCP integration) android` |
 | Design Validation | Manual review | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool validate-android` |
-| Icon Generation | Manual creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js android` |
-| Icon Verification | Manual check | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js android` |
+| Icon Generation | Manual creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js (pending MCP integration) android` |
+| Icon Verification | Manual check | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js (pending MCP integration) android` |
 | Code Generation | Manual boilerplate | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool kotlin` |
-| UI Generation | Manual UI code | `ui-generator` | `node /mcp/ui-generator/index.js compose` |
+| UI Generation | Manual UI code | `ui-generator` | `node /mcp/ui-generator/index.js (pending MCP integration) compose` |
 | Emulator | Manual emulator | `android-emulator-manager` | `Use mcp__poi-companion__android_emulator_test MCP tool test` |
 | Dependencies | Manual gradle | `dependency-manager` | `Use mcp__poi-companion__dependency_manage MCP tool android` |
-| Schema Validation | Manual validation | `schema-validator` | `node /mcp/schema-validator/index.js android` |
+| Schema Validation | Manual validation | `schema-validator` | `node /mcp/schema-validator/index.js (pending MCP integration) android` |
 
 ### **MANDATORY Android Development Workflow with MCP Tools:**
 
 ```bash
 # 1. Project Setup (NEVER create manually)
-node /mcp/project-scaffolder/index.js android --template=compose
-node /mcp/android-project-manager/index.js init
+node /mcp/project-scaffolder/index.js (pending MCP integration) android --template=compose
+node /mcp/android-project-manager/index.js (pending MCP integration) init
 
 # 2. Development Phase (NEVER code without tools)
 Use mcp__poi-companion__code_generate MCP tool kotlin --component=viewmodel
-node /mcp/ui-generator/index.js compose --screen=destination
+node /mcp/ui-generator/index.js (pending MCP integration) compose --screen=destination
 Use mcp__poi-companion__design_system_manage MCP tool generate-android-tokens
 
 # 3. Quality Assurance (NEVER skip validation)
@@ -2099,8 +2099,8 @@ Use mcp__poi-companion__performance_profile MCP tool android --benchmark
 Use mcp__poi-companion__android_emulator_test MCP tool validate
 
 # 5. Asset Management (NEVER create manually)
-node /mcp/mobile-icon-generator/index.js android --source=logo.svg
-node /mcp/mobile-icon-verifier/index.js android --validate-all
+node /mcp/mobile-icon-generator/index.js (pending MCP integration) android --source=logo.svg
+node /mcp/mobile-icon-verifier/index.js (pending MCP integration) android --validate-all
 ```
 
 ### **Integration with Other Agents via MCP Tools:**
@@ -2118,7 +2118,7 @@ When collaborating with other agents, ALWAYS use MCP tools as the communication 
 
 ```bash
 # Android Auto specific MCP workflow
-node /mcp/android-project-manager/index.js add-auto-support
+node /mcp/android-project-manager/index.js (pending MCP integration) add-auto-support
 Use mcp__poi-companion__code_generate MCP tool kotlin --template=car-app-service
 Use mcp__poi-companion__mobile_test_run MCP tool android --auto-mode
 Use mcp__poi-companion__android_emulator_test MCP tool auto-test

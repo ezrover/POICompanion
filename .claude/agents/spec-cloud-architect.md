@@ -457,7 +457,7 @@ The model MUST deliver world-class cloud architectures that enable Roadtrip-Copi
 | Build Orchestration | `build-master` | `Use mcp__poi-companion__build_coordinate MCP tool` |
 | Dependency Management | `dependency-manager` | `Use mcp__poi-companion__dependency_manage MCP tool` |
 | Performance Monitoring | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js (pending MCP integration)` |
 
 ### **Cloud Deployment Workflow:**
 ```bash

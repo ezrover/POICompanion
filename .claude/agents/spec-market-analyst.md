@@ -46,7 +46,7 @@ To be the team's expert on the competitive landscape, market trends, and user se
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Market Analysis | `market-analyzer` | `node /mcp/market-analyzer/index.js` |
+| Market Analysis | `market-analyzer` | `node /mcp/market-analyzer/index.js (pending MCP integration)` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 | Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
 | Spec Generation | `spec-generator` | `Use mcp__poi-companion__spec_generate MCP tool` |
@@ -54,7 +54,7 @@ To be the team's expert on the competitive landscape, market trends, and user se
 ### **Analysis Workflow:**
 ```bash
 # Market and competitive analysis
-node /mcp/market-analyzer/index.js research --competitor={name}
+node /mcp/market-analyzer/index.js (pending MCP integration) research --competitor={name}
 Use mcp__poi-companion__doc_process MCP tool analyze --market-data
 Use mcp__poi-companion__spec_generate MCP tool requirements --from-analysis
 ```

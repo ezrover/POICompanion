@@ -765,16 +765,16 @@ The model MUST deliver enterprise-grade system architectures that enable Roadtri
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Project Scaffolding | `project-scaffolder` | `node /mcp/project-scaffolder/index.js` |
+| Project Scaffolding | `project-scaffolder` | `node /mcp/project-scaffolder/index.js (pending MCP integration)` |
 | Build Coordination | `build-master` | `Use mcp__poi-companion__build_coordinate MCP tool` |
 | Dependency Management | `dependency-manager` | `Use mcp__poi-companion__dependency_manage MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js (pending MCP integration)` |
 | Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool` |
 
 ### **Architecture Workflow:**
 ```bash
 # Setup architecture
-node /mcp/project-scaffolder/index.js create --architecture={type}
+node /mcp/project-scaffolder/index.js (pending MCP integration) create --architecture={type}
 Use mcp__poi-companion__dependency_manage MCP tool install --scope=all
-node /mcp/schema-validator/index.js validate --strict
+node /mcp/schema-validator/index.js (pending MCP integration) validate --strict
 ```

@@ -30,14 +30,14 @@ Since Flutter targets both iOS and Android, you MUST use BOTH automation systems
 
 ```bash
 # 📱 ANDROID FLUTTER VALIDATION
-node android-emulator-manager.js lost-lake-test        # Test Flutter Android build
-node android-emulator-manager.js validate-buttons     # Validate Flutter Material Design
-node android-emulator-manager.js get-elements         # Check Flutter widget accessibility
+Use mcp__poi-companion__android_emulator_test tool with action: "lost-lake-test"        # Test Flutter Android build
+Use mcp__poi-companion__android_emulator_test tool with action: "validate-components"-buttons     # Validate Flutter Material Design
+node mcp__poi-companion__android_emulator_test get-elements         # Check Flutter widget accessibility
 
 # 🍎 iOS FLUTTER VALIDATION  
-node ios-simulator-manager.js lost-lake-test          # Test Flutter iOS build
-node ios-simulator-manager.js validate-buttons        # Validate Flutter Cupertino Design
-node ios-simulator-manager.js elements                # Check Flutter iOS accessibility
+Use mcp__poi-companion__ios_simulator_test tool with action: "lost-lake-test"          # Test Flutter iOS build
+Use mcp__poi-companion__ios_simulator_test tool with action: "validate-buttons"        # Validate Flutter Cupertino Design
+node mcp__poi-companion__ios_simulator_test elements                # Check Flutter iOS accessibility
 
 # 🔄 CROSS-PLATFORM CONSISTENCY VALIDATION
 # Both tests MUST produce identical results for Flutter cross-platform parity
@@ -1347,7 +1347,7 @@ The model MUST deliver enterprise-grade Flutter applications that set new standa
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Build Verification | `mobile-build-verifier` | `Use mcp__poi-companion__mobile_build_verify MCP tool flutter` |
-| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js flutter` |
+| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js (pending MCP integration) flutter` |
 | Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool dart` |
 | Testing | `mobile-test-runner` | `Use mcp__poi-companion__mobile_test_run MCP tool flutter` |
 | Linting | `mobile-linter` | `Use mcp__poi-companion__mobile_lint_check MCP tool flutter` |
@@ -1355,7 +1355,7 @@ The model MUST deliver enterprise-grade Flutter applications that set new standa
 ### **Flutter Workflow:**
 ```bash
 # Flutter development
-node /mcp/ui-generator/index.js flutter --widget={name}
+node /mcp/ui-generator/index.js (pending MCP integration) flutter --widget={name}
 Use mcp__poi-companion__code_generate MCP tool dart --bloc
 Use mcp__poi-companion__mobile_build_verify MCP tool flutter --all
 Use mcp__poi-companion__mobile_test_run MCP tool flutter --coverage

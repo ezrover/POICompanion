@@ -133,22 +133,22 @@ Before implementing any feature, ALWAYS leverage the 24 local MCP tools to autom
 cd /Users/naderrahimizad/Projects/AI/POICompanion/mcp
 
 # 1. Validate project structure and dependencies
-node dependency-manager/index.js validate
+node mcp__poi-companion__dependency_manage validate
 
 # 2. Run mobile build verification
-node mobile-build-verifier/index.js check
+node mcp__poi-companion__mobile_build_verify check
 
 # 3. Execute comprehensive testing baseline
-node mobile-test-runner/index.js run-all
+node mcp__poi-companion__mobile_test_run run-all
 
 # 4. Validate code quality and style
-node mobile-linter/index.js analyze
+node mcp__poi-companion__mobile_lint_check analyze
 
 # 5. Check accessibility compliance
-node accessibility-checker/index.js scan
+node mcp__poi-companion__accessibility_check scan
 
 # 6. Analyze current performance metrics
-node performance-profiler/index.js baseline
+node mcp__poi-companion__performance_profile baseline
 
 # 7. Test mobile emulator automation capabilities
 node android-emulator-manager/index.js lost-lake-test
@@ -179,7 +179,7 @@ node ios-simulator-manager/index.js get-ui-state > ios_ui_state.json
 #### **Phase 1: MCP-Enhanced Code Generation**
 ```bash
 # Generate implementation boilerplate and scaffolding
-node code-generator/index.js create --feature=[feature-name] --platform=[ios|android|web]
+node mcp__poi-companion__code_generate create --feature=[feature-name] --platform=[ios|android|web]
 
 # Generate UI components from design system
 node ui-generator/index.js component --spec=[component-spec] --platform=[target]
@@ -194,22 +194,22 @@ node schema-validator/index.js validate --input=[generated-code]
 node test-runner/index.js watch --coverage
 
 # Real-time performance monitoring
-node performance-profiler/index.js monitor
+node mcp__poi-companion__performance_profile monitor
 
 # Continuous accessibility validation
-node accessibility-checker/index.js watch
+node mcp__poi-companion__accessibility_check watch
 
 # Mobile-specific quality checks
-node mobile-linter/index.js watch --auto-fix
+node mcp__poi-companion__mobile_lint_check watch --auto-fix
 ```
 
 #### **Phase 3: MCP-Automated Build & Deployment**
 ```bash
 # Cross-platform build verification
-node build-master/index.js build --platforms=all
+node mcp__poi-companion__build_coordinate build --platforms=all
 
 # Mobile app compilation validation
-node mobile-build-verifier/index.js build --platform=[ios|android]
+node mcp__poi-companion__mobile_build_verify build --platform=[ios|android]
 
 # Icon and asset generation
 node mobile-icon-generator/index.js generate --source=[svg-source]
@@ -219,13 +219,13 @@ node mobile-icon-verifier/index.js verify --platform=[ios|android]
 #### **Phase 4: MCP-Enhanced Documentation & Completion**
 ```bash
 # Generate implementation documentation
-node spec-generator/index.js document --implementation=[code-path]
+node mcp__poi-companion__spec_generate document --implementation=[code-path]
 
 # Process and analyze implementation docs
-node doc-processor/index.js analyze --output=[doc-path]
+node mcp__poi-companion__doc_process analyze --output=[doc-path]
 
 # Update task management system
-node task-manager/index.js complete --task=[task-id]
+node mcp__poi-companion__task_manage complete --task=[task-id]
 ```
 
 ### MCP Tool Integration Examples

@@ -19,13 +19,13 @@ You are a world-class iOS Developer with deep expertise in Swift, SwiftUI, and t
 ### **Mandatory Test Execution Workflow**
 ```bash
 # After implementing ANY feature, you MUST run using the MCP tool:
-node /mcp/e2e-ui-test-runner/index.js test ios
+Use mcp__poi-companion__e2e_ui_test_run tool with platform: ios
 
 # For critical features only:
-node /mcp/e2e-ui-test-runner/index.js test ios --critical
+Use mcp__poi-companion__e2e_ui_test_run tool with platform: ios --critical
 
 # For platform parity validation (RECOMMENDED):
-node /mcp/e2e-ui-test-runner/index.js test both
+Use mcp__poi-companion__e2e_ui_test_run tool with platform: both
 ```
 
 ### **Required Test Coverage for Every Feature**
@@ -133,11 +133,11 @@ You now have access to advanced iOS simulator automation capabilities:
 #### **🛠️ Validation Commands:**
 ```bash
 # Test your implementations with these enhanced commands:
-node ios-simulator-manager.js run --enable-wda --screenshot
-node ios-simulator-manager.js elements  # List all interactive elements
-node ios-simulator-manager.js tap "Allow"  # Tap elements by name
-node ios-simulator-manager.js type "Hello World"  # Enter text
-node ios-simulator-manager.js test  # Run automated UI validation
+node mcp__poi-companion__ios_simulator_test run --enable-wda --screenshot
+node mcp__poi-companion__ios_simulator_test elements  # List all interactive elements
+node mcp__poi-companion__ios_simulator_test tap "Allow"  # Tap elements by name
+node mcp__poi-companion__ios_simulator_test type "Hello World"  # Enter text
+node mcp__poi-companion__ios_simulator_test test  # Run automated UI validation
 ```
 
 #### **🧪 ENHANCED AUTOMATION TESTING PROTOCOL (PLATFORM PARITY)**
@@ -146,7 +146,7 @@ node ios-simulator-manager.js test  # Run automated UI validation
 
 ```bash
 # 🧪 COMPLETE USER FLOW TESTING (iOS Version)
-node ios-simulator-manager.js lost-lake-test
+Use mcp__poi-companion__ios_simulator_test tool with action: "lost-lake-test"
 # Tests complete Lost Lake Oregon flow on iOS:
 # 1. Tap destination input field
 # 2. Type "Lost Lake, Oregon" 
@@ -157,7 +157,7 @@ node ios-simulator-manager.js lost-lake-test
 # 7. Ensures 100% parity with Android automation
 
 # 🔘 BUTTON AND ELEMENT VALIDATION (iOS)
-node ios-simulator-manager.js validate-buttons
+Use mcp__poi-companion__ios_simulator_test tool with action: "validate-buttons"
 # Validates all interactive elements for iOS:
 # - Button visibility and accessibility
 # - Proper touch targets (min 44pt)
@@ -166,7 +166,7 @@ node ios-simulator-manager.js validate-buttons
 # - CarPlay compatibility validation
 
 # 📱 UI ELEMENT DISCOVERY AND ANALYSIS (iOS)
-node ios-simulator-manager.js elements
+node mcp__poi-companion__ios_simulator_test elements
 # Lists all interactive elements on iOS screen:
 # - Element types, labels, and coordinates
 # - Accessibility compliance status (VoiceOver)
@@ -175,9 +175,9 @@ node ios-simulator-manager.js elements
 # - CarPlay element detection for automotive UX
 
 # 🎯 ELEMENT-SPECIFIC TESTING (iOS Advanced)
-node ios-simulator-manager.js tap "Where would you like to go?"  # Test specific iOS element
-node ios-simulator-manager.js type "Test Destination"            # Test iOS text input
-node ios-simulator-manager.js screenshot ios-feature-test.png    # Document iOS results
+node mcp__poi-companion__ios_simulator_test tap "Where would you like to go?"  # Test specific iOS element
+node mcp__poi-companion__ios_simulator_test type "Test Destination"            # Test iOS text input
+node mcp__poi-companion__ios_simulator_test screenshot ios-feature-test.png    # Document iOS results
 ```
 
 **AUTOMATED TESTING REQUIREMENTS FOR iOS FEATURES:**
@@ -192,7 +192,7 @@ node ios-simulator-manager.js screenshot ios-feature-test.png    # Document iOS 
 
 #### **🚨 BEFORE EVERY CODE DELIVERY (MANDATORY - NO EXCEPTIONS):**
 1. **Build Verification**: Ensure iOS app builds successfully using mobile-build-verifier
-2. **Crash Validation**: MANDATORY use of `ios-simulator-manager.js validate` command
+2. **Crash Validation**: MANDATORY use of `mcp__poi-companion__ios_simulator_test validate` command
 3. **App Launch Test**: Verify app launches without crashes or timeouts
 4. **Feature Testing**: Test specific functionality you implemented
 5. **UI Validation**: Verify accessibility tree and element interactions
@@ -201,7 +201,7 @@ node ios-simulator-manager.js screenshot ios-feature-test.png    # Document iOS 
 8. **Cross-Platform Coordination**: Verify Android equivalent works identically
 
 #### **🚨 CRITICAL: VALIDATION FAILURE = TASK FAILURE**
-- If `ios-simulator-manager.js validate` fails, the implementation is INCOMPLETE
+- If `mcp__poi-companion__ios_simulator_test validate` fails, the implementation is INCOMPLETE
 - ALL crashes must be fixed before code can be delivered
 - NO exceptions or shortcuts allowed in validation protocol
 - Validation failure requires immediate fix and revalidation
@@ -212,24 +212,24 @@ node ios-simulator-manager.js screenshot ios-feature-test.png    # Document iOS 
 Use mcp__poi-companion__mobile_build_verify MCP tool ios
 
 # 2. MANDATORY: Crash validation (MUST PASS)
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/ios-simulator-manager/index.js validate
+Use mcp__poi-companion__ios_simulator_test tool validate
 
 # 3. Enhanced feature testing (if validation passes)
-node ios-simulator-manager.js run --enable-wda --screenshot
+node mcp__poi-companion__ios_simulator_test run --enable-wda --screenshot
 
 # 4. Validate CarPlay auto-connection (if applicable)
-node ios-simulator-manager.js test  # Runs automated UI test
+node mcp__poi-companion__ios_simulator_test test  # Runs automated UI test
 
 # 5. Test voice features (if applicable) 
-node ios-simulator-manager.js elements  # Check for voice UI elements
-node ios-simulator-manager.js tap "Start Voice Recording"
+node mcp__poi-companion__ios_simulator_test elements  # Check for voice UI elements
+node mcp__poi-companion__ios_simulator_test tap "Start Voice Recording"
 
 # 6. Verify specific UI elements work
-node ios-simulator-manager.js tap "Location Permission Button"
-node ios-simulator-manager.js type "Test Location Query"
+node mcp__poi-companion__ios_simulator_test tap "Location Permission Button"
+node mcp__poi-companion__ios_simulator_test type "Test Location Query"
 
 # 7. Take final validation screenshot
-node ios-simulator-manager.js screenshot ~/Desktop/validation-proof.png
+node mcp__poi-companion__ios_simulator_test screenshot ~/Desktop/validation-proof.png
 ```
 
 #### **🚨 VALIDATION EXIT CODES:**
@@ -1492,27 +1492,27 @@ docs(carplay): update CarPlay integration guide
 | Lint | `swiftlint` | `mobile-linter` | `Use mcp__poi-companion__mobile_lint_check MCP tool ios --auto-fix` |
 | Performance | `instruments` | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool ios` |
 | Accessibility | Manual checks | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool ios` |
-| Project Files | Edit .xcodeproj | `ios-project-manager` | `node /mcp/ios-project-manager/index.js add-files` |
-| File Operations | Direct I/O | `mobile-file-manager` | `node /mcp/mobile-file-manager/index.js ios` |
+| Project Files | Edit .xcodeproj | `ios-project-manager` | `node /mcp/ios-project-manager/index.js (pending MCP integration) add-files` |
+| File Operations | Direct I/O | `mobile-file-manager` | `node /mcp/mobile-file-manager/index.js (pending MCP integration) ios` |
 | Design Validation | Manual review | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool validate-ios` |
-| Icon Generation | Manual creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js ios` |
-| Icon Verification | Manual check | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js ios` |
+| Icon Generation | Manual creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js (pending MCP integration) ios` |
+| Icon Verification | Manual check | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js (pending MCP integration) ios` |
 | Code Generation | Manual boilerplate | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool swift` |
-| UI Generation | Manual UI code | `ui-generator` | `node /mcp/ui-generator/index.js swiftui` |
+| UI Generation | Manual UI code | `ui-generator` | `node /mcp/ui-generator/index.js (pending MCP integration) swiftui` |
 | Simulator | Manual simulator | `ios-simulator-manager` | `Use mcp__poi-companion__ios_simulator_test MCP tool test` |
 | Dependencies | Manual SPM | `dependency-manager` | `Use mcp__poi-companion__dependency_manage MCP tool ios` |
-| Schema Validation | Manual validation | `schema-validator` | `node /mcp/schema-validator/index.js ios` |
+| Schema Validation | Manual validation | `schema-validator` | `node /mcp/schema-validator/index.js (pending MCP integration) ios` |
 
 ### **MANDATORY iOS Development Workflow with MCP Tools:**
 
 ```bash
 # 1. Project Setup (NEVER create manually)
-node /mcp/project-scaffolder/index.js ios --template=swiftui
-node /mcp/ios-project-manager/index.js init
+node /mcp/project-scaffolder/index.js (pending MCP integration) ios --template=swiftui
+node /mcp/ios-project-manager/index.js (pending MCP integration) init
 
 # 2. Development Phase (NEVER code without tools)
 Use mcp__poi-companion__code_generate MCP tool swift --component=viewmodel
-node /mcp/ui-generator/index.js swiftui --screen=destination
+node /mcp/ui-generator/index.js (pending MCP integration) swiftui --screen=destination
 Use mcp__poi-companion__design_system_manage MCP tool generate-ios-tokens
 
 # 3. Quality Assurance (NEVER skip validation)
@@ -1526,8 +1526,8 @@ Use mcp__poi-companion__performance_profile MCP tool ios --benchmark
 Use mcp__poi-companion__ios_simulator_test MCP tool validate
 
 # 5. Asset Management (NEVER create manually)
-node /mcp/mobile-icon-generator/index.js ios --source=logo.svg
-node /mcp/mobile-icon-verifier/index.js ios --validate-all
+node /mcp/mobile-icon-generator/index.js (pending MCP integration) ios --source=logo.svg
+node /mcp/mobile-icon-verifier/index.js (pending MCP integration) ios --validate-all
 ```
 
 ### **Integration with Other Agents via MCP Tools:**

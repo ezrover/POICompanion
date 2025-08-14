@@ -26,19 +26,19 @@ You are responsible for providing complete, executable initial test code, ensuri
 ### **Mandatory E2E Test Integration Workflow**
 ```bash
 # For iOS features - you MUST verify execution:
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/e2e-ui-test-runner/index.js test ios
+Use mcp__poi-companion__e2e_ui_test_run tool with platform: "ios"
 
 # For Android features - you MUST verify execution:  
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/e2e-ui-test-runner/index.js test android
+Use mcp__poi-companion__e2e_ui_test_run tool with platform: "android"
 
 # For platform parity validation - CRITICAL:
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/e2e-ui-test-runner/index.js test both
+Use mcp__poi-companion__e2e_ui_test_run tool with platform: "both"
 
 # For critical path testing only:
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/e2e-ui-test-runner/index.js test both --critical
+Use mcp__poi-companion__e2e_ui_test_run tool with platform: "both" --critical
 
 # View comprehensive test reports:
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/e2e-ui-test-runner/index.js report
+View test reports at /mcp/e2e-ui-test-runner/test-results
 ```
 
 ### **E2E Test Quality Gates You Must Enforce**
@@ -146,23 +146,23 @@ cd /Users/naderrahimizad/Projects/AI/POICompanion/mcp
 node test-runner/index.js init --framework=jest,vitest,android,ios
 
 # 2. Set up mobile testing environments
-node mobile-test-runner/index.js setup --platforms=android,ios
+node mcp__poi-companion__mobile_test_run setup --platforms=android,ios
 
 # 3. Establish testing project structure
 node project-scaffolder/index.js testing --type=comprehensive
 
 # 4. Validate testing dependencies
-node dependency-manager/index.js testing-setup
+node mcp__poi-companion__dependency_manage testing-setup
 ```
 
 #### **Test Generation & Code Creation**
 ```bash
 # Automated test code generation
 # 1. Generate test boilerplate from specifications
-node code-generator/index.js test --spec=[spec-path] --framework=[jest|vitest]
+node mcp__poi-companion__code_generate test --spec=[spec-path] --framework=[jest|vitest]
 
 # 2. Create mobile-specific test cases
-node mobile-test-runner/index.js generate --platform=[android|ios] --component=[component]
+node mcp__poi-companion__mobile_test_run generate --platform=[android|ios] --component=[component]
 
 # 3. Generate UI component tests
 node ui-generator/index.js test --component=[ui-component] --framework=compose,swiftui
@@ -178,39 +178,39 @@ node schema-validator/index.js test-data --schemas=[test-schemas]
 node test-runner/index.js watch --coverage --threshold=80
 
 # 2. Mobile app testing across devices
-node mobile-test-runner/index.js continuous --devices=all --coverage
+node mcp__poi-companion__mobile_test_run continuous --devices=all --coverage
 
 # 3. Performance testing integration
-node performance-profiler/index.js test --benchmarks
+node mcp__poi-companion__performance_profile test --benchmarks
 
 # 4. Accessibility testing automation
-node accessibility-checker/index.js test --standard=wcag-aa
+node mcp__poi-companion__accessibility_check test --standard=wcag-aa
 ```
 
 #### **Build Integration & Verification**
 ```bash
 # Testing within build pipeline
 # 1. Pre-build testing validation
-node mobile-build-verifier/index.js test-before-build
+node mcp__poi-companion__mobile_build_verify test-before-build
 
 # 2. Cross-platform testing coordination
-node build-master/index.js test --platforms=android,ios,web
+node mcp__poi-companion__build_coordinate test --platforms=android,ios,web
 
 # 3. Post-build testing verification
-node mobile-build-verifier/index.js test-after-build
+node mcp__poi-companion__mobile_build_verify test-after-build
 ```
 
 #### **Test Documentation & Reporting**
 ```bash
 # Automated test documentation and analysis
 # 1. Generate test documentation from code
-node doc-processor/index.js test-docs --source=[test-code]
+node mcp__poi-companion__doc_process test-docs --source=[test-code]
 
 # 2. Test coverage analysis and reporting
 node test-runner/index.js coverage-report --format=html,json
 
 # 3. Test result processing and insights
-node doc-processor/index.js test-results --analyze
+node mcp__poi-companion__doc_process test-results --analyze
 ```
 
 ### MCP-Enhanced Testing Examples

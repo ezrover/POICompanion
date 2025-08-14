@@ -17,15 +17,15 @@ description: Specialist monitoring and optimizing the performance of deployed AI
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js` |
+| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js (pending MCP integration)` |
 | Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js (pending MCP integration)` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
-node /mcp/model-optimizer/index.js train --data={dataset}
+node /mcp/model-optimizer/index.js (pending MCP integration) train --data={dataset}
 Use mcp__poi-companion__performance_profile MCP tool benchmark --model={name}
-node /mcp/schema-validator/index.js validate --data-schema
+node /mcp/schema-validator/index.js (pending MCP integration) validate --data-schema
 ```

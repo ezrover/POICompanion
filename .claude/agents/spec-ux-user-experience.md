@@ -452,25 +452,25 @@ Every design deliverable MUST include:
 **iOS UX Automation (ios-simulator-manager)**:
 ```bash
 # Validate Lost Lake Oregon flow
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/ios-simulator-manager/index.js lost-lake-test
+Use mcp__poi-companion__ios_simulator_test tool lost-lake-test
 
 # Validate button styling and touch targets
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/ios-simulator-manager/index.js validate-buttons
+Use mcp__poi-companion__ios_simulator_test tool validate-buttons
 
 # Custom UI element testing
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/ios-simulator-manager/index.js test-element --type=UIButton --property=accessibilityLabel --value="Go"
+Use mcp__poi-companion__ios_simulator_test tool test-element --type=UIButton --property=accessibilityLabel --value="Go"
 ```
 
 **Android UX Automation (android-emulator-manager)**:
 ```bash
 # Validate Lost Lake Oregon flow
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/android-emulator-manager/index.js lost-lake-test
+Use mcp__poi-companion__android_emulator_test tool lost-lake-test
 
 # Validate UI components and touch targets
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/android-emulator-manager/index.js validate-components
+Use mcp__poi-companion__android_emulator_test tool validate-components
 
 # Custom element automation testing
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/android-emulator-manager/index.js tap-element --text="Go" --type="Button"
+Use mcp__poi-companion__android_emulator_test tool tap-element --text="Go" --type="Button"
 ```
 
 ### Cross-Platform UX Validation
@@ -497,16 +497,16 @@ The model MUST deliver world-class user experiences that set new industry standa
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js` |
+| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js (pending MCP integration)` |
 | Design System | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool` |
 | Accessibility | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool` |
-| Icon Creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js` |
-| Icon Validation | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js` |
+| Icon Creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js (pending MCP integration)` |
+| Icon Validation | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js (pending MCP integration)` |
 
 ### **Design Workflow:**
 ```bash
 # Generate UI components
-node /mcp/ui-generator/index.js create --component={name}
+node /mcp/ui-generator/index.js (pending MCP integration) create --component={name}
 Use mcp__poi-companion__design_system_manage MCP tool validate
 Use mcp__poi-companion__accessibility_check MCP tool audit --wcag-aa
 ```
