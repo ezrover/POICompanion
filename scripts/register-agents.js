@@ -59,16 +59,16 @@ async function main() {
   // Generate the registry document
   let registry = `# Agent Registry - ${agents.length} Agents Available\n\n`;
   registry += `Generated: ${new Date().toISOString()}\n\n`;
-  registry += `## ⚠️ IMPORTANT: How to Use These Agents\n\n`;
-  registry += `Since Claude Code's Task tool doesn't directly support custom agents, use the following workaround:\n\n`;
-  registry += `1. Use the \`general-purpose\` agent via Task tool\n`;
-  registry += `2. Include the agent's system prompt from this registry\n`;
-  registry += `3. Prefix your task with the agent's role and instructions\n\n`;
+  registry += `## ✅ IMPORTANT: How to Use These Agents\n\n`;
+  registry += `All 43 agents are now directly available through Claude Code's Task tool:\n\n`;
+  registry += `1. Use Claude Code Task tool interface\n`;
+  registry += `2. Select the specific agent from the \`subagent_type\` dropdown\n`;
+  registry += `3. Provide your task description in the prompt\n\n`;
   registry += `### Example Usage:\n\n`;
   registry += `\`\`\`javascript\n`;
   registry += `// To use spec-workflow-manager:\n`;
-  registry += `Task tool with subagent_type: "general-purpose"\n`;
-  registry += `Prompt: "Act as spec-workflow-manager. [Include system prompt]. Task: [Your task]"\n`;
+  registry += `// In Claude Code interface:\n`;
+  registry += `// Task tool → subagent_type: "spec-workflow-manager" → prompt: "Create requirements for user authentication feature"\n`;
   registry += `\`\`\`\n\n`;
   registry += `---\n\n`;
   
@@ -147,38 +147,30 @@ async function main() {
   fs.writeFileSync(OUTPUT_FILE, registry);
   console.log(`\n✅ Agent registry written to: ${OUTPUT_FILE}\n`);
   
-  // Generate a wrapper function for CLAUDE.md
+  // Generate updated usage notes for CLAUDE.md
   const wrapper = `
-## 🤖 Agent Execution Wrapper
+## ✅ Agent Integration Status
 
-Since the spec-* agents aren't directly available through Task tool, use this approach:
+All 43 agents are directly available through Claude Code's Task tool interface.
 
-\`\`\`javascript
-function executeSpecAgent(agentName, task) {
-  // Read the agent's system prompt from .claude/agents/{agentName}.md
-  // Use Task tool with general-purpose agent
-  // Include the system prompt in the task description
-  return Task({
-    subagent_type: "general-purpose",
-    prompt: \`
-      You are executing as the \${agentName} agent.
-      
-      [Include agent system prompt here from registry]
-      
-      Task: \${task}
-    \`
-  });
-}
-\`\`\`
+### Usage:
+1. Use Task tool in Claude Code
+2. Select agent from subagent_type dropdown
+3. Provide task description
+
+### Integration Complete:
+- All agents properly formatted with YAML frontmatter
+- Registry updated and functional
+- No workarounds needed - direct agent access available
 `;
   
   console.log('📝 Wrapper function for agent execution:');
   console.log(wrapper);
   
-  console.log('\n🎯 Next Steps:');
-  console.log('1. The agent specifications are now documented in AGENT_REGISTRY.md');
-  console.log('2. Use the general-purpose agent with the system prompts to simulate each agent');
-  console.log('3. Consider creating actual MCP tools for critical agents');
+  console.log('\n🎯 Status:');
+  console.log('1. All 43 agent specifications documented in AGENT_REGISTRY.md');
+  console.log('2. All agents directly available through Claude Code Task tool');
+  console.log('3. No workarounds needed - integration complete');
 }
 
 main().catch(console.error);

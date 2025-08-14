@@ -2,7 +2,7 @@
 
 ## When to Create New Agents
 
-The current 40-agent workforce covers most development scenarios, but new agents should be created when:
+The current 43-agent workforce covers most development scenarios, but new agents should be created when:
 
 1. **Capability Gap**: Existing agents lack specific expertise needed
 2. **Validation Gap**: Current agents cannot prove task completion reliably
@@ -49,11 +49,10 @@ The wizard will:
 ### Step 4: Test the Agent
 Test your new agent immediately:
 
+Use Claude Code Task tool with the new agent name directly:
 ```javascript
-Task({
-  subagent_type: "general-purpose",
-  prompt: "Act as [new-agent-name]. [System prompt]. Task: [test task]"
-})
+// In Claude Code interface, use Task tool with new agent name
+// The agent should appear in the available subagent_type list
 ```
 
 ### Step 5: Document and Commit
@@ -104,7 +103,7 @@ Every new agent must:
 1. **Have Clear Purpose**: Solve a specific gap not covered by existing agents
 2. **Provide Validation**: Include mechanisms to prove task completion
 3. **Document Integration**: Explain how it works with existing agents
-4. **Follow Standards**: Match quality level of existing 40 agents
+4. **Follow Standards**: Match quality level of existing 43 agents
 5. **Include Examples**: Provide usage examples in specification
 
 ## Maintenance and Evolution
@@ -141,7 +140,7 @@ Before creating a new agent, check if it fits existing categories:
 7. **Infrastructure** (4 agents) - Operations and deployment
 8. **Specialized** (7 agents) - Domain-specific expertise
 
-Total: 40 agents
+Total: 43 agents
 
 ## Quick Reference
 
@@ -161,11 +160,10 @@ node scripts/register-agents.js
 ```
 
 ### Test agent:
+Use Claude Code Task tool with agent name:
 ```javascript
-Task({
-  subagent_type: "general-purpose",
-  prompt: "Act as spec-your-agent. [System prompt]. Task: [test]"
-})
+// In Claude Code interface: 
+// Task tool → subagent_type: "spec-your-agent" → prompt: "[test task]"
 ```
 
 Remember: The goal is a comprehensive but focused workforce. Only add agents that provide unique, irreplaceable value.

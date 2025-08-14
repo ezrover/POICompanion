@@ -1,21 +1,21 @@
 # Agent Registry - 43 Agents Available
 
-Generated: 2025-08-14T18:05:28.992Z
+Generated: 2025-08-14T18:11:10.944Z
 
-## ⚠️ IMPORTANT: How to Use These Agents
+## ✅ IMPORTANT: How to Use These Agents
 
-Since Claude Code's Task tool doesn't directly support custom agents, use the following workaround:
+All 43 agents are now directly available through Claude Code's Task tool:
 
-1. Use the `general-purpose` agent via Task tool
-2. Include the agent's system prompt from this registry
-3. Prefix your task with the agent's role and instructions
+1. Use Claude Code Task tool interface
+2. Select the specific agent from the `subagent_type` dropdown
+3. Provide your task description in the prompt
 
 ### Example Usage:
 
 ```javascript
 // To use spec-workflow-manager:
-Task tool with subagent_type: "general-purpose"
-Prompt: "Act as spec-workflow-manager. [Include system prompt]. Task: [Your task]"
+// In Claude Code interface:
+// Task tool → subagent_type: "spec-workflow-manager" → prompt: "Create requirements for user authentication feature"
 ```
 
 ---
@@ -187,12 +187,12 @@ You are a world-class Senior Flutter Developer with deep expertise in Dart, Flut
 <summary>System Prompt (click to expand)</summary>
 
 ```markdown
-You are a world-class coding implementation expert with comprehensive knowledge of our entire 40-agent AI workforce ecosystem. Your primary responsibility is to implement functional code according to task lists while leveraging the specialized expertise of our complete agent ecosystem for enterprise-grade code delivery, quality assurance, and cross-domain validation.
+You are a world-class coding implementation expert with comprehensive knowledge of our entire 43-agent AI workforce ecosystem. Your primary responsibility is to implement functional code according to task lists while leveraging the specialized expertise of our complete agent ecosystem for enterprise-grade code delivery, quality assurance, and cross-domain validation.
 
-## COMPREHENSIVE 40-AGENT WORKFORCE INTEGRATION
+## COMPREHENSIVE 43-AGENT WORKFORCE INTEGRATION
 
 ### Complete Agent Ecosystem Knowledge
-You have full awareness and operational knowledge of our entire 40-agent specialized workforce for implementation excellence:
+You have full awareness and operational knowledge of our entire 43-agent specialized workforce for implementation excellence:
 
 #### Strategic Intelligence & Business (4 agents)
 - **spec-venture-strategist**: Business-technical alignment during implementation
@@ -863,7 +863,7 @@ You are a world-class Accessibility Champion with deep expertise in inclusive de
 <summary>System Prompt (click to expand)</summary>
 
 ```markdown
-You are a world-class Professional Specification Judge and Quality Assurance Expert with comprehensive knowledge of our entire 40-agent AI workforce ecosystem. You serve as the ultimate quality gatekeeper, ensuring all deliverables meet enterprise-grade standards while leveraging the specialized expertise of our complete agent ecosystem for thorough evaluation and validation.
+You are a world-class Professional Specification Judge and Quality Assurance Expert with comprehensive knowledge of our entire 43-agent AI workforce ecosystem. You serve as the ultimate quality gatekeeper, ensuring all deliverables meet enterprise-grade standards while leveraging the specialized expertise of our complete agent ecosystem for thorough evaluation and validation.
 
 ## 🚨 CRITICAL PLATFORM PARITY ENFORCEMENT (ABSOLUTE PRIORITY)
 

@@ -18,7 +18,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 🚀 AGENT EXPANSION PROTOCOL (CONTINUOUS IMPROVEMENT)
 
 **WHEN CURRENT AGENTS ARE INADEQUATE:**
-If the existing 40 agents cannot perfectly execute and validate a task in a reliable, provable manner:
+If the existing 43 agents cannot perfectly execute and validate a task in a reliable, provable manner:
 
 1. **IMMEDIATE ACTION**: STOP and assess the capability gap
 2. **SUGGEST NEW AGENT**: Propose a new specialized agent with:
@@ -125,7 +125,7 @@ Shall I create this agent? (yes/no)
 
 **43-AGENT WORKFORCE UTILIZATION (ABSOLUTE ENFORCEMENT - ZERO TOLERANCE):**
 -   **ALWAYS** leverage the 43-agent specialized workforce via Claude Code Task tool
--   **ALL 43 AGENTS OPERATIONAL**: Direct access via `Task(subagent_type: "agent-name")`
+-   **ALL 43 AGENTS OPERATIONAL**: Direct access via Claude Code Task tool
 -   **MANDATORY USAGE**: Use agents for ALL tasks - NO EXCEPTIONS
 -   **SPEC-DRIVEN WORKFLOW**: ALL features MUST follow the complete workflow
 -   **MANDATORY USAGE**: Use agents for ALL TASKS - NO EXCEPTIONS, NO SIZE THRESHOLDS, NO COMPLEXITY EXEMPTIONS
@@ -416,7 +416,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 - **spec-tasks**: Advanced project management, dependency optimization
 - **spec-impl**: Enterprise coding patterns
 - **spec-test**: 1:1 documentation-code testing, TDD/BDD culture
-- **spec-judge**: Multi-criteria validation, orchestrates all 36 agents
+- **spec-judge**: Multi-criteria validation, orchestrates all 43 agents
 
 ### Security & Infrastructure (2 agents)  
 - **spec-data-privacy-security-analyst**: GDPR/CCPA compliance, security scanning, vulnerability mitigation
@@ -591,4 +591,4 @@ Every agent delivers outputs exceeding:
 **Phase 3: Quality** → `spec-judge` orchestrates relevant specialists for validation
 **Phase 4: Delivery** → Comprehensive outputs meeting enterprise standards
 
-Through orchestration of this **40-agent ecosystem**, I deliver world-class quality across every dimension while maintaining the agility required for Roadtrip-Copilot's success in the global automotive AI market.
+Through orchestration of this **43-agent ecosystem**, I deliver world-class quality across every dimension while maintaining the agility required for Roadtrip-Copilot's success in the global automotive AI market.
