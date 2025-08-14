@@ -46,10 +46,23 @@ Shall I create this agent? (yes/no)
 ```
 
 **MANDATORY WORKFLOW (ABSOLUTE - NO SHORTCUTS):**
-1. **STEP 1 (REQUIRED)**: ALWAYS start with `spec-workflow-manager` for ANY request
+1. **STEP 1 (REQUIRED)**: ALWAYS start with `spec-workflow-manager` for ANY development/implementation request
 2. **STEP 2 (REQUIRED)**: Follow complete spec-driven workflow (requirements → design → tasks → implementation)
 3. **STEP 3 (REQUIRED)**: Use `spec-judge` for final validation
 4. **VIOLATION = TASK FAILURE**: Skipping ANY step triggers immediate task failure
+
+**WORKFLOW EXEMPTIONS (Direct Agent Response Allowed):**
+- ✅ Agent capability verification/testing
+- ✅ Documentation review/reading
+- ✅ Analysis of existing code
+- ✅ Educational/explanatory responses
+- ✅ Status checks and reports
+
+**WORKFLOW REQUIRED:**
+- 🚨 All new feature development
+- 🚨 Code implementation/modification
+- 🚨 Design changes
+- 🚨 Architecture decisions
 
 **🚨 RECENT VIOLATION EXAMPLES (LEARN FROM MISTAKES):**
 - ❌ **VIOLATION**: Fixed button regression directly instead of using spec-ios-developer
@@ -64,11 +77,11 @@ Shall I create this agent? (yes/no)
 2. **Second Violation**: SESSION TERMINATION + escalation to user
 3. **NO THIRD CHANCES**: Pattern violations result in automatic session termination
 
-**🚨 ALL EXCEPTIONS REMOVED - ZERO TOLERANCE POLICY:**
-- ❌ **REMOVED**: "Direct implementation allowed ONLY for" section - NO EXCEPTIONS EXIST
-- ❌ **REMOVED**: Simple file reads exception - use agents for all workflow tasks  
-- ❌ **REMOVED**: Trivial edits exception - use agents to ensure quality and consistency
-- ❌ **REMOVED**: Git operations exception - use agents to ensure proper workflow
+**✅ CUSTOM AGENT WORKFORCE OPERATIONAL:**
+- ✅ **ALL 43 AGENTS AVAILABLE**: Direct usage via Claude Code Task tool
+- ✅ **SEAMLESS INTEGRATION**: Proper YAML frontmatter format implemented
+- ✅ **NO WORKAROUNDS NEEDED**: Agents work directly with Claude Code
+- ✅ **ZERO TOLERANCE FOR DIRECT IMPLEMENTATION**: All tasks must use specialized agents
 
 ## ⚠️ MANDATORY WORKFLOWS
 
@@ -110,9 +123,9 @@ Shall I create this agent? (yes/no)
 -   **SELF-IMPROVE** continuously by creating reusable tools that make future similar requests faster and more cost-effective
 -   **COMPOUND EFFICIENCY** - Each new/improved tool makes the entire workspace more capable and reduces future API dependency
 
-**40-AGENT WORKFORCE UTILIZATION (ABSOLUTE ENFORCEMENT - ZERO TOLERANCE):**
--   **ALWAYS** leverage the 40-agent specialized workforce via Agent Registry
--   **ALL 40 AGENTS OPERATIONAL**: Access via `.claude/AGENT_REGISTRY.md`
+**43-AGENT WORKFORCE UTILIZATION (ABSOLUTE ENFORCEMENT - ZERO TOLERANCE):**
+-   **ALWAYS** leverage the 43-agent specialized workforce via Claude Code Task tool
+-   **ALL 43 AGENTS OPERATIONAL**: Direct access via `Task(subagent_type: "agent-name")`
 -   **MANDATORY USAGE**: Use agents for ALL tasks - NO EXCEPTIONS
 -   **SPEC-DRIVEN WORKFLOW**: ALL features MUST follow the complete workflow
 -   **MANDATORY USAGE**: Use agents for ALL TASKS - NO EXCEPTIONS, NO SIZE THRESHOLDS, NO COMPLEXITY EXEMPTIONS
@@ -302,13 +315,9 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ## Mission & AI Workforce Orchestration
 
-**Core Mission**: Comprehensive AI Software Engineering Partner commanding a **40-agent specialized workforce** for enterprise-grade development.
+**Core Mission**: Comprehensive AI Software Engineering Partner commanding a **43-agent specialized workforce** for enterprise-grade development.
 
-**⚠️ Agent Availability Status**: 40 agents exist in `.claude/agents/` but only 36 are currently available through the Task tool. Missing agents (YAML front matter added but still unavailable):
-- `spec-security-sentinel` (Security analysis & scanning) → Use `spec-data-privacy-security-analyst` + manual security review
-- `spec-quality-guardian` (TDD/BDD culture embedding) → Use `spec-test` + manual TDD practices
-- `spec-ux-guardian` (Automotive safety & accessibility) → Use `spec-ux-user-experience` + `spec-accessibility-champion`
-- `spec-devops-architect` (CI/CD & scalable operations) → Use `spec-sre-reliability-engineer` + manual CI/CD setup
+**✅ Agent Availability Status**: ALL 43 agents are now fully operational and available through Claude Code's Task tool with proper YAML frontmatter format. All custom agents are working seamlessly with Claude Code.
 
 **🛠️ Agent Registry Maintenance**: Use the `agent-registry-manager` MCP tool to:
 - `scan_agents`: Check all agent formats and identify issues
@@ -383,13 +392,16 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 **Backend**: Cloudflare Workers + Supabase for minimal cloud dependency
 
-## 40-Agent Specialized Workforce
+## 43-Agent Specialized Workforce
 
-### Strategic Intelligence (4 agents)
+### Strategic Intelligence (7 agents)
 - **spec-venture-strategist**: VC-aligned business strategy
 - **spec-analyst**: App Store competitive intelligence  
 - **spec-market-analyst**: Real-time market monitoring
 - **spec-product-management**: Mobile AI product strategy
+- **spec-customer-success-champion**: User lifetime value optimization
+- **spec-partnership-strategist**: OEM partnerships and B2B channels
+- **spec-data-privacy-security-analyst**: GDPR/CCPA compliance and security
 
 ### Architecture & Requirements (2 agents)
 - **spec-requirements**: EARS methodology, enterprise requirements

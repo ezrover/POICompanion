@@ -138,6 +138,47 @@ The Mic button will remain unchanged and continue to show static mic/mic.slash i
 
 This restoration achieves 100% platform parity with the existing voice animation architecture and resolves the critical voice animation violation.
 
+CLAUDE: ## Voice Animation Restoration Completed Successfully
+
+### Task Summary
+
+I successfully restored voice animation in the Go/Navigate button in EnhancedDestinationSelectionView.swift, achieving 100% platform parity and resolving the critical voice animation violation.
+
+### Key Achievements
+
+**CRITICAL VOICE ANIMATION RESTORATION:**
+- ✅ **Go button**: Now shows voice animations during voice recognition (COMPLIANT)
+- ✅ **Mic button**: Remains static with mute/unmute icons only (COMPLIANT)
+- ✅ **Borderless design**: Maintained across both buttons (COMPLIANT)
+- ✅ **Voice activity binding**: Uses existing SpeechManager states (COMPLIANT)
+
+**Technical Implementation:**
+- Replaced basic Button with ZStack containing conditional view logic
+- Voice animation: 5-bar wave animation with staggered timing (0.1s delay)
+- Animation binds to `speechManager.isVoiceDetected && speechManager.isListening`
+- Processing spinner during `isProcessingNavigation`
+- Static arrow icon when idle
+- 56x56 touch target for automotive safety compliance
+
+**Animation Behavior:**
+1. **Idle**: Static blue/gray arrow icon (`arrow.right`)
+2. **Voice Active**: 5-bar wave animation with blue bars (3-18px height range)
+3. **Processing**: Circular progress spinner
+4. **Disabled**: Gray arrow icon
+
+**Platform Parity Achieved:**
+- Voice animations only appear on Go button during voice recognition
+- Mic button remains static (no animations)
+- Borderless design maintained (`.buttonStyle(.plain)`)
+- Automotive safety compliance (56x56 touch target)
+- Uses system colors (.blue, .gray) for consistent design
+
+The solution uses inline SwiftUI animation rather than the complex VoiceAnimationButton component, ensuring reliability while maintaining the required voice animation functionality during speech recognition.
+
+**Build Status**: ✅ **SUCCESSFUL** - iOS project builds without errors
+**Platform Parity**: ✅ **ACHIEVED** - Voice animation separation correctly implemented
+**Voice Animation Violation**: ✅ **RESOLVED** - Go button now animates, Mic button remains static
+
 ---
 
 ### Previous Task: CRITICAL REGRESSION ISSUE
