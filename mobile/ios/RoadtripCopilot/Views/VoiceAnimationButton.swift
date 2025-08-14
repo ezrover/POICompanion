@@ -27,25 +27,24 @@ struct VoiceAnimationButton: View {
             action()
         }) {
             ZStack {
-                // Background rounded rectangle (Design System Compliant)
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(backgroundGradient)
+                // BORDERLESS DESIGN: Remove background shape - icon-only button
+                // Background removed to comply with BORDERLESS BUTTON ENFORCEMENT
+                Color.clear
                     .frame(width: buttonSize, height: buttonSize)
-                    .shadow(color: shadowColor, radius: shadowRadius, x: 0, y: shadowOffset)
                     .scaleEffect(pulseScale)
                     .animation(.easeInOut(duration: 0.15), value: pulseScale)
                 
-                // CRITICAL FIX: Always visible content with proper icon display
+                // BORDERLESS DESIGN: Always visible icon content only
                 Group {
                     if isVoiceAnimating {
                         VoiceWaveAnimation()
-                            .foregroundColor(.white)
+                            .foregroundColor(.blue) // Use system color for borderless design
                     } else if isProcessing {
                         ProcessingSpinner()
-                            .foregroundColor(.white)
+                            .foregroundColor(.blue) // Use system color for borderless design
                     } else {
                         NavigationIcon()
-                            .foregroundColor(.white)
+                            .foregroundColor(.blue) // Use system color for borderless design
                             .font(.title2)
                             .fontWeight(.semibold)
                     }
@@ -85,27 +84,7 @@ struct VoiceAnimationButton: View {
     
     // MARK: - Computed Properties
     
-    private var backgroundGradient: LinearGradient {
-        if !isEnabled {
-            return LinearGradient(
-                colors: [Color.gray, Color.gray.opacity(0.8)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        } else if isProcessing {
-            return LinearGradient(
-                colors: [Color.orange, Color.orange.opacity(0.8)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        } else {
-            return LinearGradient(
-                colors: [Color.blue, Color.blue.opacity(0.8)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        }
-    }
+    // BORDERLESS DESIGN: Remove background gradient - not needed for icon-only buttons
     
     private var shadowColor: Color {
         if isVoiceAnimating {
@@ -175,17 +154,17 @@ struct VoiceAnimationButton: View {
     
     @ViewBuilder
     private func NavigationIcon() -> some View {
-        // CRITICAL FIX: Always visible navigation icon
+        // BORDERLESS DESIGN: Navigation icon with system colors
         Image(systemName: "arrow.right")
             .font(.system(size: 20, weight: .semibold))
-            .foregroundColor(.white)
+            .foregroundColor(.blue)
             .opacity(1.0) // Explicit opacity to prevent visibility issues
     }
     
     @ViewBuilder
     private func ProcessingSpinner() -> some View {
         ProgressView()
-            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+            .progressViewStyle(CircularProgressViewStyle(tint: .blue))
             .scaleEffect(0.8)
     }
     
@@ -216,7 +195,7 @@ struct VoiceWaveBar: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 1.5)
-            .fill(Color.white)
+            .fill(Color.blue)
             .frame(width: 3, height: height)
             .animation(
                 .easeInOut(duration: 0.4)

@@ -25,18 +25,13 @@ struct MicrophoneToggleButton: View {
             triggerHapticFeedback()
         }) {
             ZStack {
-                // Background rounded rectangle with state-dependent styling (Design System Compliant)
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(backgroundGradient)
+                // BORDERLESS DESIGN: Remove background and border - icon-only button
+                // Background and border removed to comply with BORDERLESS BUTTON ENFORCEMENT
+                Color.clear
                     .frame(width: buttonSize, height: buttonSize)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(borderColor, lineWidth: borderWidth)
-                    )
-                    .shadow(color: shadowColor, radius: shadowRadius, x: 0, y: shadowOffset)
                     .scaleEffect(pulseScale)
                 
-                // CRITICAL FIX: Always visible microphone icon with state indicators
+                // BORDERLESS DESIGN: Always visible microphone icon with state indicators
                 ZStack {
                     // Base microphone icon - always present
                     Image(systemName: microphoneIconName)
@@ -79,55 +74,11 @@ struct MicrophoneToggleButton: View {
     
     // MARK: - Computed Properties
     
-    private var backgroundGradient: LinearGradient {
-        if isMuted {
-            return LinearGradient(
-                colors: [Color.red.opacity(0.1), Color.red.opacity(0.05)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        } else {
-            // PLATFORM PARITY FIX: Remove listening state styling - MIC button should only show muted/active states
-            return LinearGradient(
-                colors: [Color(.systemGray6), Color(.systemGray5)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        }
-    }
+    // BORDERLESS DESIGN: Remove background gradient - not needed for icon-only buttons
     
-    private var borderColor: Color {
-        if isMuted {
-            return .red.opacity(0.6)
-        } else {
-            // PLATFORM PARITY FIX: Remove listening state border - MIC button should only show muted/active states
-            return Color(.systemGray3)
-        }
-    }
+    // BORDERLESS DESIGN: Remove border properties - not needed for icon-only buttons
     
-    private var borderWidth: CGFloat {
-        // PLATFORM PARITY FIX: Remove listening state border width - MIC button should only show muted/active states
-        isMuted ? 2 : 1
-    }
-    
-    private var shadowColor: Color {
-        if isMuted {
-            return Color.red.opacity(0.3)
-        } else {
-            // PLATFORM PARITY FIX: Remove listening state shadow - MIC button should only show muted/active states
-            return Color.black.opacity(0.1)
-        }
-    }
-    
-    private var shadowRadius: CGFloat {
-        // PLATFORM PARITY FIX: Remove listening state shadow radius - MIC button should only show muted/active states
-        isMuted ? 8 : 4
-    }
-    
-    private var shadowOffset: CGFloat {
-        // PLATFORM PARITY FIX: Remove listening state shadow offset - MIC button should only show muted/active states
-        isMuted ? 0 : 2
-    }
+    // BORDERLESS DESIGN: Remove shadow properties - not needed for icon-only buttons
     
     private var microphoneIconName: String {
         // PLATFORM PARITY FIX: MIC button should only show muted/active states - NO listening state

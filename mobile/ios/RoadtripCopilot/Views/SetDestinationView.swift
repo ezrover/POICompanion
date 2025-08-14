@@ -447,22 +447,24 @@ struct SetDestinationView: View {
         }
         
         let search = MKLocalSearch(request: request)
-        search.start { [self] response, error in
+        search.start { [weak self] response, error in
             DispatchQueue.main.async {
+                guard let self = self else { return } // CRASH FIX: Prevent access to deallocated self
+                
                 if let error = error {
                     print("[SetDestinationView] Search error: \(error.localizedDescription)")
-                    searchResults = []
+                    self.searchResults = []
                     return
                 }
                 
-                searchResults = response?.mapItems ?? []
-                print("[SetDestinationView] Found \(searchResults.count) search results")
+                self.searchResults = response?.mapItems ?? []
+                print("[SetDestinationView] Found \(self.searchResults.count) search results")
                 
-                // CRITICAL FIX: Show search results but require manual selection unless explicit navigation command
-                if !searchResults.isEmpty && selectedDestination == nil && !requiresUserConfirmation {
+                // CRASH FIX: Safely check search results and destination state
+                if !self.searchResults.isEmpty && self.selectedDestination == nil && !self.requiresUserConfirmation {
                     print("[SetDestinationView] Auto-selecting first result due to explicit navigation command")
-                    selectDestination(searchResults[0])
-                } else if !searchResults.isEmpty {
+                    self.selectDestination(self.searchResults[0])
+                } else if !self.searchResults.isEmpty {
                     print("[SetDestinationView] Search results available, waiting for user selection")
                     // Do not auto-select - require user to manually select destination
                 }
@@ -486,24 +488,26 @@ struct SetDestinationView: View {
         }
         
         let search = MKLocalSearch(request: request)
-        search.start { [self] response, error in
+        search.start { [weak self] response, error in
             DispatchQueue.main.async {
-                isProcessingNavigation = false
+                guard let self = self else { return } // CRASH FIX: Prevent access to deallocated self
+                
+                self.isProcessingNavigation = false
                 
                 if let error = error {
                     print("[SetDestinationView] Search error: \(error.localizedDescription)")
-                    showAlert(message: "Could not find destination. Please try again.")
+                    self.showAlert(message: "Could not find destination. Please try again.")
                     return
                 }
                 
                 guard let results = response?.mapItems, !results.isEmpty else {
-                    showAlert(message: "No results found for '\(searchText)'. Please try a different destination.")
+                    self.showAlert(message: "No results found for '\(self.searchText)'. Please try a different destination.")
                     return
                 }
                 
                 // Use the first result for navigation
                 let destination = results[0]
-                confirmNavigation(to: destination)
+                self.confirmNavigation(to: destination)
             }
         }
     }
@@ -533,12 +537,13 @@ struct SetDestinationView: View {
         
         selectedDestination = destination
         
-        // Provide confirmation feedback
+        // CRASH FIX: Safely unwrap destination name
         let destinationName = destination.name ?? "destination"
         speechManager.speak("Starting navigation to \(destinationName)")
         
-        // Call the completion handler after a brief delay for speech
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        // CRASH FIX: Use weak self to prevent retain cycles
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            guard let self = self else { return }
             self.onDestinationConfirmed(destination)
         }
     }
