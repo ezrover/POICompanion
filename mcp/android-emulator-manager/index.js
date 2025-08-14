@@ -1721,6 +1721,58 @@ async function main() {
                 await manager.autoFixCommonIssues();
                 break;
                 
+            case 'test-model':
+                console.log('🧪 Testing Gemma-3N Model Integration on Android...\n');
+                
+                // Start emulator
+                await manager.bootEmulator();
+                
+                // Build app
+                await manager.buildApp();
+                
+                // Clear logcat
+                const adbCmd = manager.getAdbCommand();
+                await execAsync(`"${adbCmd}" logcat -c`).catch(() => {});
+                
+                // Install and launch
+                await manager.installAndLaunchApp();
+                
+                // Wait for model to initialize
+                console.log('⏳ Waiting for model initialization...');
+                await new Promise(resolve => setTimeout(resolve, 5000));
+                
+                // Get model test logs
+                console.log('\n📋 Checking for model test results...\n');
+                const { stdout } = await execAsync(
+                    `"${adbCmd}" logcat -d -t 200 | grep -E "MODEL TEST|Gemma|who are you|✅|🧪|🎉"`
+                ).catch(() => ({ stdout: '' }));
+                
+                if (stdout) {
+                    const lines = stdout.split('\n');
+                    lines.forEach(line => {
+                        if (line.includes('MODEL TEST') || line.includes('🧪')) {
+                            console.log(`\n🧪 MODEL TEST: ${line}\n`);
+                        } else if (line.includes('✅')) {
+                            console.log(`\n✅ SUCCESS: ${line}\n`);
+                        } else if (line.includes('🎉')) {
+                            console.log(`\n🎉 COMPLETE: ${line}\n`);
+                        } else if (line.includes('Gemma') || line.includes('who are you')) {
+                            console.log(`🤖 AI: ${line}`);
+                        }
+                    });
+                } else {
+                    console.log('⚠️  No MODEL TEST logs found');
+                }
+                
+                // Start monitoring for additional output
+                console.log('\n📡 Starting live log monitoring...\n');
+                await manager.startLogMonitoring('Gemma3NProcessor');
+                await new Promise(resolve => setTimeout(resolve, 5000));
+                manager.stopLogMonitoring();
+                
+                console.log('\n✅ Model test complete');
+                break;
+                
             case 'lost-lake-test':
                 console.log('🧪 Running Lost Lake Oregon automated test...');
                 const testResult = await manager.testLostLakeOregonFlow();

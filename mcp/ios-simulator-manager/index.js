@@ -357,20 +357,37 @@ class IOSSimulatorManager {
         try {
             console.log(`📋 Starting log monitoring (filter: ${filter})...`);
             
+            // Ensure we have an active simulator
+            if (!this.activeSimulator || !this.activeSimulator.udid) {
+                // Get the booted simulator
+                const simulators = await this.listSimulators();
+                this.activeSimulator = simulators.find(sim => sim.state === 'Booted');
+                if (!this.activeSimulator) {
+                    throw new Error('No booted simulator found');
+                }
+            }
+            
             // Stop any existing log process
             if (this.logProcess) {
                 this.logProcess.kill();
             }
             
-            // Start new log streaming
+            console.log(`🔍 Monitoring logs on ${this.activeSimulator.name} (${this.activeSimulator.udid})`);
+            
+            // Start new log streaming - use 'booted' keyword for simplicity
+            // Use subsystem predicate for os_log messages
+            const predicate = `subsystem == "com.hmi2.roadtrip-copilot" OR processImagePath CONTAINS "RoadtripCopilot"`;
+            
             this.logProcess = spawn('xcrun', [
                 'simctl',
                 'spawn',
-                this.activeSimulator.udid,
+                'booted',
                 'log',
                 'stream',
+                '--level', 'info',
+                '--style', 'compact',
                 '--predicate',
-                `processImagePath CONTAINS "${filter}" OR eventMessage CONTAINS "${filter}"`
+                predicate
             ]);
             
             this.logProcess.stdout.on('data', (data) => {
@@ -529,6 +546,50 @@ class IOSSimulatorManager {
         }
     }
 
+    /**
+     * Get recent logs from the simulator
+     */
+    async getRecentLogs(filter = 'RoadtripCopilot', seconds = 30) {
+        try {
+            console.log(`📋 Getting recent logs (filter: ${filter}, last ${seconds}s)...`);
+            
+            const { stdout } = await execAsync(`xcrun simctl spawn booted log show --last ${seconds}s --style compact --predicate 'processImagePath CONTAINS "${filter}"' 2>/dev/null || echo "No logs found"`);
+            
+            // Parse and display relevant logs
+            const logLines = stdout.split('\n');
+            let foundModelTest = false;
+            
+            logLines.forEach(line => {
+                if (line.includes('MODEL TEST') || line.includes('🧪')) {
+                    console.log(`\n🧪 MODEL TEST: ${line}\n`);
+                    foundModelTest = true;
+                } else if (line.includes('✅') && line.includes('MODEL')) {
+                    console.log(`\n✅ SUCCESS: ${line}\n`);
+                } else if (line.includes('Gemma') || line.includes('who are you')) {
+                    console.log(`🤖 AI: ${line}`);
+                } else if (line.includes('ERROR')) {
+                    console.error(`❌ ${line}`);
+                }
+            });
+            
+            if (!foundModelTest) {
+                console.log('⚠️  No MODEL TEST logs found in recent output');
+                console.log('📝 Checking for any app output...');
+                
+                // Try alternative log collection
+                const { stdout: altLogs } = await execAsync(`xcrun simctl spawn booted log stream --last 10s --style compact | grep -i "roadtrip\\|gemma\\|model" | head -20`).catch(() => ({ stdout: '' }));
+                if (altLogs) {
+                    console.log('Alternative logs:', altLogs);
+                }
+            }
+            
+            return stdout;
+        } catch (error) {
+            console.error(`Failed to get recent logs: ${error.message}`);
+            return null;
+        }
+    }
+    
     /**
      * Stop log monitoring
      */
@@ -1363,18 +1424,48 @@ async function main() {
                 console.log('🧪 Testing Gemma-3N Model Integration...\n');
                 await manager.bootSimulator();
                 await manager.buildApp();
-                const appPath = path.join(manager.iosPath, 'build/Build/Products/Debug-iphonesimulator/RoadtripCopilot.app');
-                await manager.installOnSimulator(appPath);
-                await manager.launchApp('com.hmi2.roadtrip-copilot');
                 
-                // Monitor logs for model test output
-                console.log('📋 Monitoring for model test results...\n');
+                // Install and launch app
+                const appPath = path.join(manager.iosPath, 'build/Build/Products/Debug-iphonesimulator/RoadtripCopilot.app');
+                
+                // Verify app exists
+                try {
+                    await fs.access(appPath);
+                } catch {
+                    throw new Error(`App not found at: ${appPath}. Build may have failed.`);
+                }
+                
+                // Install the app
+                console.log('📦 Installing app...');
+                await execAsync(`xcrun simctl install booted "${appPath}"`);
+                console.log('✅ App installed');
+                
+                // Clear previous logs
+                await execAsync('xcrun simctl spawn booted log clear').catch(() => {});
+                
+                // Launch app
+                console.log('🚀 Launching app...');
+                const { stdout: launchOut } = await execAsync('xcrun simctl launch booted com.hmi2.roadtrip-copilot');
+                const pid = launchOut.split(':')[1]?.trim() || 'unknown';
+                console.log(`✅ App launched (PID: ${pid})`);
+                
+                // Wait for model to load and test to run
+                console.log('⏳ Waiting for model initialization...');
+                await new Promise(resolve => setTimeout(resolve, 5000));
+                
+                // Get recent logs
+                console.log('\n📋 Checking for model test results...\n');
+                await manager.getRecentLogs('RoadtripCopilot', 20);
+                
+                // Also try to monitor live logs
+                console.log('\n📡 Starting live log monitoring...\n');
                 await manager.startLogMonitoring('RoadtripCopilot');
                 
-                // Wait for model test to complete
-                await new Promise(resolve => setTimeout(resolve, 10000));
+                // Wait a bit more for any additional output
+                await new Promise(resolve => setTimeout(resolve, 5000));
                 
-                console.log('\n✅ Model test monitoring complete');
+                manager.stopLogMonitoring();
+                console.log('\n✅ Model test complete');
                 break;
                 
             case 'validate':

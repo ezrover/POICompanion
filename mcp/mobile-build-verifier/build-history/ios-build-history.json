@@ -1,25 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T03:47:05.037Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 15.381,
-      "errors": [],
-      "fixes": [],
-      "warnings": 4,
-      "warningDetails": [
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
-      ],
-      "warningSuggestions": [
-        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
-        "Remove unused functions, variables, and imports to clean up codebase."
-      ]
-    },
-    {
       "timestamp": "2025-08-11T03:50:38.710Z",
       "platform": "ios",
       "success": true,
@@ -1269,14 +1250,25 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T02:51:05.814Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.304,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {},
   "successRate": 60,
-  "avgBuildTime": 8.43175,
-  "lastSuccessful": "2025-08-14T02:35:37.393Z",
+  "avgBuildTime": 8.375,
+  "lastSuccessful": "2025-08-14T02:51:05.814Z",
   "trends": {
-    "improving": false,
-    "recentFailures": 1
+    "improving": true,
+    "recentFailures": 0
   }
 }

@@ -1,4 +1,5 @@
 import SwiftUI
+import os.log
 
 struct SplashScreenView: View {
     @State private var gemmaLoader: Any? // Will be Gemma3NE2BLoader on iOS 16+
@@ -150,13 +151,18 @@ struct SplashScreenView: View {
                     loadingStatus = "Verifying AI model..."
                     
                     let testPrompt = "who are you?"
+                    let logger = Logger(subsystem: "com.hmi2.roadtrip-copilot", category: "ModelTest")
+                    logger.info("🧪 [MODEL TEST] Sending test prompt: '\(testPrompt)'")
                     print("🧪 [MODEL TEST] Sending test prompt: '\(testPrompt)'")
                     
                     do {
                         let testResponse = try await loader.predict(input: testPrompt, maxTokens: 50)
+                        logger.info("✅ [MODEL TEST] Response received: '\(testResponse)'")
+                        logger.info("🎉 [MODEL TEST] Gemma-3N is working correctly!")
                         print("✅ [MODEL TEST] Response received: '\(testResponse)'")
                         print("🎉 [MODEL TEST] Gemma-3N is working correctly!")
                     } catch {
+                        logger.warning("⚠️ [MODEL TEST] Test failed but continuing: \(error.localizedDescription)")
                         print("⚠️ [MODEL TEST] Test failed but continuing: \(error)")
                         // Continue anyway - model might work for actual queries
                     }
