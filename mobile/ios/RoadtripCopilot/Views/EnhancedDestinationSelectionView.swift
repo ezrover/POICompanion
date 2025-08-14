@@ -58,8 +58,10 @@ struct EnhancedDestinationSelectionView: View {
             VStack {
                 Spacer()
                 
-                // Search bar container
+                // Search bar container - vertically centered within gray box
                 VStack(spacing: 16) {
+                    Spacer() // Add spacer to push content to center
+                    
                     // CRITICAL FIX: Two-button layout matching Android platform parity
                     HStack(spacing: 12) {
                         // Search field
@@ -164,6 +166,8 @@ struct EnhancedDestinationSelectionView: View {
                                 .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
                         )
                     }
+                    
+                    Spacer() // Add spacer to center content within gray box
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20) // Reduced bottom padding to move gray box down
@@ -175,7 +179,7 @@ struct EnhancedDestinationSelectionView: View {
                             VStack {
                                 Spacer()
                                 Rectangle()
-                                    .frame(height: selectedDestination != nil ? 120 : 90) // Optimized height for better visual balance
+                                    .frame(height: selectedDestination != nil ? 110 : 80) // Updated height: 80pt collapsed, 110pt expanded
                             }
                         )
                         .ignoresSafeArea(.all) // Edge-to-edge background
