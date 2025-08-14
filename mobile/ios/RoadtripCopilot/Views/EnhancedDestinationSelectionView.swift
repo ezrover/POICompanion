@@ -166,7 +166,7 @@ struct EnhancedDestinationSelectionView: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                .padding(.bottom, 34) // Standard safe area bottom padding for proper gray box positioning
+                .padding(.bottom, 20) // Reduced bottom padding to move gray box down
                 .background(
                     // Gray box background properly positioned at bottom
                     Rectangle()
@@ -175,7 +175,7 @@ struct EnhancedDestinationSelectionView: View {
                             VStack {
                                 Spacer()
                                 Rectangle()
-                                    .frame(height: selectedDestination != nil ? 180 : 140) // Proper height for content
+                                    .frame(height: selectedDestination != nil ? 135 : 105) // Reduced height by 25% (180→135, 140→105)
                             }
                         )
                         .ignoresSafeArea(.all) // Edge-to-edge background
