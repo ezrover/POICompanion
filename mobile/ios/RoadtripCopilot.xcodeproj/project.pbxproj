@@ -37,6 +37,7 @@
 		SIMPLEAIMANAGERBUILD000002 /* AIAgentManagerSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = SIMPLEAIMANAGERREF000001 /* AIAgentManagerSimple.swift */; };
 		GEMMA3NPROCESSORBUILD00002 /* Gemma3NProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = GEMMA3NPROCESSORREF000001 /* Gemma3NProcessor.swift */; };
 		TIMESTAMPLOGGERBUILD000002 /* TimestampLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = TIMESTAMPLOGGERREF000001 /* TimestampLogger.swift */; };
+		GEMINIAPISERVICEBUILD00002 /* GeminiAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = GEMINIAPISERVICEREF000001 /* GeminiAPIService.swift */; };
 		AVFOUNDATION0000000000000 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AVFOUNDATION000000000001 /* AVFoundation.framework */; };
 		COREML000000000000000000 /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = COREML0000000000000001 /* CoreML.framework */; };
 		SPEECH000000000000000000 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = SPEECH0000000000000001 /* Speech.framework */; };
@@ -74,6 +75,7 @@
 		SIMPLEAIMANAGERREF000001 /* AIAgentManagerSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAgentManagerSimple.swift; sourceTree = "<group>"; };
 		GEMMA3NPROCESSORREF000001 /* Gemma3NProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gemma3NProcessor.swift; sourceTree = "<group>"; };
 		TIMESTAMPLOGGERREF000001 /* TimestampLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampLogger.swift; sourceTree = "<group>"; };
+		GEMINIAPISERVICEREF000001 /* GeminiAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiAPIService.swift; sourceTree = "<group>"; };
 		AVFOUNDATION000000000001 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		COREML0000000000000001 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
 		SPEECH0000000000000001 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
@@ -142,7 +144,8 @@
 				EF01234567890123 /* CarPlay */,
 				F012345678901234 /* UI */,
 				0123456789012345 /* Extensions */,
-				UTILS012345678901234 /* Utils */,
+				SERVICES0123456789012345 /* Services */,
+				UTILS012345678901234 /* Utilities */,
 				TTS0123456789012345 /* TTS */,
 				1A2B3C4D5E6F7895 /* Assets.xcassets */,
 				1A2B3C4D5E6F7896 /* Info.plist */,
@@ -233,12 +236,20 @@
 			path = TTS;
 			sourceTree = "<group>";
 		};
-		UTILS012345678901234 /* Utils */ = {
+		UTILS012345678901234 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				TIMESTAMPLOGGERREF000001 /* TimestampLogger.swift */,
 			);
-			path = Utils;
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		SERVICES0123456789012345 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				GEMINIAPISERVICEREF000001 /* GeminiAPIService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		FRAMEWORKS000000000000 /* Frameworks */ = {
@@ -352,6 +363,7 @@
 				SIMPLEAIMANAGERBUILD000002 /* AIAgentManagerSimple.swift in Sources */,
 				GEMMA3NPROCESSORBUILD00002 /* Gemma3NProcessor.swift in Sources */,
 				TIMESTAMPLOGGERBUILD000002 /* TimestampLogger.swift in Sources */,
+				GEMINIAPISERVICEBUILD00002 /* GeminiAPIService.swift in Sources */,
 				D803D34BF455F1FA4F1A5C81 /* Gemma3NE2BLoader.swift in Sources */,
 				ADA0A50E494611C058B98A87 /* Gemma3NE4BLoader.swift in Sources */,
 				58E8EC1FCC53D2CA8CF0FD1D /* ModelManager.swift in Sources */,
