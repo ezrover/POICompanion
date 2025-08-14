@@ -50,11 +50,23 @@ class ModelManager: ObservableObject {
 
 enum ModelError: LocalizedError {
     case notInitialized
+    case configurationLoadFailed
+    case modelPathNotFound
+    case tokenizerNotFound
+    case notImplemented(String)
     
     var errorDescription: String? {
         switch self {
         case .notInitialized:
             return "Model not initialized. Please restart the app."
+        case .configurationLoadFailed:
+            return "Failed to load model configuration"
+        case .modelPathNotFound:
+            return "Model path not found in configuration"
+        case .tokenizerNotFound:
+            return "Tokenizer not found"
+        case .notImplemented(let message):
+            return "Not implemented: \(message)"
         }
     }
 }

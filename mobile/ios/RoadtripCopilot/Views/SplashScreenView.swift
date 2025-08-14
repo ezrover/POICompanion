@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SplashScreenView: View {
-    @State private var gemmaLoader: Gemma3NE2BLoader?
+    @State private var gemmaLoader: Any? // Will be Gemma3NE2BLoader on iOS 16+
     @State private var isAnimating = false
     @State private var loadingFailed = false
     @State private var errorMessage = ""
@@ -119,7 +119,8 @@ struct SplashScreenView: View {
                 
                 if #available(iOS 16.0, *) {
                     // Try to load the actual model
-                    gemmaLoader = try Gemma3NE2BLoader()
+                    let loader = try Gemma3NE2BLoader()
+                    gemmaLoader = loader
                     
                     loadingProgress = 0.3
                     loadingStatus = "Loading model configuration..."
@@ -129,7 +130,7 @@ struct SplashScreenView: View {
                     loadingStatus = "Compiling model for Neural Engine..."
                     
                     // Load tokenizer
-                    _ = try gemmaLoader?.getTokenizer()
+                    _ = try loader.getTokenizer()
                     
                     loadingProgress = 0.7
                     loadingStatus = "Initializing AI processor..."
@@ -141,7 +142,7 @@ struct SplashScreenView: View {
                     // Store the loader in a shared location (e.g., AppState or singleton)
                     await MainActor.run {
                         // Store the model loader for later use
-                        ModelManager.shared.gemmaLoader = gemmaLoader
+                        ModelManager.shared.gemmaLoader = loader
                     }
                     
                     try await Task.sleep(nanoseconds: 200_000_000) // 0.2 seconds

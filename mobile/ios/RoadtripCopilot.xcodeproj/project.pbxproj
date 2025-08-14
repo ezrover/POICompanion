@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58E8EC1FCC53D2CA8CF0FD1D /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE335EF2F71A7629AB476C /* ModelManager.swift */; };
+		ADA0A50E494611C058B98A87 /* Gemma3NE4BLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963AF57F15086AFC5EFDEC3B /* Gemma3NE4BLoader.swift */; };
+		D803D34BF455F1FA4F1A5C81 /* Gemma3NE2BLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301A22D51F645BA237DFBE52 /* Gemma3NE2BLoader.swift */; };
 		1A2B3C4D5E6F7890 /* RoadtripCopilotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7891 /* RoadtripCopilotApp.swift */; };
 		3F066B62EA0B4ABB /* LocationAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E070ED09F14D09 /* LocationAuthorizationView.swift */; };
 		1A2B3C4D5E6F7892 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7893 /* ContentView.swift */; };
@@ -76,7 +79,10 @@
 		ACCELERATE000000000001 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		CARPLAY000000000000001 /* CarPlay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarPlay.framework; path = System/Library/Frameworks/CarPlay.framework; sourceTree = SDKROOT; };
 		COMBINE000000000000001 /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Combine.framework; path = System/Library/Frameworks/Combine.framework; sourceTree = SDKROOT; };
-/* End PBXFileReference section */
+		301A22D51F645BA237DFBE52 /* Gemma3NE2BLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gemma3NE2BLoader.swift; sourceTree = "<group>"; };
+				963AF57F15086AFC5EFDEC3B /* Gemma3NE4BLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gemma3NE4BLoader.swift; sourceTree = "<group>"; };
+				C5CE335EF2F71A7629AB476C /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0123456789ABCDEC /* Frameworks */ = {
@@ -146,6 +152,8 @@
 			children = (
 				4D5E6F7890123457 /* UserPreferences.swift */,
 				4D5E6F7890123459 /* AppState.swift */,
+				301A22D51F645BA237DFBE52 /* Gemma3NE2BLoader.swift */,
+				963AF57F15086AFC5EFDEC3B /* Gemma3NE4BLoader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 				2B3C4D5E6F789013 /* LocationManager.swift */,
 				2B3C4D5E6F789015 /* SpeechManager.swift */,
 				TTSMANAGER0000000000000001 /* EnhancedTTSManager.swift */,
+				C5CE335EF2F71A7629AB476C /* ModelManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -333,6 +342,9 @@
 				SIMPLEAIMANAGERBUILD000002 /* AIAgentManagerSimple.swift in Sources */,
 				GEMMA3NPROCESSORBUILD00002 /* Gemma3NProcessor.swift in Sources */,
 				TIMESTAMPLOGGERBUILD000002 /* TimestampLogger.swift in Sources */,
+				D803D34BF455F1FA4F1A5C81 /* Gemma3NE2BLoader.swift in Sources */,
+				ADA0A50E494611C058B98A87 /* Gemma3NE4BLoader.swift in Sources */,
+				58E8EC1FCC53D2CA8CF0FD1D /* ModelManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

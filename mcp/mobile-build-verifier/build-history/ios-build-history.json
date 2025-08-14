@@ -1,69 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T02:50:52.421Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 10.04,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T03:01:10.903Z",
-      "platform": "ios",
-      "success": false,
-      "duration": 10.975,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T03:02:19.775Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 15.361,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T03:08:39.947Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 10.712,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T03:09:03.054Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 7.178,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T03:10:54.236Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 4.533,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T03:12:12.666Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 9.027,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
       "timestamp": "2025-08-11T03:16:24.454Z",
       "platform": "ios",
       "success": true,
@@ -1257,14 +1194,103 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:28:23.250Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 7.814,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:34:49.211Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 9.499,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:35:37.055Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 6.407,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:37:15.685Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 9.854,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:38:04.184Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 6.059,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:38:46.960Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 6.635,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:39:36.963Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 9.778,
+      "errors": [],
+      "fixes": [],
+      "warnings": 8,
+      "warningDetails": [
+        "warning: value 'model' was defined but never used; consider replacing with boolean test",
+        "warning: capture of 'model' with non-sendable type 'MLModel' in a `@Sendable` closure",
+        "warning: add '@preconcurrency' to suppress 'Sendable'-related warnings from module 'CoreML'",
+        "warning: capture of 'input' with non-sendable type 'Gemma3NInput' in a `@Sendable` closure",
+        "warning: value 'model' was defined but never used; consider replacing with boolean test",
+        "warning: capture of 'model' with non-sendable type 'MLModel' in a `@Sendable` closure",
+        "warning: add '@preconcurrency' to suppress 'Sendable'-related warnings from module 'CoreML'",
+        "warning: capture of 'input' with non-sendable type 'Gemma3NInput' in a `@Sendable` closure"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
     }
   ],
   "commonErrors": {},
-  "successRate": 55.00000000000001,
-  "avgBuildTime": 17.906909090909092,
-  "lastSuccessful": "2025-08-14T01:18:35.169Z",
+  "successRate": 60,
+  "avgBuildTime": 17.229499999999998,
+  "lastSuccessful": "2025-08-14T01:39:36.963Z",
   "trends": {
-    "improving": true,
-    "recentFailures": 0
+    "improving": false,
+    "recentFailures": 4
   }
 }

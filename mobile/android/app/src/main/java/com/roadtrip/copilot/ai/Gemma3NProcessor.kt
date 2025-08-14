@@ -47,6 +47,7 @@ class Gemma3NProcessor(private val context: Context) {
     
     // Model loaders
     private var gemmaLoader: Any? = null // Will be either Gemma3NE2BLoader or Gemma3NE4BLoader
+    private var llmInference: LlmInference? = null // Keep MediaPipe as fallback
     private val modelScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
     private var loadingJob: Job? = null
     
@@ -289,10 +290,9 @@ class Gemma3NProcessor(private val context: Context) {
             return@withContext
         }
         
-        // Note: MediaPipe LLM Inference code below is commented out
-        // as we're using custom loaders instead
-        /*
-        // Configure MediaPipe LLM Inference for real model
+        // Try MediaPipe as fallback if custom loader isn't available
+        if (gemmaLoader == null && modelFile.exists() && modelFile.length() > 1000) {
+            // Configure MediaPipe LLM Inference for real model
         val optionsBuilder = LlmInference.LlmInferenceOptions.builder()
             .setModelPath(modelFile.absolutePath)
             .setMaxTokens(_modelVariant.value.maxTokens)
@@ -357,7 +357,7 @@ class Gemma3NProcessor(private val context: Context) {
                 throw ModelError.InvalidOutput(e.message ?: "Failed to load model")
             }
         }
-        */
+        }
     }
     
     private suspend fun warmUpModel() = withContext(Dispatchers.IO) {
