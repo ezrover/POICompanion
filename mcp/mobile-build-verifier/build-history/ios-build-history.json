@@ -1,75 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T03:21:33.975Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 10.971,
-      "errors": [],
-      "fixes": [],
-      "warnings": 4,
-      "warningDetails": [
-        "warning: initialization of immutable value 'testUnusedVariable' was never used; consider replacing with assignment to '_' or removing it",
-        "warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead",
-        "warning: initialization of immutable value 'testUnusedVariable' was never used; consider replacing with assignment to '_' or removing it",
-        "warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead"
-      ],
-      "warningSuggestions": [
-        "Replace deprecated APIs with newer alternatives. Check Apple/Google documentation for migration guides.",
-        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
-        "Remove unused functions, variables, and imports to clean up codebase."
-      ]
-    },
-    {
-      "timestamp": "2025-08-11T03:21:59.581Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 9.148,
-      "errors": [],
-      "fixes": [],
-      "warnings": 2,
-      "warningDetails": [
-        "warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead",
-        "warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead"
-      ],
-      "warningSuggestions": [
-        "Replace deprecated APIs with newer alternatives. Check Apple/Google documentation for migration guides."
-      ]
-    },
-    {
-      "timestamp": "2025-08-11T03:22:44.417Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 8.813,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
-      "timestamp": "2025-08-11T03:27:23.526Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 10.45,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
-      "timestamp": "2025-08-11T03:38:55.503Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 12.134,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
       "timestamp": "2025-08-11T03:47:05.037Z",
       "platform": "ios",
       "success": true,
@@ -1283,14 +1214,69 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T02:31:53.493Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 10.926,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T02:33:10.599Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.819,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T02:33:26.138Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.718,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T02:34:34.436Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 9.124,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T02:35:37.393Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.938,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {},
-  "successRate": 65,
-  "avgBuildTime": 15.846769230769231,
-  "lastSuccessful": "2025-08-14T02:13:57.740Z",
+  "successRate": 60,
+  "avgBuildTime": 8.43175,
+  "lastSuccessful": "2025-08-14T02:35:37.393Z",
   "trends": {
-    "improving": true,
+    "improving": false,
     "recentFailures": 1
   }
 }

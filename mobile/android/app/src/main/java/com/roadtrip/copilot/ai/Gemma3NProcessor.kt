@@ -238,14 +238,18 @@ class Gemma3NProcessor(private val context: Context) {
                         _loadingProgress.value = 0.4
                         _loadingStatus.value = "Initializing Gemma-3N E2B..."
                     }
-                    Gemma3NE2BLoader(context)
+                    val loader = Gemma3NE2BLoader(context)
+                    loader.loadModel() // Load the actual model
+                    loader
                 }
                 ModelVariant.E4B -> {
                     withContext(Dispatchers.Main) {
                         _loadingProgress.value = 0.4
                         _loadingStatus.value = "Initializing Gemma-3N E4B..."
                     }
-                    Gemma3NE4BLoader(context)
+                    val loader = Gemma3NE4BLoader(context)
+                    loader.loadModel() // Load the actual model
+                    loader
                 }
             }
             

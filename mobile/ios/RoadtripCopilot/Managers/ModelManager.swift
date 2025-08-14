@@ -22,6 +22,9 @@ class ModelManager: ObservableObject {
         do {
             gemmaLoader = try Gemma3NE2BLoader()
             
+            // Load the actual model
+            try await gemmaLoader!.loadModel()
+            
             // TEST: Verify model works with a simple question
             print("🧪 [ModelManager] Testing Gemma-3N with verification prompt...")
             let testResponse = try await gemmaLoader!.predict(input: "who are you?", maxTokens: 50)

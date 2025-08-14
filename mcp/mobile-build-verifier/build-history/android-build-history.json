@@ -1,42 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-10T22:05:40.605Z",
-      "platform": "android",
-      "success": true,
-      "duration": 1.434,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T01:06:33.243Z",
-      "platform": "android",
-      "success": true,
-      "duration": 1.998,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T01:11:32.480Z",
-      "platform": "android",
-      "success": true,
-      "duration": 23.449,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T01:18:46.317Z",
-      "platform": "android",
-      "success": true,
-      "duration": 7.694,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
       "timestamp": "2025-08-11T01:21:15.874Z",
       "platform": "android",
       "success": true,
@@ -1167,6 +1131,50 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T02:32:10.955Z",
+      "platform": "android",
+      "success": true,
+      "duration": 5.778,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T02:33:30.858Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.632,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T02:34:43.562Z",
+      "platform": "android",
+      "success": true,
+      "duration": 5.526,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T02:35:42.334Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.543,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {
@@ -1174,10 +1182,10 @@
     "missing-dependency": 19
   },
   "successRate": 90,
-  "avgBuildTime": 12.10427777777778,
-  "lastSuccessful": "2025-08-14T02:14:07.226Z",
+  "avgBuildTime": 10.007666666666672,
+  "lastSuccessful": "2025-08-14T02:35:42.334Z",
   "trends": {
-    "improving": false,
-    "recentFailures": 1
+    "improving": true,
+    "recentFailures": 0
   }
 }
