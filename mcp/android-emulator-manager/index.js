@@ -576,7 +576,27 @@ class AndroidEmulatorManager {
             ]);
             
             this.logProcess.stdout.on('data', (data) => {
-                console.log('📱 LOGCAT:', data.toString().trim());
+                const lines = data.toString().split('\n');
+                lines.forEach(line => {
+                    if (line.trim()) {
+                        // Special handling for MODEL TEST output
+                        if (line.includes('🧪') || line.includes('MODEL TEST')) {
+                            console.log(`\n🧪 MODEL TEST: ${line}\n`);
+                        } else if (line.includes('✅') && line.includes('MODEL TEST')) {
+                            console.log(`\n✅ MODEL TEST SUCCESS: ${line}\n`);
+                        } else if (line.includes('🎉') && line.includes('MODEL TEST')) {
+                            console.log(`\n🎉 MODEL TEST COMPLETE: ${line}\n`);
+                        } else if (line.includes('Gemma') || line.includes('gemma')) {
+                            console.log(`🤖 AI: ${line}`);
+                        } else if (line.includes('who are you')) {
+                            console.log(`💬 Query: ${line}`);
+                        } else if (line.includes('AndroidRuntime') || line.includes('FATAL')) {
+                            console.error(`❌ CRASH: ${line}`);
+                        } else {
+                            console.log(`📱 ${line.trim()}`);
+                        }
+                    }
+                });
             });
             
             this.logProcess.stderr.on('data', (data) => {

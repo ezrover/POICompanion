@@ -377,8 +377,18 @@ class IOSSimulatorManager {
                 const lines = data.toString().split('\n');
                 lines.forEach(line => {
                     if (line.trim()) {
-                        // Format and display relevant logs
-                        if (line.includes('ERROR') || line.includes('FATAL')) {
+                        // Format and display relevant logs with special attention to MODEL TEST
+                        if (line.includes('🧪') || line.includes('MODEL TEST')) {
+                            console.log(`\n🧪 MODEL TEST: ${line}\n`);
+                        } else if (line.includes('✅') && line.includes('MODEL TEST')) {
+                            console.log(`\n✅ MODEL TEST SUCCESS: ${line}\n`);
+                        } else if (line.includes('🎉') && line.includes('MODEL TEST')) {
+                            console.log(`\n🎉 MODEL TEST COMPLETE: ${line}\n`);
+                        } else if (line.includes('Gemma') || line.includes('gemma')) {
+                            console.log(`🤖 AI: ${line}`);
+                        } else if (line.includes('who are you')) {
+                            console.log(`💬 Query: ${line}`);
+                        } else if (line.includes('ERROR') || line.includes('FATAL')) {
                             console.error(`❌ ${line}`);
                         } else if (line.includes('WARNING')) {
                             console.warn(`⚠️  ${line}`);
@@ -1346,6 +1356,25 @@ async function main() {
                 await manager.startLogMonitoring(args[1] || 'Roadtrip-Copilot');
                 // Keep process alive
                 process.stdin.resume();
+                break;
+                
+            case 'test-model':
+                // Test model specifically
+                console.log('🧪 Testing Gemma-3N Model Integration...\n');
+                await manager.bootSimulator();
+                await manager.buildApp();
+                const appPath = path.join(manager.iosPath, 'build/Build/Products/Debug-iphonesimulator/RoadtripCopilot.app');
+                await manager.installOnSimulator(appPath);
+                await manager.launchApp('com.hmi2.roadtrip-copilot');
+                
+                // Monitor logs for model test output
+                console.log('📋 Monitoring for model test results...\n');
+                await manager.startLogMonitoring('RoadtripCopilot');
+                
+                // Wait for model test to complete
+                await new Promise(resolve => setTimeout(resolve, 10000));
+                
+                console.log('\n✅ Model test monitoring complete');
                 break;
                 
             case 'validate':
