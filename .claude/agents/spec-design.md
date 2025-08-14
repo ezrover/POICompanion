@@ -846,17 +846,17 @@ class MedicalDeviceCybersecurityDesign:
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
-| Code Generation | `code-generator` | `node /mcp/code-generator/index.js` |
+| Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
+| Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool` |
 | Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
 
 ### **General Workflow:**
 ```bash
 # Use MCP tools instead of direct commands
-node /mcp/task-manager/index.js create --task={description}
-node /mcp/doc-processor/index.js generate
-node /mcp/code-generator/index.js create --template={type}
+Use mcp__poi-companion__task_manage MCP tool create --task={description}
+Use mcp__poi-companion__doc_process MCP tool generate
+Use mcp__poi-companion__code_generate MCP tool create --template={type}
 ```
 
 **Remember: Direct command usage = Task failure. MCP tools are MANDATORY.**

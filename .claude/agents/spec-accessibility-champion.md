@@ -407,15 +407,15 @@ The model MUST create world-class accessibility that ensures Roadtrip-Copilot is
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Accessibility Audit | `accessibility-checker` | `node /mcp/accessibility-checker/index.js` |
+| Accessibility Audit | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool` |
 | UI Validation | `ui-generator` | `node /mcp/ui-generator/index.js --accessible` |
-| Design Compliance | `design-system-manager` | `node /mcp/design-system-manager/index.js` |
-| Mobile Testing | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js --a11y` |
+| Design Compliance | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool` |
+| Mobile Testing | `mobile-test-runner` | `Use mcp__poi-companion__mobile_test_run MCP tool --a11y` |
 
 ### **Accessibility Workflow:**
 ```bash
 # Full accessibility audit
-node /mcp/accessibility-checker/index.js audit --wcag-aaa
-node /mcp/mobile-test-runner/index.js a11y --voiceover
-node /mcp/design-system-manager/index.js validate-a11y
+Use mcp__poi-companion__accessibility_check MCP tool audit --wcag-aaa
+Use mcp__poi-companion__mobile_test_run MCP tool a11y --voiceover
+Use mcp__poi-companion__design_system_manage MCP tool validate-a11y
 ```

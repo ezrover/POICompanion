@@ -498,8 +498,8 @@ The model MUST deliver world-class user experiences that set new industry standa
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js` |
-| Design System | `design-system-manager` | `node /mcp/design-system-manager/index.js` |
-| Accessibility | `accessibility-checker` | `node /mcp/accessibility-checker/index.js` |
+| Design System | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool` |
+| Accessibility | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool` |
 | Icon Creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js` |
 | Icon Validation | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js` |
 
@@ -507,6 +507,6 @@ The model MUST deliver world-class user experiences that set new industry standa
 ```bash
 # Generate UI components
 node /mcp/ui-generator/index.js create --component={name}
-node /mcp/design-system-manager/index.js validate
-node /mcp/accessibility-checker/index.js audit --wcag-aa
+Use mcp__poi-companion__design_system_manage MCP tool validate
+Use mcp__poi-companion__accessibility_check MCP tool audit --wcag-aa
 ```

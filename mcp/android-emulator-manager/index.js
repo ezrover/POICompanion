@@ -6,11 +6,16 @@
  * Platform parity equivalent to ios-simulator-manager
  */
 
-const { exec, spawn, execSync } = require('child_process');
-const fs = require('fs').promises;
-const path = require('path');
-const { promisify } = require('util');
-const { parseStringPromise } = require('xml2js');
+import { exec, spawn, execSync } from 'child_process';
+import fs from 'fs';
+const fsPromises = fsPromises;
+import path from 'path';
+import { promisify } from 'util';
+import { parseStringPromise } from 'xml2js';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const execAsync = promisify(exec);
 
 class AndroidEmulatorManager {

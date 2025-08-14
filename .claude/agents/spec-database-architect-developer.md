@@ -622,14 +622,14 @@ The model MUST deliver production-ready database architectures that enable Roadt
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
-| Code Generation | `code-generator` | `node /mcp/code-generator/index.js --db` |
-| Performance Testing | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool --db` |
+| Performance Testing | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Database Workflow:**
 ```bash
 # Database operations
 node /mcp/schema-validator/index.js validate --database
-node /mcp/code-generator/index.js migration --auto
-node /mcp/performance-profiler/index.js query --optimize
+Use mcp__poi-companion__code_generate MCP tool migration --auto
+Use mcp__poi-companion__performance_profile MCP tool query --optimize
 ```

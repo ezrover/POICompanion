@@ -136,16 +136,16 @@ You are the central coordinator - let sub-agents handle specific work while you 
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
-| Spec Generation | `spec-generator` | `node /mcp/spec-generator/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
+| Spec Generation | `spec-generator` | `Use mcp__poi-companion__spec_generate MCP tool` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 | Project Setup | `project-scaffolder` | `node /mcp/project-scaffolder/index.js` |
 | Agent Registry | `agent-registry-manager` | `node /mcp/agent-registry-manager/index.js` |
 
 ### **Workflow Automation:**
 ```bash
 # Initialize spec-driven workflow
-node /mcp/spec-generator/index.js init --feature={name}
-node /mcp/task-manager/index.js create --spec={spec-file}
-node /mcp/doc-processor/index.js generate --type=requirements
+Use mcp__poi-companion__spec_generate MCP tool init --feature={name}
+Use mcp__poi-companion__task_manage MCP tool create --spec={spec-file}
+Use mcp__poi-companion__doc_process MCP tool generate --type=requirements
 ```

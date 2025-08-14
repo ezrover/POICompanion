@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 const Ajv = require('ajv');
 const addFormats = require('ajv-formats');
 const ajv = new Ajv();

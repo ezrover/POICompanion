@@ -163,7 +163,7 @@ node ios-simulator-manager.js screenshot ios-feature-test.png    # Document iOS 
 #### **🔧 MANDATORY VALIDATION WORKFLOW:**
 ```bash
 # 1. MANDATORY: Build verification
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-build-verifier/index.js ios
+Use mcp__poi-companion__mobile_build_verify MCP tool ios
 
 # 2. MANDATORY: Crash validation (MUST PASS)
 node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/ios-simulator-manager/index.js validate
@@ -1441,20 +1441,20 @@ docs(carplay): update CarPlay integration guide
 
 | Operation | ❌ PROHIBITED Command | ✅ MANDATORY MCP Tool | Usage |
 |-----------|---------------------|----------------------|-------|
-| Build | `xcodebuild` | `mobile-build-verifier` | `node /mcp/mobile-build-verifier/index.js ios` |
-| Test | `xcodebuild test` | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js ios` |
-| Lint | `swiftlint` | `mobile-linter` | `node /mcp/mobile-linter/index.js ios --auto-fix` |
-| Performance | `instruments` | `performance-profiler` | `node /mcp/performance-profiler/index.js ios` |
-| Accessibility | Manual checks | `accessibility-checker` | `node /mcp/accessibility-checker/index.js ios` |
+| Build | `xcodebuild` | `mobile-build-verifier` | `Use mcp__poi-companion__mobile_build_verify MCP tool ios` |
+| Test | `xcodebuild test` | `mobile-test-runner` | `Use mcp__poi-companion__mobile_test_run MCP tool ios` |
+| Lint | `swiftlint` | `mobile-linter` | `Use mcp__poi-companion__mobile_lint_check MCP tool ios --auto-fix` |
+| Performance | `instruments` | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool ios` |
+| Accessibility | Manual checks | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool ios` |
 | Project Files | Edit .xcodeproj | `ios-project-manager` | `node /mcp/ios-project-manager/index.js add-files` |
 | File Operations | Direct I/O | `mobile-file-manager` | `node /mcp/mobile-file-manager/index.js ios` |
-| Design Validation | Manual review | `design-system-manager` | `node /mcp/design-system-manager/index.js validate-ios` |
+| Design Validation | Manual review | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool validate-ios` |
 | Icon Generation | Manual creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js ios` |
 | Icon Verification | Manual check | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js ios` |
-| Code Generation | Manual boilerplate | `code-generator` | `node /mcp/code-generator/index.js swift` |
+| Code Generation | Manual boilerplate | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool swift` |
 | UI Generation | Manual UI code | `ui-generator` | `node /mcp/ui-generator/index.js swiftui` |
-| Simulator | Manual simulator | `ios-simulator-manager` | `node /mcp/ios-simulator-manager/index.js test` |
-| Dependencies | Manual SPM | `dependency-manager` | `node /mcp/dependency-manager/index.js ios` |
+| Simulator | Manual simulator | `ios-simulator-manager` | `Use mcp__poi-companion__ios_simulator_test MCP tool test` |
+| Dependencies | Manual SPM | `dependency-manager` | `Use mcp__poi-companion__dependency_manage MCP tool ios` |
 | Schema Validation | Manual validation | `schema-validator` | `node /mcp/schema-validator/index.js ios` |
 
 ### **MANDATORY iOS Development Workflow with MCP Tools:**
@@ -1465,19 +1465,19 @@ node /mcp/project-scaffolder/index.js ios --template=swiftui
 node /mcp/ios-project-manager/index.js init
 
 # 2. Development Phase (NEVER code without tools)
-node /mcp/code-generator/index.js swift --component=viewmodel
+Use mcp__poi-companion__code_generate MCP tool swift --component=viewmodel
 node /mcp/ui-generator/index.js swiftui --screen=destination
-node /mcp/design-system-manager/index.js generate-ios-tokens
+Use mcp__poi-companion__design_system_manage MCP tool generate-ios-tokens
 
 # 3. Quality Assurance (NEVER skip validation)
-node /mcp/mobile-linter/index.js ios --auto-fix
-node /mcp/mobile-test-runner/index.js ios --coverage
-node /mcp/accessibility-checker/index.js ios --wcag-aa
+Use mcp__poi-companion__mobile_lint_check MCP tool ios --auto-fix
+Use mcp__poi-companion__mobile_test_run MCP tool ios --coverage
+Use mcp__poi-companion__accessibility_check MCP tool ios --wcag-aa
 
 # 4. Build & Deploy (NEVER use xcodebuild)
-node /mcp/mobile-build-verifier/index.js ios --clean
-node /mcp/performance-profiler/index.js ios --benchmark
-node /mcp/ios-simulator-manager/index.js validate
+Use mcp__poi-companion__mobile_build_verify MCP tool ios --clean
+Use mcp__poi-companion__performance_profile MCP tool ios --benchmark
+Use mcp__poi-companion__ios_simulator_test MCP tool validate
 
 # 5. Asset Management (NEVER create manually)
 node /mcp/mobile-icon-generator/index.js ios --source=logo.svg

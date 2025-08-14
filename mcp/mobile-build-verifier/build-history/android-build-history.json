@@ -1,24 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T02:02:36.991Z",
-      "platform": "android",
-      "success": true,
-      "duration": 5.451,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T02:14:55.432Z",
-      "platform": "android",
-      "success": true,
-      "duration": 6.203,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
       "timestamp": "2025-08-11T02:16:28.699Z",
       "platform": "android",
       "success": true,
@@ -1217,6 +1199,28 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T17:58:09.580Z",
+      "platform": "android",
+      "success": false,
+      "duration": 0.128,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T17:58:20.019Z",
+      "platform": "android",
+      "success": true,
+      "duration": 2.013,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {
@@ -1225,11 +1229,11 @@
     "android-gradle": 2,
     "compilation-error": 2
   },
-  "successRate": 75,
-  "avgBuildTime": 5.9226,
-  "lastSuccessful": "2025-08-14T16:03:42.890Z",
+  "successRate": 70,
+  "avgBuildTime": 6.2697142857142865,
+  "lastSuccessful": "2025-08-14T17:58:20.019Z",
   "trends": {
     "improving": false,
-    "recentFailures": 2
+    "recentFailures": 3
   }
 }

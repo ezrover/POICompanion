@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-const { exec } = require('child_process');
-const fs = require('fs').promises;
-const path = require('path');
+import { exec } from 'child_process';
+import fs from 'fs';
+const fsPromises = fsPromises;
+import path from 'path';
 
 /**
  * Mobile Icon Generator MCP Tool

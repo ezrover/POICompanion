@@ -1,28 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T17:05:28.716Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 10.392,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
-      "timestamp": "2025-08-12T14:54:42.957Z",
-      "platform": "ios",
-      "success": false,
-      "duration": 15.984,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
       "timestamp": "2025-08-12T14:55:25.450Z",
       "platform": "ios",
       "success": false,
@@ -1219,14 +1197,36 @@
         "Remove unused variables or prefix with underscore (_) if intentionally unused.",
         "Remove unused functions, variables, and imports to clean up codebase."
       ]
+    },
+    {
+      "timestamp": "2025-08-14T17:57:26.780Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 0.124,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T17:57:59.857Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 6.673,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {},
-  "successRate": 80,
-  "avgBuildTime": 9.196,
-  "lastSuccessful": "2025-08-14T17:07:39.340Z",
+  "successRate": 75,
+  "avgBuildTime": 9.316466666666667,
+  "lastSuccessful": "2025-08-14T17:57:59.857Z",
   "trends": {
     "improving": false,
-    "recentFailures": 1
+    "recentFailures": 2
   }
 }

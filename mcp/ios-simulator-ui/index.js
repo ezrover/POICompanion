@@ -6,8 +6,8 @@
  */
 
 const { execSync, spawn } = require('child_process');
-const path = require('path');
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
 
 class SimulatorUI {
     constructor() {

@@ -599,16 +599,16 @@ The model MUST serve as the ultimate quality gatekeeper while intelligently orch
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Build Validation | `mobile-build-verifier` | `node /mcp/mobile-build-verifier/index.js both` |
-| Test Validation | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js` |
-| Code Quality | `mobile-linter` | `node /mcp/mobile-linter/index.js` |
-| Accessibility | `accessibility-checker` | `node /mcp/accessibility-checker/index.js` |
-| Performance | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Build Validation | `mobile-build-verifier` | `Use mcp__poi-companion__mobile_build_verify MCP tool both` |
+| Test Validation | `mobile-test-runner` | `Use mcp__poi-companion__mobile_test_run MCP tool` |
+| Code Quality | `mobile-linter` | `Use mcp__poi-companion__mobile_lint_check MCP tool` |
+| Accessibility | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool` |
+| Performance | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
 
 ### **Validation Workflow:**
 ```bash
 # Comprehensive validation
-node /mcp/mobile-build-verifier/index.js both --detailed
-node /mcp/mobile-test-runner/index.js all --coverage
-node /mcp/accessibility-checker/index.js validate --strict
+Use mcp__poi-companion__mobile_build_verify MCP tool both --detailed
+Use mcp__poi-companion__mobile_test_run MCP tool all --coverage
+Use mcp__poi-companion__accessibility_check MCP tool validate --strict
 ```

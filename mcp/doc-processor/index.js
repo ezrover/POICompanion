@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 const natural = require('natural');
 
 // Check if the correct number of arguments are provided

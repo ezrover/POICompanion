@@ -202,14 +202,14 @@ The model MUST deliver data-driven, actionable insights that combine deep mobile
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Market Analysis | `market-analyzer` | `node /mcp/market-analyzer/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
-| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
-| Spec Generation | `spec-generator` | `node /mcp/spec-generator/index.js` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
+| Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
+| Spec Generation | `spec-generator` | `Use mcp__poi-companion__spec_generate MCP tool` |
 
 ### **Analysis Workflow:**
 ```bash
 # Market and competitive analysis
 node /mcp/market-analyzer/index.js research --competitor={name}
-node /mcp/doc-processor/index.js analyze --market-data
-node /mcp/spec-generator/index.js requirements --from-analysis
+Use mcp__poi-companion__doc_process MCP tool analyze --market-data
+Use mcp__poi-companion__spec_generate MCP tool requirements --from-analysis
 ```

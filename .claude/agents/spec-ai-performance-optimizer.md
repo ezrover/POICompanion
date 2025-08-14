@@ -18,14 +18,14 @@ description: Specialist monitoring and optimizing the performance of deployed AI
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js` |
-| Performance Analysis | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
 | Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
-| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
 node /mcp/model-optimizer/index.js train --data={dataset}
-node /mcp/performance-profiler/index.js benchmark --model={name}
+Use mcp__poi-companion__performance_profile MCP tool benchmark --model={name}
 node /mcp/schema-validator/index.js validate --data-schema
 ```

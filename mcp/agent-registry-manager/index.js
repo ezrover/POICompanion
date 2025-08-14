@@ -17,9 +17,10 @@
 const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
 const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');
 const { CallToolRequestSchema, ErrorCode, McpError } = require('@modelcontextprotocol/sdk/types.js');
-const fs = require('fs').promises;
-const path = require('path');
-const { execSync } = require('child_process');
+import fs from 'fs';
+const fsPromises = fsPromises;
+import path from 'path';
+import { execSync } from 'child_process';
 
 class AgentRegistryManager {
   constructor() {

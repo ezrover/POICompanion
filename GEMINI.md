@@ -40,7 +40,7 @@ The workspace includes 10 specialized MCP tools configured in `.claude/settings.
 - `task-manager`: Manages and tracks structured development tasks
 - `spec-generator`: Generates technical specifications from requirements
 
-All tools are pre-configured and accessible via Node.js execution from `/mcp/` directory.
+All tools are now unified in a single MCP server accessible via Claude Code MCP interface. Use mcp__poi-companion__* tools instead of direct node commands.
 
 **Commit Message Format:**
 ```bash

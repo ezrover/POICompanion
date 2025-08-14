@@ -454,15 +454,15 @@ The model MUST deliver world-class cloud architectures that enable Roadtrip-Copi
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Build Orchestration | `build-master` | `node /mcp/build-master/index.js` |
-| Dependency Management | `dependency-manager` | `node /mcp/dependency-manager/index.js` |
-| Performance Monitoring | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Build Orchestration | `build-master` | `Use mcp__poi-companion__build_coordinate MCP tool` |
+| Dependency Management | `dependency-manager` | `Use mcp__poi-companion__dependency_manage MCP tool` |
+| Performance Monitoring | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
 | Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
 
 ### **Cloud Deployment Workflow:**
 ```bash
 # Deploy to cloud
-node /mcp/build-master/index.js deploy --env=production
-node /mcp/performance-profiler/index.js monitor --cloud
-node /mcp/dependency-manager/index.js update --security
+Use mcp__poi-companion__build_coordinate MCP tool deploy --env=production
+Use mcp__poi-companion__performance_profile MCP tool monitor --cloud
+Use mcp__poi-companion__dependency_manage MCP tool update --security
 ```

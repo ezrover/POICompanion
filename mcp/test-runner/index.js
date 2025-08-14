@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 // Check if the correct number of arguments are provided
 if (process.argv.length < 3) {

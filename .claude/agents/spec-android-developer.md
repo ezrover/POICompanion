@@ -217,7 +217,7 @@ ALWAYS leverage these local MCP tools to enhance Android development efficiency 
 #### **🔧 MANDATORY VALIDATION WORKFLOW:**
 ```bash
 # 1. MANDATORY: Build verification
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-build-verifier/index.js android
+Use mcp__poi-companion__mobile_build_verify MCP tool android
 
 # 2. MANDATORY: Crash validation (MUST PASS)
 node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/android-emulator-manager/index.js validate
@@ -2005,20 +2005,20 @@ fun AutomotivePOICard(
 
 | Operation | ❌ PROHIBITED Command | ✅ MANDATORY MCP Tool | Usage |
 |-----------|---------------------|----------------------|-------|
-| Build | `./gradlew build` | `mobile-build-verifier` | `node /mcp/mobile-build-verifier/index.js android` |
-| Test | `./gradlew test` | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js android` |
-| Lint | `ktlint` | `mobile-linter` | `node /mcp/mobile-linter/index.js android --auto-fix` |
-| Performance | Manual profiling | `performance-profiler` | `node /mcp/performance-profiler/index.js android` |
-| Accessibility | Manual checks | `accessibility-checker` | `node /mcp/accessibility-checker/index.js android` |
+| Build | `./gradlew build` | `mobile-build-verifier` | `Use mcp__poi-companion__mobile_build_verify MCP tool android` |
+| Test | `./gradlew test` | `mobile-test-runner` | `Use mcp__poi-companion__mobile_test_run MCP tool android` |
+| Lint | `ktlint` | `mobile-linter` | `Use mcp__poi-companion__mobile_lint_check MCP tool android --auto-fix` |
+| Performance | Manual profiling | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool android` |
+| Accessibility | Manual checks | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool android` |
 | Project Files | Edit build.gradle | `android-project-manager` | `node /mcp/android-project-manager/index.js add-deps` |
 | File Operations | Direct I/O | `mobile-file-manager` | `node /mcp/mobile-file-manager/index.js android` |
-| Design Validation | Manual review | `design-system-manager` | `node /mcp/design-system-manager/index.js validate-android` |
+| Design Validation | Manual review | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool validate-android` |
 | Icon Generation | Manual creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js android` |
 | Icon Verification | Manual check | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js android` |
-| Code Generation | Manual boilerplate | `code-generator` | `node /mcp/code-generator/index.js kotlin` |
+| Code Generation | Manual boilerplate | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool kotlin` |
 | UI Generation | Manual UI code | `ui-generator` | `node /mcp/ui-generator/index.js compose` |
-| Emulator | Manual emulator | `android-emulator-manager` | `node /mcp/android-emulator-manager/index.js test` |
-| Dependencies | Manual gradle | `dependency-manager` | `node /mcp/dependency-manager/index.js android` |
+| Emulator | Manual emulator | `android-emulator-manager` | `Use mcp__poi-companion__android_emulator_test MCP tool test` |
+| Dependencies | Manual gradle | `dependency-manager` | `Use mcp__poi-companion__dependency_manage MCP tool android` |
 | Schema Validation | Manual validation | `schema-validator` | `node /mcp/schema-validator/index.js android` |
 
 ### **MANDATORY Android Development Workflow with MCP Tools:**
@@ -2029,19 +2029,19 @@ node /mcp/project-scaffolder/index.js android --template=compose
 node /mcp/android-project-manager/index.js init
 
 # 2. Development Phase (NEVER code without tools)
-node /mcp/code-generator/index.js kotlin --component=viewmodel
+Use mcp__poi-companion__code_generate MCP tool kotlin --component=viewmodel
 node /mcp/ui-generator/index.js compose --screen=destination
-node /mcp/design-system-manager/index.js generate-android-tokens
+Use mcp__poi-companion__design_system_manage MCP tool generate-android-tokens
 
 # 3. Quality Assurance (NEVER skip validation)
-node /mcp/mobile-linter/index.js android --auto-fix
-node /mcp/mobile-test-runner/index.js android --coverage
-node /mcp/accessibility-checker/index.js android --wcag-aa
+Use mcp__poi-companion__mobile_lint_check MCP tool android --auto-fix
+Use mcp__poi-companion__mobile_test_run MCP tool android --coverage
+Use mcp__poi-companion__accessibility_check MCP tool android --wcag-aa
 
 # 4. Build & Deploy (NEVER use gradlew)
-node /mcp/mobile-build-verifier/index.js android --clean
-node /mcp/performance-profiler/index.js android --benchmark
-node /mcp/android-emulator-manager/index.js validate
+Use mcp__poi-companion__mobile_build_verify MCP tool android --clean
+Use mcp__poi-companion__performance_profile MCP tool android --benchmark
+Use mcp__poi-companion__android_emulator_test MCP tool validate
 
 # 5. Asset Management (NEVER create manually)
 node /mcp/mobile-icon-generator/index.js android --source=logo.svg
@@ -2064,9 +2064,9 @@ When collaborating with other agents, ALWAYS use MCP tools as the communication 
 ```bash
 # Android Auto specific MCP workflow
 node /mcp/android-project-manager/index.js add-auto-support
-node /mcp/code-generator/index.js kotlin --template=car-app-service
-node /mcp/mobile-test-runner/index.js android --auto-mode
-node /mcp/android-emulator-manager/index.js auto-test
+Use mcp__poi-companion__code_generate MCP tool kotlin --template=car-app-service
+Use mcp__poi-companion__mobile_test_run MCP tool android --auto-mode
+Use mcp__poi-companion__android_emulator_test MCP tool auto-test
 ```
 
 Remember: Direct command usage = Task failure. MCP tools are MANDATORY, not optional

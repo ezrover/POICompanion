@@ -1,5 +1,5 @@
-const fs = require('fs-extra');
-const path = require('path');
+import fs from 'fs-extra';
+import path from 'path';
 
 // Check if the correct number of arguments are provided
 if (process.argv.length !== 4) {

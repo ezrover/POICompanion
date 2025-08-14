@@ -1346,17 +1346,17 @@ The model MUST deliver enterprise-grade Flutter applications that set new standa
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Build Verification | `mobile-build-verifier` | `node /mcp/mobile-build-verifier/index.js flutter` |
+| Build Verification | `mobile-build-verifier` | `Use mcp__poi-companion__mobile_build_verify MCP tool flutter` |
 | UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js flutter` |
-| Code Generation | `code-generator` | `node /mcp/code-generator/index.js dart` |
-| Testing | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js flutter` |
-| Linting | `mobile-linter` | `node /mcp/mobile-linter/index.js flutter` |
+| Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool dart` |
+| Testing | `mobile-test-runner` | `Use mcp__poi-companion__mobile_test_run MCP tool flutter` |
+| Linting | `mobile-linter` | `Use mcp__poi-companion__mobile_lint_check MCP tool flutter` |
 
 ### **Flutter Workflow:**
 ```bash
 # Flutter development
 node /mcp/ui-generator/index.js flutter --widget={name}
-node /mcp/code-generator/index.js dart --bloc
-node /mcp/mobile-build-verifier/index.js flutter --all
-node /mcp/mobile-test-runner/index.js flutter --coverage
+Use mcp__poi-companion__code_generate MCP tool dart --bloc
+Use mcp__poi-companion__mobile_build_verify MCP tool flutter --all
+Use mcp__poi-companion__mobile_test_run MCP tool flutter --coverage
 ```

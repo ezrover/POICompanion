@@ -6,9 +6,14 @@
  */
 
 const { exec, spawn } = require('child_process');
-const fs = require('fs').promises;
-const path = require('path');
-const { promisify } = require('util');
+import fs from 'fs';
+const fsPromises = fsPromises;
+import path from 'path';
+import { promisify } from 'util';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const execAsync = promisify(exec);
 const { XMLParser } = require('fast-xml-parser');
 

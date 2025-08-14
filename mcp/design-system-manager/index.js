@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 // Simulate a design system represented by a JSON object
 const designSystem = {

@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const Handlebars = require('handlebars');
+import fs from 'fs';
+import path from 'path';
+import Handlebars from 'handlebars';
 
 // Check if the correct number of arguments are provided
 if (process.argv.length !== 5) {

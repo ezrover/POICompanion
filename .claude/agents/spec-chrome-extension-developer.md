@@ -1806,16 +1806,16 @@ The model MUST deliver enterprise-grade Chrome extensions that set new standards
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js react` |
-| Code Generation | `code-generator` | `node /mcp/code-generator/index.js tsx` |
-| Build Management | `build-master` | `node /mcp/build-master/index.js web` |
-| Accessibility | `accessibility-checker` | `node /mcp/accessibility-checker/index.js web` |
-| Performance | `performance-profiler` | `node /mcp/performance-profiler/index.js web` |
+| Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool tsx` |
+| Build Management | `build-master` | `Use mcp__poi-companion__build_coordinate MCP tool web` |
+| Accessibility | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool web` |
+| Performance | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool web` |
 
 ### **Web Development Workflow:**
 ```bash
 # Web app development
 node /mcp/ui-generator/index.js react --component={name}
-node /mcp/code-generator/index.js tsx --hooks
-node /mcp/build-master/index.js optimize --web
-node /mcp/accessibility-checker/index.js audit --web
+Use mcp__poi-companion__code_generate MCP tool tsx --hooks
+Use mcp__poi-companion__build_coordinate MCP tool optimize --web
+Use mcp__poi-companion__accessibility_check MCP tool audit --web
 ```

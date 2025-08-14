@@ -399,15 +399,15 @@ The model MUST deliver world-class performance optimization that establishes Roa
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Performance Profiling | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Performance Profiling | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
 | Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js` |
-| Build Optimization | `build-master` | `node /mcp/build-master/index.js` |
-| Mobile Testing | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js` |
+| Build Optimization | `build-master` | `Use mcp__poi-companion__build_coordinate MCP tool` |
+| Mobile Testing | `mobile-test-runner` | `Use mcp__poi-companion__mobile_test_run MCP tool` |
 
 ### **Performance Workflow:**
 ```bash
 # Profile and optimize
-node /mcp/performance-profiler/index.js analyze --platform={ios|android}
+Use mcp__poi-companion__performance_profile MCP tool analyze --platform={ios|android}
 node /mcp/model-optimizer/index.js optimize --target=mobile
-node /mcp/build-master/index.js optimize --release
+Use mcp__poi-companion__build_coordinate MCP tool optimize --release
 ```
