@@ -16,6 +16,9 @@ struct SplashScreenView: View {
     
     init(onLoadingComplete: @escaping () -> Void = {}) {
         self.onLoadingComplete = onLoadingComplete
+        let logger = Logger(subsystem: "com.hmi2.roadtrip-copilot", category: "SplashScreen")
+        logger.info("🚀 [SPLASH] SplashScreenView initialized - starting LLM loading")
+        print("🚀 [SPLASH] SplashScreenView initialized - starting LLM loading")
     }
 
     var body: some View {
@@ -106,6 +109,10 @@ struct SplashScreenView: View {
     }
     
     private func startLoading() {
+        let logger = Logger(subsystem: "com.hmi2.roadtrip-copilot", category: "SplashScreen")
+        logger.info("📱 [SPLASH] startLoading() called")
+        print("📱 [SPLASH] startLoading() called")
+        
         // Start rotation animation
         withAnimation(.linear(duration: 1.5).repeatForever(autoreverses: false)) {
             isAnimating = true
@@ -114,6 +121,8 @@ struct SplashScreenView: View {
         // Load actual Gemma-3N model
         Task {
             do {
+                logger.info("🔄 [SPLASH] Starting model loading task")
+                print("🔄 [SPLASH] Starting model loading task")
                 // Initialize model loader
                 loadingProgress = 0.1
                 loadingStatus = "Locating model files..."

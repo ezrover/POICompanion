@@ -92,10 +92,10 @@ enum AppScreen {
 }
 
 class AppStateManager: ObservableObject {
-    @Published var currentScreen: AppScreen = .loading
+    @Published var currentScreen: AppScreen = .loading // ALWAYS start with loading screen
     @Published var selectedDestination: MKMapItem?
     @Published var roadtripStarted: Bool = false
-    @Published var savedDestinationName: String? = nil
+    // REMOVED: savedDestinationName - we always start fresh
     
     func startRoadtrip(to destination: MKMapItem) {
         selectedDestination = destination
@@ -136,18 +136,10 @@ class AppStateManager: ObservableObject {
         print("Returned to destination selection screen")
     }
     
-    func loadSavedDestination() {
-        // Always go to destination selection first - let user decide whether to resume
+    func onLoadingComplete() {
+        // Called when LLM models are fully loaded in SplashScreenView
         currentScreen = .destinationSelection
-        
-        // If there's a saved destination, set it for the search input to populate
-        if let destinationName = UserDefaults.standard.string(forKey: "current_destination_name") {
-            savedDestinationName = destinationName
-            print("Found saved destination: \(destinationName) - will populate search input")
-        } else {
-            savedDestinationName = nil
-            print("No saved destination found")
-        }
+        print("Loading complete - transitioning to destination selection")
     }
     
     func clearSavedDestination() {
@@ -155,7 +147,6 @@ class AppStateManager: ObservableObject {
         UserDefaults.standard.removeObject(forKey: "current_destination_name")
         UserDefaults.standard.removeObject(forKey: "current_destination_lat")
         UserDefaults.standard.removeObject(forKey: "current_destination_lng")
-        savedDestinationName = nil
         selectedDestination = nil
         roadtripStarted = false
         print("Cleared all saved destination data")

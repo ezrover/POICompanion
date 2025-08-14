@@ -122,10 +122,13 @@ struct RootView: View {
             } else {
                 switch appStateManager.currentScreen {
                 case .loading:
-                    SplashScreenView()
+                    SplashScreenView(onLoadingComplete: {
+                        // Called when LLM is fully loaded
+                        appStateManager.onLoadingComplete()
+                    })
                 case .destinationSelection:
                     EnhancedDestinationSelectionView(
-                        savedDestinationName: appStateManager.savedDestinationName
+                        savedDestinationName: nil // Always start fresh, no saved destinations
                     ) { selectedDestination, preferences in
                         appStateManager.startRoadtrip(to: selectedDestination)
                         
@@ -152,12 +155,8 @@ struct RootView: View {
         .onAppear {
             // Check initial location authorization status
             checkLocationAuthorization()
-            
-            // Simulate loading AI models and assets
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                // Check if there's a saved roadtrip in progress
-                appStateManager.loadSavedDestination()
-            }
+            // NO simulation - SplashScreenView will handle real LLM loading
+            // NO saved destination restoration - always start fresh
         }
         .onChange(of: locationManager.authorizationStatus) { status in
             checkLocationAuthorization()
