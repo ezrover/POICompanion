@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Center - Roadtrip-Copilot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="privacy_center_theme.css">
+    <style>
+        body { transition: opacity 0.3s ease-in-out; }
+        .toggle-bg:after { content: ''; transition: all 0.2s ease-in-out; }
+        .btn-hover { transition: all 0.2s ease-in-out; }
+        .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .modal-scale { transition: transform 0.25s ease-out, opacity 0.25s ease-out; }
+    </style>
+</head>
+<body class="bg-background text-foreground font-sans antialiased">
+
+    <div class="container mx-auto max-w-2xl p-4">
+
+        <!-- Header -->
+        <header class="flex items-center mb-6">
+            <button class="p-2 rounded-full btn-hover"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <h1 class="text-2xl font-bold ml-4">Privacy Center</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main class="space-y-8">
+
+            <!-- Privacy First Section -->
+            <section class="bg-card p-6 rounded-lg shadow-sm">
+                <div class="flex items-center mb-4">
+                    <div class="bg-accent text-accent-foreground p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h2 class="text-xl font-semibold ml-4">Your Privacy is Our Priority</h2>
+                </div>
+                <p class="text-muted-foreground">Roadtrip-Copilot is designed to be private by default. All of your personal data, including your location history and preferences, is processed and stored securely on this device.</p>
+            </section>
+
+            <!-- Processing Mode Section -->
+            <section class="bg-card p-6 rounded-lg shadow-sm">
+                <h3 class="text-lg font-semibold mb-4">PROCESSING MODE</h3>
+                <div class="space-y-4">
+                    <div class="border border-border p-4 rounded-lg flex items-center justify-between">
+                        <div>
+                            <div class="flex items-center">
+                                <span class="text-green-500"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h4"/><path d="M12 12v6"/><path d="M12 18h.01"/><path d="M16 12a2 2 0 0 1 4 0"/><path d="M18 12v6"/><path d="M18 18h.01"/></svg></span>
+                                <span class="font-medium ml-2">On-Device AI (Recommended)</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mt-1">All processing is local. Max privacy.</p>
+                        </div>
+                        <div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                        </div>
+                    </div>
+                    <div class="border border-border p-4 rounded-lg flex items-center justify-between opacity-60">
+                        <div>
+                            <div class="flex items-center">
+                                <span class="text-muted-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 4 16.25"/><path d="M8 16h12"/><path d="M12 12v8"/></svg></span>
+                                <span class="font-medium ml-2">Cloud AI</span>
+                            </div>
+                            <p class="text-sm text-muted-foreground mt-1">Requires your API Key. <a href="#" class="text-primary hover:underline">Learn More</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data & Permissions Section -->
+            <section class="bg-card p-6 rounded-lg shadow-sm">
+                <h3 class="text-lg font-semibold mb-4">DATA & PERMISSIONS</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium">Location Data</span>
+                        <button class="text-sm font-semibold text-primary btn-hover">Manage</button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium">Personalized Recommendations</span>
+                        <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" name="toggle" id="toggle1" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                            <label for="toggle1" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-medium">Anonymous Analytics</span>
+                        <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                            <input type="checkbox" name="toggle" id="toggle2" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/>
+                            <label for="toggle2" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Account Data Section -->
+            <section class="bg-card p-6 rounded-lg shadow-sm">
+                <h3 class="text-lg font-semibold mb-4">ACCOUNT DATA</h3>
+                <div class="space-y-4">
+                    <button class="w-full text-left font-medium text-primary btn-hover p-2 rounded">Export My Data</button>
+                    <button class="w-full text-left font-medium text-destructive btn-hover p-2 rounded">Delete My Account</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <style>
+        .toggle-checkbox:checked { right: 0; border-color: var(--accent); }
+        .toggle-checkbox:checked + .toggle-label { background-color: var(--accent); }
+    </style>
+
+</body>
+</html>

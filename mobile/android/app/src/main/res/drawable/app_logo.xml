@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="150dp"
+    android:height="150dp"
+    android:viewportWidth="150"
+    android:viewportHeight="150">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M75,10 A65,65 0 0,1 140,75 A65,65 0 0,1 75,140 A65,65 0 0,1 10,75 A65,65 0 0,1 75,10 Z"/>
+    
+    <!-- Road icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M45,75 L105,75 M45,85 L105,85 M45,65 L105,65"/>
+    
+    <!-- Location pin -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M75,35 C68,35 62,41 62,48 C62,57 75,75 75,75 S88,57 88,48 C88,41 82,35 75,35 Z M75,53 C72,53 70,51 70,48 C70,45 72,43 75,43 C78,43 80,45 80,48 C80,51 78,53 75,53 Z"/>
+</vector>

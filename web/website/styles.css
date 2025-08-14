@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+:root {
+    --background: #0a0a0a;
+    --foreground: #f5f5f5;
+    --muted-foreground: #a3a3a3;
+    --primary: #60a5fa;
+    --primary-foreground: #0a0a0a;
+    --card: #1a1a1a;
+    --card-foreground: #f5f5f5;
+    --border: #262626;
+    --accent: #4ade80;
+    --accent-foreground: #0a0a0a;
+}
+
+body {
+    background-color: var(--background) !important;
+    color: var(--foreground) !important;
+    font-family: 'Inter', sans-serif !important;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--foreground) !important;
+    font-weight: 700 !important;
+}
+
+.font-black {
+    font-weight: 900 !important;
+}
+
+.hero-gradient-text {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn {
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+    color: var(--primary-foreground) !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 rgba(96, 165, 250, 0.2);
+}
+
+.btn-secondary {
+    background-color: var(--card) !important;
+    color: var(--foreground) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.btn-secondary:hover {
+    background-color: var(--border) !important;
+    transform: translateY(-2px);
+}
+
+.feature-card {
+    background-color: var(--card) !important;
+    border: 1px solid var(--border) !important;
+    transition: all 0.3s ease !important;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary) !important;
+}
+
+.section-header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-image-pulse {
+    animation: pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.7);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 10px rgba(96, 165, 250, 0);
+    }
+}

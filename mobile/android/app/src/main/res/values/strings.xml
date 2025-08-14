@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Roadtrip-Copilot</string>
+    <string name="app_description">AI-powered roadtrip companion for discovering amazing places</string>
+    
+    <!-- Service and Notification Strings -->
+    <string name="service_notification_title">Roadtrip-Copilot Active</string>
+    <string name="service_notification_text">Discovering amazing places along your route</string>
+    <string name="service_channel_name">Roadtrip Discovery</string>
+    <string name="service_channel_description">Background service for POI discovery</string>
+    
+    <!-- Permission Request Strings -->
+    <string name="permission_location_title">Location Access Needed</string>
+    <string name="permission_location_message">Roadtrip-Copilot needs location access to discover interesting places along your route.</string>
+    <string name="permission_audio_title">Microphone Access Needed</string>
+    <string name="permission_audio_message">Roadtrip-Copilot needs microphone access for voice commands and speech recognition.</string>
+    <string name="permission_notification_title">Notification Permission</string>
+    <string name="permission_notification_message">Allow notifications to stay informed about discovered places.</string>
+    
+    <!-- UI Strings -->
+    <string name="destination_search_hint">Search for destination...</string>
+    <string name="voice_input">Voice Input</string>
+    <string name="listening">Listening...</string>
+    <string name="processing">Processing...</string>
+    <string name="set_destination">Set Destination</string>
+    <string name="start_roadtrip">Start Roadtrip</string>
+    <string name="end_trip">End Trip</string>
+    
+    <!-- Voice Command Feedback -->
+    <string name="voice_saved">Saved to favorites</string>
+    <string name="voice_liked">Liked</string>
+    <string name="voice_skipped">Skipped</string>
+    <string name="voice_next_location">Next location</string>
+    <string name="voice_previous_location">Previous location</string>
+    <string name="voice_getting_directions">Getting directions</string>
+    <string name="voice_calling">Calling location</string>
+    
+    <!-- Onboarding Strings -->
+    <string name="onboarding_destination_title">Where would you like to go?</string>
+    <string name="onboarding_radius_title">Set your search radius</string>
+    <string name="onboarding_radius_subtitle">How far should we search for interesting places?</string>
+    <string name="onboarding_categories_title">Choose your interests</string>
+    <string name="onboarding_categories_subtitle">What kinds of places interest you?</string>
+    <string name="onboarding_confirm_title">Ready for your roadtrip?</string>
+    
+    <!-- Category Names -->
+    <string name="category_restaurants">Restaurants</string>
+    <string name="category_gas_stations">Gas Stations</string>
+    <string name="category_attractions">Tourist Attractions</string>
+    <string name="category_lodging">Hotels &amp; Lodging</string>
+    <string name="category_shopping">Shopping</string>
+    <string name="category_parks">Parks &amp; Nature</string>
+    <string name="category_museums">Museums</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_beaches">Beaches</string>
+    <string name="category_viewpoints">Scenic Viewpoints</string>
+    <string name="category_historic_sites">Historic Sites</string>
+    <string name="category_wineries">Wineries &amp; Breweries</string>
+    
+    <!-- Button Labels -->
+    <string name="btn_save">Save</string>
+    <string name="btn_like">Like</string>
+    <string name="btn_dislike">Dislike</string>
+    <string name="btn_navigate">Navigate</string>
+    <string name="btn_previous">Previous</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_call">Call</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_all">All</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_voice">Voice</string>
+    
+    <!-- Distance Units -->
+    <string name="unit_miles">Miles</string>
+    <string name="unit_kilometers">Kilometers</string>
+    <string name="unit_miles_short">mi</string>
+    <string name="unit_kilometers_short">km</string>
+    
+    <!-- Error Messages -->
+    <string name="error_location_permission">Location permission is required for roadtrip discovery</string>
+    <string name="error_audio_permission">Microphone permission is required for voice commands</string>
+    <string name="error_speech_recognition">Speech recognition not available</string>
+    <string name="error_no_destination">Please select a destination first</string>
+    <string name="error_network">Network connection required</string>
+    
+    <!-- Content Descriptions for Accessibility -->
+    <string name="cd_microphone">Microphone for voice input</string>
+    <string name="cd_location">Location marker</string>
+    <string name="cd_weather">Weather information</string>
+    <string name="cd_favorite">Favorite this location</string>
+    <string name="cd_like">Like this location</string>
+    <string name="cd_dislike">Dislike this location</string>
+    <string name="cd_navigate">Get directions</string>
+    <string name="cd_call">Call this location</string>
+    <string name="cd_previous">Previous location</string>
+    <string name="cd_next">Next location</string>
+</resources>

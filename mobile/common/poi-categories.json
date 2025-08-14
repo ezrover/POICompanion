@@ -1,0 +1,463 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2025-01-11",
+  "description": "Authentic, non-chain POI categories for Roadtrip-Copilot discovery filtering - focused on local gems, independent businesses, and unique experiences across iOS, CarPlay, Android, and Android Auto platforms",
+  "categories": {
+    "local_food": {
+      "id": "local_food",
+      "name": "Local Food & Authentic Dining",
+      "icon": "🍽️",
+      "description": "Independent restaurants, family-owned eateries, and authentic local cuisine - no chains",
+      "priority": 1,
+      "discoveryWeight": 75,
+      "subcategories": [
+        {
+          "id": "family_restaurant",
+          "name": "Family-Owned Restaurants",
+          "icon": "🍽️",
+          "mapKitType": "restaurant",
+          "googlePlaceTypes": ["restaurant"],
+          "keywords": ["family restaurant", "local diner", "mom and pop", "family-owned", "independent restaurant", "local eatery", "authentic cuisine"]
+        },
+        {
+          "id": "local_cafe",
+          "name": "Independent Cafés",
+          "icon": "☕",
+          "mapKitType": "cafe",
+          "googlePlaceTypes": ["cafe"],
+          "keywords": ["local cafe", "independent coffee", "artisan coffee", "roastery", "coffee roaster", "local coffeehouse"]
+        },
+        {
+          "id": "craft_brewery",
+          "name": "Craft Breweries & Local Pubs",
+          "icon": "🍺",
+          "mapKitType": "brewery",
+          "googlePlaceTypes": ["bar"],
+          "keywords": ["craft brewery", "microbrewery", "local pub", "taproom", "brewpub", "neighborhood bar", "dive bar"]
+        },
+        {
+          "id": "artisan_bakery",
+          "name": "Artisan Bakeries",
+          "icon": "🥖",
+          "mapKitType": "bakery",
+          "googlePlaceTypes": ["bakery"],
+          "keywords": ["artisan bakery", "local bakery", "fresh bread", "handmade pastries", "neighborhood bakery"]
+        },
+        {
+          "id": "food_truck",
+          "name": "Local Food Trucks",
+          "icon": "🚚",
+          "mapKitType": "restaurant",
+          "googlePlaceTypes": ["food"],
+          "keywords": ["food truck", "mobile food", "street food", "local truck", "gourmet truck"]
+        },
+        {
+          "id": "local_winery",
+          "name": "Local Wineries & Distilleries",
+          "icon": "🍷",
+          "mapKitType": "winery",
+          "googlePlaceTypes": ["winery"],
+          "keywords": ["local winery", "family vineyard", "craft distillery", "wine tasting", "local spirits", "artisan wine"]
+        },
+        {
+          "id": "ethnic_cuisine",
+          "name": "Authentic Ethnic Cuisine",
+          "icon": "🌮",
+          "mapKitType": "restaurant",
+          "googlePlaceTypes": ["restaurant"],
+          "keywords": ["authentic mexican", "real italian", "family recipe", "traditional cuisine", "ethnic food", "immigrant-owned", "cultural food"]
+        }
+      ]
+    },
+    "local_lodging": {
+      "id": "local_lodging",
+      "name": "Unique Local Lodging",
+      "icon": "🏡",
+      "description": "Independent inns, historic hotels, cabins, and unique local accommodations - no chains",
+      "priority": 2,
+      "discoveryWeight": 65,
+      "subcategories": [
+        {
+          "id": "historic_inn",
+          "name": "Historic Inns & B&Bs",
+          "icon": "🏚️",
+          "mapKitType": "hotel",
+          "googlePlaceTypes": ["lodging"],
+          "keywords": ["historic inn", "bed and breakfast", "b&b", "historic hotel", "boutique inn", "family inn", "century old"]
+        },
+        {
+          "id": "local_campground",
+          "name": "Local Campgrounds",
+          "icon": "⛺",
+          "mapKitType": "campground",
+          "googlePlaceTypes": ["campground", "rv_park"],
+          "keywords": ["family campground", "local camping", "private campground", "farm camping", "primitive camping"]
+        },
+        {
+          "id": "unique_stays",
+          "name": "Unique Accommodations",
+          "icon": "🛖",
+          "mapKitType": "hotel",
+          "googlePlaceTypes": ["lodging"],
+          "keywords": ["treehouse", "yurt", "cabin rental", "glamping", "unique stay", "quirky accommodation", "converted building"]
+        },
+        {
+          "id": "working_ranch",
+          "name": "Working Ranches & Farms",
+          "icon": "🐎",
+          "mapKitType": "hotel",
+          "googlePlaceTypes": ["lodging"],
+          "keywords": ["guest ranch", "working ranch", "farm stay", "ranch experience", "agritourism", "dude ranch"]
+        }
+      ]
+    },
+    "local_attractions": {
+      "id": "local_attractions",
+      "name": "Local Attractions & Hidden Gems",
+      "icon": "💎",
+      "description": "Local landmarks, quirky attractions, and unique local entertainment - no corporate chains",
+      "priority": 3,
+      "discoveryWeight": 85,
+      "subcategories": [
+        {
+          "id": "roadside_attraction",
+          "name": "Roadside Attractions",
+          "icon": "🦖",
+          "mapKitType": "publicTransport",
+          "googlePlaceTypes": ["tourist_attraction"],
+          "keywords": ["roadside attraction", "world's largest", "quirky statue", "oddity", "weird attraction", "offbeat", "kitschy"]
+        },
+        {
+          "id": "local_museum",
+          "name": "Local Museums & Galleries",
+          "icon": "🏛️",
+          "mapKitType": "museum",
+          "googlePlaceTypes": ["museum", "art_gallery"],
+          "keywords": ["local museum", "community museum", "folk art", "local history", "town museum", "heritage center"]
+        },
+        {
+          "id": "local_theater",
+          "name": "Community Theaters",
+          "icon": "🎭",
+          "mapKitType": "movieTheater",
+          "googlePlaceTypes": ["movie_theater"],
+          "keywords": ["community theater", "local theater", "drive-in theater", "historic theater", "small town cinema"]
+        },
+        {
+          "id": "local_venue",
+          "name": "Local Music Venues",
+          "icon": "🎵",
+          "mapKitType": "nightlife",
+          "googlePlaceTypes": ["night_club"],
+          "keywords": ["local venue", "music hall", "honky tonk", "dive venue", "community center", "local bands"]
+        },
+        {
+          "id": "historic_site",
+          "name": "Historic Sites",
+          "icon": "🏛️",
+          "mapKitType": "publicTransport",
+          "googlePlaceTypes": ["tourist_attraction"],
+          "keywords": ["historic site", "battlefield", "old building", "ghost town", "ruins", "heritage site", "local history"]
+        }
+      ]
+    },
+    "natural_wonders": {
+      "id": "natural_wonders",
+      "name": "Natural Wonders & Wild Places",
+      "icon": "🌲",
+      "description": "Hidden natural gems, off-the-beaten-path spots, and pristine outdoor locations",
+      "priority": 4,
+      "discoveryWeight": 90,
+      "subcategories": [
+        {
+          "id": "hidden_beach",
+          "name": "Secret Beaches & Swimming Holes",
+          "icon": "🏖️",
+          "mapKitType": "beach",
+          "googlePlaceTypes": ["natural_feature"],
+          "keywords": ["hidden beach", "secret beach", "swimming hole", "locals beach", "secluded cove", "private beach"]
+        },
+        {
+          "id": "scenic_overlook",
+          "name": "Hidden Scenic Overlooks",
+          "icon": "🏔️",
+          "mapKitType": "nationalPark",
+          "googlePlaceTypes": ["tourist_attraction", "natural_feature"],
+          "keywords": ["hidden viewpoint", "secret overlook", "locals vista", "undiscovered view", "off-road vista", "backcountry view"]
+        },
+        {
+          "id": "wild_trails",
+          "name": "Unmarked Trails & Wild Paths",
+          "icon": "🥾",
+          "mapKitType": "nationalPark",
+          "googlePlaceTypes": ["park"],
+          "keywords": ["unmarked trail", "wild trail", "primitive trail", "bushwhack", "old logging road", "game trail"]
+        },
+        {
+          "id": "natural_features",
+          "name": "Natural Formations & Geology",
+          "icon": "🗿",
+          "mapKitType": "nationalPark",
+          "googlePlaceTypes": ["natural_feature", "tourist_attraction"],
+          "keywords": ["rock formation", "natural arch", "cave", "hot springs", "natural bridge", "geological wonder"]
+        },
+        {
+          "id": "wild_waterfall",
+          "name": "Hidden Waterfalls & Springs",
+          "icon": "💧",
+          "mapKitType": "nationalPark",
+          "googlePlaceTypes": ["natural_feature"],
+          "keywords": ["hidden waterfall", "secret falls", "natural spring", "remote cascade", "backcountry falls", "locals waterfall"]
+        }
+      ]
+    },
+    "local_shopping": {
+      "id": "local_shopping",
+      "name": "Local Artisans & Unique Shopping",
+      "icon": "🎨",
+      "description": "Independent shops, local artisans, antique stores, and unique local markets - no chain stores",
+      "priority": 5,
+      "discoveryWeight": 55,
+      "subcategories": [
+        {
+          "id": "artisan_shop",
+          "name": "Local Artisan Shops",
+          "icon": "🎨",
+          "mapKitType": "store",
+          "googlePlaceTypes": ["store"],
+          "keywords": ["artisan shop", "local artist", "handmade goods", "craft shop", "pottery", "woodworker", "local maker"]
+        },
+        {
+          "id": "vintage_antiques",
+          "name": "Antique Shops & Vintage",
+          "icon": "🏺",
+          "mapKitType": "store",
+          "googlePlaceTypes": ["store"],
+          "keywords": ["antique shop", "vintage store", "estate sale", "flea market", "secondhand", "retro", "collectibles"]
+        },
+        {
+          "id": "local_market",
+          "name": "Farmers Markets & Local Markets",
+          "icon": "🌽",
+          "mapKitType": "foodMarket",
+          "googlePlaceTypes": ["supermarket"],
+          "keywords": ["farmers market", "local produce", "community market", "farm stand", "roadside stand", "organic market"]
+        },
+        {
+          "id": "local_bookstore",
+          "name": "Independent Bookstores",
+          "icon": "📚",
+          "mapKitType": "store",
+          "googlePlaceTypes": ["book_store"],
+          "keywords": ["independent bookstore", "local bookshop", "used bookstore", "rare books", "community bookstore"]
+        },
+        {
+          "id": "specialty_shop",
+          "name": "Local Specialty Shops",
+          "icon": "🏪",
+          "mapKitType": "store",
+          "googlePlaceTypes": ["store"],
+          "keywords": ["local shop", "specialty store", "family business", "unique goods", "one-of-a-kind", "mom and pop shop"]
+        }
+      ]
+    },
+    "essential_services": {
+      "id": "essential_services",
+      "name": "Essential Local Services",
+      "icon": "⛽",
+      "description": "Local gas stations, independent pharmacies, and essential services - avoiding corporate chains where possible",
+      "priority": 6,
+      "discoveryWeight": 40,
+      "subcategories": [
+        {
+          "id": "independent_gas",
+          "name": "Independent Gas Stations",
+          "icon": "⛽",
+          "mapKitType": "gasStation",
+          "googlePlaceTypes": ["gas_station"],
+          "keywords": ["independent gas", "local gas station", "family gas station", "mom and pop gas", "unbranded gas"]
+        },
+        {
+          "id": "local_pharmacy",
+          "name": "Local Pharmacies",
+          "icon": "💊",
+          "mapKitType": "pharmacy",
+          "googlePlaceTypes": ["pharmacy"],
+          "keywords": ["local pharmacy", "independent pharmacy", "family pharmacy", "community pharmacy", "small town pharmacy"]
+        },
+        {
+          "id": "local_mechanic",
+          "name": "Local Auto Repair",
+          "icon": "🔧",
+          "mapKitType": "gasStation",
+          "googlePlaceTypes": ["car_repair"],
+          "keywords": ["local mechanic", "auto repair", "garage", "family mechanic", "small town repair"]
+        },
+        {
+          "id": "community_bank",
+          "name": "Community Banks & Credit Unions",
+          "icon": "🏦",
+          "mapKitType": "bank",
+          "googlePlaceTypes": ["bank"],
+          "keywords": ["community bank", "credit union", "local bank", "savings and loan", "regional bank"]
+        }
+      ]
+    },
+    "ultimate_discoveries": {
+      "id": "ultimate_discoveries",
+      "name": "Ultimate Hidden Discoveries",
+      "icon": "💎",
+      "description": "The crown jewels of local discovery - places only locals know about and true roadtrip legends",
+      "priority": 7,
+      "discoveryWeight": 95,
+      "subcategories": [
+        {
+          "id": "locals_only",
+          "name": "Locals-Only Secrets",
+          "icon": "🤫",
+          "mapKitType": "publicTransport",
+          "googlePlaceTypes": ["tourist_attraction"],
+          "keywords": ["locals only", "insider secret", "word of mouth", "local knowledge", "hidden gem", "best kept secret"]
+        },
+        {
+          "id": "lost_america",
+          "name": "Lost America & Forgotten Places",
+          "icon": "🏚️",
+          "mapKitType": "publicTransport",
+          "googlePlaceTypes": ["tourist_attraction"],
+          "keywords": ["abandoned town", "ghost town", "forgotten place", "ruins", "lost civilization", "time capsule", "historic remnant"]
+        },
+        {
+          "id": "legendary_spot",
+          "name": "Legendary Local Spots",
+          "icon": "⭐",
+          "mapKitType": "publicTransport",
+          "googlePlaceTypes": ["tourist_attraction"],
+          "keywords": ["local legend", "famous locally", "town landmark", "community treasure", "generations old", "family tradition"]
+        },
+        {
+          "id": "unique_experience",
+          "name": "One-of-a-Kind Experiences",
+          "icon": "🎪",
+          "mapKitType": "publicTransport",
+          "googlePlaceTypes": ["tourist_attraction"],
+          "keywords": ["one of a kind", "nowhere else", "unique experience", "only in america", "bizarre", "extraordinary", "impossible to replicate"]
+        },
+        {
+          "id": "natural_secret",
+          "name": "Secret Natural Wonders",
+          "icon": "🌟",
+          "mapKitType": "nationalPark",
+          "googlePlaceTypes": ["natural_feature"],
+          "keywords": ["secret natural wonder", "hidden nature", "undiscovered beauty", "pristine wilderness", "untouched landscape"]
+        }
+      ]
+    },
+    "spiritual_heritage": {
+      "id": "spiritual_heritage",
+      "name": "Historic & Spiritual Heritage",
+      "icon": "⛪",
+      "description": "Historic churches, spiritual sites, and places of local religious significance",
+      "priority": 8,
+      "discoveryWeight": 50,
+      "subcategories": [
+        {
+          "id": "historic_church",
+          "name": "Historic Churches & Chapels",
+          "icon": "⛪",
+          "mapKitType": "worship",
+          "googlePlaceTypes": ["church"],
+          "keywords": ["historic church", "old church", "century-old chapel", "pioneer church", "frontier church", "stone church"]
+        },
+        {
+          "id": "spiritual_landmark",
+          "name": "Spiritual Landmarks",
+          "icon": "🕌",
+          "mapKitType": "worship",
+          "googlePlaceTypes": ["hindu_temple", "mosque", "synagogue"],
+          "keywords": ["spiritual landmark", "sacred site", "religious monument", "pilgrimage site", "holy ground"]
+        },
+        {
+          "id": "cemetery",
+          "name": "Historic Cemeteries",
+          "icon": "🪦",
+          "mapKitType": "publicTransport",
+          "googlePlaceTypes": ["cemetery"],
+          "keywords": ["historic cemetery", "old graveyard", "pioneer cemetery", "family cemetery", "boothill", "historic burial"]
+        },
+        {
+          "id": "mission_site",
+          "name": "Historic Missions & Sites",
+          "icon": "🏛️",
+          "mapKitType": "worship",
+          "googlePlaceTypes": ["church"],
+          "keywords": ["historic mission", "old mission", "mission ruins", "religious historic site", "spanish mission"]
+        }
+      ]
+    },
+  },
+  "filters": {
+    "essential_categories": ["local_food", "essential_services", "local_lodging"],
+    "high_discovery_value": ["ultimate_discoveries", "natural_wonders", "local_attractions"],
+    "automotive_priority": ["independent_gas", "family_restaurant", "historic_inn", "scenic_overlook"],
+    "safety_categories": ["local_pharmacy", "independent_gas", "local_mechanic", "community_bank"],
+    "content_creation_priority": ["ultimate_discoveries", "natural_wonders", "local_attractions", "local_food"],
+    "authentic_local_focus": ["locals_only", "family_restaurant", "artisan_shop", "craft_brewery", "lost_america"],
+    "roadtrip_legends": ["roadside_attraction", "legendary_spot", "unique_experience", "wild_trails"]
+  },
+  "platform_mappings": {
+    "apple_mapkit": {
+      "local_food": ["restaurant", "cafe", "bakery", "brewery", "winery"],
+      "local_attractions": ["museum", "nightlife", "publicTransport"],
+      "local_lodging": ["hotel", "campground"],
+      "essential_services": ["gasStation", "pharmacy", "bank"],
+      "natural_wonders": ["park", "beach", "nationalPark"],
+      "local_shopping": ["store"],
+      "spiritual_heritage": ["worship"]
+    },
+    "google_places": {
+      "local_food_types": ["restaurant", "cafe", "bar", "bakery", "winery"],
+      "local_lodging_types": ["lodging", "campground", "rv_park"],
+      "local_attractions_types": ["tourist_attraction", "museum", "art_gallery", "movie_theater"],
+      "local_shopping_types": ["store", "book_store", "supermarket"],
+      "essential_services_types": ["gas_station", "pharmacy", "bank", "car_repair"],
+      "natural_wonders_types": ["park", "natural_feature", "beach"],
+      "spiritual_heritage_types": ["church", "hindu_temple", "mosque", "synagogue", "cemetery"],
+      "ultimate_discoveries_types": ["tourist_attraction", "natural_feature"]
+    }
+  },
+  "discovery_scoring": {
+    "base_earning_potential": {
+      "family_restaurant": 65,
+      "locals_only": 95,
+      "hidden_beach": 85,
+      "craft_brewery": 70,
+      "artisan_shop": 55,
+      "natural_wonders": 85,
+      "roadside_attraction": 80,
+      "historic_inn": 60,
+      "lost_america": 90,
+      "unique_experience": 95
+    },
+    "uniqueness_multipliers": {
+      "no_reviews": 1.5,
+      "local_only": 2.0,
+      "family_owned": 1.7,
+      "hidden": 2.2,
+      "authentic": 1.8,
+      "one_of_a_kind": 2.5,
+      "word_of_mouth": 2.0,
+      "generations_old": 1.9
+    }
+  },
+  "voice_recognition_keywords": {
+    "local_food_related": ["local restaurant", "family restaurant", "mom and pop", "authentic food", "local diner", "craft brewery", "artisan coffee", "family recipe"],
+    "natural_wonders_related": ["hidden beach", "secret waterfall", "scenic overlook", "wild trail", "natural wonder", "pristine nature", "untouched wilderness"],
+    "local_lodging_related": ["historic inn", "bed and breakfast", "unique stay", "local hotel", "family inn", "guest ranch", "glamping"],
+    "essential_services_related": ["local gas", "independent pharmacy", "community bank", "family mechanic", "local repair"],
+    "local_attractions_related": ["roadside attraction", "local museum", "historic site", "community theater", "quirky attraction", "local landmark"],
+    "local_shopping_related": ["artisan shop", "antique store", "farmers market", "local bookstore", "handmade goods", "vintage store"],
+    "ultimate_discoveries_related": ["locals only", "hidden gem", "secret spot", "local legend", "off the beaten path", "best kept secret", "one of a kind"],
+    "authentic_experience_related": ["authentic", "genuine", "original", "traditional", "family owned", "generations old", "local favorite"]
+  }
+}

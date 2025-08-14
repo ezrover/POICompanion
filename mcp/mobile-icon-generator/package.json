@@ -1,0 +1,28 @@
+{
+  "name": "mobile-icon-generator",
+  "version": "1.0.0",
+  "description": "MCP tool for converting SVG files to mobile app icons for iOS and Android",
+  "main": "index.js",
+  "bin": {
+    "mobile-icon-generator": "./index.js"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "mcp",
+    "mobile",
+    "icons",
+    "svg",
+    "ios",
+    "android",
+    "app-icons",
+    "conversion"
+  ],
+  "author": "Claude Code MCP Tools",
+  "license": "MIT",
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

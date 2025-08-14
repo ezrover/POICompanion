@@ -1,0 +1,20 @@
+{
+  "model_type": "gemma-3n",
+  "variant": "e2b",
+  "format": "safetensors",
+  "quantization": "fp16",
+  "max_tokens": 2048,
+  "vocab_size": 256000,
+  "hidden_size": 2048,
+  "num_layers": 18,
+  "performance": {
+    "expected_latency_ms": 350,
+    "memory_gb": 2.0,
+    "tokens_per_second": 25
+  },
+  "ios_optimization": {
+    "neural_engine": true,
+    "metal_performance_shaders": true,
+    "minimum_ios_version": "16.0"
+  }
+}

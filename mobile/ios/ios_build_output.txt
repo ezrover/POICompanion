@@ -1,0 +1,51 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -scheme RoadtripCopilot build
+
+User defaults from command line:
+    IDEPackageSupportUseBuiltinSCM = YES
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device }
+{ platform:iOS Simulator, id:dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder, name:Any iOS Simulator Device }
+{ platform:iOS Simulator, id:572B4925-BA36-481F-93B5-CBEF76820812, OS:18.2, name:iPad (10th generation) }
+{ platform:iOS Simulator, id:2A195CE3-B272-4328-8F08-BA74F6D97E37, OS:18.2, name:iPad Air 11-inch (M2) }
+{ platform:iOS Simulator, id:BCDAA563-5020-411A-BB1F-9A75DD821AAA, OS:18.2, name:iPad Pro 13-inch (M4) }
+{ platform:iOS Simulator, id:76014D80-9F69-4F83-8FFA-F612CD9B2BE6, OS:18.2, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, id:AB769284-A7BC-46C6-B8E6-1C30EA7B066F, OS:18.2, name:iPhone 16 }
+{ platform:iOS Simulator, id:0907E73A-4A2E-4E9B-8222-7EE376BC70F7, OS:18.2, name:iPhone 16 Plus }
+{ platform:iOS Simulator, id:3E0C09D1-EFE5-4D1B-8EC6-82AEFED20118, OS:18.2, name:iPhone 16 Pro }
+{ platform:iOS Simulator, id:07FF1F89-9526-4673-B1E2-ECDA3ED530F2, OS:18.2, name:iPhone 16 Pro Max }
+{ platform:iOS Simulator, id:39CAD530-4B20-4F10-A4D5-3FF6127226BF, OS:18.2, name:iPhone SE (3rd generation) }
+Prepare packages
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'RoadtripCopilot' in project 'RoadtripCopilot' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/naderrahimizad/Projects/AI/POICompanion/mobile/ios/RoadtripCopilot/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 9a4bd234bea54fa90953954d626ae1ae
+Build description path: /Users/naderrahimizad/Library/Developer/Xcode/DerivedData/RoadtripCopilot-algtwilvdueyyohlcnzgrkxaipro/Build/Intermediates.noindex/XCBuildData/9a4bd234bea54fa90953954d626ae1ae.xcbuilddata
+/Users/naderrahimizad/Projects/AI/POICompanion/mobile/ios/RoadtripCopilot.xcodeproj: error: Provisioning profile "iOS Team Provisioning Profile: com.hmi2.roadtrip-copilot" doesn't include the com.apple.developer.background-modes,
+com.apple.developer.carplay-audio,
+com.apple.developer.carplay-navigation,
+and com.apple.developer.location.when-in-use entitlements. (in target 'RoadtripCopilot' from project 'RoadtripCopilot')
+** BUILD FAILED **
+
+
+The following build commands failed:
+	Building project RoadtripCopilot with scheme RoadtripCopilot
+(1 failure)

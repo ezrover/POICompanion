@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadtrip-Copilot - Your AI Co-Pilot for the Road</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body class="bg-background text-foreground font-sans antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-background/80 backdrop-blur-lg sticky top-0 z-50 border-b border-border">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="p-2 rounded-lg bg-gray-200 mr-2"><img src="assets/images/hmi2_logo.png" alt="HMI2.ai Logo" class="h-28 w-28 mr-2"></div>
+                <span class="text-xl font-bold">Roadtrip-Copilot</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#features" class="hover:text-primary transition-colors">Features</a>
+                <a href="#creator-economy" class="hover:text-primary transition-colors">Pricing</a>
+                <a href="#" class="hover:text-primary transition-colors text-background">For Businesses</a>
+            </div>
+            <div>
+                <a href="#cta" class="btn btn-primary px-5 py-2 rounded-lg font-semibold">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-20 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight scroll-animate">Never Miss a <span class="hero-gradient-text">Hidden Gem</span> Again.</h1>
+            <p class="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto scroll-animate">Transform your drive into an adventure! Discover amazing places nearby with immersive audio insights - hands-free, eyes-free, safe.</p>
+            <div class="flex justify-center space-x-4 mb-12 scroll-animate">
+                 <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                    <svg class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg>
+                    <span>Download for iOS</span>
+                </a>
+                <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-900">
+                    <svg class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"></path></svg>
+                    <span>Get it on Android</span>
+                </a>
+            </div>
+            <img src="carplay_mendocino_grove.png" alt="Roadtrip-Copilot on Apple CarPlay" class="mx-auto rounded-2xl shadow-2xl hero-image-pulse max-w-4xl w-full scroll-animate">
+        </div>
+    </header>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12 scroll-animate">How Roadtrip-Copilot Works</h2>
+            <div class="grid md:grid-cols-4 gap-12">
+                <div class="scroll-animate">
+                    <div class="text-4xl mb-4">🚗</div>
+                    <h3 class="text-2xl font-bold text-primary mb-2">1. Drive Anywhere</h3>
+                    <p class="text-muted-foreground">Just drive as normal. Roadtrip-Copilot automatically scans for interesting places within 1-25 miles.</p>
+                </div>
+                <div class="scroll-animate">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-2xl font-bold text-primary mb-2">2. AI Finds Gems</h3>
+                    <p class="text-muted-foreground">Our AI discovers hidden gems, local favorites, and unique experiences you'd never find otherwise.</p>
+                </div>
+                <div class="scroll-animate">
+                    <div class="text-4xl mb-4">🔊</div>
+                    <h3 class="text-2xl font-bold text-primary mb-2">3. Curated Podcast Insights</h3>
+                    <p class="text-muted-foreground">"Joe's Diner ★4.5 - Great craft burgers, crowded at lunch, try the bacon classic"</p>
+                </div>
+                <div class="scroll-animate">
+                     <div class="text-4xl mb-4">🎬</div>
+                    <h3 class="text-2xl font-bold text-primary mb-2">4. Could Earn FREE Roadtrips</h3>
+                    <p class="text-muted-foreground">Be the FIRST to discover! Videos could earn revenue only for NEW places not in our database. Your 50% could become FREE roadtrips!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section id="features" class="py-20 bg-card border-y border-border">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 scroll-animate">Why Drivers Love Roadtrip-Copilot</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card p-6 rounded-lg scroll-animate">
+                    <h3 class="text-xl font-bold mb-2">👁️ Eyes on the Road</h3>
+                    <p class="text-muted-foreground">100% voice-based. Never look at your phone. Keep your eyes on the road, always.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg scroll-animate">
+                    <h3 class="text-xl font-bold mb-2">⚡ Lightning Fast</h3>
+                    <p class="text-muted-foreground">Instant responses. No waiting, no buffering. Just immediate insights.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg scroll-animate">
+                    <h3 class="text-xl font-bold mb-2">🔒 Privacy First</h3>
+                    <p class="text-muted-foreground">All processing happens on your device. Your location and preferences stay private.</p>
+                </div>
+                 <div class="feature-card p-6 rounded-lg scroll-animate">
+                    <h3 class="text-xl font-bold mb-2">💎 Hidden Gems</h3>
+                    <p class="text-muted-foreground">Discover local favorites and unique experiences you'd never find otherwise.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg scroll-animate">
+                    <h3 class="text-xl font-bold mb-2">🌐 Works Offline</h3>
+                    <p class="text-muted-foreground">No internet? No problem. All features work even in remote areas with offline mode.</p>
+                </div>
+                <div class="feature-card p-6 rounded-lg scroll-animate">
+                    <h3 class="text-xl font-bold mb-2">🎬 First Discovery Rewards</h3>
+                    <p class="text-muted-foreground">Be the FIRST to discover places! Only NEW POIs not in our database could earn video revenue. 50% could convert to FREE roadtrips automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creator Economy Section -->
+    <section id="creator-economy" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4 scroll-animate">Discover New Places. <span class="hero-gradient-text">Earn FREE Roadtrips.</span></h2>
+            <p class="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto scroll-animate">Be the first to discover a new POI, and you could earn unlimited free roadtrips. Our unique 50/50 revenue sharing model turns your discoveries into rewards.</p>
+            <div class="bg-card p-8 rounded-lg shadow-lg scroll-animate">
+                <p class="text-2xl font-bold text-accent">Every $0.50 you earn = 1 FREE Roadtrip</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-20 bg-card border-y border-border">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <p class="text-2xl italic text-muted-foreground mb-4 scroll-animate">"Found this incredible hidden waterfall on Highway 1 that I never would have discovered otherwise. The audio podcast was perfect!"</p>
+                <p class="font-bold text-lg scroll-animate">- Sarah M., Road Trip Enthusiast</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="cta" class="py-20 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-black mb-4 scroll-animate">Ready to Transform Your Drive?</h2>
+            <p class="text-xl text-muted-foreground mb-8 scroll-animate">Download Roadtrip-Copilot today and start with 7 free roadtrips!</p>
+            <div class="flex justify-center space-x-4 scroll-animate">
+                <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                    <svg class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg>
+                    <span>Download for iOS</span>
+                </a>
+                <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-900">
+                    <svg class="w-5 h-5 mr-2 -ml-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"></path></svg>
+                    <span>Get it on Android</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border py-8">
+        <div class="container mx-auto px-6 text-center text-muted-foreground">
+            <p>&copy; 2025 HMI2.ai, Inc. All rights reserved.</p>
+            <div class="mt-4 space-x-6">
+                <a href="privacy-policy.html" class="hover:text-primary">Privacy Policy</a>
+                <a href="terms-of-service.html" class="hover:text-primary">Terms of Service</a>
+                <a href="#" class="hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

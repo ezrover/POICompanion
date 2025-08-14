@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadtrip-Copilot: Investor Website Overview</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #4A90E2;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #4A90E2;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.3em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .description {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 15px;
+        }
+        
+        .offer-badge {
+            background: linear-gradient(135deg, #F8E71C, #ffd700);
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+        }
+        
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #7ED321;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .section {
+            margin: 40px 0;
+            page-break-inside: avoid;
+        }
+        
+        .section h2 {
+            color: #4A90E2;
+            font-size: 1.8em;
+            border-bottom: 2px solid #e1e5e9;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .steps {
+            counter-reset: step-counter;
+        }
+        
+        .step {
+            counter-increment: step-counter;
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #4A90E2;
+        }
+        
+        .step::before {
+            content: "Step " counter(step-counter) ": ";
+            font-weight: bold;
+            color: #4A90E2;
+        }
+        
+        .step h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            display: inline;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature {
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .feature h3 {
+            color: #4A90E2;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .platforms {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .platform {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .pricing-card {
+            padding: 30px 20px;
+            background: #fff;
+            border: 2px solid #4A90E2;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+            border-color: #7ED321;
+        }
+        
+        .price {
+            font-size: 2em;
+            font-weight: bold;
+            color: #4A90E2;
+            margin: 15px 0;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e1e5e9;
+        }
+        
+        .testimonial {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #7ED321;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .author {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .rating {
+            color: #F8E71C;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+        
+        .faq {
+            margin: 30px 0;
+        }
+        
+        .faq-item {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+        }
+        
+        .faq-question {
+            color: #4A90E2;
+            font-size: 1.2em;
+            margin: 0 0 10px 0;
+        }
+        
+        .faq-answer {
+            color: #666;
+            margin: 0;
+        }
+        
+        .contact-info {
+            background: #4A90E2;
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .contact-info h2 {
+            color: white;
+            border: none;
+            margin: 0 0 20px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 2px solid #e1e5e9;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ffeaa7;
+            margin: 20px 0;
+        }
+        
+        @media print {
+            body { font-size: 12px; }
+            .section { page-break-inside: avoid; }
+            .step, .feature, .testimonial { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Roadtrip-Copilot</div>
+        <div class="tagline">The Expedia of Roadside Discovery</div>
+        <div class="description">Transform your drive into an adventure! Discover amazing places nearby with immersive audio insights - hands-free, eyes-free, safe.</div>
+    </div>
+
+    <div class="offer-badge">
+        🎉 Limited Time: 7 Free Roadtrips, Then Earn FREE Roadtrips from Your Discovery Videos!
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat">
+            <span class="stat-number">FREE</span>
+            <span class="stat-label">Roadtrips from Videos</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">50/50</span>
+            <span class="stat-label">Revenue Share</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">Hands-Free</span>
+            <span class="stat-label">AI Voice Companion</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">6 sec</span>
+            <span class="stat-label">POI Insights Podcast</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🚗 How Roadtrip-Copilot Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>Drive Anywhere</h3>
+                <p>Just drive as normal. Roadtrip-Copilot automatically scans for interesting places within 1-25 miles.</p>
+            </div>
+            <div class="step">
+                <h3>AI Finds Gems</h3>
+                <p>Our AI discovers hidden gems, local favorites, and unique experiences you'd never find otherwise.</p>
+            </div>
+            <div class="step">
+                <h3>Curated Podcast Insights</h3>
+                <p><em>"Joe's Diner ★4.5 - Great craft burgers, crowded at lunch, try the bacon classic"</em></p>
+            </div>
+            <div class="step">
+                <h3>Earn FREE Roadtrips</h3>
+                <p>We automatically create discovery videos and share them on social media. Your 50% of ad revenue becomes FREE roadtrips instantly!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>✨ Why Drivers Love Roadtrip-Copilot</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <span class="feature-icon">👁️</span>
+                <h3>Eyes on Road</h3>
+                <p>100% voice-based. Never look at your phone. Keep your eyes on the road, always.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">⚡</span>
+                <h3>Lightning Fast</h3>
+                <p>Instant responses. No waiting, no buffering. Just immediate insights.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔒</span>
+                <h3>Privacy First</h3>
+                <p>Your location and preferences stay private on your own mobile device.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">💎</span>
+                <h3>Hidden Gems</h3>
+                <p>Discover local favorites and unique experiences you'd never find otherwise.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🌐</span>
+                <h3>Works Offline</h3>
+                <p>All features work even in remote areas with offline mode.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🎬</span>
+                <h3>Earn FREE Roadtrips</h3>
+                <p>50% of ad revenue converts to FREE roadtrips automatically.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📱 Works on All Your Devices</h2>
+        <div class="platforms">
+            <div class="platform">
+                <h3>🍎 Apple CarPlay</h3>
+                <p>Seamlessly integrated with your iPhone and car's display system.</p>
+                <div style="background: #4A90E2; color: white; padding: 5px 10px; border-radius: 15px; display: inline-block; margin-top: 10px;">iOS 14+</div>
+            </div>
+            <div class="platform">
+                <h3>🤖 Android Auto</h3>
+                <p>Perfect integration with Android phones and car infotainment.</p>
+                <div style="background: #4A90E2; color: white; padding: 5px 10px; border-radius: 15px; display: inline-block; margin-top: 10px;">Android 8+</div>
+            </div>
+            <div class="platform">
+                <h3>🥽 Google XR</h3>
+                <p>The future of discovery with augmented reality overlays.</p>
+                <div style="background: #F8E71C; color: #333; padding: 5px 10px; border-radius: 15px; display: inline-block; margin-top: 10px;">Coming Soon</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>💰 Earn FREE Roadtrips</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card featured">
+                <h3>Video-to-Roadtrip</h3>
+                <div class="price">FREE Roadtrips<br><small>earned from videos</small></div>
+                <ul class="pricing-features">
+                    <li>✓ 7 free roadtrips trial</li>
+                    <li>✓ 50% of video ad revenue = free roadtrips</li>
+                    <li>✓ Auto-conversion: Every $0.50 earned = 1 free roadtrip</li>
+                    <li>✓ All platforms (CarPlay, Android Auto)</li>
+                    <li>✓ Offline mode included</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Revenue Sharing</h3>
+                <div class="price">50%<br><small>of all video revenue</small></div>
+                <ul class="pricing-features">
+                    <li>✓ Auto-create discovery videos from your trips</li>
+                    <li>✓ Posted to YouTube, TikTok, Instagram, Facebook</li>
+                    <li>✓ 50/50 revenue sharing with automatic conversion</li>
+                    <li>✓ Your share becomes FREE roadtrips instantly</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="highlight">
+            <strong>🎉 Limited Time:</strong> First 10,000 users get 7 free roadtrips + unlimited FREE roadtrips from videos!
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🌟 What Early Users Say</h2>
+        
+        <div class="testimonial">
+            <div class="quote">"Found this incredible hidden waterfall on Highway 1 that I never would have discovered otherwise. The audio podcast was perfect!"</div>
+            <div class="author"><strong>Sarah M.</strong> - Road Trip Enthusiast</div>
+            <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="testimonial">
+            <div class="quote">"As a truck driver, this app is a game changer. Finds great local diners and keeps me safe - no need to look at my phone."</div>
+            <div class="author"><strong>Mike R.</strong> - Professional Driver</div>
+            <div class="rating">★★★★★</div>
+        </div>
+
+        <div class="testimonial">
+            <div class="quote">"Made our family road trip so much more fun. Kids loved hearing about the quirky places we passed. Already earned 94 FREE roadtrips from our discovery videos!"</div>
+            <div class="author"><strong>Jennifer L.</strong> - Family Traveler & Content Creator</div>
+            <div class="rating">★★★★★</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>❓ Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <h3 class="faq-question">How do I get unlimited FREE roadtrips?</h3>
+                <p class="faq-answer">Start with 7 free roadtrips, no credit card required. After that, every discovery you make creates a video that earns revenue. Your 50% share automatically converts to FREE roadtrips at $0.50 each!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Is it really hands-free and safe?</h3>
+                <p class="faq-answer">Absolutely! Roadtrip-Copilot is 100% voice-based. You never need to look at or touch your phone. It's designed specifically for driving safety.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">How does the 50/50 revenue sharing work?</h3>
+                <p class="faq-answer">When you discover amazing places, we automatically create short videos and post them to YouTube, TikTok, Instagram, and Facebook. You get 50% of all ad revenue, which automatically converts to FREE roadtrips (every $0.50 = 1 free roadtrip)!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Does it work without internet?</h3>
+                <p class="faq-answer">Yes! Roadtrip-Copilot works completely offline. All AI processing happens locally on your phone, so you'll get insights even in remote areas.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">What makes the insights so special?</h3>
+                <p class="faq-answer">Our AI reads thousands of reviews and distills them into perfect audio conversational podcasts. You get everything you need to know, instantly.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">When will it be available?</h3>
+                <p class="faq-answer">We're in final beta testing now. Join our waitlist to be among the first 10,000 users who get unlimited FREE roadtrips from their discovery videos!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-info">
+        <h2>📲 Ready to Transform Your Drive?</h2>
+        <p><strong>Join our waitlist:</strong> waitlist@hmi2.com</p>
+        <p>Currently in final beta testing</p>
+        <div style="margin-top: 20px;">
+            <div>🎆 7 free roadtrips</div>
+            <div>🔁 50/50 revenue sharing</div>
+            <div>🎬 FREE roadtrips from videos</div>
+            <div>🔒 100% privacy guaranteed</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>© 2024 HMI2.ai. Roadtrip-Copilot is a trademark of HMI2.ai Inc.</strong></p>
+        <p>Revolutionary 50/50 revenue sharing model • Self-sustaining user economy • Privacy-first architecture</p>
+        <p><em>This document represents a consumer-facing platform with a unique creator economy model that transforms users from customers into profitable content creators.</em></p>
+        <p>Document generated for investor review • Last updated: December 2024</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "name": "android-emulator-manager",
+  "version": "1.0.0",
+  "description": "An MCP tool that automates Android emulator operations for the Roadtrip-Copilot project. Platform parity equivalent to ios-simulator-manager.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "list": "node index.js list",
+    "boot": "node index.js boot",
+    "build": "node index.js build",
+    "install": "node index.js install",
+    "launch": "node index.js launch",
+    "validate": "node index.js validate",
+    "screenshot": "node index.js screenshot",
+    "info": "node index.js info",
+    "test-ui": "node index.js test",
+    "lost-lake-test": "node index.js lost-lake-test",
+    "validate-buttons": "node index.js validate-buttons",
+    "get-elements": "node index.js get-elements",
+    "full-flow": "node index.js full",
+    "cleanup": "node index.js cleanup"
+  },
+  "keywords": [
+    "android",
+    "emulator",
+    "avd",
+    "testing",
+    "automation",
+    "mobile",
+    "adb",
+    "roadtrip-copilot",
+    "mcp-tool",
+    "platform-parity"
+  ],
+  "author": "Claude Code - Android Development Team",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "preferGlobal": false,
+  "bin": {
+    "android-emulator-manager": "./index.js"
+  }
+}

@@ -1,0 +1,1270 @@
+{
+  "builds": [
+    {
+      "timestamp": "2025-08-11T02:50:52.421Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.04,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T03:01:10.903Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 10.975,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T03:02:19.775Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 15.361,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T03:08:39.947Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.712,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T03:09:03.054Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 7.178,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T03:10:54.236Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.533,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T03:12:12.666Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 9.027,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T03:16:24.454Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.246,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T03:16:39.459Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.144,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T03:18:41.945Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 6.139,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T03:19:15.186Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.031,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T03:20:24.678Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 8.013,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T03:21:33.975Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.971,
+      "errors": [],
+      "fixes": [],
+      "warnings": 4,
+      "warningDetails": [
+        "warning: initialization of immutable value 'testUnusedVariable' was never used; consider replacing with assignment to '_' or removing it",
+        "warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead",
+        "warning: initialization of immutable value 'testUnusedVariable' was never used; consider replacing with assignment to '_' or removing it",
+        "warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead"
+      ],
+      "warningSuggestions": [
+        "Replace deprecated APIs with newer alternatives. Check Apple/Google documentation for migration guides.",
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T03:21:59.581Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 9.148,
+      "errors": [],
+      "fixes": [],
+      "warnings": 2,
+      "warningDetails": [
+        "warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead",
+        "warning: 'windows' was deprecated in iOS 15.0: Use UIWindowScene.windows on a relevant window scene instead"
+      ],
+      "warningSuggestions": [
+        "Replace deprecated APIs with newer alternatives. Check Apple/Google documentation for migration guides."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T03:22:44.417Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 8.813,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T03:27:23.526Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.45,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T03:38:55.503Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 12.134,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T03:47:05.037Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 15.381,
+      "errors": [],
+      "fixes": [],
+      "warnings": 4,
+      "warningDetails": [
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T03:50:38.710Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 8.773,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T04:32:30.055Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 6.857,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T04:35:34.948Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 15.515,
+      "errors": [],
+      "fixes": [],
+      "warnings": 10,
+      "warningDetails": [
+        "warning: value 'ttsProcessor' was defined but never used; consider replacing with boolean test",
+        "warning: initialization of immutable value 'thermalImpact' was never used; consider replacing with assignment to '_' or removing it",
+        "warning: initialization of immutable value 'networkLatency' was never used; consider replacing with assignment to '_' or removing it",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: initialization of immutable value 'thermalImpact' was never used; consider replacing with assignment to '_' or removing it",
+        "warning: initialization of immutable value 'networkLatency' was never used; consider replacing with assignment to '_' or removing it",
+        "warning: value 'ttsProcessor' was defined but never used; consider replacing with boolean test"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T10:26:43.655Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.386,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T10:30:48.049Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 6.58,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T10:31:49.396Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 11.099,
+      "errors": [],
+      "fixes": [],
+      "warnings": 4,
+      "warningDetails": [
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T10:35:43.085Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 5.902,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T10:36:18.235Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.093,
+      "errors": [],
+      "fixes": [],
+      "warnings": 2,
+      "warningDetails": [
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T10:52:48.670Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.291,
+      "errors": [],
+      "fixes": [],
+      "warnings": 6,
+      "warningDetails": [
+        "warning: instance method 'templateApplicationScene(_:didConnect:to:)' nearly matches optional requirement 'templateApplicationScene(_:didConnect:to:)' of protocol 'CPTemplateApplicationSceneDelegate'",
+        "warning: instance method 'templateApplicationScene(_:didDisconnect:from:)' nearly matches optional requirement 'templateApplicationScene(_:didDisconnect:from:)' of protocol 'CPTemplateApplicationSceneDelegate'",
+        "warning: instance method 'templateApplicationScene(_:didConnect:to:)' nearly matches optional requirement 'templateApplicationScene(_:didConnect:to:)' of protocol 'CPTemplateApplicationSceneDelegate'",
+        "warning: instance method 'templateApplicationScene(_:didDisconnect:from:)' nearly matches optional requirement 'templateApplicationScene(_:didDisconnect:from:)' of protocol 'CPTemplateApplicationSceneDelegate'",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T11:03:51.511Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 11.006,
+      "errors": [],
+      "fixes": [],
+      "warnings": 3,
+      "warningDetails": [
+        "warning: value 'templateScene' was defined but never used; consider replacing with boolean test",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T11:06:35.861Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 9.856,
+      "errors": [],
+      "fixes": [],
+      "warnings": 2,
+      "warningDetails": [
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T11:11:56.701Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.744,
+      "errors": [],
+      "fixes": [],
+      "warnings": 2,
+      "warningDetails": [
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T11:16:08.441Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 11.532,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T11:16:40.471Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.336,
+      "errors": [],
+      "fixes": [],
+      "warnings": 7,
+      "warningDetails": [
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
+        "warning: value 'ttsProcessor' was defined but never used; consider replacing with boolean test",
+        "warning: initialization of immutable value 'thermalImpact' was never used; consider replacing with assignment to '_' or removing it",
+        "warning: initialization of immutable value 'networkLatency' was never used; consider replacing with assignment to '_' or removing it"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-11T11:18:20.435Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 5.319,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T11:19:17.300Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 7.245,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T17:01:57.324Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 6.544,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T17:05:28.716Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.392,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T14:54:42.957Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 15.984,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T14:55:25.450Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 8.373,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T14:56:01.110Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 9.547,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T14:56:32.331Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 14.099,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T15:06:28.829Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 5.151,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T15:18:28.853Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.33,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T15:29:20.844Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 11.215,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T15:59:08.678Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 16.207,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T15:59:49.595Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 15.564,
+      "errors": [],
+      "fixes": [],
+      "warnings": 6,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: initialization of immutable value 'inputs' was never used; consider replacing with assignment to '_' or removing it",
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: initialization of immutable value 'inputs' was never used; consider replacing with assignment to '_' or removing it"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-12T16:09:23.022Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 2.761,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T16:10:27.737Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 14.812,
+      "errors": [],
+      "fixes": [],
+      "warnings": 6,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: initialization of immutable value 'inputs' was never used; consider replacing with assignment to '_' or removing it",
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: initialization of immutable value 'inputs' was never used; consider replacing with assignment to '_' or removing it"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-12T16:23:51.758Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 14.255,
+      "errors": [],
+      "fixes": [],
+      "warnings": 4,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T16:34:07.607Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 18.385,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T16:38:54.279Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 19.105,
+      "errors": [],
+      "fixes": [],
+      "warnings": 4,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T16:40:32.868Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.158,
+      "errors": [],
+      "fixes": [],
+      "warnings": 4,
+      "warningDetails": [
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T16:43:40.429Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 5.939,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T16:52:01.251Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 2.843,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T17:00:14.020Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 15.645,
+      "errors": [],
+      "fixes": [],
+      "warnings": 2,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T17:07:39.525Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 2.656,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T17:22:50.492Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 13.527,
+      "errors": [],
+      "fixes": [],
+      "warnings": 2,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T17:31:03.984Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.032,
+      "errors": [],
+      "fixes": [],
+      "warnings": 2,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T17:41:13.447Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 12.766,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T17:47:27.565Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 11.06,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T17:47:43.342Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.126,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:08:44.246Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 13.827,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:09:19.024Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 13.966,
+      "errors": [],
+      "fixes": [],
+      "warnings": 4,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:18:11.474Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 5.251,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:22:03.855Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.645,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:42:26.189Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 19.146,
+      "errors": [],
+      "fixes": [],
+      "warnings": 4,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:45:19.041Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 3.177,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:45:43.887Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 8.578,
+      "errors": [],
+      "fixes": [],
+      "warnings": 4,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:46:58.050Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.664,
+      "errors": [],
+      "fixes": [],
+      "warnings": 4,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:49:10.028Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 18.005,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:59:09.350Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 15.713,
+      "errors": [],
+      "fixes": [],
+      "warnings": 2,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:01:48.011Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 3.051,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:02:48.048Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 2.543,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:03:11.139Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 5.942,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:04:50.689Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.543,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:15:09.488Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 13.599,
+      "errors": [],
+      "fixes": [],
+      "warnings": 2,
+      "warningDetails": [
+        "warning: no calls to throwing functions occur within 'try' expression",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block"
+      ],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:17:15.126Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 2.588,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:17:28.072Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 5.771,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:21:22.775Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 11.075,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:25:12.254Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 2.926,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:29:15.086Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 11.622,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:30:17.711Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 8.335,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:31:11.750Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 7.666,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:33:37.917Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 9.331,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:34:16.306Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 8.273,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:42:47.645Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 12.828,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:45:18.511Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 8.671,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:46:45.542Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 8.706,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:47:41.598Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 9.415,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:48:47.802Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 17.715,
+      "errors": [],
+      "fixes": [],
+      "warnings": 8,
+      "warningDetails": [
+        "warning: value 'model' was defined but never used; consider replacing with boolean test",
+        "warning: capture of 'model' with non-sendable type 'MLModel' in a `@Sendable` closure",
+        "warning: add '@preconcurrency' to suppress 'Sendable'-related warnings from module 'CoreML'",
+        "warning: capture of 'input' with non-sendable type 'Gemma3NInput' in a `@Sendable` closure",
+        "warning: value 'model' was defined but never used; consider replacing with boolean test",
+        "warning: capture of 'model' with non-sendable type 'MLModel' in a `@Sendable` closure",
+        "warning: add '@preconcurrency' to suppress 'Sendable'-related warnings from module 'CoreML'",
+        "warning: capture of 'input' with non-sendable type 'Gemma3NInput' in a `@Sendable` closure"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
+    },
+    {
+      "timestamp": "2025-08-13T20:01:26.401Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 5.682,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:03:50.310Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 11.158,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:11:48.418Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 3.072,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:12:11.903Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 6.463,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:17:43.232Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 14.165,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:18:49.673Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 5.322,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:51:15.317Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 12.965,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T21:57:21.400Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 95.511,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T22:11:09.208Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.985,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T22:16:36.482Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.029,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:18:35.169Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 12.981,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    }
+  ],
+  "commonErrors": {},
+  "successRate": 55.00000000000001,
+  "avgBuildTime": 17.906909090909092,
+  "lastSuccessful": "2025-08-14T01:18:35.169Z",
+  "trends": {
+    "improving": true,
+    "recentFailures": 0
+  }
+}

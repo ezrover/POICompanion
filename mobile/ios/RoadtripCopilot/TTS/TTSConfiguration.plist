@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Kitten TTS Configuration -->
+    <key>KittenTTS</key>
+    <dict>
+        <key>ModelFileName</key>
+        <string>kitten_tts_nano.mlmodelc</string>
+        <key>ModelVersion</key>
+        <string>0.1</string>
+        <key>MaxModelSizeMB</key>
+        <integer>25</integer>
+        <key>SupportedVoices</key>
+        <array>
+            <dict>
+                <key>VoiceID</key>
+                <integer>0</integer>
+                <key>Name</key>
+                <string>Female Friendly</string>
+                <key>Gender</key>
+                <string>Female</string>
+                <key>Personality</key>
+                <string>FriendlyGuide</string>
+            </dict>
+            <dict>
+                <key>VoiceID</key>
+                <integer>1</integer>
+                <key>Name</key>
+                <string>Female Professional</string>
+                <key>Gender</key>
+                <string>Female</string>
+                <key>Personality</key>
+                <string>ProfessionalAssistant</string>
+            </dict>
+            <dict>
+                <key>VoiceID</key>
+                <integer>2</integer>
+                <key>Name</key>
+                <string>Female Warm</string>
+                <key>Gender</key>
+                <string>Female</string>
+                <key>Personality</key>
+                <string>FriendlyGuide</string>
+            </dict>
+            <dict>
+                <key>VoiceID</key>
+                <integer>3</integer>
+                <key>Name</key>
+                <string>Female Energetic</string>
+                <key>Gender</key>
+                <string>Female</string>
+                <key>Personality</key>
+                <string>EnthusiasticExplorer</string>
+            </dict>
+            <dict>
+                <key>VoiceID</key>
+                <integer>4</integer>
+                <key>Name</key>
+                <string>Male Casual</string>
+                <key>Gender</key>
+                <string>Male</string>
+                <key>Personality</key>
+                <string>CasualCompanion</string>
+            </dict>
+            <dict>
+                <key>VoiceID</key>
+                <integer>5</integer>
+                <key>Name</key>
+                <string>Male Authoritative</string>
+                <key>Gender</key>
+                <string>Male</string>
+                <key>Personality</key>
+                <string>ProfessionalAssistant</string>
+            </dict>
+            <dict>
+                <key>VoiceID</key>
+                <integer>6</integer>
+                <key>Name</key>
+                <string>Male Calm</string>
+                <key>Gender</key>
+                <string>Male</string>
+                <key>Personality</key>
+                <string>ProfessionalAssistant</string>
+            </dict>
+            <dict>
+                <key>VoiceID</key>
+                <integer>7</integer>
+                <key>Name</key>
+                <string>Male Enthusiastic</string>
+                <key>Gender</key>
+                <string>Male</string>
+                <key>Personality</key>
+                <string>EnthusiasticExplorer</string>
+            </dict>
+        </array>
+    </dict>
+    
+    <!-- Performance Targets -->
+    <key>PerformanceTargets</key>
+    <dict>
+        <key>StartupLatencyMs</key>
+        <integer>200</integer>
+        <key>FirstTokenLatencyMs</key>
+        <integer>350</integer>
+        <key>VoiceCommandLatencyMs</key>
+        <integer>150</integer>
+        <key>PodcastGenerationMs</key>
+        <integer>2000</integer>
+        <key>MaxMemoryUsageMB</key>
+        <integer>25</integer>
+        <key>MaxBatteryDrainPercentPerHour</key>
+        <real>1.0</real>
+    </dict>
+    
+    <!-- Audio Quality Settings -->
+    <key>AudioQuality</key>
+    <dict>
+        <key>SampleRate</key>
+        <integer>22050</integer>
+        <key>BitDepth</key>
+        <integer>16</integer>
+        <key>Channels</key>
+        <integer>1</integer>
+        <key>AudioFormat</key>
+        <string>PCM</string>
+        <key>AutomotiveOptimizations</key>
+        <true/>
+        <key>NoiseReduction</key>
+        <true/>
+        <key>DynamicRangeCompression</key>
+        <true/>
+    </dict>
+    
+    <!-- Voice Personality Configuration -->
+    <key>VoicePersonalities</key>
+    <dict>
+        <key>FriendlyGuide</key>
+        <dict>
+            <key>DisplayName</key>
+            <string>Friendly Guide</string>
+            <key>Description</key>
+            <string>Warm, welcoming, and supportive companion for your journey</string>
+            <key>DefaultVoiceID</key>
+            <integer>0</integer>
+            <key>SpeedMultiplier</key>
+            <real>1.0</real>
+            <key>PitchMultiplier</key>
+            <real>1.0</real>
+            <key>AutomotivePitchAdjustment</key>
+            <real>-0.05</real>
+        </dict>
+        <key>ProfessionalAssistant</key>
+        <dict>
+            <key>DisplayName</key>
+            <string>Professional Assistant</string>
+            <key>Description</key>
+            <string>Clear, efficient, and authoritative voice for business travel</string>
+            <key>DefaultVoiceID</key>
+            <integer>1</integer>
+            <key>SpeedMultiplier</key>
+            <real>1.0</real>
+            <key>PitchMultiplier</key>
+            <real>0.95</real>
+            <key>AutomotivePitchAdjustment</key>
+            <real>-0.05</real>
+        </dict>
+        <key>CasualCompanion</key>
+        <dict>
+            <key>DisplayName</key>
+            <string>Casual Companion</string>
+            <key>Description</key>
+            <string>Relaxed and conversational voice for leisure travel</string>
+            <key>DefaultVoiceID</key>
+            <integer>4</integer>
+            <key>SpeedMultiplier</key>
+            <real>1.1</real>
+            <key>PitchMultiplier</key>
+            <real>1.05</real>
+            <key>AutomotivePitchAdjustment</key>
+            <real>-0.05</real>
+        </dict>
+        <key>EnthusiasticExplorer</key>
+        <dict>
+            <key>DisplayName</key>
+            <string>Enthusiastic Explorer</string>
+            <key>Description</key>
+            <string>Energetic and excited voice for adventure travel</string>
+            <key>DefaultVoiceID</key>
+            <integer>3</integer>
+            <key>SpeedMultiplier</key>
+            <real>1.1</real>
+            <key>PitchMultiplier</key>
+            <real>1.1</real>
+            <key>AutomotivePitchAdjustment</key>
+            <real>-0.05</real>
+        </dict>
+    </dict>
+    
+    <!-- CarPlay Configuration -->
+    <key>CarPlaySettings</key>
+    <dict>
+        <key>EnableVoiceAnnouncements</key>
+        <true/>
+        <key>MaxAnnouncementDurationSeconds</key>
+        <integer>30</integer>
+        <key>EnableHandsFreeDiscovery</key>
+        <true/>
+        <key>VoiceCommandTimeout</key>
+        <integer>5</integer>
+        <key>AudioDucking</key>
+        <true/>
+        <key>SafetyCompliant</key>
+        <true/>
+    </dict>
+    
+    <!-- Podcast Generation Settings -->
+    <key>PodcastGeneration</key>
+    <dict>
+        <key>TargetDurationSeconds</key>
+        <integer>6</integer>
+        <key>DurationToleranceSeconds</key>
+        <real>0.5</real>
+        <key>MaxRetries</key>
+        <integer>3</integer>
+        <key>WordsPerSecond</key>
+        <real>3.0</real>
+        <key>EnableVariationGeneration</key>
+        <true/>
+        <key>VariationCount</key>
+        <integer>3</integer>
+    </dict>
+    
+    <!-- Performance Monitoring -->
+    <key>PerformanceMonitoring</key>
+    <dict>
+        <key>EnableRealTimeMonitoring</key>
+        <true/>
+        <key>MonitoringIntervalSeconds</key>
+        <integer>5</integer>
+        <key>MaxStoredRecords</key>
+        <integer>500</integer>
+        <key>EnableBatteryMonitoring</key>
+        <true/>
+        <key>EnableThermalMonitoring</key>
+        <true/>
+        <key>EnableMemoryMonitoring</key>
+        <true/>
+        <key>AlertThresholds</key>
+        <dict>
+            <key>CriticalLatencyMs</key>
+            <integer>1000</integer>
+            <key>WarningLatencyMs</key>
+            <integer>500</integer>
+            <key>CriticalMemoryPressure</key>
+            <real>0.85</real>
+            <key>CriticalBatteryDrainPercentPerHour</key>
+            <real>5.0</real>
+            <key>MinSuccessRate</key>
+            <real>0.90</real>
+        </dict>
+    </dict>
+    
+    <!-- Fallback Configuration -->
+    <key>FallbackSettings</key>
+    <dict>
+        <key>EnableSystemTTSFallback</key>
+        <true/>
+        <key>FallbackTriggers</key>
+        <dict>
+            <key>KittenTTSUnavailable</key>
+            <true/>
+            <key>HighLatency</key>
+            <true/>
+            <key>LowMemory</key>
+            <true/>
+            <key>ThermalThrottling</key>
+            <true/>
+            <key>BatteryOptimization</key>
+            <true/>
+        </dict>
+        <key>AutoRecovery</key>
+        <true/>
+        <key>RecoveryTimeoutSeconds</key>
+        <integer>30</integer>
+    </dict>
+</dict>
+</plist>

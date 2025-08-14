@@ -1,0 +1,23 @@
+{
+  "variant": "E2B",
+  "quantization": "INT8",
+  "size_gb": 1.8,
+  "format": "task",
+  "nnapi_optimized": true,
+  "minimum_android_api": 29,
+  "supported_accelerators": ["CPU", "GPU", "NPU", "DSP"],
+  "performance_metrics": {
+    "expected_latency_ms": 350,
+    "expected_memory_gb": 2.0,
+    "tokens_per_second": 25
+  },
+  "roadtrip_copilot": {
+    "specialized_functions": [
+      "processDiscovery",
+      "validatePOI",
+      "generateContent"
+    ],
+    "optimized_for": "mobile",
+    "target_latency_ms": 350
+  }
+}

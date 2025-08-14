@@ -1,0 +1,193 @@
+{
+  "kittenTTS": {
+    "modelFileName": "kitten_tts_nano.tflite",
+    "modelVersion": "0.1",
+    "maxModelSizeMB": 25,
+    "supportedVoices": [
+      {
+        "voiceID": 0,
+        "name": "Female Friendly",
+        "gender": "Female",
+        "personality": "FRIENDLY_GUIDE"
+      },
+      {
+        "voiceID": 1,
+        "name": "Female Professional",
+        "gender": "Female", 
+        "personality": "PROFESSIONAL_ASSISTANT"
+      },
+      {
+        "voiceID": 2,
+        "name": "Female Warm",
+        "gender": "Female",
+        "personality": "FRIENDLY_GUIDE"
+      },
+      {
+        "voiceID": 3,
+        "name": "Female Energetic",
+        "gender": "Female",
+        "personality": "ENTHUSIASTIC_EXPLORER"
+      },
+      {
+        "voiceID": 4,
+        "name": "Male Casual",
+        "gender": "Male",
+        "personality": "CASUAL_COMPANION"
+      },
+      {
+        "voiceID": 5,
+        "name": "Male Authoritative",
+        "gender": "Male",
+        "personality": "PROFESSIONAL_ASSISTANT"
+      },
+      {
+        "voiceID": 6,
+        "name": "Male Calm",
+        "gender": "Male", 
+        "personality": "PROFESSIONAL_ASSISTANT"
+      },
+      {
+        "voiceID": 7,
+        "name": "Male Enthusiastic",
+        "gender": "Male",
+        "personality": "ENTHUSIASTIC_EXPLORER"
+      }
+    ]
+  },
+  "performanceTargets": {
+    "startupLatencyMs": 200,
+    "firstTokenLatencyMs": 350,
+    "voiceCommandLatencyMs": 150,
+    "podcastGenerationMs": 2000,
+    "maxMemoryUsageMB": 25,
+    "maxBatteryDrainPercentPerHour": 1.0
+  },
+  "audioQuality": {
+    "sampleRate": 22050,
+    "bitDepth": 16,
+    "channels": 1,
+    "audioFormat": "PCM",
+    "automotiveOptimizations": true,
+    "noiseReduction": true,
+    "dynamicRangeCompression": true
+  },
+  "voicePersonalities": {
+    "FRIENDLY_GUIDE": {
+      "displayName": "Friendly Guide",
+      "description": "Warm, welcoming, and supportive companion for your journey",
+      "defaultVoiceID": 0,
+      "speedMultiplier": 1.0,
+      "pitchMultiplier": 1.0,
+      "automotivePitchAdjustment": -0.05
+    },
+    "PROFESSIONAL_ASSISTANT": {
+      "displayName": "Professional Assistant", 
+      "description": "Clear, efficient, and authoritative voice for business travel",
+      "defaultVoiceID": 1,
+      "speedMultiplier": 1.0,
+      "pitchMultiplier": 0.95,
+      "automotivePitchAdjustment": -0.05
+    },
+    "CASUAL_COMPANION": {
+      "displayName": "Casual Companion",
+      "description": "Relaxed and conversational voice for leisure travel",
+      "defaultVoiceID": 4,
+      "speedMultiplier": 1.1,
+      "pitchMultiplier": 1.05,
+      "automotivePitchAdjustment": -0.05
+    },
+    "ENTHUSIASTIC_EXPLORER": {
+      "displayName": "Enthusiastic Explorer",
+      "description": "Energetic and excited voice for adventure travel", 
+      "defaultVoiceID": 3,
+      "speedMultiplier": 1.1,
+      "pitchMultiplier": 1.1,
+      "automotivePitchAdjustment": -0.05
+    }
+  },
+  "androidAutoSettings": {
+    "enableVoiceAnnouncements": true,
+    "maxAnnouncementDurationSeconds": 30,
+    "enableHandsFreeDiscovery": true,
+    "voiceCommandTimeoutSeconds": 5,
+    "audioFocusDucking": true,
+    "safetyCompliant": true,
+    "mediaSessionIntegration": true
+  },
+  "podcastGeneration": {
+    "targetDurationSeconds": 6,
+    "durationToleranceSeconds": 0.5,
+    "maxRetries": 3,
+    "wordsPerSecond": 3.0,
+    "enableVariationGeneration": true,
+    "variationCount": 3,
+    "contentTemplates": {
+      "RESTAURANT": [
+        "Discover {name}, a hidden culinary gem offering {description}. Perfect for food lovers seeking authentic flavors.",
+        "Hungry? Try {name}! This local favorite serves {description} that'll make your taste buds dance.",
+        "Pull over for {name}, where {description} meets incredible hospitality. A true roadside treasure."
+      ],
+      "ATTRACTION": [
+        "Don't miss {name}! This amazing {description} offers unforgettable experiences for the whole family.",
+        "Adventure awaits at {name}. Experience {description} that creates memories lasting a lifetime.", 
+        "Stop and explore {name}, featuring {description}. It's worth every minute of your detour."
+      ],
+      "OUTDOOR": [
+        "Nature lovers, meet {name}! Enjoy {description} surrounded by breathtaking natural beauty.",
+        "Escape to {name} for {description}. Connect with nature and recharge your adventure spirit.",
+        "Discover {name}, where {description} creates the perfect outdoor adventure experience."
+      ]
+    }
+  },
+  "performanceMonitoring": {
+    "enableRealTimeMonitoring": true,
+    "monitoringIntervalSeconds": 5,
+    "maxStoredRecords": 500,
+    "enableBatteryMonitoring": true,
+    "enableThermalMonitoring": true,
+    "enableMemoryMonitoring": true,
+    "alertThresholds": {
+      "criticalLatencyMs": 1000,
+      "warningLatencyMs": 500,
+      "criticalMemoryPressure": 0.85,
+      "criticalBatteryDrainPercentPerHour": 5.0,
+      "minSuccessRate": 0.90,
+      "maxThermalImpact": 0.7
+    }
+  },
+  "fallbackSettings": {
+    "enableSystemTTSFallback": true,
+    "fallbackTriggers": {
+      "kittenTTSUnavailable": true,
+      "highLatency": true,
+      "lowMemory": true,
+      "thermalThrottling": true,
+      "batteryOptimization": true
+    },
+    "autoRecovery": true,
+    "recoveryTimeoutSeconds": 30
+  },
+  "hardwareAcceleration": {
+    "enableNPUAcceleration": true,
+    "enableGPUAcceleration": true,
+    "enableCPUOptimization": true,
+    "preferredAccelerationOrder": ["NPU", "GPU", "CPU"],
+    "threadCount": "auto",
+    "useXNNPACK": true
+  },
+  "caching": {
+    "enableSynthesisCache": true,
+    "maxCacheSizeMB": 10,
+    "maxCacheEntries": 50,
+    "cacheCommonPhrases": true,
+    "preloadFrequentPhrases": [
+      "Saved to favorites",
+      "Liked", 
+      "Skipped",
+      "Next location",
+      "Previous location",
+      "Getting directions",
+      "Calling location"
+    ]
+  }
+}

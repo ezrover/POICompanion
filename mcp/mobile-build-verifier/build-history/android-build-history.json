@@ -1,0 +1,1093 @@
+{
+  "builds": [
+    {
+      "timestamp": "2025-08-10T20:33:03.041Z",
+      "platform": "android",
+      "success": false,
+      "duration": 4.276,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-10T20:59:13.203Z",
+      "platform": "android",
+      "success": false,
+      "duration": 5.829,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-10T21:44:37.396Z",
+      "platform": "android",
+      "success": false,
+      "duration": 3.583,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-10T21:44:47.734Z",
+      "platform": "android",
+      "success": false,
+      "duration": 2.69,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-10T21:52:12.591Z",
+      "platform": "android",
+      "success": false,
+      "duration": 3.25,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-10T22:05:00.108Z",
+      "platform": "android",
+      "success": true,
+      "duration": 2.174,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-10T22:05:40.605Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.434,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:06:33.243Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.998,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:11:32.480Z",
+      "platform": "android",
+      "success": true,
+      "duration": 23.449,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:18:46.317Z",
+      "platform": "android",
+      "success": true,
+      "duration": 7.694,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:21:15.874Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.464,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:22:33.238Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.39,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:25:33.055Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.395,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:27:00.665Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.355,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:30:05.253Z",
+      "platform": "android",
+      "success": true,
+      "duration": 7.064,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:37:23.238Z",
+      "platform": "android",
+      "success": true,
+      "duration": 7.725,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:45:44.365Z",
+      "platform": "android",
+      "success": true,
+      "duration": 6.572,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:48:04.355Z",
+      "platform": "android",
+      "success": false,
+      "duration": 12.8,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:50:59.567Z",
+      "platform": "android",
+      "success": true,
+      "duration": 12.71,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T01:53:16.929Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.89,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T02:01:14.696Z",
+      "platform": "android",
+      "success": false,
+      "duration": 8.215,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T02:02:08.451Z",
+      "platform": "android",
+      "success": false,
+      "duration": 5.157,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T02:02:36.991Z",
+      "platform": "android",
+      "success": true,
+      "duration": 5.451,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T02:14:55.432Z",
+      "platform": "android",
+      "success": true,
+      "duration": 6.203,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T02:16:28.699Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.332,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T02:17:09.515Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.314,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T02:26:12.668Z",
+      "platform": "android",
+      "success": true,
+      "duration": 6.738,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T02:28:11.822Z",
+      "platform": "android",
+      "success": true,
+      "duration": 6.021,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T02:32:36.692Z",
+      "platform": "android",
+      "success": true,
+      "duration": 6.023,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T02:51:02.463Z",
+      "platform": "android",
+      "success": true,
+      "duration": 6.38,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T03:01:29.205Z",
+      "platform": "android",
+      "success": false,
+      "duration": 5.809,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T03:02:35.140Z",
+      "platform": "android",
+      "success": true,
+      "duration": 7.17,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0
+    },
+    {
+      "timestamp": "2025-08-11T03:47:20.437Z",
+      "platform": "android",
+      "success": false,
+      "duration": 7.479,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T03:50:47.485Z",
+      "platform": "android",
+      "success": true,
+      "duration": 7.894,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T04:32:43.174Z",
+      "platform": "android",
+      "success": false,
+      "duration": 7.891,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-11T04:35:50.491Z",
+      "platform": "android",
+      "success": true,
+      "duration": 6.938,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T15:06:33.982Z",
+      "platform": "android",
+      "success": false,
+      "duration": 40.937,
+      "errors": [
+        "android-kotlin-compile"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T15:18:39.184Z",
+      "platform": "android",
+      "success": true,
+      "duration": 17.981,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T17:46:41.128Z",
+      "platform": "android",
+      "success": true,
+      "duration": 40.968,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T17:47:47.469Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.41,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T18:26:16.241Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.643,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T18:27:26.716Z",
+      "platform": "android",
+      "success": true,
+      "duration": 4.085,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-12T18:27:57.594Z",
+      "platform": "android",
+      "success": true,
+      "duration": 4.186,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:08:18.151Z",
+      "platform": "android",
+      "success": false,
+      "duration": 29.804,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:09:07.211Z",
+      "platform": "android",
+      "success": true,
+      "duration": 14.661,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:18:26.022Z",
+      "platform": "android",
+      "success": false,
+      "duration": 13.368,
+      "errors": [
+        "android-kotlin-compile"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:21:36.945Z",
+      "platform": "android",
+      "success": true,
+      "duration": 22.283,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:23:44.576Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.433,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:54:20.901Z",
+      "platform": "android",
+      "success": false,
+      "duration": 19.873,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T16:54:53.067Z",
+      "platform": "android",
+      "success": true,
+      "duration": 18.659,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:00:15.354Z",
+      "platform": "android",
+      "success": true,
+      "duration": 6.706,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:15:28.163Z",
+      "platform": "android",
+      "success": true,
+      "duration": 6.862,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:20:00.661Z",
+      "platform": "android",
+      "success": false,
+      "duration": 17.682,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:20:55.344Z",
+      "platform": "android",
+      "success": true,
+      "duration": 22.63,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T17:24:02.348Z",
+      "platform": "android",
+      "success": true,
+      "duration": 4.6,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:05:05.658Z",
+      "platform": "android",
+      "success": false,
+      "duration": 20.273,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:05:51.861Z",
+      "platform": "android",
+      "success": true,
+      "duration": 19.387,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:09:13.150Z",
+      "platform": "android",
+      "success": true,
+      "duration": 3.894,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:24:41.265Z",
+      "platform": "android",
+      "success": true,
+      "duration": 7.376,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:27:22.644Z",
+      "platform": "android",
+      "success": false,
+      "duration": 13.007,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:28:48.847Z",
+      "platform": "android",
+      "success": true,
+      "duration": 10.66,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:29:33.672Z",
+      "platform": "android",
+      "success": true,
+      "duration": 2.327,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:30:32.103Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.562,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:33:54.104Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.499,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:50:04.476Z",
+      "platform": "android",
+      "success": true,
+      "duration": 25.77,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:53:26.824Z",
+      "platform": "android",
+      "success": false,
+      "duration": 16.469,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:53:54.196Z",
+      "platform": "android",
+      "success": false,
+      "duration": 2.613,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:55:23.681Z",
+      "platform": "android",
+      "success": false,
+      "duration": 4.71,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:55:53.485Z",
+      "platform": "android",
+      "success": false,
+      "duration": 2.602,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:56:38.130Z",
+      "platform": "android",
+      "success": false,
+      "duration": 28.396,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T19:57:18.613Z",
+      "platform": "android",
+      "success": false,
+      "duration": 5.543,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:01:32.085Z",
+      "platform": "android",
+      "success": false,
+      "duration": 27.924,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:02:31.134Z",
+      "platform": "android",
+      "success": false,
+      "duration": 6.49,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:02:47.784Z",
+      "platform": "android",
+      "success": false,
+      "duration": 4.967,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:03:30.745Z",
+      "platform": "android",
+      "success": true,
+      "duration": 12.902,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:04:01.471Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.892,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:11:55.652Z",
+      "platform": "android",
+      "success": true,
+      "duration": 3.656,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:17:57.399Z",
+      "platform": "android",
+      "success": false,
+      "duration": 4.275,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:18:20.380Z",
+      "platform": "android",
+      "success": true,
+      "duration": 8.375,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:18:54.997Z",
+      "platform": "android",
+      "success": true,
+      "duration": 16.106,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:38:07.254Z",
+      "platform": "android",
+      "success": false,
+      "duration": 14.455,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:39:04.359Z",
+      "platform": "android",
+      "success": false,
+      "duration": 13.597,
+      "errors": [
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:42:19.524Z",
+      "platform": "android",
+      "success": false,
+      "duration": 5.958,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:42:59.470Z",
+      "platform": "android",
+      "success": true,
+      "duration": 31.943,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T20:51:28.284Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.889,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T21:05:30.076Z",
+      "platform": "android",
+      "success": true,
+      "duration": 25.689,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T21:17:24.632Z",
+      "platform": "android",
+      "success": true,
+      "duration": 2.78,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T21:18:47.391Z",
+      "platform": "android",
+      "success": true,
+      "duration": 2.771,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T21:24:41.516Z",
+      "platform": "android",
+      "success": true,
+      "duration": 7.036,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T21:28:41.865Z",
+      "platform": "android",
+      "success": true,
+      "duration": 39.631,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T21:39:22.644Z",
+      "platform": "android",
+      "success": true,
+      "duration": 42.889,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T22:16:40.513Z",
+      "platform": "android",
+      "success": true,
+      "duration": 28.22,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-13T22:23:05.880Z",
+      "platform": "android",
+      "success": true,
+      "duration": 19.89,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:18:48.153Z",
+      "platform": "android",
+      "success": true,
+      "duration": 45.999,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    }
+  ],
+  "commonErrors": {
+    "android-kotlin-compile": 18,
+    "missing-dependency": 17
+  },
+  "successRate": 80,
+  "avgBuildTime": 18.229250000000004,
+  "lastSuccessful": "2025-08-14T01:18:48.153Z",
+  "trends": {
+    "improving": false,
+    "recentFailures": 0
+  }
+}

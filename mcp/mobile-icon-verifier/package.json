@@ -1,0 +1,28 @@
+{
+  "name": "mobile-icon-verifier",
+  "version": "1.0.0",
+  "description": "MCP tool for verifying mobile app icons for correctness, dimensions, and completeness",
+  "main": "index.js",
+  "bin": {
+    "mobile-icon-verifier": "./index.js"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "mcp",
+    "mobile",
+    "icons",
+    "verification",
+    "ios",
+    "android",
+    "app-icons",
+    "quality-assurance"
+  ],
+  "author": "Claude Code MCP Tools",
+  "license": "MIT",
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
