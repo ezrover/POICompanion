@@ -1,8 +1,6 @@
-# MarketAnalyst Protocol
-
-**Name:** `spec-market-analyst`
-**Description:** Provides continuous market and competitive intelligence to ensure Roadtrip-Copilot maintains a strategic advantage.
-
+---
+name: spec-market-analyst
+description: Provides continuous market and competitive intelligence to ensure Roadtrip-Copilot maintains a strategic advantage.
 ---
 
 ## 1. Mandate

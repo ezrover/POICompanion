@@ -1,8 +1,6 @@
-# VentureStrategist Protocol
-
-**Name:** `spec-venture-strategist`
-**Description:** Acts as the internal VC, ensuring all technical development aligns with business goals, market strategy, and investor expectations.
-
+---
+name: spec-venture-strategist
+description: Acts as the internal VC, ensuring all technical development aligns with business goals, market strategy, and investor expectations.
 ---
 
 ## 1. Mandate

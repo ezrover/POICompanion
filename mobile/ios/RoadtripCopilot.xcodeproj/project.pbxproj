@@ -25,6 +25,7 @@
 		6F78901234567892 /* EnhancedDestinationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F78901234567893 /* EnhancedDestinationSelectionView.swift */; };
 		POIRESULTVIEW0000000000002 /* POIResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = POIRESULTVIEW0000000000001 /* POIResultView.swift */; };
 		7890123456789012 /* VoiceVisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7890123456789013 /* VoiceVisualizerView.swift */; };
+		MICROPHONETOGGLEBTN000002 /* MicrophoneToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = MICROPHONETOGGLEBTN000001 /* MicrophoneToggleButton.swift */; };
 		8901234567890123 /* SpeechManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901234567890124 /* SpeechManagerExtensions.swift */; };
 		9012345678901234 /* POIDiscoveryAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012345678901235 /* POIDiscoveryAgent.swift */; };
 		FEEDC0DE0000000000000002 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDC0DE0000000000000001 /* SplashScreenView.swift */; };
@@ -61,6 +62,7 @@
 		6F78901234567893 /* EnhancedDestinationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedDestinationSelectionView.swift; sourceTree = "<group>"; };
 		POIRESULTVIEW0000000000001 /* POIResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIResultView.swift; sourceTree = "<group>"; };
 		7890123456789013 /* VoiceVisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceVisualizerView.swift; sourceTree = "<group>"; };
+		MICROPHONETOGGLEBTN000001 /* MicrophoneToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneToggleButton.swift; sourceTree = "<group>"; };
 		8901234567890124 /* SpeechManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManagerExtensions.swift; sourceTree = "<group>"; };
 		9012345678901235 /* POIDiscoveryAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIDiscoveryAgent.swift; sourceTree = "<group>"; };
 		FEEDC0DE0000000000000001 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				1A2B3C4D5E6F7893 /* MainDashboardView.swift */,
 				POIRESULTVIEW0000000000001 /* POIResultView.swift */,
 				FEEDC0DE0000000000000001 /* SplashScreenView.swift */,
+				MICROPHONETOGGLEBTN000001 /* MicrophoneToggleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				POIRESULTVIEW0000000000002 /* POIResultView.swift in Sources */,
 				6F78901234567894 /* OnboardingSteps.swift in Sources */,
 				7890123456789012 /* VoiceVisualizerView.swift in Sources */,
+				MICROPHONETOGGLEBTN000002 /* MicrophoneToggleButton.swift in Sources */,
 				8901234567890123 /* SpeechManagerExtensions.swift in Sources */,
 				9012345678901234 /* POIDiscoveryAgent.swift in Sources */,
 				FEEDC0DE0000000000000002 /* SplashScreenView.swift in Sources */,

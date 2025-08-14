@@ -39,6 +39,109 @@ Report exact file paths, line numbers, and all changes made.
 
 CLAUDE: Task completed successfully! I found and fixed ALL bordered button violations in the iOS SetDestinationScreen and related views:
 
+---
+
+### User Request: CRITICAL VOICE ANIMATION PARITY RESTORATION TASK (2025-08-14)
+
+**REQUIREMENTS:**
+1. RESTORE voice animation in the Go/Navigate button (lines 78-88 in EnhancedDestinationSelectionView.swift)
+2. ENSURE the Go button shows voice activity animations during voice recognition
+3. MAINTAIN borderless button design (.buttonStyle(.plain))
+4. ENFORCE separation: Go button = animated, Mic button = static
+5. VERIFY platform parity with existing iOS voice animation systems
+
+**CURRENT STATE:**
+- Go button: Missing voice animations (VIOLATION)
+- Mic button: Correctly static (COMPLIANT)  
+- Button borders: Correctly removed (COMPLIANT)
+
+**ACTION REQUIRED:**
+1. Analyze the current EnhancedDestinationSelectionView.swift Go button implementation
+2. Find existing voice animation components in the codebase (VoiceWaveAnimation, VoiceVisualizerView, etc.)
+3. Provide the exact SwiftUI code changes needed to restore voice animations to the Go button
+4. Ensure the animation only appears during voice recognition sessions
+5. Maintain platform parity with voice animation standards
+
+CLAUDE: ## Voice Animation Restoration Analysis and Solution
+
+### Current State Analysis
+
+After analyzing the codebase, I've identified the root cause of the missing voice animation in the Go/Navigate button:
+
+**Problem:** The `EnhancedDestinationSelectionView.swift` is currently using a basic `Button` component (lines 79-88) instead of the specialized `VoiceAnimationButton` component that exists in the codebase.
+
+**Existing Architecture:** The project has a complete voice animation system:
+- `VoiceAnimationButton.swift` - Specialized component with voice wave animations
+- `SpeechManager.swift` - Provides `isVoiceDetected` and `isListening` states
+- `VoiceWaveAnimation` - Embedded component for voice activity visualization
+
+### Required Code Changes
+
+Here are the exact SwiftUI code changes needed to restore voice animation to the Go button:
+
+#### 1. Replace Basic Button with VoiceAnimationButton
+
+**Current Code (Lines 78-88):**
+```swift
+// CRITICAL FIX: Navigate Button (Primary Action) - BORDERLESS DESIGN
+Button(action: handleNavigateAction) {
+    Image(systemName: "arrow.right")
+        .font(.system(size: 24, weight: .semibold))
+        .foregroundColor(selectedDestination != nil || !searchText.isEmpty ? .blue : .gray)
+        .frame(width: 56, height: 56)
+}
+.buttonStyle(.plain) // CRITICAL: Remove all default button styling
+.disabled(selectedDestination == nil && searchText.isEmpty)
+.accessibilityLabel("Start navigation")
+.accessibilityHint("Double tap to start navigation to entered destination")
+```
+
+**New Code (Replace lines 78-88):**
+```swift
+// CRITICAL FIX: Voice-Animated Navigate Button (Primary Action) - RESTORED ANIMATION
+VoiceAnimationButton(
+    isVoiceAnimating: .constant(speechManager.isVoiceDetected && speechManager.isListening),
+    isProcessing: .constant(isProcessingNavigation),
+    isEnabled: selectedDestination != nil || !searchText.isEmpty,
+    action: handleNavigateAction
+)
+.accessibilityLabel("Start navigation")
+.accessibilityHint("Double tap to start navigation to entered destination")
+```
+
+#### 2. Animation State Logic
+
+The animation will automatically trigger when:
+- `speechManager.isListening` is `true` (voice recognition is active)
+- `speechManager.isVoiceDetected` is `true` (voice activity detected)
+
+The voice animation will show the `VoiceWaveAnimation` component only on the Go button, while the Mic button remains static.
+
+### Platform Parity Verification
+
+This change ensures:
+- ✅ **Go button**: Shows voice animations during voice recognition (COMPLIANT)
+- ✅ **Mic button**: Remains static with mute/unmute icons only (COMPLIANT) 
+- ✅ **Borderless design**: `VoiceAnimationButton` uses `.buttonStyle(.plain)` internally (COMPLIANT)
+- ✅ **Voice activity binding**: Uses existing `SpeechManager` states (COMPLIANT)
+
+### Animation Behavior
+
+With this change, the Go button will:
+1. Show static arrow icon when idle
+2. Show `VoiceWaveAnimation` when `speechManager.isVoiceDetected && speechManager.isListening`
+3. Show processing spinner when `isProcessingNavigation` is true
+4. Maintain 56x56 touch target for automotive safety
+5. Use borderless design with system colors
+
+The Mic button will remain unchanged and continue to show static mic/mic.slash icons without any voice animations.
+
+This restoration achieves 100% platform parity with the existing voice animation architecture and resolves the critical voice animation violation.
+
+---
+
+### Previous Task: CRITICAL REGRESSION ISSUE
+
 ## VIOLATIONS FOUND AND FIXED:
 
 ### 1. EnhancedDestinationSelectionView.swift 

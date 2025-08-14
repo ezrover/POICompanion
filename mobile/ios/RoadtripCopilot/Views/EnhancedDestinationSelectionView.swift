@@ -75,14 +75,39 @@ struct EnhancedDestinationSelectionView: View {
                                 }
                             }
                         
-                        // CRITICAL FIX: Navigate Button (Primary Action) - BORDERLESS DESIGN
+                        // CRITICAL FIX: Voice-Animated Navigate Button (Primary Action) - RESTORED ANIMATION
                         Button(action: handleNavigateAction) {
-                            Image(systemName: "arrow.right")
-                                .font(.system(size: 24, weight: .semibold))
-                                .foregroundColor(selectedDestination != nil || !searchText.isEmpty ? .blue : .gray)
-                                .frame(width: 56, height: 56)
+                            ZStack {
+                                if speechManager.isVoiceDetected && speechManager.isListening {
+                                    // Voice wave animation
+                                    HStack(spacing: 2) {
+                                        ForEach(0..<5, id: \.self) { index in
+                                            RoundedRectangle(cornerRadius: 1.5)
+                                                .fill(Color.blue)
+                                                .frame(width: 3, height: 3 + CGFloat.random(in: 0...15))
+                                                .animation(
+                                                    .easeInOut(duration: 0.4)
+                                                    .repeatForever(autoreverses: true)
+                                                    .delay(Double(index) * 0.1),
+                                                    value: speechManager.isVoiceDetected
+                                                )
+                                        }
+                                    }
+                                } else if isProcessingNavigation {
+                                    // Processing spinner
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                                        .scaleEffect(0.8)
+                                } else {
+                                    // Static arrow icon
+                                    Image(systemName: "arrow.right")
+                                        .font(.system(size: 24, weight: .semibold))
+                                        .foregroundColor(selectedDestination != nil || !searchText.isEmpty ? .blue : .gray)
+                                }
+                            }
+                            .frame(width: 56, height: 56)
                         }
-                        .buttonStyle(.plain) // CRITICAL: Remove all default button styling
+                        .buttonStyle(.plain)
                         .disabled(selectedDestination == nil && searchText.isEmpty)
                         .accessibilityLabel("Start navigation")
                         .accessibilityHint("Double tap to start navigation to entered destination")

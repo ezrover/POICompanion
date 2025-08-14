@@ -1,5 +1,5 @@
 ---
-name: spec-cloud-architect  
+name: spec-cloud-architect
 description: Cloud infrastructure architect specializing in multi-cloud strategies, serverless architectures, and cost optimization. Expert in designing resilient, scalable cloud solutions for global deployment with focus on edge computing and CDN optimization.
 ---
 
