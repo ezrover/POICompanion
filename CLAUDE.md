@@ -251,47 +251,46 @@ Shall I create this agent? (yes/no)
 - ✅ **ALWAYS** use MCP tools for ALL operations
 - 🚫 **NO EXCEPTIONS** - Even "simple" commands must use MCP tools
 
-### 🔧 Local MCP Tools Configuration
+### 🔧 Unified MCP Server Configuration
 
-The workspace includes 24 specialized MCP tools configured in `.claude/settings.local.json`:
+**🚨 MAJOR CHANGE: All 24 tools are now unified into a single MCP server following Model Context Protocol standards.**
 
-**Mobile Development Tools (MANDATORY - NEVER USE DIRECT COMMANDS):**
-- `mobile-build-verifier`: **PRIMARY BUILD TOOL** - Use for ALL iOS/Android builds
-  - ❌ PROHIBITED: `xcodebuild`, `./gradlew build`, `swift build`
-  - ✅ REQUIRED: `node /mcp/mobile-build-verifier/index.js <ios|android|both>`
-- `mobile-test-runner`: Executes mobile app tests with detailed reporting
-- `mobile-linter`: Code quality analysis and style enforcement
-- `mobile-icon-generator`: SVG to app icon converter (32 sizes)
-- `mobile-icon-verifier`: Icon verification with completeness scoring
-- `mobile-file-manager`: Mobile project file operations
-- `android-project-manager`: Android-specific project management (called by mobile-build-verifier)
-- `ios-project-manager`: iOS-specific project management (called by mobile-build-verifier)
+**POI Companion MCP Server (MANDATORY - ONLY ACCESS METHOD):**
+- **Location**: `/mcp/dist/index.js` (TypeScript compiled to JavaScript)
+- **Protocol**: Official Model Context Protocol (MCP) v0.6.0
+- **Access**: Via Claude Desktop MCP interface ONLY
+- **Configuration**: Add to `~/.claude/claude_desktop_config.json`
 
-**Code & Architecture Tools:**
-- `code-generator`: Generates boilerplate code and components
-- `performance-profiler`: Analyzes app performance and optimization
-- `accessibility-checker`: Validates WCAG compliance
-- `design-system-manager`: Manages design system components
-- `build-master`: Cross-platform build coordination
-- `model-optimizer`: AI model optimization for mobile
+**Available MCP Tools (14 primary tools, all 24 legacy tools integrated):**
 
-**Development & Testing Tools:**
-- `test-runner`: General test execution and reporting
-- `ui-generator`: User interface code generation
-- `schema-validator`: Data schema validation and verification
+**Mobile Development Tools:**
+- `mobile_build_verify`: iOS/Android builds with intelligent error analysis
+- `mobile_test_run`: Comprehensive test execution with coverage reporting  
+- `mobile_lint_check`: Code quality analysis and style enforcement
+- `android_emulator_test`: Automated UI validation and performance monitoring
+- `ios_simulator_test`: Accessibility validation and CarPlay testing
 
-**Project Management & Analysis Tools:**
-- `task-manager`: Manages and tracks structured development tasks
-- `spec-generator`: Generates technical specifications from requirements
-- `agent-registry-manager`: Monitors and maintains Claude Code agent registry
-- `project-scaffolder`: Creates project structures and boilerplate
-- `doc-processor`: Document analysis and processing
-- `market-analyzer`: Market research and competitive analysis
+**Code Quality & Architecture Tools:**
+- `code_generate`: Boilerplate code and component templates
+- `performance_profile`: App performance analysis and optimization
+- `accessibility_check`: WCAG compliance validation
+- `design_system_manage`: Component consistency and validation
 
-**Integration & Utilities:**
-- `dependency-manager`: Manages project dependencies and versions
+**Project Management Tools:**
+- `task_manage`: Structured development task tracking
+- `dependency_manage`: Project dependencies and version control
+- `build_coordinate`: Cross-platform build automation
+- `doc_process`: Document analysis and processing
+- `spec_generate`: Technical specification creation
 
-All tools are pre-configured and accessible via Node.js execution from `/mcp/` directory.
+**❌ DEPRECATED: Individual Node.js Tools (REPLACED BY MCP SERVER):**
+- ~~`mobile-build-verifier`~~ → Use `mobile_build_verify` MCP tool
+- ~~`mobile-test-runner`~~ → Use `mobile_test_run` MCP tool
+- ~~`android-emulator-manager`~~ → Use `android_emulator_test` MCP tool
+- ~~`ios-simulator-manager`~~ → Use `ios_simulator_test` MCP tool
+- ~~All other 20 tools~~ → Integrated into unified MCP server
+
+**NEW ACCESS METHOD:** All tools accessible ONLY via Claude Desktop MCP interface using unified server at `/mcp/dist/index.js`
 
 ```bash
 git commit -m "[type]: [description]
@@ -468,37 +467,59 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 - Legal docs → `spec-legal-counsel` + `spec-regulatory-compliance-specialist`
 - Global expansion → `spec-localization-global-expert` + `spec-partnership-strategist`
 
-## Development Commands (🚨 MANDATORY MCP TOOL USAGE)
+## Development Commands (🚨 UNIFIED MCP SERVER - MANDATORY)
 
-**⚠️ IMPORTANT: USE MCP TOOLS, NOT DIRECT BASH COMMANDS**
+**⚠️ CRITICAL: ALL TOOLS NOW ACCESSED VIA UNIFIED MCP SERVER**
 
-**Build Verification (ALWAYS USE THIS FOR BUILDS):**
-```bash
-# Use mobile-build-verifier MCP tool instead of manual commands
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-build-verifier/index.js ios        # Build iOS
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-build-verifier/index.js android    # Build Android  
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-build-verifier/index.js both       # Build both
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-build-verifier/index.js ios --clean --fix  # Clean build with auto-fixes
+**MCP Server Setup (REQUIRED FOR CLAUDE DESKTOP):**
+```json
+// Add to ~/.claude/claude_desktop_config.json
+{
+  "mcpServers": {
+    "poi-companion": {
+      "command": "node",
+      "args": ["/Users/naderrahimizad/Projects/AI/POICompanion/mcp/dist/index.js"]
+    }
+  }
+}
 ```
 
-**Testing (USE MCP TOOL):**
+**Build Verification (USE MCP SERVER TOOLS):**
+- Use `mobile_build_verify` tool via Claude Desktop MCP interface
+- Parameters: `{"platform": "ios", "clean": true, "autoFix": true}`
+- Parameters: `{"platform": "android", "detailed": true}`
+- Parameters: `{"platform": "both", "clean": true, "autoFix": true}`
+
+**Testing (USE MCP SERVER TOOLS):**
+- Use `mobile_test_run` tool via Claude Desktop MCP interface  
+- Parameters: `{"platform": "ios", "testType": "all", "coverage": true}`
+- Parameters: `{"platform": "android", "testType": "ui"}`
+
+**Android Emulator Testing:**
+- Use `android_emulator_test` tool via Claude Desktop MCP interface
+- Parameters: `{"action": "lost-lake-test"}`
+- Parameters: `{"action": "validate-components"}`
+- Parameters: `{"action": "monitor-performance", "duration": 60}`
+
+**iOS Simulator Testing:**
+- Use `ios_simulator_test` tool via Claude Desktop MCP interface
+- Parameters: `{"action": "lost-lake-test"}`
+- Parameters: `{"action": "validate-buttons"}`
+- Parameters: `{"action": "test-accessibility", "voiceOver": true}`
+
+**❌ DEPRECATED Individual Tool Commands (REPLACED BY MCP SERVER):**
 ```bash
-# Use mobile-test-runner MCP tool
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-test-runner/index.js ios
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-test-runner/index.js android
+# These are now handled by the unified MCP server
+# node /mcp/mobile-build-verifier/index.js (DEPRECATED)
+# node /mcp/mobile-test-runner/index.js (DEPRECATED)
+# node /mcp/android-emulator-manager/index.js (DEPRECATED)
+# node /mcp/ios-simulator-manager/index.js (DEPRECATED)
 ```
 
 **❌ PROHIBITED Manual Commands (NEVER USE - IMMEDIATE TASK FAILURE):**
 ```bash
-# iOS (only if MCP tool fails)
-cd ios && xcodebuild -scheme Roadtrip-Copilot build
-cd ios && open Roadtrip-Copilot.xcodeproj
-cd ios && xcodebuild test -scheme Roadtrip-Copilot
-
-# Android (only if MCP tool fails)
-cd android && ./gradlew assembleDebug
-cd android && ./gradlew installDebug
-cd android && ./gradlew test
+# Direct build commands (ABSOLUTELY FORBIDDEN)
+xcodebuild, ./gradlew, swift, kotlin, npm run build
 ```
 
 **Model Preparation**:

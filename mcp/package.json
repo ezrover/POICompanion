@@ -1,23 +1,44 @@
 {
-  "name": "mcp-server",
+  "name": "poi-companion-mcp-server",
   "version": "1.0.0",
-  "description": "Centralized MCP server for Roadtrip-Copilot tools",
+  "description": "POI Companion MCP Server - Comprehensive mobile development tools for iOS/Android",
   "main": "dist/index.js",
-  "scripts": {
-    "start": "ts-node src/index.ts",
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "poi-companion-mcp": "dist/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "dev": "ts-node --esm src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mobile-development",
+    "ios",
+    "android",
+    "testing",
+    "build-tools"
+  ],
+  "author": "POI Companion Team",
+  "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
   "devDependencies": {
     "@types/node": "^20.14.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   },
   "dependencies": {
-    "@model-context-protocol/core": "^0.0.1",
-    "@model-context-protocol/server": "^0.0.1"
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "zod": "^3.23.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

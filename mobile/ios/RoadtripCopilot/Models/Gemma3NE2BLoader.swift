@@ -156,12 +156,20 @@ class Gemma3NE2BLoader {
         // Simulate intelligent responses with potential tool calls
         if lowercased.contains("tell me about") && lowercased.contains("place") {
             // Extract location and trigger POI search
-            let location = input.replacingOccurrences(of: "tell me about this place:", with: "")
-                .trimmingCharacters(in: .whitespaces)
+            let location = input.replacingOccurrences(of: "tell me about this place:", with: "", options: .caseInsensitive)
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Escape the location string for JSON
+            let escapedLocation = location
+                .replacingOccurrences(of: "\\", with: "\\\\")
+                .replacingOccurrences(of: "\"", with: "\\\"")
+                .replacingOccurrences(of: "\n", with: "\\n")
+                .replacingOccurrences(of: "\r", with: "\\r")
+                .replacingOccurrences(of: "\t", with: "\\t")
             
             // Return a function call for POI search
             return """
-            {"name": "search_poi", "parameters": {"location": "\(location)", "category": "attraction"}}
+            {"name": "search_poi", "parameters": {"location": "\(escapedLocation)", "category": "attraction"}}
             """
         }
         
@@ -337,12 +345,25 @@ struct SimpleFunctionCall {
         
         // Look for JSON function call pattern
         guard let jsonStart = trimmed.range(of: "{"),
-              let jsonEnd = trimmed.range(of: "}", options: .backwards),
-              jsonStart.lowerBound <= jsonEnd.lowerBound else {
+              let jsonEnd = trimmed.range(of: "}", options: .backwards) else {
             return nil
         }
         
-        let jsonString = String(trimmed[jsonStart.lowerBound...jsonEnd.upperBound])
+        // Ensure valid range bounds
+        guard jsonStart.lowerBound < jsonEnd.upperBound else {
+            return nil
+        }
+        
+        // Safely extract substring
+        let startIndex = jsonStart.lowerBound
+        let endIndex = jsonEnd.upperBound
+        
+        // Check if indices are valid
+        guard startIndex >= trimmed.startIndex && endIndex <= trimmed.endIndex else {
+            return nil
+        }
+        
+        let jsonString = String(trimmed[startIndex...endIndex])
         
         guard let data = jsonString.data(using: .utf8),
               let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
