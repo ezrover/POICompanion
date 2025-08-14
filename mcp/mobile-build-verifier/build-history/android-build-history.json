@@ -1,36 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T02:01:14.696Z",
-      "platform": "android",
-      "success": false,
-      "duration": 8.215,
-      "errors": [
-        "android-kotlin-compile",
-        "missing-dependency"
-      ],
-      "fixes": [
-        "Check Kotlin syntax and imports in recently modified files",
-        "Install dependencies: ./gradlew build --refresh-dependencies"
-      ],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T02:02:08.451Z",
-      "platform": "android",
-      "success": false,
-      "duration": 5.157,
-      "errors": [
-        "android-kotlin-compile",
-        "missing-dependency"
-      ],
-      "fixes": [
-        "Check Kotlin syntax and imports in recently modified files",
-        "Install dependencies: ./gradlew build --refresh-dependencies"
-      ],
-      "warnings": 0
-    },
-    {
       "timestamp": "2025-08-11T02:02:36.991Z",
       "platform": "android",
       "success": true,
@@ -1215,19 +1185,51 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T16:00:23.743Z",
+      "platform": "android",
+      "success": false,
+      "duration": 34.303,
+      "errors": [
+        "android-gradle",
+        "android-kotlin-compile",
+        "missing-dependency",
+        "compilation-error"
+      ],
+      "fixes": [
+        "Run: cd mobile/android && ./gradlew --stop && ./gradlew clean",
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies",
+        "Check syntax and imports in recent changes"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T16:03:42.890Z",
+      "platform": "android",
+      "success": true,
+      "duration": 45.862,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {
-    "android-kotlin-compile": 24,
-    "missing-dependency": 22,
-    "android-gradle": 1,
-    "compilation-error": 1
+    "android-kotlin-compile": 25,
+    "missing-dependency": 23,
+    "android-gradle": 2,
+    "compilation-error": 2
   },
   "successRate": 75,
-  "avgBuildTime": 2.9732000000000003,
-  "lastSuccessful": "2025-08-14T15:48:21.096Z",
+  "avgBuildTime": 5.9226,
+  "lastSuccessful": "2025-08-14T16:03:42.890Z",
   "trends": {
-    "improving": true,
-    "recentFailures": 1
+    "improving": false,
+    "recentFailures": 2
   }
 }

@@ -69,24 +69,33 @@ class POICarouselViewModel(application: Application) : AndroidViewModel(applicat
             val photoTool = toolRegistry.getTool("fetch_poi_photo")
             if (photoTool != null) {
                 try {
-                    val photoResult = photoTool.execute(
+                    val resultJson = photoTool.execute(
                         mapOf(
                             "poi_name" to poi.name,
                             "location" to "Lost Lake, Oregon"
                         )
                     )
                     
-                    Log.d(TAG, "📸 Photo fetch result for ${poi.name}: ${photoResult["status"]}")
-                    
-                    // Store photo URL or cached path
-                    val photoUrl = photoResult["photo_url"] as? String
-                    if (photoUrl != null) {
-                        photos[poi.id] = photoUrl
+                    // Parse JSON string result
+                    val result = try {
+                        org.json.JSONObject(resultJson)
+                    } catch (e: Exception) {
+                        null
                     }
                     
-                    // Log execution time
-                    val executionTime = photoResult["execution_time_ms"] as? Long ?: 0
-                    Log.d(TAG, "   Execution time: ${executionTime}ms")
+                    if (result != null) {
+                        Log.d(TAG, "📸 Photo fetch result for ${poi.name}: ${result.optString("status")}")
+                        
+                        // Store photo URL
+                        val photoUrl = result.optString("photo_url")
+                        if (photoUrl.isNotEmpty()) {
+                            photos[poi.id] = photoUrl
+                        }
+                        
+                        // Log execution time
+                        val executionTime = result.optLong("execution_time_ms", 0)
+                        Log.d(TAG, "   Execution time: ${executionTime}ms")
+                    }
                     
                 } catch (e: Exception) {
                     Log.e(TAG, "❌ Failed to fetch photo for ${poi.name}", e)
@@ -97,7 +106,7 @@ class POICarouselViewModel(application: Application) : AndroidViewModel(applicat
             val reviewTool = toolRegistry.getTool("fetch_social_reviews")
             if (reviewTool != null) {
                 try {
-                    val reviewResult = reviewTool.execute(
+                    val resultJson = reviewTool.execute(
                         mapOf(
                             "poi_name" to poi.name,
                             "location" to "Lost Lake, Oregon",
@@ -105,34 +114,41 @@ class POICarouselViewModel(application: Application) : AndroidViewModel(applicat
                         )
                     )
                     
-                    @Suppress("UNCHECKED_CAST")
-                    val selectedReviews = reviewResult["selected_reviews"] as? List<Map<String, Any>>
-                    
-                    selectedReviews?.let { reviewMaps ->
-                        val mappedReviews = reviewMaps.mapNotNull { reviewMap ->
-                            try {
-                                Review(
-                                    author = reviewMap["author"] as String,
-                                    rating = (reviewMap["rating"] as Number).toDouble(),
-                                    text = reviewMap["text"] as String,
-                                    date = reviewMap["date"] as? String ?: "",
-                                    source = reviewMap["source"] as? String ?: ""
-                                )
-                            } catch (e: Exception) {
-                                null
-                            }
-                        }
-                        
-                        reviews[poi.id] = mappedReviews
-                        
-                        Log.d(TAG, "📝 Fetched ${mappedReviews.size} reviews for ${poi.name}")
-                        Log.d(TAG, "   Average rating: ${reviewResult["average_rating"]}")
-                        Log.d(TAG, "   Podcast ready: ${reviewResult["podcast_ready"]}")
+                    // Parse JSON string result
+                    val result = try {
+                        org.json.JSONObject(resultJson)
+                    } catch (e: Exception) {
+                        null
                     }
                     
-                    // Log execution time
-                    val executionTime = reviewResult["execution_time_ms"] as? Long ?: 0
-                    Log.d(TAG, "   Execution time: ${executionTime}ms")
+                    if (result != null) {
+                        val selectedReviewsArray = result.optJSONArray("selected_reviews")
+                        
+                        if (selectedReviewsArray != null) {
+                            val mappedReviews = mutableListOf<Review>()
+                            
+                            for (i in 0 until selectedReviewsArray.length()) {
+                                val reviewObj = selectedReviewsArray.getJSONObject(i)
+                                try {
+                                    mappedReviews.add(Review(
+                                        author = reviewObj.getString("author"),
+                                        rating = reviewObj.getDouble("rating"),
+                                        text = reviewObj.getString("text"),
+                                        date = reviewObj.optString("date", ""),
+                                        source = reviewObj.optString("source", "")
+                                    ))
+                                } catch (e: Exception) {
+                                    // Skip invalid review
+                                }
+                            }
+                            
+                            reviews[poi.id] = mappedReviews
+                            
+                            Log.d(TAG, "📝 Fetched ${mappedReviews.size} reviews for ${poi.name}")
+                            Log.d(TAG, "   Average rating: ${result.optDouble("average_rating", 0.0)}")
+                            Log.d(TAG, "   Podcast ready: ${result.optBoolean("podcast_ready", false)}")
+                        }
+                    }
                     
                 } catch (e: Exception) {
                     Log.e(TAG, "❌ Failed to fetch reviews for ${poi.name}", e)
