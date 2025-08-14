@@ -1266,26 +1266,46 @@ class POICompanionMCPServer {
       verbose = false
     } = args;
     
-    const toolPath = path.join(__dirname, '../e2e-ui-test-runner/index.js');
+    const basePath = this.projectRoot;
+    const iosTestPath = path.join(basePath, 'mobile', 'ios', 'e2e-ui-tests');
+    const androidTestPath = path.join(basePath, 'mobile', 'android', 'e2e-ui-tests');
     
-    let cmd = `node "${toolPath}" test ${platform}`;
-    if (critical) cmd += ' --critical';
-    if (skipBuild) cmd += ' --skip-build';
-    if (skipSimulator) cmd += ' --skip-simulator';
-    if (skipEmulator) cmd += ' --skip-emulator';
-    if (failFast) cmd += ' --fail-fast';
-    if (verbose) cmd += ' --verbose';
+    let results: string[] = [];
+    let hasErrors = false;
 
     try {
-      const { stdout, stderr } = await execAsync(cmd, { 
-        cwd: this.projectRoot,
-        timeout: 600000 // 10 minute timeout for E2E tests
-      });
+      // iOS tests
+      if (platform === 'ios' || platform === 'both') {
+        if (!skipSimulator) {
+          await execAsync('xcrun simctl list devices booted', { cwd: basePath });
+        }
+        if (!skipBuild) {
+          const iosBuildCmd = 'xcodebuild -scheme Roadtrip-Copilot build-for-testing';
+          await execAsync(iosBuildCmd, { cwd: path.join(basePath, 'mobile', 'ios'), timeout: 300000 });
+        }
+        const iosTestCmd = `xcodebuild test -scheme E2EUITests ${critical ? '-only-testing:E2EUITests/CriticalTests' : ''} ${verbose ? '' : '-quiet'}`;
+        const { stdout, stderr } = await execAsync(iosTestCmd, { cwd: iosTestPath, timeout: 600000 });
+        results.push(`iOS Tests:\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`);
+      }
+      
+      // Android tests
+      if (platform === 'android' || platform === 'both') {
+        if (!skipEmulator) {
+          await execAsync('adb devices', { cwd: basePath });
+        }
+        if (!skipBuild) {
+          const androidBuildCmd = './gradlew assembleDebugAndroidTest';
+          await execAsync(androidBuildCmd, { cwd: path.join(basePath, 'mobile', 'android'), timeout: 300000 });
+        }
+        const androidTestCmd = `./gradlew connectedAndroidTest ${critical ? '--tests="*.CriticalTests"' : ''} ${failFast ? '--fail-fast' : ''}`;
+        const { stdout, stderr } = await execAsync(androidTestCmd, { cwd: androidTestPath, timeout: 600000 });
+        results.push(`Android Tests:\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`);
+      }
       
       return {
         content: [{
           type: 'text',
-          text: `E2E UI Test Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+          text: `E2E UI Test Results:\n\n${results.join('\n\n')}`
         }]
       };
     } catch (error: any) {
