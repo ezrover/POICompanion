@@ -9,6 +9,10 @@ Create a comprehensive button design system that ensures 100% parity between iOS
 ## CRITICAL REGRESSION ISSUE
 We've had multiple instances where circular borders (clipShape(Circle())) keep reappearing on iOS buttons after being removed. This MUST be prevented permanently.
 
+Replace mock POI data with real POI discovery system. Currently, iOS ToolRegistry.swift and Android ToolRegistry.kt return hardcoded mock responses instead of real POI data. Need to implement LLM-based local POI analysis using fully integrated Gemma model with online API failover when LLM lacks data. Maintain platform parity and automotive safety compliance.
+
+CLAUDE: Completed comprehensive spec-driven implementation plan for real POI discovery system. Created detailed requirements, technical design, and 14-task implementation plan spanning 4 weeks with 334 hours total effort. Plan addresses mock data elimination, Gemma-3N LLM integration, API failover system (Google Places/OSM/Yelp), platform parity enforcement, and automotive safety compliance. Key deliverables: POI Discovery Orchestrator, Enhanced Tool Registry upgrade, cache management, performance optimization, and comprehensive testing. Ready for implementation with specialized agent coordination. All specifications saved in /specs/real-poi-discovery/ directory.
+
 CRITICAL: Find and Fix iOS SetDestinationScreen Bordered Buttons
 
 The user reports that the SetDestinationScreen still has bordered buttons with '->' and 'Mic' icons when running in Xcode. We need to find and fix these immediately.
