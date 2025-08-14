@@ -69,21 +69,21 @@ struct EnhancedDestinationSelectionView: View {
                                 }
                             }
                         
-                        // CRITICAL FIX: Navigate Button (Primary Action) - ALWAYS VISIBLE  
+                        // CRITICAL FIX: Navigate Button (Primary Action) - BORDERLESS DESIGN
                         Button(action: handleNavigateAction) {
                             ZStack {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(selectedDestination != nil || !searchText.isEmpty ? Color.blue : Color.gray)
+                                // BORDERLESS DESIGN: Remove background shape - icon-only button
+                                Color.clear
                                     .frame(width: 56, height: 56)
                                 
                                 if isProcessingNavigation {
                                     ProgressView()
-                                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                                         .scaleEffect(0.8)
                                 } else {
                                     Image(systemName: "arrow.right")
                                         .font(.system(size: 24, weight: .semibold))
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.blue) // Use system color for borderless design
                                 }
                             }
                         }
@@ -91,16 +91,16 @@ struct EnhancedDestinationSelectionView: View {
                         .accessibilityLabel("Start navigation")
                         .accessibilityHint("Double tap to start navigation to entered destination")
                         
-                        // CRITICAL FIX: Microphone Toggle Button (Secondary Action) - ALWAYS VISIBLE
+                        // CRITICAL FIX: Microphone Toggle Button (Secondary Action) - BORDERLESS DESIGN
                         Button(action: handleMicrophoneToggle) {
                             ZStack {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(isListening ? Color.green : Color.gray)
+                                // BORDERLESS DESIGN: Remove background shape - icon-only button
+                                Color.clear
                                     .frame(width: 56, height: 56)
                                 
                                 Image(systemName: isListening ? "mic.fill" : "mic")
                                     .font(.system(size: 24, weight: .medium))
-                                    .foregroundColor(.white)
+                                    .foregroundColor(isListening ? .green : .primary) // Use system colors for borderless design
                             }
                         }
                         .accessibilityLabel("Microphone")

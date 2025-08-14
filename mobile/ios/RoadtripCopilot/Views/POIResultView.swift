@@ -150,10 +150,7 @@ struct POIResultView: View {
                                 .foregroundColor(.blue)
                                 .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .stroke(Color.blue, lineWidth: 2)
-                                )
+                                // BORDERLESS DESIGN: Remove stroke border to comply with BORDERLESS BUTTON ENFORCEMENT
                         }
                     }
                 }

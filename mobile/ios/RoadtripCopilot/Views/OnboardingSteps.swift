@@ -92,7 +92,7 @@ struct DestinationStepView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
-                .background(Color(.systemBackground).opacity(0.9))
+                .background(Color.clear)
                 .cornerRadius(12)
                 .padding(.horizontal)
             }
@@ -160,7 +160,7 @@ struct RadiusStepView: View {
             }
             .padding(.vertical, 30)
             .frame(maxWidth: .infinity)
-            .background(Color(.systemBackground).opacity(0.9))
+            .background(Color.clear)
             .cornerRadius(20)
             .padding(.horizontal)
             
@@ -179,10 +179,7 @@ struct RadiusStepView: View {
                             .background(
                                 RoundedRectangle(cornerRadius: 12)
                                     .fill(userPreferences.distanceUnit == unit ? Color.blue : Color.clear)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 12)
-                                            .stroke(Color.blue, lineWidth: 2)
-                                    )
+                                // BORDERLESS DESIGN: Remove stroke overlay to comply with BORDERLESS BUTTON ENFORCEMENT
                             )
                     }
                 }
@@ -219,7 +216,7 @@ struct RadiusStepView: View {
                 }
             }
             .padding()
-            .background(Color(.systemBackground).opacity(0.9))
+            .background(Color.clear)
             .cornerRadius(16)
             .padding(.horizontal)
             
@@ -253,7 +250,7 @@ struct RadiusStepView: View {
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .infinity)
                     .frame(height: 50)
-                    .background(Color(.systemBackground).opacity(0.9))
+                    .background(Color.clear)
                     .cornerRadius(12)
                 }
                 
@@ -325,7 +322,7 @@ struct CategoryStepView: View {
                         .foregroundColor(.secondary)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
-                        .background(Color(.systemBackground).opacity(0.9))
+                        .background(Color.clear)
                         .cornerRadius(20)
                 }
                 
@@ -380,7 +377,7 @@ struct CategoryStepView: View {
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .infinity)
                     .frame(height: 50)
-                    .background(Color(.systemBackground).opacity(0.9))
+                    .background(Color.clear)
                     .cornerRadius(12)
                 }
                 
@@ -428,11 +425,8 @@ struct CategoryButton: View {
             .frame(height: 80)
             .background(
                 RoundedRectangle(cornerRadius: 12)
-                    .fill(isSelected ? Color.blue : Color(.systemBackground).opacity(0.9))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 12)
-                            .stroke(Color.blue, lineWidth: isSelected ? 0 : 1)
-                    )
+                    .fill(isSelected ? Color.blue : Color.clear)
+                // BORDERLESS DESIGN: Remove stroke overlay to comply with BORDERLESS BUTTON ENFORCEMENT
             )
         }
         .scaleEffect(isSelected ? 1.05 : 1.0)
@@ -517,7 +511,7 @@ struct ConfirmationStepView: View {
                     .foregroundColor(.secondary)
                     .frame(maxWidth: .infinity)
                     .frame(height: 50)
-                    .background(Color(.systemBackground).opacity(0.9))
+                    .background(Color.clear)
                     .cornerRadius(12)
                 }
             }
@@ -560,7 +554,7 @@ struct SettingsSummaryCard: View {
             Spacer()
         }
         .padding()
-        .background(Color(.systemBackground).opacity(0.9))
+        .background(Color.clear)
         .cornerRadius(16)
     }
 }
