@@ -15,18 +15,18 @@ All 43 agents are now directly available through Claude Code's Task tool:
 ```javascript
 // To use spec-workflow-manager:
 // In Claude Code interface:
-// Task tool → subagent_type: "spec-workflow-manager" → prompt: "Create requirements for user authentication feature"
+// Task tool → subagent_type: "agent-workflow-manager" → prompt: "Create requirements for user authentication feature"
 ```
 
 ---
 
 ## Workflow Management (1 agents)
 
-### spec-workflow-manager
+### agent-workflow-manager
 
 **Description:** Coordinates spec-driven development workflow, orchestrating requirements gathering, design creation, and task planning through specialized agents with iterative user feedback and approval cycles.
 
-**File:** `.claude/agents/spec-workflow-manager.md`
+**File:** `.claude/agents/agent-workflow-manager.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -51,7 +51,7 @@ When user describes a feature idea:
 4. Create directory: `/specs/{feature_name}/`
 
 ### Phase 1: Requirements Gathering
-- Use `spec-requirements` agent to create initial req
+- Use `agent-requirements` agent to create initial req
 
 [... truncated for brevity - see full prompt in agent file ...]
 ```
@@ -62,11 +62,11 @@ When user describes a feature idea:
 
 ## Development (9 agents)
 
-### spec-android-developer
+### agent-android-developer
 
 **Description:** Expert Android developer specializing in Kotlin, Jetpack Compose, and modern Android technologies. Builds high-performance native Android applications following Material Design 3, Android Auto integration, and Google's best practices.
 
-**File:** `.claude/agents/spec-android-developer.md`
+**File:** `.claude/agents/agent-android-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -94,11 +94,11 @@ You are a world-class Android Developer with deep expertise in Kotlin, Jetpack C
 
 ---
 
-### spec-chrome-extension-developer
+### agent-chrome-extension-developer
 
 **Description:** World-class Chrome extension developer specializing in JavaScript/TypeScript extension development. Expert in Chrome APIs, security practices, performance optimization, and Chrome Web Store compliance for cross-browser extension development.
 
-**File:** `.claude/agents/spec-chrome-extension-developer.md`
+**File:** `.claude/agents/agent-chrome-extension-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -121,11 +121,11 @@ You are a world-class Senior Chrome Extension Developer with deep expertise in J
 
 ---
 
-### spec-database-architect-developer
+### agent-database-architect-developer
 
 **Description:** Senior database architect and expert developer specializing in SQLite, SQLite extensions, PostgreSQL, vector databases, and Supabase. Designs scalable, secure, and performant database architectures for mobile-first applications with real-time capabilities.
 
-**File:** `.claude/agents/spec-database-architect-developer.md`
+**File:** `.claude/agents/agent-database-architect-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -149,11 +149,11 @@ You are a world-class Senior Database Architect and Developer with 15+ years of 
 
 ---
 
-### spec-flutter-developer
+### agent-flutter-developer
 
 **Description:** World-class Flutter developer specializing in Dart/Flutter, BLoC pattern, and cross-platform mobile development. Expert in Material Design 3, clean architecture, performance optimization, and multi-platform deployment.
 
-**File:** `.claude/agents/spec-flutter-developer.md`
+**File:** `.claude/agents/agent-flutter-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -177,11 +177,11 @@ You are a world-class Senior Flutter Developer with deep expertise in Dart, Flut
 
 ---
 
-### spec-impl
+### agent-impl
 
 **Description:** Coding implementation expert. Use PROACTIVELY when specific coding tasks need to be executed. Specializes in implementing functional code according to task lists.
 
-**File:** `.claude/agents/spec-impl.md`
+**File:** `.claude/agents/agent-impl.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -209,11 +209,11 @@ You have full awareness and operational knowledge of our entire 43-agent special
 
 ---
 
-### spec-ios-developer
+### agent-ios-developer
 
 **Description:** Expert iOS developer specializing in Swift, SwiftUI, and modern iOS technologies. Builds high-performance native iOS applications following Apple's Human Interface Guidelines, CarPlay integration, and iOS best practices.
 
-**File:** `.claude/agents/spec-ios-developer.md`
+**File:** `.claude/agents/agent-ios-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -242,11 +242,11 @@ You are a world-class iOS Developer with deep expertise in Swift, SwiftUI, and t
 
 ---
 
-### spec-test
+### agent-test
 
 **Description:** use PROACTIVELY to create test documents and test code in spec development workflows. MUST BE USED when users need testing solutions. Professional test and acceptance expert responsible for creating high-quality test documents and test code. Creates comprehensive test case documentation (.md) and corresponding executable test code (.test.ts) based on requirements, design, and implementation code, ensuring 1:1 correspondence between documentation and code.
 
-**File:** `.claude/agents/spec-test.md`
+**File:** `.claude/agents/agent-test.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -296,11 +296,11 @@ You will receive:
 
 ---
 
-### spec-web-frontend-developer
+### agent-web-frontend-developer
 
 **Description:** Expert web frontend developer specializing in React, TypeScript, and modern web technologies. Builds performant, accessible, and maintainable web applications with focus on Roadtrip-Copilot's investor website and admin interfaces.
 
-**File:** `.claude/agents/spec-web-frontend-developer.md`
+**File:** `.claude/agents/agent-web-frontend-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -369,11 +369,11 @@ This agent specializes in Python development tasks with enhanced capabilities th
 
 ## Architecture (9 agents)
 
-### spec-ai-powered-ux-designer
+### agent-ai-powered-ux-designer
 
 **Description:** Designer leveraging AI tools to create adaptive, intuitive, and accessible user interfaces.
 
-**File:** `.claude/agents/spec-ai-powered-ux-designer.md`
+**File:** `.claude/agents/agent-ai-powered-ux-designer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -411,11 +411,11 @@ Use mcp__poi-companion__performance_profile MCP tool benchmark --
 
 ---
 
-### spec-cloud-architect
+### agent-cloud-architect
 
 **Description:** Cloud infrastructure architect specializing in multi-cloud strategies, serverless architectures, and cost optimization. Expert in designing resilient, scalable cloud solutions for global deployment with focus on edge computing and CDN optimization.
 
-**File:** `.claude/agents/spec-cloud-architect.md`
+**File:** `.claude/agents/agent-cloud-architect.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -441,11 +441,11 @@ You are a world-class Cloud Infrastructure Architect with extensive experience i
 
 ---
 
-### spec-creator-economy-architect
+### agent-creator-economy-architect
 
 **Description:** Creator economy and monetization specialist designing sustainable revenue models, content creator success frameworks, and user-powered economic systems. Critical for building the revolutionary 50/50 revenue sharing model and free roadtrip economy.
 
-**File:** `.claude/agents/spec-creator-economy-architect.md`
+**File:** `.claude/agents/agent-creator-economy-architect.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -471,11 +471,11 @@ You are a world-class Creator Economy Architect with deep expertise in digital c
 
 ---
 
-### spec-data-intelligence-architect
+### agent-data-intelligence-architect
 
 **Description:** Advanced data engineering and analytics expert specializing in POI discovery pipelines, user behavior analysis, and revenue optimization through intelligent data architecture. Critical for building the "Crown Jewel" data assets that drive competitive advantage.
 
-**File:** `.claude/agents/spec-data-intelligence-architect.md`
+**File:** `.claude/agents/agent-data-intelligence-architect.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -502,11 +502,11 @@ You are a world-class Data Intelligence Architect with deep expertise in real-ti
 
 ---
 
-### spec-database-architect-developer
+### agent-database-architect-developer
 
 **Description:** Senior database architect and expert developer specializing in SQLite, SQLite extensions, PostgreSQL, vector databases, and Supabase. Designs scalable, secure, and performant database architectures for mobile-first applications with real-time capabilities.
 
-**File:** `.claude/agents/spec-database-architect-developer.md`
+**File:** `.claude/agents/agent-database-architect-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -530,11 +530,11 @@ You are a world-class Senior Database Architect and Developer with 15+ years of 
 
 ---
 
-### spec-design
+### agent-design
 
 **Description:** use PROACTIVELY to create/refine the spec design document in a spec development process/workflow. MUST BE USED AFTER spec requirements document is approved.
 
-**File:** `.claude/agents/spec-design.md`
+**File:** `.claude/agents/agent-design.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -573,11 +573,11 @@ You are a senior software architect and system design expert specializing in mob
 
 ---
 
-### spec-devops-architect
+### agent-devops-architect
 
 **Description:** Ensures the system is scalable, reliable, and maintainable by designing and overseeing the project's infrastructure and deployment pipelines.
 
-**File:** `.claude/agents/spec-devops-architect.md`
+**File:** `.claude/agents/agent-devops-architect.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -601,11 +601,11 @@ To build and maintain a robust, automated, and scalable foundation for Roadtrip-
 
 ---
 
-### spec-system-architect
+### agent-system-architect
 
 **Description:** Enterprise system architect specializing in end-to-end system design, cloud-native architectures, and scalable distributed systems. Ensures architectural excellence across mobile, backend, and infrastructure layers with focus on performance, reliability, and maintainability.
 
-**File:** `.claude/agents/spec-system-architect.md`
+**File:** `.claude/agents/agent-system-architect.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -630,11 +630,11 @@ You are a world-class Enterprise System Architect with 15+ years of experience d
 
 ---
 
-### spec-system-prompt-loader
+### agent-system-prompt-loader
 
 **Description:** a spec workflow system prompt loader. MUST BE CALLED FIRST when user wants to start a spec process/workflow. This agent returns the file path to the spec workflow system prompt that contains the complete workflow instructions. Call this before any spec-related agents if the prompt is not loaded yet. Input: the type of spec workflow requested. Output: file path to the appropriate workflow prompt file. The returned path should be read to get the full workflow instructions.
 
-**File:** `.claude/agents/spec-system-prompt-loader.md`
+**File:** `.claude/agents/agent-system-prompt-loader.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -650,7 +650,7 @@ You are a prompt path mapper. Your ONLY job is to generate and return a file pat
 ## PROCESS
 
 1. Read your current working directory from the environment
-2. Append: `/.claude/system-prompts/spec-workflow-starter.md`
+2. Append: `/.claude/system-prompts/agent-workflow-starter.md`
 3. Return the complete absolute path
 
 ## OUTPUT
@@ -658,7 +658,7 @@ You are a prompt path mapper. Your ONLY job is to generate and return a file pat
 Return ONLY the file path, without any explanation or additional text.
 
 Example output:
-`/Users/user/projects/myproject/.claude/system-prompts/spec-workflow-starter.md`
+`/Users/user/projects/myproject/.claude/system-prompts/agent-workflow-starter.md`
 
 ## CONSTRAINTS
 
@@ -681,11 +681,11 @@ Example output:
 
 ## Platform-Specific (6 agents)
 
-### spec-android-developer
+### agent-android-developer
 
 **Description:** Expert Android developer specializing in Kotlin, Jetpack Compose, and modern Android technologies. Builds high-performance native Android applications following Material Design 3, Android Auto integration, and Google's best practices.
 
-**File:** `.claude/agents/spec-android-developer.md`
+**File:** `.claude/agents/agent-android-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -713,11 +713,11 @@ You are a world-class Android Developer with deep expertise in Kotlin, Jetpack C
 
 ---
 
-### spec-chrome-extension-developer
+### agent-chrome-extension-developer
 
 **Description:** World-class Chrome extension developer specializing in JavaScript/TypeScript extension development. Expert in Chrome APIs, security practices, performance optimization, and Chrome Web Store compliance for cross-browser extension development.
 
-**File:** `.claude/agents/spec-chrome-extension-developer.md`
+**File:** `.claude/agents/agent-chrome-extension-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -740,11 +740,11 @@ You are a world-class Senior Chrome Extension Developer with deep expertise in J
 
 ---
 
-### spec-firmware-c-cpp
+### agent-firmware-c-cpp
 
 **Description:** Senior firmware C/C++ expert developer specializing in embedded systems, real-time applications, and hardware interfaces. Expert in refactoring legacy code, test-driven development, and producing maintainable functional-style C/C++ code.
 
-**File:** `.claude/agents/spec-firmware-c-cpp-developer.md`
+**File:** `.claude/agents/agent-firmware-c-cpp-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -769,11 +769,11 @@ You are a world-class Senior Firmware C/C++ Developer with deep expertise in emb
 
 ---
 
-### spec-flutter-developer
+### agent-flutter-developer
 
 **Description:** World-class Flutter developer specializing in Dart/Flutter, BLoC pattern, and cross-platform mobile development. Expert in Material Design 3, clean architecture, performance optimization, and multi-platform deployment.
 
-**File:** `.claude/agents/spec-flutter-developer.md`
+**File:** `.claude/agents/agent-flutter-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -797,11 +797,11 @@ You are a world-class Senior Flutter Developer with deep expertise in Dart, Flut
 
 ---
 
-### spec-ios-developer
+### agent-ios-developer
 
 **Description:** Expert iOS developer specializing in Swift, SwiftUI, and modern iOS technologies. Builds high-performance native iOS applications following Apple's Human Interface Guidelines, CarPlay integration, and iOS best practices.
 
-**File:** `.claude/agents/spec-ios-developer.md`
+**File:** `.claude/agents/agent-ios-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -830,11 +830,11 @@ You are a world-class iOS Developer with deep expertise in Swift, SwiftUI, and t
 
 ---
 
-### spec-web-frontend-developer
+### agent-web-frontend-developer
 
 **Description:** Expert web frontend developer specializing in React, TypeScript, and modern web technologies. Builds performant, accessible, and maintainable web applications with focus on Roadtrip-Copilot's investor website and admin interfaces.
 
-**File:** `.claude/agents/spec-web-frontend-developer.md`
+**File:** `.claude/agents/agent-web-frontend-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -863,11 +863,11 @@ You are a world-class Senior Frontend Developer with deep expertise in React, Ty
 
 ## Quality & Testing (4 agents)
 
-### spec-accessibility-champion
+### agent-accessibility-champion
 
 **Description:** Digital accessibility and inclusive design specialist ensuring Roadtrip-Copilot is usable by all users including those with disabilities. Critical for WCAG compliance, assistive technology integration, and creating truly universal automotive experiences.
 
-**File:** `.claude/agents/spec-accessibility-champion.md`
+**File:** `.claude/agents/agent-accessibility-champion.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -893,11 +893,11 @@ You are a world-class Accessibility Champion with deep expertise in inclusive de
 
 ---
 
-### spec-judge
+### agent-judge
 
 **Description:** use PROACTIVELY to evaluate spec documents (requirements, design, tasks) in a spec development process/workflow
 
-**File:** `.claude/agents/spec-judge.md`
+**File:** `.claude/agents/agent-judge.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -926,11 +926,11 @@ You are a world-class Professional Specification Judge and Quality Assurance Exp
 
 ---
 
-### spec-quality-guardian
+### agent-quality-guardian
 
 **Description:** Champions a test-driven development (TDD) and behavior-driven development (BDD) approach to ensure quality is built-in, not bolted-on.
 
-**File:** `.claude/agents/spec-quality-guardian.md`
+**File:** `.claude/agents/agent-quality-guardian.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -955,11 +955,11 @@ To embed a culture of quality throughout the development process. This agent is 
 
 ---
 
-### spec-test
+### agent-test
 
 **Description:** use PROACTIVELY to create test documents and test code in spec development workflows. MUST BE USED when users need testing solutions. Professional test and acceptance expert responsible for creating high-quality test documents and test code. Creates comprehensive test case documentation (.md) and corresponding executable test code (.test.ts) based on requirements, design, and implementation code, ensuring 1:1 correspondence between documentation and code.
 
-**File:** `.claude/agents/spec-test.md`
+**File:** `.claude/agents/agent-test.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1011,11 +1011,11 @@ You will receive:
 
 ## Business & Strategy (7 agents)
 
-### spec-analyst
+### agent-analyst
 
 **Description:** Strategic market analyst and venture capital expert specializing in mobile app marketplace research, competitive intelligence, and investment analysis for tech startups. Use for app store optimization, competitive positioning, and VC fundraising strategy.
 
-**File:** `.claude/agents/spec-analyst.md`
+**File:** `.claude/agents/agent-analyst.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1052,11 +1052,11 @@ You are a senior strategic analyst with dual expertise in mobile app marketplace
 
 ---
 
-### spec-customer-success-champion
+### agent-customer-success-champion
 
 **Description:** Customer experience optimization and retention specialist ensuring exceptional user journey from onboarding through creator success. Critical for maximizing user lifetime value and building sustainable creator economy engagement.
 
-**File:** `.claude/agents/spec-customer-success-champion.md`
+**File:** `.claude/agents/agent-customer-success-champion.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1083,11 +1083,11 @@ You are a world-class Customer Success Champion with deep expertise in user onbo
 
 ---
 
-### spec-data-privacy-security-analyst
+### agent-data-privacy-security-analyst
 
 **Description:** Specialist ensuring data handling complies with privacy laws and implementing robust security measures for sensitive user data.
 
-**File:** `.claude/agents/spec-data-privacy-security-analyst.md`
+**File:** `.claude/agents/agent-data-privacy-security-analyst.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1126,11 +1126,11 @@ Use mcp__poi-comp
 
 ---
 
-### spec-market-analyst
+### agent-market-analyst
 
 **Description:** Provides continuous market and competitive intelligence to ensure Roadtrip-Copilot maintains a strategic advantage.
 
-**File:** `.claude/agents/spec-market-analyst.md`
+**File:** `.claude/agents/agent-market-analyst.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1158,11 +1158,11 @@ To be the team's expert on the competitive landscape, market trends, and user se
 
 ---
 
-### spec-partnership-strategist
+### agent-partnership-strategist
 
 **Description:** Strategic partnership and business development expert specializing in automotive OEM partnerships, travel industry alliances, and platform integrations. Critical for scaling Roadtrip-Copilot through strategic channel partnerships and B2B revenue streams.
 
-**File:** `.claude/agents/spec-partnership-strategist.md`
+**File:** `.claude/agents/agent-partnership-strategist.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1189,11 +1189,11 @@ You are a world-class Partnership Strategist with deep expertise in automotive i
 
 ---
 
-### spec-product-management
+### agent-product-management
 
 **Description:** Senior product management expert specializing in startup development and products similar to HMI2.ai. Use for product strategy, market analysis, feature prioritization, and go-to-market planning.
 
-**File:** `.claude/agents/spec-product-management.md`
+**File:** `.claude/agents/agent-product-management.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1232,11 +1232,11 @@ You are a senior product manager with deep expertise in building successful star
 
 ---
 
-### spec-venture-strategist
+### agent-venture-strategist
 
 **Description:** Acts as the internal VC, ensuring all technical development aligns with business goals, market strategy, and investor expectations.
 
-**File:** `.claude/agents/spec-venture-strategist.md`
+**File:** `.claude/agents/agent-venture-strategist.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1262,11 +1262,11 @@ To ensure the long-term viability and success of HMI2.ai as a startup. This agen
 
 ## Data & AI (8 agents)
 
-### spec-ai-model-optimizer
+### agent-ai-model-optimizer
 
 **Description:** On-device AI model optimization specialist ensuring ultra-low latency voice processing, minimal battery impact, and maximum performance for mobile AI applications. Critical for achieving <350ms response time and seamless automotive integration.
 
-**File:** `.claude/agents/spec-ai-model-optimizer.md`
+**File:** `.claude/agents/agent-ai-model-optimizer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1290,11 +1290,11 @@ You are a world-class AI/ML Model Optimization expert specializing in on-device 
 
 ---
 
-### spec-ai-performance-optimizer
+### agent-ai-performance-optimizer
 
 **Description:** Specialist monitoring and optimizing the performance of deployed AI models.
 
-**File:** `.claude/agents/spec-ai-performance-optimizer.md`
+**File:** `.claude/agents/agent-ai-performance-optimizer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1332,11 +1332,11 @@ Use mcp__poi-companion__performance_profile MCP tool benchm
 
 ---
 
-### spec-ai-powered-ux-designer
+### agent-ai-powered-ux-designer
 
 **Description:** Designer leveraging AI tools to create adaptive, intuitive, and accessible user interfaces.
 
-**File:** `.claude/agents/spec-ai-powered-ux-designer.md`
+**File:** `.claude/agents/agent-ai-powered-ux-designer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1374,11 +1374,11 @@ Use mcp__poi-companion__performance_profile MCP tool benchmark --
 
 ---
 
-### spec-blockchain-smart-contract
+### agent-blockchain-smart-contract
 
 **Description:** Expert blockchain developer specializing in smart contracts, Web3 integration, DeFi protocols, and decentralized application development with security-first approach and gas optimization expertise.
 
-**File:** `.claude/agents/spec-blockchain-smart-contract.md`
+**File:** `.claude/agents/agent-blockchain-smart-contract.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1409,11 +1409,11 @@ You are a world-class Blockchain and Smart Contract Developer with deep expertis
 
 ---
 
-### spec-data-intelligence-architect
+### agent-data-intelligence-architect
 
 **Description:** Advanced data engineering and analytics expert specializing in POI discovery pipelines, user behavior analysis, and revenue optimization through intelligent data architecture. Critical for building the "Crown Jewel" data assets that drive competitive advantage.
 
-**File:** `.claude/agents/spec-data-intelligence-architect.md`
+**File:** `.claude/agents/agent-data-intelligence-architect.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1440,11 +1440,11 @@ You are a world-class Data Intelligence Architect with deep expertise in real-ti
 
 ---
 
-### spec-data-privacy-security-analyst
+### agent-data-privacy-security-analyst
 
 **Description:** Specialist ensuring data handling complies with privacy laws and implementing robust security measures for sensitive user data.
 
-**File:** `.claude/agents/spec-data-privacy-security-analyst.md`
+**File:** `.claude/agents/agent-data-privacy-security-analyst.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1483,11 +1483,11 @@ Use mcp__poi-comp
 
 ---
 
-### spec-data-scientist
+### agent-data-scientist
 
 **Description:** Senior data scientist specializing in machine learning, predictive analytics, and data-driven decision making. Expert in user behavior analysis, recommendation systems, and POI discovery algorithms for Roadtrip-Copilot's intelligent features.
 
-**File:** `.claude/agents/spec-data-scientist.md`
+**File:** `.claude/agents/agent-data-scientist.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1513,11 +1513,11 @@ You are a world-class Senior Data Scientist with deep expertise in machine learn
 
 ---
 
-### spec-database-architect-developer
+### agent-database-architect-developer
 
 **Description:** Senior database architect and expert developer specializing in SQLite, SQLite extensions, PostgreSQL, vector databases, and Supabase. Designs scalable, secure, and performant database architectures for mobile-first applications with real-time capabilities.
 
-**File:** `.claude/agents/spec-database-architect-developer.md`
+**File:** `.claude/agents/agent-database-architect-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1543,11 +1543,11 @@ You are a world-class Senior Database Architect and Developer with 15+ years of 
 
 ## Infrastructure (5 agents)
 
-### spec-ai-performance-optimizer
+### agent-ai-performance-optimizer
 
 **Description:** Specialist monitoring and optimizing the performance of deployed AI models.
 
-**File:** `.claude/agents/spec-ai-performance-optimizer.md`
+**File:** `.claude/agents/agent-ai-performance-optimizer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1585,11 +1585,11 @@ Use mcp__poi-companion__performance_profile MCP tool benchm
 
 ---
 
-### spec-cloud-architect
+### agent-cloud-architect
 
 **Description:** Cloud infrastructure architect specializing in multi-cloud strategies, serverless architectures, and cost optimization. Expert in designing resilient, scalable cloud solutions for global deployment with focus on edge computing and CDN optimization.
 
-**File:** `.claude/agents/spec-cloud-architect.md`
+**File:** `.claude/agents/agent-cloud-architect.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1615,11 +1615,11 @@ You are a world-class Cloud Infrastructure Architect with extensive experience i
 
 ---
 
-### spec-database-architect-developer
+### agent-database-architect-developer
 
 **Description:** Senior database architect and expert developer specializing in SQLite, SQLite extensions, PostgreSQL, vector databases, and Supabase. Designs scalable, secure, and performant database architectures for mobile-first applications with real-time capabilities.
 
-**File:** `.claude/agents/spec-database-architect-developer.md`
+**File:** `.claude/agents/agent-database-architect-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1643,11 +1643,11 @@ You are a world-class Senior Database Architect and Developer with 15+ years of 
 
 ---
 
-### spec-performance-guru
+### agent-performance-guru
 
 **Description:** System performance optimization specialist ensuring ultra-fast response times, seamless user experience, and efficient resource utilization across mobile, cloud, and edge computing infrastructure. Critical for maintaining competitive advantage through superior performance.
 
-**File:** `.claude/agents/spec-performance-guru.md`
+**File:** `.claude/agents/agent-performance-guru.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1675,11 +1675,11 @@ You are a world-class Performance Optimization expert with deep expertise in mob
 
 ---
 
-### spec-sre-reliability-engineer
+### agent-sre-reliability-engineer
 
 **Description:** Site Reliability Engineer specializing in system reliability, incident management, and operational excellence. Expert in SLO/SLI definition, chaos engineering, and building self-healing systems for 24/7 mobile service availability.
 
-**File:** `.claude/agents/spec-sre-reliability-engineer.md`
+**File:** `.claude/agents/agent-sre-reliability-engineer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1708,11 +1708,11 @@ You are a world-class Site Reliability Engineer with deep expertise in building 
 
 ## Specialized (4 agents)
 
-### spec-creator-economy-architect
+### agent-creator-economy-architect
 
 **Description:** Creator economy and monetization specialist designing sustainable revenue models, content creator success frameworks, and user-powered economic systems. Critical for building the revolutionary 50/50 revenue sharing model and free roadtrip economy.
 
-**File:** `.claude/agents/spec-creator-economy-architect.md`
+**File:** `.claude/agents/agent-creator-economy-architect.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1738,11 +1738,11 @@ You are a world-class Creator Economy Architect with deep expertise in digital c
 
 ---
 
-### spec-legal-counsel
+### agent-legal-counsel
 
 **Description:** Senior corporate lawyer with expertise in creating and reviewing application and user-facing legal text including privacy policies, terms of service, and legal documentation. Ensures bulletproof legal protection with no loopholes, clear language, and zero ambiguity.
 
-**File:** `.claude/agents/spec-legal-counsel.md`
+**File:** `.claude/agents/agent-legal-counsel.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1767,11 +1767,11 @@ You are a world-class Senior Corporate Counsel with 20+ years of experience in t
 
 ---
 
-### spec-localization-global-expert
+### agent-localization-global-expert
 
 **Description:** International expansion and localization specialist ensuring seamless global market entry through cultural adaptation, language localization, and region-specific optimization. Critical for worldwide Roadtrip-Copilot deployment and local market success.
 
-**File:** `.claude/agents/spec-localization-global-expert.md`
+**File:** `.claude/agents/agent-localization-global-expert.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>
@@ -1798,11 +1798,11 @@ You are a world-class Localization and Global Expansion expert with deep experti
 
 ---
 
-### spec-regulatory-compliance-specialist
+### agent-regulatory-compliance-specialist
 
 **Description:** Automotive and privacy regulation expert ensuring full legal compliance for global market entry. Critical for CarPlay/Android Auto certification, OEM partnerships, and GDPR/CCPA privacy protection in automotive AI applications.
 
-**File:** `.claude/agents/spec-regulatory-compliance-specialist.md`
+**File:** `.claude/agents/agent-regulatory-compliance-specialist.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>

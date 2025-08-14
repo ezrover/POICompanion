@@ -1,8 +1,10 @@
 {
   "name": "MobileLLM-Simple",
-  "format": "tflite",
   "architecture": "LSTM-based",
   "vocab_size": 1000,
-  "status": "placeholder",
+  "hidden_size": 128,
+  "num_layers": 2,
+  "input_length": 20,
+  "status": "working",
   "note": "Simplified model for proof-of-concept"
 }
