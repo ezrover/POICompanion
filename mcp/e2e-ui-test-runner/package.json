@@ -1,0 +1,35 @@
+{
+  "name": "e2e-ui-test-runner",
+  "version": "1.0.0",
+  "description": "Comprehensive E2E UI Test Runner MCP Tool for iOS and Android platforms",
+  "main": "index.js",
+  "bin": {
+    "e2e-test": "./index.js"
+  },
+  "scripts": {
+    "test:ios": "node index.js test ios",
+    "test:android": "node index.js test android",
+    "test:both": "node index.js test both",
+    "test:critical": "node index.js test both --critical",
+    "list": "node index.js list",
+    "clean": "node index.js clean",
+    "report": "node index.js report"
+  },
+  "keywords": [
+    "e2e",
+    "ui-testing",
+    "ios",
+    "android",
+    "xcuitest",
+    "espresso",
+    "mcp",
+    "test-automation"
+  ],
+  "author": "Roadtrip Copilot Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
