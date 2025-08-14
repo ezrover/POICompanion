@@ -175,7 +175,7 @@ struct EnhancedDestinationSelectionView: View {
                             VStack {
                                 Spacer()
                                 Rectangle()
-                                    .frame(height: selectedDestination != nil ? 135 : 105) // Reduced height by 25% (180→135, 140→105)
+                                    .frame(height: selectedDestination != nil ? 120 : 90) // Optimized height for better visual balance
                             }
                         )
                         .ignoresSafeArea(.all) // Edge-to-edge background
