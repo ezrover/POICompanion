@@ -1,0 +1,33 @@
+{
+  "model_type": "gemma-3n",
+  "variant": "e2b",
+  "model_path": "/Users/naderrahimizad/Projects/AI/POICompanion/models/llm/gemma-3n-e2b",
+  "format": "safetensors",
+  "quantization": "fp16",
+  "max_tokens": 2048,
+  "vocab_size": 256000,
+  "hidden_size": 2048,
+  "num_layers": 18,
+  "files": {
+    "config": "/Users/naderrahimizad/Projects/AI/POICompanion/models/llm/gemma-3n-e2b/config.json",
+    "tokenizer": "/Users/naderrahimizad/Projects/AI/POICompanion/models/llm/gemma-3n-e2b/tokenizer.json",
+    "tokenizer_config": "/Users/naderrahimizad/Projects/AI/POICompanion/models/llm/gemma-3n-e2b/tokenizer_config.json",
+    "generation_config": "/Users/naderrahimizad/Projects/AI/POICompanion/models/llm/gemma-3n-e2b/generation_config.json",
+    "weights": [
+      "/Users/naderrahimizad/Projects/AI/POICompanion/models/llm/gemma-3n-e2b/model-00004-of-00004.safetensors",
+      "/Users/naderrahimizad/Projects/AI/POICompanion/models/llm/gemma-3n-e2b/model-00001-of-00004.safetensors",
+      "/Users/naderrahimizad/Projects/AI/POICompanion/models/llm/gemma-3n-e2b/model-00003-of-00004.safetensors",
+      "/Users/naderrahimizad/Projects/AI/POICompanion/models/llm/gemma-3n-e2b/model-00002-of-00004.safetensors"
+    ]
+  },
+  "performance": {
+    "expected_latency_ms": 350,
+    "memory_gb": 2.0,
+    "tokens_per_second": 25
+  },
+  "ios_optimization": {
+    "neural_engine": true,
+    "metal_performance_shaders": true,
+    "minimum_ios_version": "16.0"
+  }
+}
