@@ -182,16 +182,16 @@ node ios-simulator-manager/index.js get-ui-state > ios_ui_state.json
 node mcp__poi-companion__code_generate create --feature=[feature-name] --platform=[ios|android|web]
 
 # Generate UI components from design system
-node ui-generator/index.js component --spec=[component-spec] --platform=[target]
+Use mcp__poi-companion__ui_generate tool component --spec=[component-spec] --platform=[target]
 
 # Validate generated code against schemas
-node schema-validator/index.js validate --input=[generated-code]
+Use mcp__poi-companion__schema_validate tool validate --input=[generated-code]
 ```
 
 #### **Phase 2: MCP-Driven Quality Assurance**
 ```bash
 # Continuous testing during implementation
-node test-runner/index.js watch --coverage
+Use mcp__poi-companion__test_run tool watch --coverage
 
 # Real-time performance monitoring
 node mcp__poi-companion__performance_profile monitor

@@ -457,15 +457,15 @@ The model MUST leverage Unsloth's cutting-edge optimization technologies to deli
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET]` |
+| Model Optimization | `model-optimizer` | `Use mcp__poi-companion__model_optimize tool` |
 | Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
+| Schema Validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
-node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET] train --data={dataset}
+Use mcp__poi-companion__model_optimize tool with action: "train", dataset: "{dataset}"
 Use mcp__poi-companion__performance_profile MCP tool benchmark --model={name}
-node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET] validate --data-schema
+Use mcp__poi-companion__schema_validate tool with action: "validate" --data-schema
 ```

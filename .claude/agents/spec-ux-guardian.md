@@ -46,7 +46,7 @@ To champion a user-centric design philosophy throughout the entire product devel
 | Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 | Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
+| Schema Validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool` |
 
 ### **General Workflow:**
 ```bash

@@ -1347,7 +1347,7 @@ The model MUST deliver enterprise-grade Flutter applications that set new standa
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Build Verification | `mobile-build-verifier` | `Use mcp__poi-companion__mobile_build_verify MCP tool flutter` |
-| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET] flutter` |
+| UI Generation | `ui-generator` | `Use mcp__poi-companion__ui_generate tool flutter` |
 | Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool dart` |
 | Testing | `mobile-test-runner` | `Use mcp__poi-companion__mobile_test_run MCP tool flutter` |
 | Linting | `mobile-linter` | `Use mcp__poi-companion__mobile_lint_check MCP tool flutter` |
@@ -1355,7 +1355,7 @@ The model MUST deliver enterprise-grade Flutter applications that set new standa
 ### **Flutter Workflow:**
 ```bash
 # Flutter development
-node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET] flutter --widget={name}
+Use mcp__poi-companion__ui_generate tool flutter --widget={name}
 Use mcp__poi-companion__code_generate MCP tool dart --bloc
 Use mcp__poi-companion__mobile_build_verify MCP tool flutter --all
 Use mcp__poi-companion__mobile_test_run MCP tool flutter --coverage

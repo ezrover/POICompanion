@@ -17,8 +17,7 @@ import coremltools as ct
 from coremltools.converters.mil import Builder as mb
 from coremltools.models.neural_network import quantization_utils
 
-# TensorFlow/PyTorch imports for model loading
-import tensorflow as tf
+# PyTorch imports for model loading
 import torch
 import transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -68,7 +67,7 @@ class Gemma3NToCoreMLConverter:
         logger.info(f"Loading Gemma-3N {self.model_variant} model...")
         
         # Check for local model first
-        local_model_path = f"llm/gemma-3n-{self.model_variant.lower()}"
+        local_model_path = f"../llm/gemma-3n-{self.model_variant.lower()}"
         
         if os.path.exists(local_model_path):
             logger.info(f"Found local model at {local_model_path}")

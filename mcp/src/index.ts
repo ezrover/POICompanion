@@ -490,6 +490,338 @@ class POICompanionMCPServer {
           },
           required: ['type', 'feature']
         }
+      },
+      // Additional Tools Integration
+      {
+        name: 'model_optimize',
+        description: 'AI model optimization for mobile deployment',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            action: {
+              type: 'string',
+              enum: ['train', 'optimize', 'quantize', 'benchmark'],
+              description: 'Model optimization action'
+            },
+            model: {
+              type: 'string',
+              description: 'Model name or path'
+            },
+            platform: {
+              type: 'string',
+              enum: ['ios', 'android', 'both'],
+              description: 'Target platform for optimization'
+            },
+            dataset: {
+              type: 'string',
+              description: 'Dataset for training or evaluation'
+            }
+          },
+          required: ['action']
+        }
+      },
+      {
+        name: 'schema_validate',
+        description: 'Validate data schemas and structures',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            action: {
+              type: 'string',
+              enum: ['validate', 'generate', 'check', 'fix'],
+              description: 'Schema validation action'
+            },
+            schema: {
+              type: 'string',
+              description: 'Schema file or type'
+            },
+            data: {
+              type: 'string',
+              description: 'Data to validate'
+            },
+            platform: {
+              type: 'string',
+              enum: ['ios', 'android', 'web', 'all'],
+              description: 'Platform-specific schema'
+            }
+          },
+          required: ['action']
+        }
+      },
+      {
+        name: 'ui_generate',
+        description: 'Generate UI components and screens',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            framework: {
+              type: 'string',
+              enum: ['react', 'compose', 'swiftui', 'flutter'],
+              description: 'UI framework'
+            },
+            component: {
+              type: 'string',
+              description: 'Component name to generate'
+            },
+            template: {
+              type: 'string',
+              description: 'Template to use'
+            },
+            screen: {
+              type: 'string',
+              description: 'Screen name for full screen generation'
+            }
+          },
+          required: ['framework', 'component']
+        }
+      },
+      {
+        name: 'market_analyze',
+        description: 'Market research and competitive analysis',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            action: {
+              type: 'string',
+              enum: ['research', 'analyze', 'compare', 'trends'],
+              description: 'Market analysis action'
+            },
+            competitor: {
+              type: 'string',
+              description: 'Competitor name or app'
+            },
+            market: {
+              type: 'string',
+              description: 'Market segment to analyze'
+            },
+            region: {
+              type: 'string',
+              description: 'Geographic region'
+            }
+          },
+          required: ['action']
+        }
+      },
+      {
+        name: 'icon_generate',
+        description: 'Generate mobile app icons for all required sizes',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            source: {
+              type: 'string',
+              description: 'Source image or SVG file'
+            },
+            platform: {
+              type: 'string',
+              enum: ['ios', 'android', 'both'],
+              description: 'Target platform'
+            },
+            adaptive: {
+              type: 'boolean',
+              description: 'Generate adaptive icons (Android)',
+              default: true
+            }
+          },
+          required: ['source', 'platform']
+        }
+      },
+      {
+        name: 'icon_verify',
+        description: 'Verify app icons meet platform requirements',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            platform: {
+              type: 'string',
+              enum: ['ios', 'android', 'both'],
+              description: 'Platform to verify'
+            },
+            validateAll: {
+              type: 'boolean',
+              description: 'Validate all icon sizes',
+              default: true
+            }
+          },
+          required: ['platform']
+        }
+      },
+      {
+        name: 'file_manage',
+        description: 'Mobile project file management operations',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            action: {
+              type: 'string',
+              enum: ['scan', 'organize', 'clean', 'analyze'],
+              description: 'File management action'
+            },
+            platform: {
+              type: 'string',
+              enum: ['ios', 'android', 'both'],
+              description: 'Target platform'
+            },
+            path: {
+              type: 'string',
+              description: 'Path to manage'
+            }
+          },
+          required: ['action', 'platform']
+        }
+      },
+      {
+        name: 'android_project_manage',
+        description: 'Android project structure and configuration management',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            action: {
+              type: 'string',
+              enum: ['init', 'add-deps', 'configure', 'add-auto-support'],
+              description: 'Android project action'
+            },
+            project: {
+              type: 'string',
+              description: 'Project name'
+            },
+            dependencies: {
+              type: 'array',
+              items: { type: 'string' },
+              description: 'Dependencies to add'
+            }
+          },
+          required: ['action']
+        }
+      },
+      {
+        name: 'ios_project_manage',
+        description: 'iOS project structure and configuration management',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            action: {
+              type: 'string',
+              enum: ['init', 'add-deps', 'configure', 'add-carplay'],
+              description: 'iOS project action'
+            },
+            project: {
+              type: 'string',
+              description: 'Project name'
+            },
+            pods: {
+              type: 'array',
+              items: { type: 'string' },
+              description: 'CocoaPods to add'
+            }
+          },
+          required: ['action']
+        }
+      },
+      {
+        name: 'agent_registry_manage',
+        description: 'Manage and monitor Claude Code agent registry',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            action: {
+              type: 'string',
+              enum: ['scan', 'repair', 'status', 'update'],
+              description: 'Registry management action'
+            },
+            fix: {
+              type: 'boolean',
+              description: 'Automatically fix issues',
+              default: false
+            }
+          },
+          required: ['action']
+        }
+      },
+      {
+        name: 'project_scaffold',
+        description: 'Create project structures and boilerplate',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            platform: {
+              type: 'string',
+              enum: ['ios', 'android', 'web', 'flutter'],
+              description: 'Target platform'
+            },
+            template: {
+              type: 'string',
+              description: 'Project template to use'
+            },
+            name: {
+              type: 'string',
+              description: 'Project name'
+            },
+            features: {
+              type: 'array',
+              items: { type: 'string' },
+              description: 'Features to include'
+            }
+          },
+          required: ['platform']
+        }
+      },
+      {
+        name: 'test_run',
+        description: 'General test execution and reporting',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            framework: {
+              type: 'string',
+              enum: ['jest', 'vitest', 'junit', 'xctest'],
+              description: 'Test framework'
+            },
+            action: {
+              type: 'string',
+              enum: ['run', 'watch', 'coverage', 'init'],
+              description: 'Test action'
+            },
+            path: {
+              type: 'string',
+              description: 'Test path or pattern'
+            },
+            coverage: {
+              type: 'boolean',
+              description: 'Generate coverage report',
+              default: false
+            }
+          },
+          required: ['action']
+        }
+      },
+      {
+        name: 'qa_validate',
+        description: 'Mobile app quality assurance validation',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            platform: {
+              type: 'string',
+              enum: ['ios', 'android', 'both'],
+              description: 'Platform to validate'
+            },
+            checks: {
+              type: 'array',
+              items: {
+                type: 'string',
+                enum: ['ui', 'performance', 'security', 'accessibility', 'all']
+              },
+              description: 'QA checks to perform'
+            },
+            strict: {
+              type: 'boolean',
+              description: 'Use strict validation',
+              default: false
+            }
+          },
+          required: ['platform']
+        }
       }
     ];
   }
@@ -528,6 +860,32 @@ class POICompanionMCPServer {
         return await this.specGenerate(args);
       case 'e2e_ui_test_run':
         return await this.e2eUITestRun(args);
+      case 'model_optimize':
+        return await this.modelOptimize(args);
+      case 'schema_validate':
+        return await this.schemaValidate(args);
+      case 'ui_generate':
+        return await this.uiGenerate(args);
+      case 'market_analyze':
+        return await this.marketAnalyze(args);
+      case 'icon_generate':
+        return await this.iconGenerate(args);
+      case 'icon_verify':
+        return await this.iconVerify(args);
+      case 'file_manage':
+        return await this.fileManage(args);
+      case 'android_project_manage':
+        return await this.androidProjectManage(args);
+      case 'ios_project_manage':
+        return await this.iosProjectManage(args);
+      case 'agent_registry_manage':
+        return await this.agentRegistryManage(args);
+      case 'project_scaffold':
+        return await this.projectScaffold(args);
+      case 'test_run':
+        return await this.testRun(args);
+      case 'qa_validate':
+        return await this.qaValidate(args);
       default:
         throw new Error(`Unknown tool: ${name}`);
     }
@@ -961,6 +1319,367 @@ class POICompanionMCPServer {
         content: [{
           type: 'text',
           text: `Specification generation failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  // New tool implementations
+  private async modelOptimize(args: any) {
+    const { action, model, platform, dataset } = args;
+    const toolPath = path.join(__dirname, '../model-optimizer/index.js');
+    
+    let cmd = `node "${toolPath}" ${action}`;
+    if (model) cmd += ` --model="${model}"`;
+    if (platform) cmd += ` --platform=${platform}`;
+    if (dataset) cmd += ` --dataset="${dataset}"`;
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { 
+        cwd: this.projectRoot,
+        timeout: 1200000 // 20 minutes for model operations
+      });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `Model Optimization Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Model optimization failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async schemaValidate(args: any) {
+    const { action, schema, data, platform } = args;
+    const toolPath = path.join(__dirname, '../schema-validator/index.js');
+    
+    let cmd = `node "${toolPath}" ${action}`;
+    if (schema) cmd += ` --schema="${schema}"`;
+    if (data) cmd += ` --data="${data}"`;
+    if (platform) cmd += ` --platform=${platform}`;
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { cwd: this.projectRoot });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `Schema Validation Results:\n\n${stdout}${stderr ? `\nIssues: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Schema validation failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async uiGenerate(args: any) {
+    const { framework, component, template, screen } = args;
+    const toolPath = path.join(__dirname, '../ui-generator/index.js');
+    
+    let cmd = `node "${toolPath}" ${framework}`;
+    if (component) cmd += ` --component="${component}"`;
+    if (template) cmd += ` --template="${template}"`;
+    if (screen) cmd += ` --screen="${screen}"`;
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { cwd: this.projectRoot });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `UI Generation Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `UI generation failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async marketAnalyze(args: any) {
+    const { action, competitor, market, region } = args;
+    const toolPath = path.join(__dirname, '../market-analyzer/index.js');
+    
+    let cmd = `node "${toolPath}" ${action}`;
+    if (competitor) cmd += ` --competitor="${competitor}"`;
+    if (market) cmd += ` --market="${market}"`;
+    if (region) cmd += ` --region="${region}"`;
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { 
+        cwd: this.projectRoot,
+        timeout: 300000 // 5 minutes
+      });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `Market Analysis Results:\n\n${stdout}${stderr ? `\nNotes: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Market analysis failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async iconGenerate(args: any) {
+    const { source, platform, adaptive = true } = args;
+    const toolPath = path.join(__dirname, '../mobile-icon-generator/index.js');
+    
+    let cmd = `node "${toolPath}" ${platform} --source="${source}"`;
+    if (adaptive && platform === 'android') cmd += ' --adaptive';
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { cwd: this.projectRoot });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `Icon Generation Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Icon generation failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async iconVerify(args: any) {
+    const { platform, validateAll = true } = args;
+    const toolPath = path.join(__dirname, '../mobile-icon-verifier/index.js');
+    
+    let cmd = `node "${toolPath}" ${platform}`;
+    if (validateAll) cmd += ' --validate-all';
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { cwd: this.projectRoot });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `Icon Verification Results:\n\n${stdout}${stderr ? `\nIssues: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Icon verification failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async fileManage(args: any) {
+    const { action, platform, path: filePath } = args;
+    const toolPath = path.join(__dirname, '../mobile-file-manager/index.js');
+    
+    let cmd = `node "${toolPath}" ${action} --platform=${platform}`;
+    if (filePath) cmd += ` --path="${filePath}"`;
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { cwd: this.projectRoot });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `File Management Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `File management failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async androidProjectManage(args: any) {
+    const { action, project, dependencies } = args;
+    const toolPath = path.join(__dirname, '../android-project-manager/index.js');
+    
+    let cmd = `node "${toolPath}" ${action}`;
+    if (project) cmd += ` --project="${project}"`;
+    if (dependencies && dependencies.length) cmd += ` --deps="${dependencies.join(',')}"`;
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { cwd: this.projectRoot });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `Android Project Management Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Android project management failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async iosProjectManage(args: any) {
+    const { action, project, pods } = args;
+    const toolPath = path.join(__dirname, '../ios-project-manager/index.js');
+    
+    let cmd = `node "${toolPath}" ${action}`;
+    if (project) cmd += ` --project="${project}"`;
+    if (pods && pods.length) cmd += ` --pods="${pods.join(',')}"`;
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { cwd: this.projectRoot });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `iOS Project Management Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `iOS project management failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async agentRegistryManage(args: any) {
+    const { action, fix = false } = args;
+    const toolPath = path.join(__dirname, '../agent-registry-manager/index.js');
+    
+    let cmd = `node "${toolPath}" ${action}`;
+    if (fix) cmd += ' --fix';
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { cwd: this.projectRoot });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `Agent Registry Management Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Agent registry management failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async projectScaffold(args: any) {
+    const { platform, template, name, features } = args;
+    const toolPath = path.join(__dirname, '../project-scaffolder/index.js');
+    
+    let cmd = `node "${toolPath}" ${platform}`;
+    if (template) cmd += ` --template="${template}"`;
+    if (name) cmd += ` --name="${name}"`;
+    if (features && features.length) cmd += ` --features="${features.join(',')}"`;
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { cwd: this.projectRoot });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `Project Scaffolding Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Project scaffolding failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async testRun(args: any) {
+    const { framework = 'jest', action, path: testPath, coverage = false } = args;
+    const toolPath = path.join(__dirname, '../test-runner/index.js');
+    
+    let cmd = `node "${toolPath}" ${action} --framework=${framework}`;
+    if (testPath) cmd += ` --path="${testPath}"`;
+    if (coverage) cmd += ' --coverage';
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { 
+        cwd: this.projectRoot,
+        timeout: 600000 // 10 minutes
+      });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `Test Execution Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Test execution failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async qaValidate(args: any) {
+    const { platform, checks = ['all'], strict = false } = args;
+    const toolPath = path.join(__dirname, '../mobile-qa-validator/index.js');
+    
+    let cmd = `node "${toolPath}" ${platform} --checks="${checks.join(',')}"`;
+    if (strict) cmd += ' --strict';
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { cwd: this.projectRoot });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `QA Validation Results:\n\n${stdout}${stderr ? `\nIssues: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `QA validation failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
         }]
       };
     }

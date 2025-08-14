@@ -1805,7 +1805,7 @@ The model MUST deliver enterprise-grade Chrome extensions that set new standards
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET] react` |
+| UI Generation | `ui-generator` | `Use mcp__poi-companion__ui_generate tool react` |
 | Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool tsx` |
 | Build Management | `build-master` | `Use mcp__poi-companion__build_coordinate MCP tool web` |
 | Accessibility | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool web` |
@@ -1814,7 +1814,7 @@ The model MUST deliver enterprise-grade Chrome extensions that set new standards
 ### **Web Development Workflow:**
 ```bash
 # Web app development
-node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET] react --component={name}
+Use mcp__poi-companion__ui_generate tool with framework: "react", component: "{name}"
 Use mcp__poi-companion__code_generate MCP tool tsx --hooks
 Use mcp__poi-companion__build_coordinate MCP tool optimize --web
 Use mcp__poi-companion__accessibility_check MCP tool audit --web

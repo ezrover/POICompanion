@@ -353,15 +353,15 @@ You are a world-class Senior Frontend Developer with deep expertise in React, Ty
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET]` |
+| Model Optimization | `model-optimizer` | `Use mcp__poi-companion__model_optimize tool` |
 | Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
+| Schema Validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
-node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET] train --data={dataset}
+Use mcp__poi-companion__model_optimize tool with action: "train", dataset: "{dataset}"
 Use mcp__poi-companion__performance_profile MCP tool benchmark --
 
 [... truncated for brevity - see full prompt in agent file ...]
@@ -1070,7 +1070,7 @@ You are a world-class Customer Success Champion with deep expertise in user onbo
 | Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 | Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
+| Schema Validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool` |
 
 ### **General Workflow:**
 ```bash
@@ -1274,15 +1274,15 @@ You are a world-class AI/ML Model Optimization expert specializing in on-device 
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET]` |
+| Model Optimization | `model-optimizer` | `Use mcp__poi-companion__model_optimize tool` |
 | Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
+| Schema Validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
-node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET] train --data={dataset}
+Use mcp__poi-companion__model_optimize tool with action: "train", dataset: "{dataset}"
 Use mcp__poi-companion__performance_profile MCP tool benchm
 
 [... truncated for brevity - see full prompt in agent file ...]
@@ -1316,15 +1316,15 @@ Use mcp__poi-companion__performance_profile MCP tool benchm
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET]` |
+| Model Optimization | `model-optimizer` | `Use mcp__poi-companion__model_optimize tool` |
 | Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
+| Schema Validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
-node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET] train --data={dataset}
+Use mcp__poi-companion__model_optimize tool with action: "train", dataset: "{dataset}"
 Use mcp__poi-companion__performance_profile MCP tool benchmark --
 
 [... truncated for brevity - see full prompt in agent file ...]
@@ -1427,7 +1427,7 @@ You are a world-class Data Intelligence Architect with deep expertise in real-ti
 | Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 | Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
+| Schema Validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool` |
 
 ### **General Workflow:**
 ```bash
@@ -1527,15 +1527,15 @@ You are a world-class Senior Database Architect and Developer with 15+ years of 
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET]` |
+| Model Optimization | `model-optimizer` | `Use mcp__poi-companion__model_optimize tool` |
 | Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
+| Schema Validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
-node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET] train --data={dataset}
+Use mcp__poi-companion__model_optimize tool with action: "train", dataset: "{dataset}"
 Use mcp__poi-companion__performance_profile MCP tool benchm
 
 [... truncated for brevity - see full prompt in agent file ...]

@@ -143,13 +143,13 @@ ALWAYS leverage these local MCP tools to enhance testing efficiency, coverage, a
 cd /Users/naderrahimizad/Projects/AI/POICompanion/mcp
 
 # 1. Initialize comprehensive testing framework
-node test-runner/index.js init --framework=jest,vitest,android,ios
+Use mcp__poi-companion__test_run tool init --framework=jest,vitest,android,ios
 
 # 2. Set up mobile testing environments
 node mcp__poi-companion__mobile_test_run setup --platforms=android,ios
 
 # 3. Establish testing project structure
-node project-scaffolder/index.js testing --type=comprehensive
+Use mcp__poi-companion__project_scaffold tool testing --type=comprehensive
 
 # 4. Validate testing dependencies
 node mcp__poi-companion__dependency_manage testing-setup
@@ -165,17 +165,17 @@ node mcp__poi-companion__code_generate test --spec=[spec-path] --framework=[jest
 node mcp__poi-companion__mobile_test_run generate --platform=[android|ios] --component=[component]
 
 # 3. Generate UI component tests
-node ui-generator/index.js test --component=[ui-component] --framework=compose,swiftui
+Use mcp__poi-companion__ui_generate tool test --component=[ui-component] --framework=compose,swiftui
 
 # 4. Validate test schemas and data
-node schema-validator/index.js test-data --schemas=[test-schemas]
+Use mcp__poi-companion__schema_validate tool test-data --schemas=[test-schemas]
 ```
 
 #### **Continuous Testing & Quality Assurance**
 ```bash
 # Real-time testing execution and monitoring
 # 1. Continuous test execution during development
-node test-runner/index.js watch --coverage --threshold=80
+Use mcp__poi-companion__test_run tool watch --coverage --threshold=80
 
 # 2. Mobile app testing across devices
 node mcp__poi-companion__mobile_test_run continuous --devices=all --coverage
@@ -207,7 +207,7 @@ node mcp__poi-companion__mobile_build_verify test-after-build
 node mcp__poi-companion__doc_process test-docs --source=[test-code]
 
 # 2. Test coverage analysis and reporting
-node test-runner/index.js coverage-report --format=html,json
+Use mcp__poi-companion__test_run tool coverage-report --format=html,json
 
 # 3. Test result processing and insights
 node mcp__poi-companion__doc_process test-results --analyze

@@ -497,16 +497,16 @@ The model MUST deliver world-class user experiences that set new industry standa
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET]` |
+| UI Generation | `ui-generator` | `Use mcp__poi-companion__ui_generate tool` |
 | Design System | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool` |
 | Accessibility | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool` |
-| Icon Creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js [NOT IN UNIFIED MCP YET]` |
-| Icon Validation | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js [NOT IN UNIFIED MCP YET]` |
+| Icon Creation | `mobile-icon-generator` | `Use mcp__poi-companion__icon_generate tool` |
+| Icon Validation | `mobile-icon-verifier` | `Use mcp__poi-companion__icon_verify tool` |
 
 ### **Design Workflow:**
 ```bash
 # Generate UI components
-node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET] create --component={name}
+Use mcp__poi-companion__ui_generate tool create --component={name}
 Use mcp__poi-companion__design_system_manage MCP tool validate
 Use mcp__poi-companion__accessibility_check MCP tool audit --wcag-aa
 ```

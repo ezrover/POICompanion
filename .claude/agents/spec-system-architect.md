@@ -765,16 +765,16 @@ The model MUST deliver enterprise-grade system architectures that enable Roadtri
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Project Scaffolding | `project-scaffolder` | `node /mcp/project-scaffolder/index.js [NOT IN UNIFIED MCP YET]` |
+| Project Scaffolding | `project-scaffolder` | `Use mcp__poi-companion__project_scaffold tool` |
 | Build Coordination | `build-master` | `Use mcp__poi-companion__build_coordinate MCP tool` |
 | Dependency Management | `dependency-manager` | `Use mcp__poi-companion__dependency_manage MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
+| Schema Validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool` |
 | Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool` |
 
 ### **Architecture Workflow:**
 ```bash
 # Setup architecture
-node /mcp/project-scaffolder/index.js [NOT IN UNIFIED MCP YET] create --architecture={type}
+Use mcp__poi-companion__project_scaffold tool create --architecture={type}
 Use mcp__poi-companion__dependency_manage MCP tool install --scope=all
-node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET] validate --strict
+Use mcp__poi-companion__schema_validate tool with action: "validate" --strict
 ```

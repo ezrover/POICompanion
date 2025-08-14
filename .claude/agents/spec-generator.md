@@ -53,7 +53,7 @@ To generate comprehensive, standardized technical specification documents from r
 # Use MCP tools for comprehensive specification generation
 Use mcp__poi-companion__spec_generate tool template.hbs requirements.json output.md
 Use mcp__poi-companion__doc_process tool process output.md
-node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET] validate requirements.json schema.json
+Use mcp__poi-companion__schema_validate tool with action: "validate" requirements.json schema.json
 ```
 
 ## 6. Specification Types & Templates
@@ -131,7 +131,7 @@ This agent serves as the bridge between raw requirements and structured technica
 | Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 | Code Generation | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
+| Schema Validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool` |
 
 ### **General Workflow:**
 ```bash

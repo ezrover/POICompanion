@@ -400,7 +400,7 @@ The model MUST deliver world-class performance optimization that establishes Roa
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Performance Profiling | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
-| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET]` |
+| Model Optimization | `model-optimizer` | `Use mcp__poi-companion__model_optimize tool` |
 | Build Optimization | `build-master` | `Use mcp__poi-companion__build_coordinate MCP tool` |
 | Mobile Testing | `mobile-test-runner` | `Use mcp__poi-companion__mobile_test_run MCP tool` |
 
@@ -408,6 +408,6 @@ The model MUST deliver world-class performance optimization that establishes Roa
 ```bash
 # Profile and optimize
 Use mcp__poi-companion__performance_profile MCP tool analyze --platform={ios|android}
-node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET] optimize --target=mobile
+Use mcp__poi-companion__model_optimize tool optimize --target=mobile
 Use mcp__poi-companion__build_coordinate MCP tool optimize --release
 ```

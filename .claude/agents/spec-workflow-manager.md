@@ -139,8 +139,8 @@ You are the central coordinator - let sub-agents handle specific work while you 
 | Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
 | Spec Generation | `spec-generator` | `Use mcp__poi-companion__spec_generate MCP tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
-| Project Setup | `project-scaffolder` | `node /mcp/project-scaffolder/index.js [NOT IN UNIFIED MCP YET]` |
-| Agent Registry | `agent-registry-manager` | `node /mcp/agent-registry-manager/index.js [NOT IN UNIFIED MCP YET]` |
+| Project Setup | `project-scaffolder` | `Use mcp__poi-companion__project_scaffold tool` |
+| Agent Registry | `agent-registry-manager` | `Use mcp__poi-companion__agent_registry_manage tool` |
 
 ### **Workflow Automation:**
 ```bash

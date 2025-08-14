@@ -1492,27 +1492,27 @@ docs(carplay): update CarPlay integration guide
 | Lint | `swiftlint` | `mobile-linter` | `Use mcp__poi-companion__mobile_lint_check MCP tool ios --auto-fix` |
 | Performance | `instruments` | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool ios` |
 | Accessibility | Manual checks | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool ios` |
-| Project Files | Edit .xcodeproj | `ios-project-manager` | `node /mcp/ios-project-manager/index.js [NOT IN UNIFIED MCP YET] add-files` |
-| File Operations | Direct I/O | `mobile-file-manager` | `node /mcp/mobile-file-manager/index.js [NOT IN UNIFIED MCP YET] ios` |
+| Project Files | Edit .xcodeproj | `ios-project-manager` | `Use mcp__poi-companion__ios_project_manage tool add-files` |
+| File Operations | Direct I/O | `mobile-file-manager` | `Use mcp__poi-companion__file_manage tool ios` |
 | Design Validation | Manual review | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool validate-ios` |
-| Icon Generation | Manual creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js [NOT IN UNIFIED MCP YET] ios` |
-| Icon Verification | Manual check | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js [NOT IN UNIFIED MCP YET] ios` |
+| Icon Generation | Manual creation | `mobile-icon-generator` | `Use mcp__poi-companion__icon_generate tool ios` |
+| Icon Verification | Manual check | `mobile-icon-verifier` | `Use mcp__poi-companion__icon_verify tool ios` |
 | Code Generation | Manual boilerplate | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool swift` |
-| UI Generation | Manual UI code | `ui-generator` | `node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET] swiftui` |
+| UI Generation | Manual UI code | `ui-generator` | `Use mcp__poi-companion__ui_generate tool swiftui` |
 | Simulator | Manual simulator | `ios-simulator-manager` | `Use mcp__poi-companion__ios_simulator_test MCP tool test` |
 | Dependencies | Manual SPM | `dependency-manager` | `Use mcp__poi-companion__dependency_manage MCP tool ios` |
-| Schema Validation | Manual validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET] ios` |
+| Schema Validation | Manual validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool ios` |
 
 ### **MANDATORY iOS Development Workflow with MCP Tools:**
 
 ```bash
 # 1. Project Setup (NEVER create manually)
-node /mcp/project-scaffolder/index.js [NOT IN UNIFIED MCP YET] ios --template=swiftui
-node /mcp/ios-project-manager/index.js [NOT IN UNIFIED MCP YET] init
+Use mcp__poi-companion__project_scaffold tool ios --template=swiftui
+Use mcp__poi-companion__ios_project_manage tool init
 
 # 2. Development Phase (NEVER code without tools)
 Use mcp__poi-companion__code_generate MCP tool swift --component=viewmodel
-node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET] swiftui --screen=destination
+Use mcp__poi-companion__ui_generate tool swiftui --screen=destination
 Use mcp__poi-companion__design_system_manage MCP tool generate-ios-tokens
 
 # 3. Quality Assurance (NEVER skip validation)
@@ -1526,8 +1526,8 @@ Use mcp__poi-companion__performance_profile MCP tool ios --benchmark
 Use mcp__poi-companion__ios_simulator_test MCP tool validate
 
 # 5. Asset Management (NEVER create manually)
-node /mcp/mobile-icon-generator/index.js [NOT IN UNIFIED MCP YET] ios --source=logo.svg
-node /mcp/mobile-icon-verifier/index.js [NOT IN UNIFIED MCP YET] ios --validate-all
+Use mcp__poi-companion__icon_generate tool ios --source=logo.svg
+Use mcp__poi-companion__icon_verify tool ios --validate-all
 ```
 
 ### **Integration with Other Agents via MCP Tools:**

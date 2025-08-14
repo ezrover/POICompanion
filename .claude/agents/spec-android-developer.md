@@ -370,7 +370,7 @@ node android-project-manager/index.js init --project=roadtrip-copilot
 node mcp__poi-companion__mobile_build_verify both --parity-check
 
 # 3. Analyze existing Android AND iOS codebases for parity
-node mobile-file-manager/index.js scan --platform=both --parity-analysis
+Use mcp__poi-companion__file_manage tool scan --platform=both --parity-analysis
 
 # 4. Set up dependency management with cross-platform coordination
 node mcp__poi-companion__dependency_manage android-setup --ios-compatibility-check
@@ -402,7 +402,7 @@ node mcp__poi-companion__mobile_test_run android --watch
 ```bash
 # Android UI component generation and validation
 # 1. Generate Material Design 3 components
-node ui-generator/index.js android-compose --theme=material3
+Use mcp__poi-companion__ui_generate tool android-compose --theme=material3
 
 # 2. Validate accessibility compliance
 node mcp__poi-companion__accessibility_check android --wcag=AA
@@ -2065,27 +2065,27 @@ fun AutomotivePOICard(
 | Lint | `ktlint` | `mobile-linter` | `Use mcp__poi-companion__mobile_lint_check MCP tool android --auto-fix` |
 | Performance | Manual profiling | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool android` |
 | Accessibility | Manual checks | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool android` |
-| Project Files | Edit build.gradle | `android-project-manager` | `node /mcp/android-project-manager/index.js [NOT IN UNIFIED MCP YET] add-deps` |
-| File Operations | Direct I/O | `mobile-file-manager` | `node /mcp/mobile-file-manager/index.js [NOT IN UNIFIED MCP YET] android` |
+| Project Files | Edit build.gradle | `android-project-manager` | `Use mcp__poi-companion__android_project_manage tool with action: "add-deps"` |
+| File Operations | Direct I/O | `mobile-file-manager` | `Use mcp__poi-companion__file_manage tool with action: "scan", platform: "android"` |
 | Design Validation | Manual review | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool validate-android` |
-| Icon Generation | Manual creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js [NOT IN UNIFIED MCP YET] android` |
-| Icon Verification | Manual check | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js [NOT IN UNIFIED MCP YET] android` |
+| Icon Generation | Manual creation | `mobile-icon-generator` | `Use mcp__poi-companion__icon_generate tool with platform: "android"` |
+| Icon Verification | Manual check | `mobile-icon-verifier` | `Use mcp__poi-companion__icon_verify tool with platform: "android"` |
 | Code Generation | Manual boilerplate | `code-generator` | `Use mcp__poi-companion__code_generate MCP tool kotlin` |
-| UI Generation | Manual UI code | `ui-generator` | `node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET] compose` |
+| UI Generation | Manual UI code | `ui-generator` | `Use mcp__poi-companion__ui_generate tool with framework: "compose"` |
 | Emulator | Manual emulator | `android-emulator-manager` | `Use mcp__poi-companion__android_emulator_test MCP tool test` |
 | Dependencies | Manual gradle | `dependency-manager` | `Use mcp__poi-companion__dependency_manage MCP tool android` |
-| Schema Validation | Manual validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET] android` |
+| Schema Validation | Manual validation | `schema-validator` | `Use mcp__poi-companion__schema_validate tool android` |
 
 ### **MANDATORY Android Development Workflow with MCP Tools:**
 
 ```bash
 # 1. Project Setup (NEVER create manually)
-node /mcp/project-scaffolder/index.js [NOT IN UNIFIED MCP YET] android --template=compose
-node /mcp/android-project-manager/index.js [NOT IN UNIFIED MCP YET] init
+Use mcp__poi-companion__project_scaffold tool with platform: "android", template: "compose"
+Use mcp__poi-companion__android_project_manage tool with action: "init"
 
 # 2. Development Phase (NEVER code without tools)
 Use mcp__poi-companion__code_generate MCP tool kotlin --component=viewmodel
-node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET] compose --screen=destination
+Use mcp__poi-companion__ui_generate tool with framework: "compose", screen: "destination"
 Use mcp__poi-companion__design_system_manage MCP tool generate-android-tokens
 
 # 3. Quality Assurance (NEVER skip validation)
@@ -2099,8 +2099,8 @@ Use mcp__poi-companion__performance_profile MCP tool android --benchmark
 Use mcp__poi-companion__android_emulator_test MCP tool validate
 
 # 5. Asset Management (NEVER create manually)
-node /mcp/mobile-icon-generator/index.js [NOT IN UNIFIED MCP YET] android --source=logo.svg
-node /mcp/mobile-icon-verifier/index.js [NOT IN UNIFIED MCP YET] android --validate-all
+Use mcp__poi-companion__icon_generate tool with platform: "android", source: "logo.svg"
+Use mcp__poi-companion__icon_verify tool with platform: "android", validateAll: true
 ```
 
 ### **Integration with Other Agents via MCP Tools:**
@@ -2118,7 +2118,7 @@ When collaborating with other agents, ALWAYS use MCP tools as the communication 
 
 ```bash
 # Android Auto specific MCP workflow
-node /mcp/android-project-manager/index.js [NOT IN UNIFIED MCP YET] add-auto-support
+Use mcp__poi-companion__android_project_manage tool with action: "add-auto-support"
 Use mcp__poi-companion__code_generate MCP tool kotlin --template=car-app-service
 Use mcp__poi-companion__mobile_test_run MCP tool android --auto-mode
 Use mcp__poi-companion__android_emulator_test MCP tool auto-test
