@@ -147,7 +147,7 @@ struct RootView: View {
                     }
                     
                 case .mainDashboard:
-                    MainDashboardView()
+                    MainPOIView()
                         .environmentObject(userPreferences)
                 }
             }

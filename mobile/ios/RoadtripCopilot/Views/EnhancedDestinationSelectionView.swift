@@ -74,6 +74,7 @@ struct EnhancedDestinationSelectionView: View {
                                     searchForDestinations()
                                 }
                             }
+                            .accessibilityIdentifier("destinationSearchField")
                         
                         // CRITICAL FIX: Voice-Animated Navigate Button (Primary Action) - RESTORED ANIMATION
                         Button(action: handleNavigateAction) {
@@ -111,6 +112,7 @@ struct EnhancedDestinationSelectionView: View {
                         .disabled(selectedDestination == nil && searchText.isEmpty)
                         .accessibilityLabel("Start navigation")
                         .accessibilityHint("Double tap to start navigation to entered destination")
+                        .accessibilityIdentifier("navigateButton")
                         
                         // CRITICAL FIX: Microphone Toggle Button (Secondary Action) - BORDERLESS DESIGN
                         Button(action: handleMicrophoneToggle) {
@@ -122,6 +124,7 @@ struct EnhancedDestinationSelectionView: View {
                         .buttonStyle(.plain) // CRITICAL: Remove all default button styling
                         .accessibilityLabel("Microphone")
                         .accessibilityHint("Double tap to toggle microphone")
+                        .accessibilityIdentifier("microphoneButton")
                     }
                     
                     // Selected destination info (if any)
@@ -132,12 +135,14 @@ struct EnhancedDestinationSelectionView: View {
                                     .font(.headline)
                                     .foregroundColor(.primary)
                                     .lineLimit(1)
+                                    .accessibilityIdentifier("selectedDestinationName")
                                 
                                 if let address = destination.placemark.title {
                                     Text(address)
                                         .font(.subheadline)
                                         .foregroundColor(.secondary)
                                         .lineLimit(2)
+                                        .accessibilityIdentifier("selectedDestinationAddress")
                                 }
                             }
                             

@@ -3,7 +3,7 @@ import CoreLocation
 import AVFoundation
 import MapKit
 
-struct MainDashboardView: View {
+struct MainPOIView: View {
     @ObservedObject var locationManager = LocationManager.shared
     @StateObject private var speechManager = SpeechManager()
     @StateObject private var agentManager = AIAgentManager()
@@ -68,6 +68,7 @@ struct MainDashboardView: View {
                             .padding(.vertical, 4)
                         }
                         .accessibilityLabel("Back to destination selection")
+                        .accessibilityIdentifier("backButton")
                         
                         Spacer()
                         
@@ -83,11 +84,13 @@ struct MainDashboardView: View {
                                     .foregroundColor(.white)
                                     .lineLimit(1)
                                     .truncationMode(.tail)
+                                    .accessibilityIdentifier("destinationInfo")
                             }
                         } else {
                             Text("Roadtrip-Copilot")
                                 .font(.headline)
                                 .foregroundColor(.white)
+                                .accessibilityIdentifier("appTitle")
                         }
                         
                         Spacer()
@@ -105,6 +108,7 @@ struct MainDashboardView: View {
                                     .fontWeight(.semibold)
                                     .foregroundColor(.white)
                                     .animation(.easeInOut(duration: 0.3), value: locationManager.currentSpeedMPH)
+                                    .accessibilityIdentifier("speedIndicator")
                             }
                             .padding(.horizontal, 6)
                             .padding(.vertical, 2)
@@ -119,16 +123,19 @@ struct MainDashboardView: View {
                                         .foregroundColor(.white)
                                         .lineLimit(1)
                                         .truncationMode(.tail)
+                                        .accessibilityIdentifier("locationInfo")
                                 } else if let city = locationManager.currentCity {
                                     Text(city)
                                         .font(.caption)
                                         .foregroundColor(.white)
                                         .lineLimit(1)
+                                        .accessibilityIdentifier("locationInfo")
                                 } else if let state = locationManager.currentState {
                                     Text(state)
                                         .font(.caption)
                                         .foregroundColor(.white)
                                         .lineLimit(1)
+                                        .accessibilityIdentifier("locationInfo")
                                 }
                             }
                         }
@@ -156,6 +163,7 @@ struct MainDashboardView: View {
                             Text(currentPOI.name)
                                 .font(.headline)
                                 .foregroundColor(.white)
+                                .accessibilityIdentifier("currentPOIName")
                             Spacer()
                         }
                         .padding()
@@ -177,6 +185,7 @@ struct MainDashboardView: View {
                         actionKey: "previous",
                         isAnimating: animatingButton == "previous"
                     )
+                    .accessibilityIdentifier("previousPOIButton")
                     
                     Spacer()
                     
@@ -189,6 +198,7 @@ struct MainDashboardView: View {
                         actionKey: "save",
                         isAnimating: animatingButton == "save"
                     )
+                    .accessibilityIdentifier("savePOIButton")
                     
                     Spacer()
                     
@@ -201,6 +211,7 @@ struct MainDashboardView: View {
                         actionKey: "like",
                         isAnimating: animatingButton == "like"
                     )
+                    .accessibilityIdentifier("likePOIButton")
                     
                     Spacer()
                     
@@ -213,6 +224,7 @@ struct MainDashboardView: View {
                         actionKey: "dislike",
                         isAnimating: animatingButton == "dislike"
                     )
+                    .accessibilityIdentifier("dislikePOIButton")
                     
                     Spacer()
                     
@@ -226,6 +238,7 @@ struct MainDashboardView: View {
                         isAnimating: animatingButton == "navigate",
                         showVoiceWave: speechManager.isVoiceDetected || speechManager.isSpeaking
                     )
+                    .accessibilityIdentifier("navigatePOIButton")
                     
                     Spacer()
                     
@@ -238,6 +251,7 @@ struct MainDashboardView: View {
                         actionKey: "call",
                         isAnimating: animatingButton == "call"
                     )
+                    .accessibilityIdentifier("callPOIButton")
                     
                     Spacer()
                     
@@ -253,6 +267,7 @@ struct MainDashboardView: View {
                         actionKey: "exit",
                         isAnimating: animatingButton == "exit"
                     )
+                    .accessibilityIdentifier("exitPOIButton")
                     
                     Spacer()
                     
@@ -265,6 +280,7 @@ struct MainDashboardView: View {
                         actionKey: "next",
                         isAnimating: animatingButton == "next"
                     )
+                    .accessibilityIdentifier("nextPOIButton")
                     }
                     .padding(.horizontal, 4) // 4px margin from screen edges
                     .padding(.top, 8) // 8px top margin for better visibility
@@ -584,5 +600,5 @@ struct HMIButtonStyle: ButtonStyle {
 
 
 #Preview {
-    MainDashboardView()
+    MainPOIView()
 }
