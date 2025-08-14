@@ -424,6 +424,51 @@ class POICompanionMCPServer {
         }
       },
       {
+        name: 'e2e_ui_test_run',
+        description: 'Comprehensive E2E UI testing for iOS and Android platforms with platform parity validation',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            platform: {
+              type: 'string',
+              enum: ['ios', 'android', 'both'],
+              description: 'Target platform(s) for E2E testing'
+            },
+            critical: {
+              type: 'boolean',
+              description: 'Run critical tests only',
+              default: false
+            },
+            skipBuild: {
+              type: 'boolean',
+              description: 'Skip building apps (use existing builds)',
+              default: false
+            },
+            skipSimulator: {
+              type: 'boolean',
+              description: 'Skip iOS simulator boot check',
+              default: false
+            },
+            skipEmulator: {
+              type: 'boolean',
+              description: 'Skip Android emulator boot check',
+              default: false
+            },
+            failFast: {
+              type: 'boolean',
+              description: 'Stop on first test failure',
+              default: false
+            },
+            verbose: {
+              type: 'boolean',
+              description: 'Show detailed output',
+              default: false
+            }
+          },
+          required: ['platform']
+        }
+      },
+      {
         name: 'spec_generate',
         description: 'Generate technical specifications from requirements',
         inputSchema: {
@@ -481,6 +526,8 @@ class POICompanionMCPServer {
         return await this.docProcess(args);
       case 'spec_generate':
         return await this.specGenerate(args);
+      case 'e2e_ui_test_run':
+        return await this.e2eUITestRun(args);
       default:
         throw new Error(`Unknown tool: ${name}`);
     }
@@ -845,6 +892,49 @@ class POICompanionMCPServer {
         content: [{
           type: 'text',
           text: `Document processing failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+        }]
+      };
+    }
+  }
+
+  private async e2eUITestRun(args: any) {
+    const { 
+      platform, 
+      critical = false, 
+      skipBuild = false, 
+      skipSimulator = false,
+      skipEmulator = false,
+      failFast = false,
+      verbose = false
+    } = args;
+    
+    const toolPath = path.join(__dirname, '../e2e-ui-test-runner/index.js');
+    
+    let cmd = `node "${toolPath}" test ${platform}`;
+    if (critical) cmd += ' --critical';
+    if (skipBuild) cmd += ' --skip-build';
+    if (skipSimulator) cmd += ' --skip-simulator';
+    if (skipEmulator) cmd += ' --skip-emulator';
+    if (failFast) cmd += ' --fail-fast';
+    if (verbose) cmd += ' --verbose';
+
+    try {
+      const { stdout, stderr } = await execAsync(cmd, { 
+        cwd: this.projectRoot,
+        timeout: 600000 // 10 minute timeout for E2E tests
+      });
+      
+      return {
+        content: [{
+          type: 'text',
+          text: `E2E UI Test Results:\n\n${stdout}${stderr ? `\nWarnings: ${stderr}` : ''}`
+        }]
+      };
+    } catch (error: any) {
+      return {
+        content: [{
+          type: 'text',
+          text: `E2E UI tests failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
         }]
       };
     }
