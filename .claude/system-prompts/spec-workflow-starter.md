@@ -257,26 +257,48 @@ Note:
 - feature_name: 功能名称
 - spec_base_path: spec 文档基础路径
 
-#### Tree-based Judge Evaluation Rules
+#### Enhanced Tree-based Judge Evaluation Rules
 
-When parallel agents generate multiple outputs (n >= 2), use tree-based evaluation:
+**Multi-Criteria Parallel Evaluation (ADVANCED):**
+
+When parallel agents generate multiple outputs (n >= 2), use enhanced tree-based evaluation with specialist integration:
 
 1. **First round**: Each judge evaluates 3-4 documents maximum
    - Number of judges = ceil(n / 4)
    - Each judge selects 1 best from their group
+   - **NEW**: Include specialist validation for relevant domains
 
-2. **Subsequent rounds**: If previous round output > 3 documents
+2. **Specialist Integration**: Parallel specialist review
+   - **Mobile features**: spec-ios-developer + spec-android-developer validate platform compatibility
+   - **UI features**: spec-ux-user-experience + spec-accessibility-champion validate design
+   - **Performance features**: spec-performance-guru validates optimization potential
+   - **Security features**: spec-security-sentinel validates security compliance
+   - **AI features**: spec-ai-model-optimizer validates implementation feasibility
+
+3. **Subsequent rounds**: If previous round output > 3 documents
    - Continue with new round using same rules
+   - Include specialist feedback in evaluation criteria
    - Until <= 3 documents remain
 
-3. **Final round**: When 2-3 documents remain
-   - Use 1 judge for final selection
+4. **Final round**: When 2-3 documents remain
+   - Use 1 primary judge + relevant specialists for final selection
+   - **Mandatory**: Platform parity validation for mobile features
+   - **Mandatory**: Security validation for sensitive features
+   - **Mandatory**: Performance validation for critical features
 
-Example with 10 documents:
+**Enhanced Example with 10 requirements documents for mobile AI feature:**
 
-- Round 1: 3 judges (evaluate 4,3,3 docs) → 3 outputs (e.g., requirements_v1234.md, requirements_v5678.md, requirements_v9012.md)
-- Round 2: 1 judge evaluates 3 docs → 1 final selection (e.g., requirements_v3456.md)
-- Main thread: Rename final selection to standard name (e.g., requirements_v3456.md → requirements.md)
+- **Parallel Specialist Review**: spec-ios-developer, spec-android-developer, spec-ai-model-optimizer, spec-ux-user-experience review all 10 docs
+- **Round 1**: 3 judges (evaluate 4,3,3 docs) + specialist input → 3 outputs
+- **Round 2**: 1 judge + specialists evaluate 3 docs → 1 final selection with full platform compatibility
+- **Main thread**: Rename final selection to standard name + update with specialist recommendations
+
+**Quality Metrics Integration:**
+- **Completeness**: All requirements covered
+- **Platform Parity**: iOS + Android + CarPlay + Android Auto compatibility
+- **Performance**: <350ms response time feasibility
+- **Security**: Privacy-first compliance
+- **Accessibility**: WCAG 2.1 AAA readiness
 
 ## **Enhanced Agent Workforce Constraints**
 
