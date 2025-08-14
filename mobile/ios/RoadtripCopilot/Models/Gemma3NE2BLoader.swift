@@ -217,7 +217,8 @@ class Gemma3NE2BLoader {
         }
         
         if lowercased.contains("tell me about") {
-            let place = input.replacingOccurrences(of: "tell me about this place:", with: "").trimmingCharacters(in: .whitespaces)
+            let place = input.replacingOccurrences(of: "tell me about this place:", with: "", options: .caseInsensitive)
+                .trimmingCharacters(in: .whitespacesAndNewlines)
             return "'\(place)' sounds like an interesting destination! While I'm still loading my full capabilities, I can tell you that this area likely has unique attractions, local restaurants, and hidden gems waiting to be discovered. I'd recommend exploring the historic downtown area and checking out local recommendations."
         }
         
@@ -349,21 +350,25 @@ struct SimpleFunctionCall {
             return nil
         }
         
-        // Ensure valid range bounds
-        guard jsonStart.lowerBound < jsonEnd.upperBound else {
-            return nil
-        }
-        
-        // Safely extract substring
+        // Safely extract substring - use correct bounds
         let startIndex = jsonStart.lowerBound
-        let endIndex = jsonEnd.upperBound
+        let endIndex = jsonEnd.upperBound  // upperBound is correct for including the closing brace
         
-        // Check if indices are valid
-        guard startIndex >= trimmed.startIndex && endIndex <= trimmed.endIndex else {
+        // Ensure valid range bounds and indices
+        guard startIndex < endIndex,
+              startIndex >= trimmed.startIndex,
+              endIndex <= trimmed.endIndex else {
             return nil
         }
         
-        let jsonString = String(trimmed[startIndex...endIndex])
+        // Create a safe substring range
+        let range = startIndex..<endIndex
+        let jsonString = String(trimmed[range])
+        
+        // Validate that we have a non-empty JSON string
+        guard !jsonString.isEmpty else {
+            return nil
+        }
         
         guard let data = jsonString.data(using: .utf8),
               let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
