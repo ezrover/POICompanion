@@ -3,7 +3,7 @@ import CoreLocation
 import AVFoundation
 import MapKit
 
-struct ContentView: View {
+struct MainDashboardView: View {
     @ObservedObject var locationManager = LocationManager.shared
     @StateObject private var speechManager = SpeechManager()
     @StateObject private var agentManager = AIAgentManager()
@@ -399,7 +399,7 @@ struct ContentView: View {
         case "call":
             handleCallAction()
         case "exit", "back": // CRITICAL FIX: Add back voice command support
-            print("[ContentView] Back/Exit command received - returning to destination selection")
+            print("[MainDashboardView] Back/Exit command received - returning to destination selection")
             speechManager.speak("Going back to destination selection")
             appStateManager.returnToDestinationSelection()
             roadtripSession.pauseSession()
@@ -584,5 +584,5 @@ struct HMIButtonStyle: ButtonStyle {
 
 
 #Preview {
-    ContentView()
+    MainDashboardView()
 }

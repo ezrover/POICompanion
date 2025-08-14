@@ -14,7 +14,7 @@
 		D803D34BF455F1FA4F1A5C81 /* Gemma3NE2BLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301A22D51F645BA237DFBE52 /* Gemma3NE2BLoader.swift */; };
 		1A2B3C4D5E6F7890 /* RoadtripCopilotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7891 /* RoadtripCopilotApp.swift */; };
 		3F066B62EA0B4ABB /* LocationAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E070ED09F14D09 /* LocationAuthorizationView.swift */; };
-		1A2B3C4D5E6F7892 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7893 /* ContentView.swift */; };
+		1A2B3C4D5E6F7892 /* MainDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7893 /* MainDashboardView.swift */; };
 		1A2B3C4D5E6F7894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7895 /* Assets.xcassets */; };
 		2B3C4D5E6F789012 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F789013 /* LocationManager.swift */; };
 		2B3C4D5E6F789014 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F789015 /* SpeechManager.swift */; };
@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		0123456789ABCDEF /* RoadtripCopilot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadtripCopilot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F7891 /* RoadtripCopilotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadtripCopilotApp.swift; sourceTree = "<group>"; };
-		1A2B3C4D5E6F7893 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1A2B3C4D5E6F7893 /* MainDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDashboardView.swift; sourceTree = "<group>"; };
 		F4E070ED09F14D09 /* LocationAuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationView.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F7895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A2B3C4D5E6F7896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				1A2B3C4D5E6F7891 /* RoadtripCopilotApp.swift */,
-				1A2B3C4D5E6F7893 /* ContentView.swift */,
 				ABCDEF0123456789 /* Models */,
 				BCDEF01234567890 /* Views */,
 				CDEF012345678901 /* Managers */,
@@ -167,6 +166,7 @@
 			children = (
 				6F78901234567893 /* EnhancedDestinationSelectionView.swift */,
 				F4E070ED09F14D09 /* LocationAuthorizationView.swift */,
+				1A2B3C4D5E6F7893 /* MainDashboardView.swift */,
 				POIRESULTVIEW0000000000001 /* POIResultView.swift */,
 				FEEDC0DE0000000000000001 /* SplashScreenView.swift */,
 			);
@@ -323,7 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A2B3C4D5E6F7892 /* ContentView.swift in Sources */,
+				1A2B3C4D5E6F7892 /* MainDashboardView.swift in Sources */,
 				1A2B3C4D5E6F7890 /* RoadtripCopilotApp.swift in Sources */,
 				3F066B62EA0B4ABB /* LocationAuthorizationView.swift in Sources */,
 				2B3C4D5E6F789012 /* LocationManager.swift in Sources */,
