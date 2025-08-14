@@ -21,6 +21,12 @@ class ModelManager: ObservableObject {
     func loadModel() async throws {
         do {
             gemmaLoader = try Gemma3NE2BLoader()
+            
+            // TEST: Verify model works with a simple question
+            print("🧪 [ModelManager] Testing Gemma-3N with verification prompt...")
+            let testResponse = try await gemmaLoader!.predict(input: "who are you?", maxTokens: 50)
+            print("✅ [ModelManager] Model test response: '\(testResponse)'")
+            
             await MainActor.run {
                 self.isModelLoaded = true
                 self.modelLoadError = nil

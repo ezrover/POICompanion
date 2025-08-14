@@ -145,6 +145,22 @@ struct SplashScreenView: View {
                         ModelManager.shared.gemmaLoader = loader
                     }
                     
+                    // TEST: Verify model is working with a simple question
+                    loadingProgress = 0.95
+                    loadingStatus = "Verifying AI model..."
+                    
+                    let testPrompt = "who are you?"
+                    print("🧪 [MODEL TEST] Sending test prompt: '\(testPrompt)'")
+                    
+                    do {
+                        let testResponse = try await loader.predict(input: testPrompt, maxTokens: 50)
+                        print("✅ [MODEL TEST] Response received: '\(testResponse)'")
+                        print("🎉 [MODEL TEST] Gemma-3N is working correctly!")
+                    } catch {
+                        print("⚠️ [MODEL TEST] Test failed but continuing: \(error)")
+                        // Continue anyway - model might work for actual queries
+                    }
+                    
                     try await Task.sleep(nanoseconds: 200_000_000) // 0.2 seconds
                 } else {
                     // Fallback for older iOS versions

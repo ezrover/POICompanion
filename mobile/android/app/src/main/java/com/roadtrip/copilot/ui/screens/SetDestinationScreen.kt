@@ -79,6 +79,19 @@ fun SetDestinationScreen(
             try {
                 gemmaProcessor.loadModel()
                 println("[SetDestinationScreen] Gemma-3N model loaded successfully")
+                
+                // TEST: Verify model with a simple question
+                println("🧪 [SetDestinationScreen] Testing Gemma-3N with verification prompt...")
+                val discoveryInput = com.roadtrip.copilot.ai.DiscoveryInput(
+                    latitude = 0.0,
+                    longitude = 0.0,
+                    poiName = "test",
+                    category = "test",
+                    context = "who are you?"
+                )
+                val testResult = gemmaProcessor.processDiscovery(discoveryInput)
+                println("✅ [SetDestinationScreen] Model test response: '${testResult.podcastScript}'")
+                
             } catch (e: Exception) {
                 println("[SetDestinationScreen] Gemma-3N loading failed: ${e.message}")
             }
