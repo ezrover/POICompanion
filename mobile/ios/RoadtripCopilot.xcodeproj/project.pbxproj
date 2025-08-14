@@ -22,10 +22,8 @@
 		4D5E6F7890123456 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5E6F7890123457 /* UserPreferences.swift */; };
 		4D5E6F7890123458 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5E6F7890123459 /* AppState.swift */; };
 		5E6F789012345678 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F789012345679 /* CarPlaySceneDelegate.swift */; };
-		6F78901234567890 /* DestinationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F78901234567891 /* DestinationSelectionView.swift */; };
 		6F78901234567892 /* EnhancedDestinationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F78901234567893 /* EnhancedDestinationSelectionView.swift */; };
 		POIRESULTVIEW0000000000002 /* POIResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = POIRESULTVIEW0000000000001 /* POIResultView.swift */; };
-		6F78901234567894 /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F78901234567895 /* OnboardingSteps.swift */; };
 		7890123456789012 /* VoiceVisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7890123456789013 /* VoiceVisualizerView.swift */; };
 		8901234567890123 /* SpeechManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901234567890124 /* SpeechManagerExtensions.swift */; };
 		9012345678901234 /* POIDiscoveryAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012345678901235 /* POIDiscoveryAgent.swift */; };
@@ -60,10 +58,8 @@
 		4D5E6F7890123457 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		4D5E6F7890123459 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		5E6F789012345679 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
-		6F78901234567891 /* DestinationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationSelectionView.swift; sourceTree = "<group>"; };
 		6F78901234567893 /* EnhancedDestinationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedDestinationSelectionView.swift; sourceTree = "<group>"; };
 		POIRESULTVIEW0000000000001 /* POIResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIResultView.swift; sourceTree = "<group>"; };
-		6F78901234567895 /* OnboardingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSteps.swift; sourceTree = "<group>"; };
 		7890123456789013 /* VoiceVisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceVisualizerView.swift; sourceTree = "<group>"; };
 		8901234567890124 /* SpeechManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManagerExtensions.swift; sourceTree = "<group>"; };
 		9012345678901235 /* POIDiscoveryAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIDiscoveryAgent.swift; sourceTree = "<group>"; };
@@ -169,10 +165,8 @@
 		BCDEF01234567890 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6F78901234567891 /* DestinationSelectionView.swift */,
 				6F78901234567893 /* EnhancedDestinationSelectionView.swift */,
 				F4E070ED09F14D09 /* LocationAuthorizationView.swift */,
-				6F78901234567895 /* OnboardingSteps.swift */,
 				POIRESULTVIEW0000000000001 /* POIResultView.swift */,
 				FEEDC0DE0000000000000001 /* SplashScreenView.swift */,
 			);

@@ -4,13 +4,19 @@ import CoreLocation
 import Foundation
 import Combine
 
+// Wrapper to make MKMapItem identifiable
+struct IdentifiableMapItem: Identifiable {
+    let id = UUID()
+    let mapItem: MKMapItem
+}
+
 struct EnhancedDestinationSelectionView: View {
     @StateObject private var locationManager = LocationManager()
     @StateObject private var speechManager = SpeechManager()
     @StateObject private var userPreferences = UserPreferences()
     
     @State private var searchText = ""
-    @State private var searchResults: [MKMapItem] = []
+    @State private var searchResults: [IdentifiableMapItem] = []
     @State private var selectedDestination: MKMapItem?
     @State private var isListening = false
     @State private var shouldNavigate = false
@@ -36,13 +42,13 @@ struct EnhancedDestinationSelectionView: View {
     var body: some View {
         ZStack {
             // Full-screen map (edge to edge)
-            Map(coordinateRegion: $region, annotationItems: searchResults) { item in
-                MapAnnotation(coordinate: item.placemark.coordinate) {
+            Map(coordinateRegion: $region, annotationItems: searchResults) { identifiableItem in
+                MapAnnotation(coordinate: identifiableItem.mapItem.placemark.coordinate) {
                     EnhancedDestinationPin(
-                        item: item,
-                        isSelected: selectedDestination?.name == item.name
+                        item: identifiableItem.mapItem,
+                        isSelected: selectedDestination?.name == identifiableItem.mapItem.name
                     ) {
-                        selectDestination(item)
+                        selectDestination(identifiableItem.mapItem)
                     }
                 }
             }
@@ -71,38 +77,24 @@ struct EnhancedDestinationSelectionView: View {
                         
                         // CRITICAL FIX: Navigate Button (Primary Action) - BORDERLESS DESIGN
                         Button(action: handleNavigateAction) {
-                            ZStack {
-                                // BORDERLESS DESIGN: Remove background shape - icon-only button
-                                Color.clear
-                                    .frame(width: 56, height: 56)
-                                
-                                if isProcessingNavigation {
-                                    ProgressView()
-                                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-                                        .scaleEffect(0.8)
-                                } else {
-                                    Image(systemName: "arrow.right")
-                                        .font(.system(size: 24, weight: .semibold))
-                                        .foregroundColor(.blue) // Use system color for borderless design
-                                }
-                            }
+                            Image(systemName: "arrow.right")
+                                .font(.system(size: 24, weight: .semibold))
+                                .foregroundColor(selectedDestination != nil || !searchText.isEmpty ? .blue : .gray)
+                                .frame(width: 56, height: 56)
                         }
+                        .buttonStyle(.plain) // CRITICAL: Remove all default button styling
                         .disabled(selectedDestination == nil && searchText.isEmpty)
                         .accessibilityLabel("Start navigation")
                         .accessibilityHint("Double tap to start navigation to entered destination")
                         
                         // CRITICAL FIX: Microphone Toggle Button (Secondary Action) - BORDERLESS DESIGN
                         Button(action: handleMicrophoneToggle) {
-                            ZStack {
-                                // BORDERLESS DESIGN: Remove background shape - icon-only button
-                                Color.clear
-                                    .frame(width: 56, height: 56)
-                                
-                                Image(systemName: isListening ? "mic.fill" : "mic")
-                                    .font(.system(size: 24, weight: .medium))
-                                    .foregroundColor(isListening ? .green : .primary) // Use system colors for borderless design
-                            }
+                            Image(systemName: isListening ? "mic.fill" : "mic")
+                                .font(.system(size: 24, weight: .medium))
+                                .foregroundColor(isListening ? .green : .primary)
+                                .frame(width: 56, height: 56)
                         }
+                        .buttonStyle(.plain) // CRITICAL: Remove all default button styling
                         .accessibilityLabel("Microphone")
                         .accessibilityHint("Double tap to toggle microphone")
                     }
@@ -319,7 +311,7 @@ struct EnhancedDestinationSelectionView: View {
             // Auto-navigate to first result after search
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 if let firstResult = self.searchResults.first {
-                    self.selectedDestination = firstResult
+                    self.selectedDestination = firstResult.mapItem
                     self.handleGemmaIntegrationAndNavigation()
                 }
                 self.isProcessingNavigation = false
@@ -609,14 +601,14 @@ struct EnhancedDestinationSelectionView: View {
     }
     
     private func handleSearchSuccess(response: MKLocalSearch.Response, query: String, searchStartTime: Date) {
-        self.searchResults = response.mapItems
+        self.searchResults = response.mapItems.map { IdentifiableMapItem(mapItem: $0) }
         TimestampLogger.logSearchEnd(query, startTime: searchStartTime, resultCount: self.searchResults.count)
         
         if !self.searchResults.isEmpty {
             // CRITICAL FIX: Show search results but do NOT auto-select - require manual user selection
             print("[DestinationView] Search results available, waiting for user selection")
             // Update map region to show first result but don't select it
-            let firstResult = self.searchResults[0]
+            let firstResult = self.searchResults[0].mapItem
             self.region = MKCoordinateRegion(
                 center: firstResult.placemark.coordinate,
                 span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)

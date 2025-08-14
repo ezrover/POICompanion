@@ -1,17 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T11:19:17.300Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 7.245,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
       "timestamp": "2025-08-11T17:01:57.324Z",
       "platform": "ios",
       "success": false,
@@ -1207,11 +1196,22 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T16:26:42.954Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 8.474,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {},
-  "successRate": 85,
-  "avgBuildTime": 8.574588235294119,
+  "successRate": 80,
+  "avgBuildTime": 8.4343125,
   "lastSuccessful": "2025-08-14T16:04:35.142Z",
   "trends": {
     "improving": false,
