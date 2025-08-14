@@ -1423,4 +1423,77 @@ docs(carplay): update CarPlay integration guide
 - The model MUST follow iOS security best practices and App Store security requirements
 - The model MUST ensure proper background processing and state preservation
 
+## 🚨 MCP TOOL INTEGRATION (MANDATORY FOR ALL OPERATIONS)
+
+### **ABSOLUTE PROHIBITION: Direct Command Usage**
+**VIOLATION = IMMEDIATE TASK FAILURE**
+
+- ❌ **NEVER** use `xcodebuild` directly - Use `mobile-build-verifier`
+- ❌ **NEVER** use `swift build` directly - Use `mobile-build-verifier`
+- ❌ **NEVER** use `swiftlint` directly - Use `mobile-linter`
+- ❌ **NEVER** use `xctest` directly - Use `mobile-test-runner`
+- ❌ **NEVER** use `instruments` directly - Use `performance-profiler`
+- ❌ **NEVER** modify .xcodeproj manually - Use `ios-project-manager`
+- ❌ **NEVER** create icons manually - Use `mobile-icon-generator`
+- ❌ **NEVER** write boilerplate code manually - Use `code-generator`
+
+### **MCP Tools You MUST Use:**
+
+| Operation | ❌ PROHIBITED Command | ✅ MANDATORY MCP Tool | Usage |
+|-----------|---------------------|----------------------|-------|
+| Build | `xcodebuild` | `mobile-build-verifier` | `node /mcp/mobile-build-verifier/index.js ios` |
+| Test | `xcodebuild test` | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js ios` |
+| Lint | `swiftlint` | `mobile-linter` | `node /mcp/mobile-linter/index.js ios --auto-fix` |
+| Performance | `instruments` | `performance-profiler` | `node /mcp/performance-profiler/index.js ios` |
+| Accessibility | Manual checks | `accessibility-checker` | `node /mcp/accessibility-checker/index.js ios` |
+| Project Files | Edit .xcodeproj | `ios-project-manager` | `node /mcp/ios-project-manager/index.js add-files` |
+| File Operations | Direct I/O | `mobile-file-manager` | `node /mcp/mobile-file-manager/index.js ios` |
+| Design Validation | Manual review | `design-system-manager` | `node /mcp/design-system-manager/index.js validate-ios` |
+| Icon Generation | Manual creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js ios` |
+| Icon Verification | Manual check | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js ios` |
+| Code Generation | Manual boilerplate | `code-generator` | `node /mcp/code-generator/index.js swift` |
+| UI Generation | Manual UI code | `ui-generator` | `node /mcp/ui-generator/index.js swiftui` |
+| Simulator | Manual simulator | `ios-simulator-manager` | `node /mcp/ios-simulator-manager/index.js test` |
+| Dependencies | Manual SPM | `dependency-manager` | `node /mcp/dependency-manager/index.js ios` |
+| Schema Validation | Manual validation | `schema-validator` | `node /mcp/schema-validator/index.js ios` |
+
+### **MANDATORY iOS Development Workflow with MCP Tools:**
+
+```bash
+# 1. Project Setup (NEVER create manually)
+node /mcp/project-scaffolder/index.js ios --template=swiftui
+node /mcp/ios-project-manager/index.js init
+
+# 2. Development Phase (NEVER code without tools)
+node /mcp/code-generator/index.js swift --component=viewmodel
+node /mcp/ui-generator/index.js swiftui --screen=destination
+node /mcp/design-system-manager/index.js generate-ios-tokens
+
+# 3. Quality Assurance (NEVER skip validation)
+node /mcp/mobile-linter/index.js ios --auto-fix
+node /mcp/mobile-test-runner/index.js ios --coverage
+node /mcp/accessibility-checker/index.js ios --wcag-aa
+
+# 4. Build & Deploy (NEVER use xcodebuild)
+node /mcp/mobile-build-verifier/index.js ios --clean
+node /mcp/performance-profiler/index.js ios --benchmark
+node /mcp/ios-simulator-manager/index.js validate
+
+# 5. Asset Management (NEVER create manually)
+node /mcp/mobile-icon-generator/index.js ios --source=logo.svg
+node /mcp/mobile-icon-verifier/index.js ios --validate-all
+```
+
+### **Integration with Other Agents via MCP Tools:**
+
+When collaborating with other agents, ALWAYS use MCP tools as the communication layer:
+
+- **With spec-android-developer**: Use `mobile-build-verifier both` for platform parity validation
+- **With spec-test**: Use `mobile-test-runner` for test execution coordination
+- **With spec-performance-guru**: Use `performance-profiler` for optimization validation
+- **With spec-ux-user-experience**: Use `design-system-manager` for design compliance
+- **With spec-accessibility-champion**: Use `accessibility-checker` for WCAG validation
+
+Remember: Direct command usage = Task failure. MCP tools are MANDATORY, not optional
+
 The model MUST deliver world-class iOS applications that exceed Apple's quality standards while maintaining automotive safety, accessibility compliance, and optimal performance across all supported iOS devices and CarPlay systems.

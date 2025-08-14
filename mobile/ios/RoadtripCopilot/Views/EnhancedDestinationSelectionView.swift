@@ -418,12 +418,9 @@ struct EnhancedDestinationSelectionView: View {
                     // Get response from Gemma-3N
                     response = try await ModelManager.shared.predict(input: prompt, maxTokens: 150)
                 } else {
-                    // Use legacy model manager for iOS 15
-                    if !ModelManagerLegacy.shared.isModelLoaded {
-                        try await ModelManagerLegacy.shared.loadModel()
-                    }
-                    
-                    response = try await ModelManagerLegacy.shared.predict(input: prompt, maxTokens: 150)
+                    // For iOS 15, provide a fallback response without AI
+                    response = "This is a beautiful destination! " + destinationName + " offers great experiences and memorable moments. Perfect for exploration and discovery."
+                    print("⚠️ [ModelManager] iOS 15 detected - using fallback response (AI requires iOS 16+)")
                 }
                 
                 await MainActor.run {
