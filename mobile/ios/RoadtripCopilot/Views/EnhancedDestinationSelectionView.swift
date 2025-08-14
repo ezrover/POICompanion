@@ -166,19 +166,19 @@ struct EnhancedDestinationSelectionView: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                .padding(.bottom, 100) // Much larger bottom padding to ensure search field is clearly visible
+                .padding(.bottom, 34) // Standard safe area bottom padding for proper gray box positioning
                 .background(
-                    // Much thinner background blur for minimal UI
+                    // Gray box background properly positioned at bottom
                     Rectangle()
                         .fill(.ultraThinMaterial)
                         .mask(
                             VStack {
                                 Spacer()
                                 Rectangle()
-                                    .frame(height: selectedDestination != nil ? 120 : 80) // Reduced height
+                                    .frame(height: selectedDestination != nil ? 180 : 140) // Proper height for content
                             }
                         )
-                        .ignoresSafeArea(.all) // Ignore all safe areas for edge-to-edge
+                        .ignoresSafeArea(.all) // Edge-to-edge background
                 )
             }
         }
