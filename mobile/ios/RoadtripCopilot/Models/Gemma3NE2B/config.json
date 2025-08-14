@@ -5,5 +5,5 @@
   "use_neural_engine": true,
   "max_sequence_length": 2048,
   "quantization": "int8",
-  "expected_size_mb": 500
+  "expected_size_mb": 400
 }

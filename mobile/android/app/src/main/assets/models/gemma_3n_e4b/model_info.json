@@ -1,0 +1,7 @@
+{
+  "format": "tflite",
+  "version": "1.0.0",
+  "author": "Roadtrip Copilot",
+  "description": "Gemma-3N E4B Mobile Model",
+  "created": "2025-08-14"
+}

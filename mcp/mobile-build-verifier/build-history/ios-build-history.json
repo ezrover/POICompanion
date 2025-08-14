@@ -1,27 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T10:52:48.670Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 10.291,
-      "errors": [],
-      "fixes": [],
-      "warnings": 6,
-      "warningDetails": [
-        "warning: instance method 'templateApplicationScene(_:didConnect:to:)' nearly matches optional requirement 'templateApplicationScene(_:didConnect:to:)' of protocol 'CPTemplateApplicationSceneDelegate'",
-        "warning: instance method 'templateApplicationScene(_:didDisconnect:from:)' nearly matches optional requirement 'templateApplicationScene(_:didDisconnect:from:)' of protocol 'CPTemplateApplicationSceneDelegate'",
-        "warning: instance method 'templateApplicationScene(_:didConnect:to:)' nearly matches optional requirement 'templateApplicationScene(_:didConnect:to:)' of protocol 'CPTemplateApplicationSceneDelegate'",
-        "warning: instance method 'templateApplicationScene(_:didDisconnect:from:)' nearly matches optional requirement 'templateApplicationScene(_:didDisconnect:from:)' of protocol 'CPTemplateApplicationSceneDelegate'",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
-      ],
-      "warningSuggestions": [
-        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
-        "Remove unused functions, variables, and imports to clean up codebase."
-      ]
-    },
-    {
       "timestamp": "2025-08-11T11:03:51.511Z",
       "platform": "ios",
       "success": true,
@@ -1247,12 +1226,23 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T14:56:17.910Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 6.505,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {},
   "successRate": 80,
-  "avgBuildTime": 8.7971875,
-  "lastSuccessful": "2025-08-14T14:54:34.170Z",
+  "avgBuildTime": 8.592625,
+  "lastSuccessful": "2025-08-14T14:56:17.910Z",
   "trends": {
     "improving": true,
     "recentFailures": 0

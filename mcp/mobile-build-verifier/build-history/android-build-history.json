@@ -1,15 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T01:45:44.365Z",
-      "platform": "android",
-      "success": true,
-      "duration": 6.572,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
       "timestamp": "2025-08-11T01:48:04.355Z",
       "platform": "android",
       "success": false,
@@ -1203,6 +1194,17 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T14:56:37.726Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.753,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {
@@ -1210,10 +1212,10 @@
     "missing-dependency": 21
   },
   "successRate": 80,
-  "avgBuildTime": 2.851875,
-  "lastSuccessful": "2025-08-14T14:54:38.832Z",
+  "avgBuildTime": 2.858,
+  "lastSuccessful": "2025-08-14T14:56:37.726Z",
   "trends": {
-    "improving": false,
-    "recentFailures": 2
+    "improving": true,
+    "recentFailures": 1
   }
 }
