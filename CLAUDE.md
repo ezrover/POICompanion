@@ -522,10 +522,10 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 **❌ DEPRECATED Individual Tool Commands (REPLACED BY MCP SERVER):**
 ```bash
 # These are now handled by the unified MCP server
-# node /mcp/mobile-build-verifier/index.js (DEPRECATED)
-# node /mcp/mobile-test-runner/index.js (DEPRECATED)
-# node /mcp/android-emulator-manager/index.js (DEPRECATED)
-# node /mcp/ios-simulator-manager/index.js (DEPRECATED)
+# Use mcp__poi-companion__mobile_build_verify tool (DEPRECATED)
+# Use mcp__poi-companion__mobile_test_run tool (DEPRECATED)
+# Use mcp__poi-companion__android_emulator_test tool (DEPRECATED)
+# Use mcp__poi-companion__ios_simulator_test tool (DEPRECATED)
 ```
 
 **❌ PROHIBITED Manual Commands (NEVER USE - IMMEDIATE TASK FAILURE):**

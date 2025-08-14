@@ -17,15 +17,15 @@ description: Designer leveraging AI tools to create adaptive, intuitive, and acc
 
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
-| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js (pending MCP integration)` |
+| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET]` |
 | Performance Analysis | `performance-profiler` | `Use mcp__poi-companion__performance_profile MCP tool` |
-| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js (pending MCP integration)` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET]` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 
 ### **Data Science Workflow:**
 ```bash
 # Model development
-node /mcp/model-optimizer/index.js (pending MCP integration) train --data={dataset}
+node /mcp/model-optimizer/index.js [NOT IN UNIFIED MCP YET] train --data={dataset}
 Use mcp__poi-companion__performance_profile MCP tool benchmark --model={name}
-node /mcp/schema-validator/index.js (pending MCP integration) validate --data-schema
+node /mcp/schema-validator/index.js [NOT IN UNIFIED MCP YET] validate --data-schema
 ```

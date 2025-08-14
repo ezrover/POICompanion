@@ -408,7 +408,7 @@ The model MUST create world-class accessibility that ensures Roadtrip-Copilot is
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Accessibility Audit | `accessibility-checker` | `Use mcp__poi-companion__accessibility_check MCP tool` |
-| UI Validation | `ui-generator` | `node /mcp/ui-generator/index.js (pending MCP integration) --accessible` |
+| UI Validation | `ui-generator` | `node /mcp/ui-generator/index.js [NOT IN UNIFIED MCP YET] --accessible` |
 | Design Compliance | `design-system-manager` | `Use mcp__poi-companion__design_system_manage MCP tool` |
 | Mobile Testing | `mobile-test-runner` | `Use mcp__poi-companion__mobile_test_run MCP tool --a11y` |
 
