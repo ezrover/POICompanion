@@ -15,6 +15,36 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **MANDATORY ENFORCEMENT:** ALL tasks MUST use appropriate spec-* agents - NO EXCEPTIONS
 
+## 🚀 AGENT EXPANSION PROTOCOL (CONTINUOUS IMPROVEMENT)
+
+**WHEN CURRENT AGENTS ARE INADEQUATE:**
+If the existing 40 agents cannot perfectly execute and validate a task in a reliable, provable manner:
+
+1. **IMMEDIATE ACTION**: STOP and assess the capability gap
+2. **SUGGEST NEW AGENT**: Propose a new specialized agent with:
+   - Clear name following `spec-[domain]-[specialization]` pattern
+   - Specific expertise and capabilities needed
+   - How it fills the gap in current workforce
+   - Expected validation/proof mechanisms
+3. **AWAIT APPROVAL**: Present suggestion to user and wait for approval
+4. **CREATE AGENT**: Upon approval:
+   - Generate agent specification in `.claude/agents/`
+   - Update AGENT_REGISTRY.md via `scripts/register-agents.js`
+   - Test new agent functionality
+   - Document in CLAUDE.md
+
+**AGENT SUGGESTION TEMPLATE:**
+```
+🆕 SUGGESTED NEW AGENT: spec-[proposed-name]
+
+**Gap Identified:** [What current agents cannot do]
+**Proposed Expertise:** [Specific capabilities needed]
+**Validation Methods:** [How it proves task completion]
+**Integration:** [How it works with existing agents]
+
+Shall I create this agent? (yes/no)
+```
+
 **MANDATORY WORKFLOW (ABSOLUTE - NO SHORTCUTS):**
 1. **STEP 1 (REQUIRED)**: ALWAYS start with `spec-workflow-manager` for ANY request
 2. **STEP 2 (REQUIRED)**: Follow complete spec-driven workflow (requirements → design → tasks → implementation)
@@ -101,6 +131,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **spec-system-architect**: For system-wide changes
 - **spec-judge**: FINAL VALIDATION for all implementations
 - **EXECUTION**: Use general-purpose agent with system prompts from AGENT_REGISTRY.md
+- **EXPANSION**: If no adequate agent exists, MUST propose new agent before proceeding
 
 **⚠️ VIOLATION CONSEQUENCES (IMMEDIATE AUTOMATIC ENFORCEMENT):**
 1. **First Violation**: IMMEDIATE TASK FAILURE + mandatory rollback + restart with agents (NO warnings)
