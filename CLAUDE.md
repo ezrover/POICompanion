@@ -244,14 +244,21 @@ Shall I create this agent? (yes/no)
 - `spec-ios-developer` + `spec-android-developer`: MUST implement voice changes
 - `spec-judge`: MUST validate voice and button platform parity before completion
 
+## 🚨 MCP TOOL ENFORCEMENT (ABSOLUTE REQUIREMENT - ZERO TOLERANCE)
+
+**MANDATORY USAGE - VIOLATION = IMMEDIATE TASK FAILURE:**
+- ❌ **NEVER** use direct commands (`xcodebuild`, `./gradlew`, `npm`, `swift`, `kotlin`)
+- ✅ **ALWAYS** use MCP tools for ALL operations
+- 🚫 **NO EXCEPTIONS** - Even "simple" commands must use MCP tools
+
 ### 🔧 Local MCP Tools Configuration
 
 The workspace includes 24 specialized MCP tools configured in `.claude/settings.local.json`:
 
-**Mobile Development Tools (USE THESE INSTEAD OF BASH COMMANDS):**
-- `mobile-build-verifier`: **PRIMARY BUILD TOOL** - Use for ALL iOS/Android builds instead of manual xcodebuild/gradlew commands
-  - Usage: `node /mcp/mobile-build-verifier/index.js <ios|android|both> [--clean] [--fix] [--history] [--detailed]`
-  - ALWAYS use this for build verification instead of: `xcodebuild`, `./gradlew`, etc.
+**Mobile Development Tools (MANDATORY - NEVER USE DIRECT COMMANDS):**
+- `mobile-build-verifier`: **PRIMARY BUILD TOOL** - Use for ALL iOS/Android builds
+  - ❌ PROHIBITED: `xcodebuild`, `./gradlew build`, `swift build`
+  - ✅ REQUIRED: `node /mcp/mobile-build-verifier/index.js <ios|android|both>`
 - `mobile-test-runner`: Executes mobile app tests with detailed reporting
 - `mobile-linter`: Code quality analysis and style enforcement
 - `mobile-icon-generator`: SVG to app icon converter (32 sizes)
@@ -461,7 +468,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 - Legal docs → `spec-legal-counsel` + `spec-regulatory-compliance-specialist`
 - Global expansion → `spec-localization-global-expert` + `spec-partnership-strategist`
 
-## Development Commands
+## Development Commands (🚨 MANDATORY MCP TOOL USAGE)
 
 **⚠️ IMPORTANT: USE MCP TOOLS, NOT DIRECT BASH COMMANDS**
 
@@ -481,7 +488,7 @@ node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-test-runner/index
 node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-test-runner/index.js android
 ```
 
-**Legacy Manual Commands (AVOID - Use MCP tools above instead):**
+**❌ PROHIBITED Manual Commands (NEVER USE - IMMEDIATE TASK FAILURE):**
 ```bash
 # iOS (only if MCP tool fails)
 cd ios && xcodebuild -scheme Roadtrip-Copilot build

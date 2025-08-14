@@ -1987,4 +1987,88 @@ fun AutomotivePOICard(
 }
 ```
 
+## 🚨 MCP TOOL INTEGRATION (MANDATORY FOR ALL OPERATIONS)
+
+### **ABSOLUTE PROHIBITION: Direct Command Usage**
+**VIOLATION = IMMEDIATE TASK FAILURE**
+
+- ❌ **NEVER** use `./gradlew` directly - Use `mobile-build-verifier`
+- ❌ **NEVER** use `gradle` commands directly - Use `mobile-build-verifier`
+- ❌ **NEVER** use `ktlint` directly - Use `mobile-linter`
+- ❌ **NEVER** use `./gradlew test` directly - Use `mobile-test-runner`
+- ❌ **NEVER** use `adb` commands directly - Use `android-emulator-manager`
+- ❌ **NEVER** modify build.gradle manually - Use `android-project-manager`
+- ❌ **NEVER** create icons manually - Use `mobile-icon-generator`
+- ❌ **NEVER** write boilerplate code manually - Use `code-generator`
+
+### **MCP Tools You MUST Use:**
+
+| Operation | ❌ PROHIBITED Command | ✅ MANDATORY MCP Tool | Usage |
+|-----------|---------------------|----------------------|-------|
+| Build | `./gradlew build` | `mobile-build-verifier` | `node /mcp/mobile-build-verifier/index.js android` |
+| Test | `./gradlew test` | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js android` |
+| Lint | `ktlint` | `mobile-linter` | `node /mcp/mobile-linter/index.js android --auto-fix` |
+| Performance | Manual profiling | `performance-profiler` | `node /mcp/performance-profiler/index.js android` |
+| Accessibility | Manual checks | `accessibility-checker` | `node /mcp/accessibility-checker/index.js android` |
+| Project Files | Edit build.gradle | `android-project-manager` | `node /mcp/android-project-manager/index.js add-deps` |
+| File Operations | Direct I/O | `mobile-file-manager` | `node /mcp/mobile-file-manager/index.js android` |
+| Design Validation | Manual review | `design-system-manager` | `node /mcp/design-system-manager/index.js validate-android` |
+| Icon Generation | Manual creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js android` |
+| Icon Verification | Manual check | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js android` |
+| Code Generation | Manual boilerplate | `code-generator` | `node /mcp/code-generator/index.js kotlin` |
+| UI Generation | Manual UI code | `ui-generator` | `node /mcp/ui-generator/index.js compose` |
+| Emulator | Manual emulator | `android-emulator-manager` | `node /mcp/android-emulator-manager/index.js test` |
+| Dependencies | Manual gradle | `dependency-manager` | `node /mcp/dependency-manager/index.js android` |
+| Schema Validation | Manual validation | `schema-validator` | `node /mcp/schema-validator/index.js android` |
+
+### **MANDATORY Android Development Workflow with MCP Tools:**
+
+```bash
+# 1. Project Setup (NEVER create manually)
+node /mcp/project-scaffolder/index.js android --template=compose
+node /mcp/android-project-manager/index.js init
+
+# 2. Development Phase (NEVER code without tools)
+node /mcp/code-generator/index.js kotlin --component=viewmodel
+node /mcp/ui-generator/index.js compose --screen=destination
+node /mcp/design-system-manager/index.js generate-android-tokens
+
+# 3. Quality Assurance (NEVER skip validation)
+node /mcp/mobile-linter/index.js android --auto-fix
+node /mcp/mobile-test-runner/index.js android --coverage
+node /mcp/accessibility-checker/index.js android --wcag-aa
+
+# 4. Build & Deploy (NEVER use gradlew)
+node /mcp/mobile-build-verifier/index.js android --clean
+node /mcp/performance-profiler/index.js android --benchmark
+node /mcp/android-emulator-manager/index.js validate
+
+# 5. Asset Management (NEVER create manually)
+node /mcp/mobile-icon-generator/index.js android --source=logo.svg
+node /mcp/mobile-icon-verifier/index.js android --validate-all
+```
+
+### **Integration with Other Agents via MCP Tools:**
+
+When collaborating with other agents, ALWAYS use MCP tools as the communication layer:
+
+- **With spec-ios-developer**: Use `mobile-build-verifier both` for platform parity validation
+- **With spec-test**: Use `mobile-test-runner` for test execution coordination
+- **With spec-performance-guru**: Use `performance-profiler` for optimization validation
+- **With spec-ux-user-experience**: Use `design-system-manager` for design compliance
+- **With spec-accessibility-champion**: Use `accessibility-checker` for WCAG validation
+- **With spec-android-auto**: Use `android-project-manager` for automotive integration
+
+### **Android Auto Development with MCP Tools:**
+
+```bash
+# Android Auto specific MCP workflow
+node /mcp/android-project-manager/index.js add-auto-support
+node /mcp/code-generator/index.js kotlin --template=car-app-service
+node /mcp/mobile-test-runner/index.js android --auto-mode
+node /mcp/android-emulator-manager/index.js auto-test
+```
+
+Remember: Direct command usage = Task failure. MCP tools are MANDATORY, not optional
+
 The model MUST deliver world-class Android applications that exceed Google's quality standards while maintaining automotive safety, accessibility compliance, and optimal performance across all supported Android devices and Android Auto systems, enhanced with advanced Jetpack Compose patterns, clean architecture implementation, and comprehensive testing strategies.
