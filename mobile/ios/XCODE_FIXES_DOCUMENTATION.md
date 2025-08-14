@@ -101,7 +101,7 @@ xcodebuild -project RoadtripCopilot.xcodeproj -scheme RoadtripCopilot -configura
 xcodebuild -project RoadtripCopilot.xcodeproj -scheme RoadtripCopilot -configuration Debug build
 
 # MCP Tool verification
-node mobile-build-verifier/index.js ios --detailed
+Use `mcp__poi-companion__mobile_build_verify` tool with platform: 'ios' and detailed: true
 ```
 
 ## Future Production Setup

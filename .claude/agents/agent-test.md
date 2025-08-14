@@ -67,7 +67,7 @@ Use mcp__poi-companion__e2e_ui_test_run tool with platform: "both"
 Use mcp__poi-companion__e2e_ui_test_run tool with platform: "both" --critical
 
 # View comprehensive test reports:
-View test reports at /mcp/test-results
+View test reports in the test-results directory
 ```
 
 ### **E2E Test Quality Gates You Must Enforce**

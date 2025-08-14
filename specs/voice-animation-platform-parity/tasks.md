@@ -419,13 +419,13 @@ fun updateVoiceActivity(isActive: Boolean) {
 **Build Commands**:
 ```bash
 # iOS build verification
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-build-verifier/index.js ios
+Use `mcp__poi-companion__mobile_build_verify` tool with platform: 'ios'
 
 # Android build verification  
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-build-verifier/index.js android
+Use `mcp__poi-companion__mobile_build_verify` tool with platform: 'android'
 
 # Both platforms
-node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/mobile-build-verifier/index.js both
+Use `mcp__poi-companion__mobile_build_verify` tool with platform: 'both'
 ```
 
 **Testing Requirements**:

@@ -118,7 +118,7 @@ Shall I create this agent? (yes/no)
 5. **If you forget to commit, you have FAILED the task - no exceptions**
 
 **MCP TOOL OPTIMIZATION & SELF-IMPROVEMENT (NON-NEGOTIABLE):**
--   **BEFORE** implementing any user request, ALWAYS evaluate if existing local project MCP tools in /mcp/ and the relevant agents in .claude/agents/spec-*.md can be improved or if new tools should be created to handle the task more efficiently
+-   **BEFORE** implementing any user request, ALWAYS evaluate if existing local project MCP tools and the relevant agents in .claude/agents/agent-*.md can be improved or if new tools should be created to handle the task more efficiently
 -   **PRIORITIZE** building/enhancing local project MCP tools over direct implementation to reduce remote AI LLM API calls
 -   **SELF-IMPROVE** continuously by creating reusable tools that make future similar requests faster and more cost-effective
 -   **COMPOUND EFFICIENCY** - Each new/improved tool makes the entire workspace more capable and reduces future API dependency
@@ -269,7 +269,7 @@ Shall I create this agent? (yes/no)
 **🚨 MAJOR CHANGE: All 24 tools are now unified into a single MCP server following Model Context Protocol standards.**
 
 **POI Companion MCP Server (MANDATORY - ONLY ACCESS METHOD):**
-- **Location**: `/mcp/dist/index.js` (TypeScript compiled to JavaScript)
+- **Location**: the unified MCP server (TypeScript compiled to JavaScript)
 - **Protocol**: Official Model Context Protocol (MCP) v0.6.0
 - **Access**: Via Claude Desktop MCP interface ONLY
 - **Configuration**: Add to `~/.claude/claude_desktop_config.json`
@@ -303,7 +303,7 @@ Shall I create this agent? (yes/no)
 - ~~`ios-simulator-manager`~~ → Use `ios_simulator_test` MCP tool
 - ~~All other 20 tools~~ → Integrated into unified MCP server
 
-**NEW ACCESS METHOD:** All tools accessible ONLY via Claude Desktop MCP interface using unified server at `/mcp/dist/index.js`
+**NEW ACCESS METHOD:** All tools accessible ONLY via Claude Desktop MCP interface using unified server at the unified MCP server
 
 ```bash
 git commit -m "[type]: [description]
@@ -490,7 +490,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
   "mcpServers": {
     "poi-companion": {
       "command": "node",
-      "args": ["/Users/naderrahimizad/Projects/AI/POICompanion/mcp/dist/index.js"]
+      "args": ["the unified MCP server at mcp/dist/index.js"]
     }
   }
 }

@@ -231,8 +231,8 @@ cd mobile/android && ./gradlew testDebugUnitTest
 cd mobile/android && ./gradlew connectedDebugAndroidTest
 
 # MCP tool verification
-cd mcp && node mobile-build-verifier/index.js android
-cd mcp && node mobile-build-verifier/index.js both
+Use `mcp__poi-companion__mobile_build_verify` tool with platform: 'android'
+Use `mcp__poi-companion__mobile_build_verify` tool with platform: 'both'
 ```
 
 ## Future Recommendations
