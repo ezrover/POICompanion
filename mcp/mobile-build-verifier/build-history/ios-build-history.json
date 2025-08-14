@@ -1,28 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T11:16:40.471Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 10.336,
-      "errors": [],
-      "fixes": [],
-      "warnings": 7,
-      "warningDetails": [
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: value 'ttsProcessor' was defined but never used; consider replacing with boolean test",
-        "warning: initialization of immutable value 'thermalImpact' was never used; consider replacing with assignment to '_' or removing it",
-        "warning: initialization of immutable value 'networkLatency' was never used; consider replacing with assignment to '_' or removing it"
-      ],
-      "warningSuggestions": [
-        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
-        "Remove unused functions, variables, and imports to clean up codebase."
-      ]
-    },
-    {
       "timestamp": "2025-08-11T11:18:20.435Z",
       "platform": "ios",
       "success": false,
@@ -1218,12 +1196,23 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T15:58:07.858Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.389,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {},
   "successRate": 80,
-  "avgBuildTime": 8.761750000000001,
-  "lastSuccessful": "2025-08-14T15:48:15.877Z",
+  "avgBuildTime": 8.818375000000001,
+  "lastSuccessful": "2025-08-14T15:58:07.858Z",
   "trends": {
     "improving": false,
     "recentFailures": 1

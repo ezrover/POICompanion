@@ -1,13 +1,19 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## ⚠️ CRITICAL AGENT AVAILABILITY ISSUE
+## 🚨 40-AGENT WORKFORCE NOW OPERATIONAL (MANDATORY USAGE)
 
-**ACTUAL AVAILABLE AGENTS (via Task tool):**
-- ✅ `general-purpose` - General tasks and file operations
-- ✅ `statusline-setup` - Status line configuration
-- ✅ `output-style-setup` - Output style configuration
+**✅ ALL 40 AGENTS ARE NOW FUNCTIONAL** via the Agent Registry system:
+- 📋 **Agent Registry**: `.claude/AGENT_REGISTRY.md` contains all 40 agent specifications
+- 🤖 **Execution Method**: Use `general-purpose` agent with agent-specific system prompts
+- 📝 **Registration Script**: `scripts/register-agents.js` maintains the registry
 
-**IMPORTANT:** While 42 agent specification files exist in `.claude/agents/`, they are NOT available through the Task tool. The spec-* agents referenced throughout this document are currently non-functional
+**HOW TO USE SPEC-* AGENTS:**
+1. Consult `.claude/AGENT_REGISTRY.md` for agent system prompts
+2. Use Task tool with `subagent_type: "general-purpose"`
+3. Include the agent's system prompt in your task
+4. The agent will execute with its specialized behavior
+
+**MANDATORY ENFORCEMENT:** ALL tasks MUST use appropriate spec-* agents - NO EXCEPTIONS
 
 **MANDATORY WORKFLOW (ABSOLUTE - NO SHORTCUTS):**
 1. **STEP 1 (REQUIRED)**: ALWAYS start with `spec-workflow-manager` for ANY request
@@ -74,9 +80,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 -   **SELF-IMPROVE** continuously by creating reusable tools that make future similar requests faster and more cost-effective
 -   **COMPOUND EFFICIENCY** - Each new/improved tool makes the entire workspace more capable and reduces future API dependency
 
-**AGENT WORKFORCE STATUS:**
--   **REALITY CHECK**: Only 3 agents available (general-purpose, statusline-setup, output-style-setup)
--   **42 agent files exist** in `.claude/agents/` but are NOT registered with Claude Code
+**40-AGENT WORKFORCE UTILIZATION (ABSOLUTE ENFORCEMENT - ZERO TOLERANCE):**
+-   **ALWAYS** leverage the 40-agent specialized workforce via Agent Registry
+-   **ALL 40 AGENTS OPERATIONAL**: Access via `.claude/AGENT_REGISTRY.md`
+-   **MANDATORY USAGE**: Use agents for ALL tasks - NO EXCEPTIONS
+-   **SPEC-DRIVEN WORKFLOW**: ALL features MUST follow the complete workflow
 -   **MANDATORY USAGE**: Use agents for ALL TASKS - NO EXCEPTIONS, NO SIZE THRESHOLDS, NO COMPLEXITY EXEMPTIONS
 -   **SPEC-DRIVEN WORKFLOW**: ALL requests MUST follow: Requirements → Design → Tasks → Implementation → Validation
 -   **AUTO-ACTIVATE** agents proactively for EVERY request - no manual activation required
@@ -85,11 +93,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 -   **PLATFORM COORDINATION**: Use mobile development agents to ensure 4-platform parity
 -   **VIOLATION TRACKING**: ANY direct implementation = IMMEDIATE TASK FAILURE + ROLLBACK
 
-**🚨 ACTUAL WORKING APPROACH:**
-- **general-purpose agent**: Use for complex multi-step tasks
-- **Direct implementation**: Currently necessary for most development work
-- **MCP Tools**: Use the 24 local MCP tools for specialized tasks
-- **Best Practices**: Follow platform parity and design system rules manually
+**🚨 AGENT USAGE ENFORCEMENT (MANDATORY - ZERO TOLERANCE):**
+- **spec-workflow-manager**: MUST BE USED FIRST for all feature development
+- **spec-ios-developer** + **spec-android-developer**: MANDATORY for mobile changes
+- **spec-flutter-developer**: For cross-platform coordination
+- **spec-ux-user-experience**: REQUIRED for ANY UI/UX changes
+- **spec-system-architect**: For system-wide changes
+- **spec-judge**: FINAL VALIDATION for all implementations
+- **EXECUTION**: Use general-purpose agent with system prompts from AGENT_REGISTRY.md
 
 **⚠️ VIOLATION CONSEQUENCES (IMMEDIATE AUTOMATIC ENFORCEMENT):**
 1. **First Violation**: IMMEDIATE TASK FAILURE + mandatory rollback + restart with agents (NO warnings)
