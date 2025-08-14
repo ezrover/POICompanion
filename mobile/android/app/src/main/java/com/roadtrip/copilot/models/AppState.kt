@@ -4,6 +4,7 @@ package com.roadtrip.copilot.models
 
 enum class AppScreen {
     DESTINATION_SELECTION,
+    POI_RESULT,
     MAIN_DASHBOARD
 }
 

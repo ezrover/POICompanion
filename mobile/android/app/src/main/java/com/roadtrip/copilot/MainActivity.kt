@@ -152,8 +152,25 @@ fun RootScreen() {
                     } else {
                         roadtripSession.startSession()
                     }
+                },
+                onShowPOIResult = { destinationName, destinationAddress, gemmaResponse ->
+                    appStateManager.showPOIResult(destinationName, destinationAddress, gemmaResponse)
                 }
             )
+        }
+        
+        AppScreen.POI_RESULT -> {
+            val poiData by appStateManager.poiResultData.collectAsStateWithLifecycle()
+            poiData?.let { data ->
+                POIResultScreen(
+                    destinationName = data.destinationName,
+                    destinationAddress = data.destinationAddress,
+                    gemmaResponse = data.gemmaResponse,
+                    onBack = {
+                        appStateManager.returnFromPOIResult()
+                    }
+                )
+            }
         }
         
         AppScreen.MAIN_DASHBOARD -> {

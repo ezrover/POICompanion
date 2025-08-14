@@ -24,6 +24,16 @@ class AppStateManager @Inject constructor() : ViewModel() {
     val destinationInfo: String
         get() = _destinationInfo.value?.name ?: "No destination set"
     
+    // POI Result state
+    private val _poiResultData = MutableStateFlow<POIResultData?>(null)
+    val poiResultData: StateFlow<POIResultData?> = _poiResultData.asStateFlow()
+    
+    data class POIResultData(
+        val destinationName: String,
+        val destinationAddress: String?,
+        val gemmaResponse: String
+    )
+    
     fun startRoadtrip(destination: DestinationInfo) {
         _destinationInfo.value = destination
         _isInActiveRoadtrip.value = true
@@ -45,4 +55,16 @@ class AppStateManager @Inject constructor() : ViewModel() {
     }
     
     fun getDestinationInfo(): DestinationInfo? = _destinationInfo.value
+    
+    fun showPOIResult(destinationName: String, destinationAddress: String?, gemmaResponse: String) {
+        _poiResultData.value = POIResultData(destinationName, destinationAddress, gemmaResponse)
+        _currentScreen.value = AppScreen.POI_RESULT
+        println("Showing POI result for: $destinationName")
+    }
+    
+    fun returnFromPOIResult() {
+        _poiResultData.value = null
+        _currentScreen.value = AppScreen.DESTINATION_SELECTION
+        println("Returned from POI result to destination selection")
+    }
 }

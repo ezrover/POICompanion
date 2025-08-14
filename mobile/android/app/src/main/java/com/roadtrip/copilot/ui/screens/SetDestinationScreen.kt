@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.roadtrip.copilot.managers.SpeechManager
+import com.roadtrip.copilot.ai.Gemma3NProcessor
 import com.roadtrip.copilot.ui.components.VoiceAnimationComponent
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -42,10 +43,12 @@ import kotlinx.coroutines.launch
 @Composable
 fun SetDestinationScreen(
     onNavigate: (String) -> Unit,
+    onShowPOIResult: (String, String?, String) -> Unit,
     onCancel: (() -> Unit)? = null
 ) {
     val speechManager = remember { SpeechManager() }
     val context = LocalContext.current
+    val gemmaProcessor = remember { Gemma3NProcessor(context) }
     val hapticFeedback = LocalHapticFeedback.current
     val accessibilityManager = LocalAccessibilityManager.current
     val coroutineScope = rememberCoroutineScope()
@@ -66,10 +69,20 @@ fun SetDestinationScreen(
     val recognizedText by speechManager.recognizedText.collectAsState()
     val isVoiceDetected by speechManager.isVoiceDetected.collectAsState()
     
-    // Initialize speech manager for destination mode
+    // Initialize speech manager and Gemma processor for destination mode
     LaunchedEffect(Unit) {
         speechManager.initialize(context)
         speechManager.enableDestinationMode()
+        
+        // Initialize Gemma processor
+        coroutineScope.launch {
+            try {
+                gemmaProcessor.loadModel()
+                println("[SetDestinationScreen] Gemma-3N model loaded successfully")
+            } catch (e: Exception) {
+                println("[SetDestinationScreen] Gemma-3N loading failed: ${e.message}")
+            }
+        }
     }
     
     // AUTO-START VOICE RECOGNITION (Platform Parity with iOS)
@@ -113,11 +126,11 @@ fun SetDestinationScreen(
                     destinationInput = cleanDestination
                     // Only auto-trigger navigation with explicit voice navigation commands
                     println("[SetDestinationScreen] Auto-triggering navigation for explicit voice command: $cleanDestination")
-                    handleNavigationCommand(cleanDestination, onNavigate, speechManager)
+                    handleGemmaIntegrationAndNavigation(cleanDestination, onShowPOIResult, gemmaProcessor, speechManager, coroutineScope)
                 } else if (destinationInput.isNotEmpty()) {
                     // Navigate to current destination input with explicit voice navigation command
                     println("[SetDestinationScreen] Navigating to current destination with voice command: $destinationInput")
-                    handleNavigationCommand(destinationInput, onNavigate, speechManager)
+                    handleGemmaIntegrationAndNavigation(destinationInput, onShowPOIResult, gemmaProcessor, speechManager, coroutineScope)
                 }
             } else {
                 // CRITICAL FIX: Just destination text without command - show results but require user confirmation
@@ -237,7 +250,7 @@ fun SetDestinationScreen(
                             if (destinationInput.isNotEmpty()) {
                                 // CRITICAL FIX: Enter key requires explicit user confirmation to navigate
                                 println("[SetDestinationScreen] Enter key pressed - requiring explicit user confirmation to navigate")
-                                handleNavigationCommand(destinationInput, onNavigate, speechManager)
+                                handleGemmaIntegrationAndNavigation(destinationInput, onShowPOIResult, gemmaProcessor, speechManager, coroutineScope)
                             }
                         }
                     ),
@@ -265,7 +278,7 @@ fun SetDestinationScreen(
                         onClick = {
                             if (destinationInput.isNotEmpty()) {
                                 hapticFeedback.performHapticFeedback(HapticFeedbackType.TextHandleMove)
-                                handleNavigationCommand(destinationInput, onNavigate, speechManager)
+                                handleGemmaIntegrationAndNavigation(destinationInput, onShowPOIResult, gemmaProcessor, speechManager, coroutineScope)
                             }
                         },
                         modifier = Modifier.size(56.dp)
@@ -528,6 +541,55 @@ fun MicButton(
             modifier = Modifier.size(24.dp),
             tint = if (isMuted) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface
         )
+    }
+}
+
+private fun handleGemmaIntegrationAndNavigation(
+    destination: String,
+    onShowPOIResult: (String, String?, String) -> Unit,
+    gemmaProcessor: Gemma3NProcessor,
+    speechManager: SpeechManager,
+    coroutineScope: kotlinx.coroutines.CoroutineScope
+) {
+    if (destination.isNotEmpty()) {
+        val prompt = "tell me about this place: $destination"
+        println("[SetDestinationScreen] Calling Gemma-3N with prompt: $prompt")
+        
+        coroutineScope.launch {
+            try {
+                // Ensure model is loaded
+                if (!gemmaProcessor.isModelLoaded.value) {
+                    gemmaProcessor.loadModel()
+                }
+                
+                // Create discovery input for Gemma
+                val discoveryInput = com.roadtrip.copilot.ai.DiscoveryInput(
+                    latitude = 0.0, // We don't have coordinates yet
+                    longitude = 0.0,
+                    poiName = destination,
+                    category = "destination", 
+                    context = prompt
+                )
+                
+                // Get response from Gemma-3N
+                val discoveryResult = gemmaProcessor.processDiscovery(discoveryInput)
+                val gemmaResponse = discoveryResult.podcastScript
+                
+                println("[SetDestinationScreen] Gemma response received: $gemmaResponse")
+                
+                // Show POI result screen with response
+                onShowPOIResult(destination, null, gemmaResponse)
+                
+            } catch (e: Exception) {
+                println("[SetDestinationScreen] Gemma integration failed: ${e.message}")
+                
+                // Fallback response if Gemma fails
+                val fallbackResponse = "This destination looks interesting! It's a great place to explore and discover new experiences."
+                onShowPOIResult(destination, null, fallbackResponse)
+            }
+        }
+        
+        speechManager.disableDestinationMode()
     }
 }
 
