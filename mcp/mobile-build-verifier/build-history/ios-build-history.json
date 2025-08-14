@@ -1,24 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T11:03:51.511Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 11.006,
-      "errors": [],
-      "fixes": [],
-      "warnings": 3,
-      "warningDetails": [
-        "warning: value 'templateScene' was defined but never used; consider replacing with boolean test",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
-      ],
-      "warningSuggestions": [
-        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
-        "Remove unused functions, variables, and imports to clean up codebase."
-      ]
-    },
-    {
       "timestamp": "2025-08-11T11:06:35.861Z",
       "platform": "ios",
       "success": true,
@@ -1237,12 +1219,23 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T15:38:44.982Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 11.381,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {},
-  "successRate": 80,
-  "avgBuildTime": 8.592625,
-  "lastSuccessful": "2025-08-14T14:56:17.910Z",
+  "successRate": 85,
+  "avgBuildTime": 8.75664705882353,
+  "lastSuccessful": "2025-08-14T15:38:44.982Z",
   "trends": {
     "improving": true,
     "recentFailures": 0

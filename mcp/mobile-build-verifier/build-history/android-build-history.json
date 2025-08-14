@@ -1,21 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T01:48:04.355Z",
-      "platform": "android",
-      "success": false,
-      "duration": 12.8,
-      "errors": [
-        "android-kotlin-compile",
-        "missing-dependency"
-      ],
-      "fixes": [
-        "Check Kotlin syntax and imports in recently modified files",
-        "Install dependencies: ./gradlew build --refresh-dependencies"
-      ],
-      "warnings": 0
-    },
-    {
       "timestamp": "2025-08-11T01:50:59.567Z",
       "platform": "android",
       "success": true,
@@ -1205,6 +1190,17 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T15:38:56.367Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.566,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {
@@ -1212,10 +1208,10 @@
     "missing-dependency": 21
   },
   "successRate": 80,
-  "avgBuildTime": 2.858,
-  "lastSuccessful": "2025-08-14T14:56:37.726Z",
+  "avgBuildTime": 2.849375,
+  "lastSuccessful": "2025-08-14T15:38:56.367Z",
   "trends": {
     "improving": true,
-    "recentFailures": 1
+    "recentFailures": 0
   }
 }
