@@ -1,0 +1,21 @@
+{
+  "name": "TinyLlama-1.1B-Chat",
+  "parameters": "1.1B",
+  "size_gb": 2.2,
+  "quantized_size_gb": 0.5,
+  "context_length": 2048,
+  "vocab_size": 32000,
+  "architecture": "LlamaForCausalLM",
+  "format": "safetensors",
+  "chat_template": true,
+  "suitable_for": [
+    "mobile",
+    "edge",
+    "embedded"
+  ],
+  "performance": {
+    "tokens_per_second_mobile": 30,
+    "first_token_latency_ms": 200,
+    "memory_usage_mb": 500
+  }
+}

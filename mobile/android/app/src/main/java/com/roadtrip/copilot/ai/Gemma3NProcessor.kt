@@ -14,10 +14,11 @@ import java.net.URL
 import kotlin.math.roundToInt
 
 /**
- * Gemma-3N MediaPipe Processor for Android
+ * TinyLlama Processor for Android
+ * Using TinyLlama-1.1B as a lightweight alternative to Gemma for mobile deployment
  * Handles loading and inference with tool-use capabilities
  */
-class Gemma3NProcessor(private val context: Context) {
+class Gemma3NProcessor(private val context: Context) {  // Keep class name for compatibility
     
     companion object {
         private const val TAG = "Gemma3NProcessor"
@@ -25,7 +26,7 @@ class Gemma3NProcessor(private val context: Context) {
         
         // System prompt for POI discovery with tool use
         private val SYSTEM_PROMPT = """
-            You are Gemma, a helpful AI travel assistant for discovering points of interest during road trips.
+            You are TinyLlama, a helpful AI travel assistant for discovering points of interest during road trips.
             
             AVAILABLE TOOLS:
             1. search_poi(location: string, category: string) - Search for points of interest
@@ -71,12 +72,17 @@ class Gemma3NProcessor(private val context: Context) {
         val fileName: String,
         val maxTokens: Int
     ) {
-        E2B(
+        TINYLLAMA(
+            modelName = "tinyllama",
+            fileName = "tinyllama/model.tflite",
+            maxTokens = 2048
+        ),
+        E2B(  // Legacy support
             modelName = "gemma-3n-e2b",
             fileName = "gemma-3n-e2b-it.task",
             maxTokens = 512
         ),
-        E4B(
+        E4B(  // Legacy support
             modelName = "gemma-3n-e4b",
             fileName = "gemma-3n-e4b-it.task",
             maxTokens = 1024
@@ -84,7 +90,8 @@ class Gemma3NProcessor(private val context: Context) {
     }
     
     init {
-        // Start model initialization
+        // Start model initialization with TinyLlama
+        _modelVariant.value = ModelVariant.TINYLLAMA
         modelScope.launch {
             initializeModel()
         }
@@ -95,8 +102,8 @@ class Gemma3NProcessor(private val context: Context) {
      */
     private suspend fun initializeModel() = withContext(Dispatchers.IO) {
         try {
-            Log.d(TAG, "📥 Preparing to load Gemma-3N model")
-            updateLoadingStatus("Locating model files...")
+            Log.d(TAG, "📥 Preparing to load TinyLlama model")
+            updateLoadingStatus("Locating TinyLlama model files...")
             updateProgress(0.1)
             
             // Get or download the model
@@ -368,7 +375,7 @@ class Gemma3NProcessor(private val context: Context) {
         
         return when {
             lowercased.contains("who are you") || lowercased.contains("what are you") -> {
-                "I'm Gemma-3N, your AI travel companion! I help discover amazing places and hidden gems along your journey. With my tool-use capabilities, I can search for points of interest, provide detailed information, and even search the internet for current events."
+                "I'm TinyLlama, your AI travel companion! I'm a lightweight but capable assistant that helps discover amazing places and hidden gems along your journey. With my tool-use capabilities, I can search for points of interest, provide detailed information, and even search the internet for current events."
             }
             
             lowercased.contains("tell me about") -> {

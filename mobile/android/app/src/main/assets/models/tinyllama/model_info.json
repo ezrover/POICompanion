@@ -1,0 +1,10 @@
+{
+  "name": "TinyLlama-1.1B",
+  "format": "tflite",
+  "quantization": "int8",
+  "size_mb": 500,
+  "context_length": 2048,
+  "vocab_size": 32000,
+  "status": "placeholder",
+  "note": "Using placeholder model for development. Real TFLite conversion requires TensorFlow setup."
+}

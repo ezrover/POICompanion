@@ -4,9 +4,10 @@ import Combine
 import Accelerate
 import CoreLocation
 
-/// Gemma-3N Core ML Processor for iOS
-/// Handles loading and inference for the unified Gemma-3N model
-class Gemma3NProcessor: ObservableObject {
+/// TinyLlama Core ML Processor for iOS
+/// Handles loading and inference for TinyLlama-1.1B model
+/// Using TinyLlama as a lightweight alternative to Gemma for mobile deployment
+class Gemma3NProcessor: ObservableObject {  // Keep class name for compatibility
     
     // MARK: - Published Properties
     @Published var isModelLoaded = false
@@ -24,11 +25,13 @@ class Gemma3NProcessor: ObservableObject {
     
     // MARK: - Model Variants
     enum ModelVariant: String, CaseIterable {
-        case E2B = "gemma-3n-e2b"  // 2GB model
-        case E4B = "gemma-3n-e4b"  // 3GB model
+        case TinyLlama = "tinyllama"  // 500MB quantized model
+        case E2B = "gemma-3n-e2b"  // Legacy: 2GB model
+        case E4B = "gemma-3n-e4b"  // Legacy: 3GB model
         
         var fileName: String {
             switch self {
+            case .TinyLlama: return "TinyLlama"
             case .E2B: return "gemma-3n-e2b-fp16"
             case .E4B: return "gemma-3n-e4b-fp16"
             }
@@ -36,6 +39,7 @@ class Gemma3NProcessor: ObservableObject {
         
         var expectedMemoryGB: Float {
             switch self {
+            case .TinyLlama: return 0.5  // 500MB quantized
             case .E2B: return 2.0
             case .E4B: return 3.0
             }
@@ -43,6 +47,7 @@ class Gemma3NProcessor: ObservableObject {
         
         var maxTokens: Int {
             switch self {
+            case .TinyLlama: return 2048
             case .E2B: return 2048
             case .E4B: return 4096
             }
@@ -70,16 +75,9 @@ class Gemma3NProcessor: ObservableObject {
     }
     
     private func selectOptimalModelVariant() {
-        // Check available memory to select appropriate model variant
-        let availableMemoryGB = getAvailableMemory()
-        
-        if availableMemoryGB > 6.0 {
-            modelVariant = .E4B
-            loadingStatus = "Loading Gemma-3N E4B (Enhanced)..."
-        } else {
-            modelVariant = .E2B
-            loadingStatus = "Loading Gemma-3N E2B (Efficient)..."
-        }
+        // Use TinyLlama for efficient mobile deployment
+        modelVariant = .TinyLlama
+        loadingStatus = "Loading TinyLlama AI model..."
     }
     
     // MARK: - Model Loading

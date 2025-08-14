@@ -12,6 +12,7 @@ import { exec } from 'child_process';
 import * as path from 'path';
 import { promisify } from 'util';
 import { fileURLToPath } from 'url';
+import { promises as fs } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -822,6 +823,68 @@ class POICompanionMCPServer {
           },
           required: ['platform']
         }
+      },
+      // Agent Orchestrator Tools
+      {
+        name: 'execute_agent',
+        description: 'Execute a specific Claude Code agent with a given task',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            agent_name: {
+              type: 'string',
+              description: 'Name of the agent to execute (e.g., spec-workflow-manager)'
+            },
+            task: {
+              type: 'string',
+              description: 'The task or prompt for the agent to execute'
+            },
+            context: {
+              type: 'object',
+              description: 'Additional context for the agent',
+              properties: {
+                files: {
+                  type: 'array',
+                  items: { type: 'string' },
+                  description: 'File paths to provide as context'
+                },
+                previous_output: {
+                  type: 'string',
+                  description: 'Output from previous agent or step'
+                }
+              }
+            }
+          },
+          required: ['agent_name', 'task']
+        }
+      },
+      {
+        name: 'list_agents',
+        description: 'List all available Claude Code agent specifications',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            category: {
+              type: 'string',
+              description: 'Filter by category (optional)',
+              enum: ['development', 'architecture', 'quality', 'platform', 'business', 'infrastructure']
+            }
+          }
+        }
+      },
+      {
+        name: 'get_agent_info',
+        description: 'Get detailed information about a specific agent',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            agent_name: {
+              type: 'string',
+              description: 'Name of the agent'
+            }
+          },
+          required: ['agent_name']
+        }
       }
     ];
   }
@@ -886,6 +949,12 @@ class POICompanionMCPServer {
         return await this.testRun(args);
       case 'qa_validate':
         return await this.qaValidate(args);
+      case 'execute_agent':
+        return await this.executeAgent(args);
+      case 'list_agents':
+        return await this.listAgents(args);
+      case 'get_agent_info':
+        return await this.getAgentInfo(args);
       default:
         throw new Error(`Unknown tool: ${name}`);
     }
@@ -1703,6 +1772,154 @@ class POICompanionMCPServer {
         }]
       };
     }
+  }
+
+  // Agent Orchestrator Methods
+  private agents: Map<string, any> = new Map();
+  private agentsLoaded: boolean = false;
+
+  private async loadAgents() {
+    if (this.agentsLoaded) return;
+    
+    try {
+      const agentsDir = path.join(this.projectRoot, '.claude', 'agents');
+      const files = await fs.readdir(agentsDir);
+      const agentFiles = files.filter(f => f.startsWith('spec-') && f.endsWith('.md'));
+      
+      for (const file of agentFiles) {
+        const content = await fs.readFile(path.join(agentsDir, file), 'utf-8');
+        const agent = this.parseAgent(content, file);
+        if (agent) {
+          this.agents.set(agent.name, agent);
+        }
+      }
+      
+      this.agentsLoaded = true;
+      console.error(`[Agent Orchestrator] Loaded ${this.agents.size} agent specifications`);
+    } catch (error) {
+      console.error('[Agent Orchestrator] Error loading agents:', error);
+    }
+  }
+
+  private parseAgent(content: string, filename: string) {
+    const yamlMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    if (!yamlMatch) return null;
+    
+    const yamlContent = yamlMatch[1];
+    const nameMatch = yamlContent.match(/name:\s*(.+)/);
+    const descMatch = yamlContent.match(/description:\s*(.+)/);
+    
+    if (!nameMatch || !descMatch) return null;
+    
+    // Extract the system prompt (everything after the YAML)
+    const systemPrompt = content.substring(yamlMatch[0].length).trim();
+    
+    return {
+      name: nameMatch[1].trim(),
+      description: descMatch[1].trim(),
+      systemPrompt: systemPrompt,
+      filename: filename
+    };
+  }
+
+  private async executeAgent(args: any) {
+    await this.loadAgents();
+    
+    const { agent_name, task, context = {} } = args;
+    const agent = this.agents.get(agent_name);
+    
+    if (!agent) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Error: Agent '${agent_name}' not found. Use 'list_agents' to see available agents.`
+        }]
+      };
+    }
+    
+    // Construct the full prompt for the agent
+    let fullPrompt = `You are being executed as the ${agent_name} agent.\n\n`;
+    fullPrompt += `AGENT SYSTEM PROMPT:\n${agent.systemPrompt}\n\n`;
+    fullPrompt += `USER TASK:\n${task}\n\n`;
+    
+    if (context.files && context.files.length > 0) {
+      fullPrompt += `CONTEXT FILES:\n${context.files.join(', ')}\n\n`;
+    }
+    
+    if (context.previous_output) {
+      fullPrompt += `PREVIOUS OUTPUT:\n${context.previous_output}\n\n`;
+    }
+    
+    fullPrompt += `Please execute this task according to your agent specification and provide a comprehensive response.`;
+    
+    return {
+      content: [{
+        type: 'text',
+        text: `[Agent: ${agent_name}]\n\n${fullPrompt}\n\n[Note: This prompt would be executed by Claude Code's general-purpose agent in a real scenario]`
+      }]
+    };
+  }
+
+  private async listAgents(args: any) {
+    await this.loadAgents();
+    
+    const { category } = args;
+    let filteredAgents = Array.from(this.agents.values());
+    
+    // Simple category filtering based on agent name patterns
+    if (category) {
+      const categoryPatterns: Record<string, string[]> = {
+        'development': ['developer', 'impl', 'test', 'code'],
+        'architecture': ['architect', 'design', 'system'],
+        'quality': ['test', 'qa', 'quality', 'security'],
+        'platform': ['ios', 'android', 'web', 'flutter', 'chrome'],
+        'business': ['venture', 'market', 'analyst', 'product', 'customer'],
+        'infrastructure': ['cloud', 'sre', 'devops', 'database']
+      };
+      
+      const patterns = categoryPatterns[category] || [];
+      filteredAgents = filteredAgents.filter(agent => 
+        patterns.some(pattern => agent.name.toLowerCase().includes(pattern))
+      );
+    }
+    
+    const agentList = filteredAgents.map(agent => 
+      `- **${agent.name}**: ${agent.description}`
+    ).join('\n');
+    
+    return {
+      content: [{
+        type: 'text',
+        text: `Available Agents${category ? ` (${category})` : ''}:\n\n${agentList}\n\nTotal: ${filteredAgents.length} agents`
+      }]
+    };
+  }
+
+  private async getAgentInfo(args: any) {
+    await this.loadAgents();
+    
+    const { agent_name } = args;
+    const agent = this.agents.get(agent_name);
+    
+    if (!agent) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Error: Agent '${agent_name}' not found.`
+        }]
+      };
+    }
+    
+    // Provide a summary of the agent's capabilities
+    const systemPromptPreview = agent.systemPrompt.substring(0, 500) + 
+      (agent.systemPrompt.length > 500 ? '...' : '');
+    
+    return {
+      content: [{
+        type: 'text',
+        text: `Agent Information:\n\n**Name**: ${agent.name}\n**Description**: ${agent.description}\n**File**: ${agent.filename}\n\n**System Prompt Preview**:\n${systemPromptPreview}\n\n**Full Length**: ${agent.systemPrompt.length} characters`
+      }]
+    };
   }
 
   async run(): Promise<void> {
