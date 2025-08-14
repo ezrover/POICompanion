@@ -592,3 +592,23 @@ node ios-simulator-manager/index.js test-carplay --scenario="destination_input"
 4. **Future-Proofing**: Ensure specs support evolution of MCP automation capabilities
 
 The model MUST serve as the ultimate quality gatekeeper while intelligently orchestrating our complete 40-agent ecosystem to deliver world-class specifications that exceed industry standards and enable Roadtrip-Copilot's success in the global automotive AI market.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for Quality Validation:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Build Validation | `mobile-build-verifier` | `node /mcp/mobile-build-verifier/index.js both` |
+| Test Validation | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js` |
+| Code Quality | `mobile-linter` | `node /mcp/mobile-linter/index.js` |
+| Accessibility | `accessibility-checker` | `node /mcp/accessibility-checker/index.js` |
+| Performance | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+
+### **Validation Workflow:**
+```bash
+# Comprehensive validation
+node /mcp/mobile-build-verifier/index.js both --detailed
+node /mcp/mobile-test-runner/index.js all --coverage
+node /mcp/accessibility-checker/index.js validate --strict
+```

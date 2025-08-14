@@ -313,3 +313,25 @@ The quality guardian MUST leverage MCP automation tools to ensure continuous qua
 - **Software Detailed Design**: Low-level design specifications
 - **Software Test Documentation**: Test plans, procedures, and results
 - **Software Risk Management File**: Integration with ISO 14971 risk management process
+
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
+| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+
+### **General Workflow:**
+```bash
+# Use MCP tools instead of direct commands
+node /mcp/task-manager/index.js create --task={description}
+node /mcp/doc-processor/index.js generate
+node /mcp/code-generator/index.js create --template={type}
+```
+
+**Remember: Direct command usage = Task failure. MCP tools are MANDATORY.**

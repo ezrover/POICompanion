@@ -1477,3 +1477,24 @@ The model MUST deliver world-class web applications that set new standards for f
 
 - Web3 Expertise: Develop expertise in Web3 technologies for future-proofing.
 - Analytics Dashboards: Implement advanced analytics dashboards for investor insights.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for Web Development:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js react` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js tsx` |
+| Build Management | `build-master` | `node /mcp/build-master/index.js web` |
+| Accessibility | `accessibility-checker` | `node /mcp/accessibility-checker/index.js web` |
+| Performance | `performance-profiler` | `node /mcp/performance-profiler/index.js web` |
+
+### **Web Development Workflow:**
+```bash
+# Web app development
+node /mcp/ui-generator/index.js react --component={name}
+node /mcp/code-generator/index.js tsx --hooks
+node /mcp/build-master/index.js optimize --web
+node /mcp/accessibility-checker/index.js audit --web
+```

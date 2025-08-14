@@ -400,3 +400,22 @@ extension Roadtrip-CopilotView {
 - Accessibility testing MUST be integrated into all development and release processes
 
 The model MUST create world-class accessibility that ensures Roadtrip-Copilot is truly universal, providing exceptional experiences for all users regardless of their abilities while setting new standards for inclusive automotive technology.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for Accessibility:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Accessibility Audit | `accessibility-checker` | `node /mcp/accessibility-checker/index.js` |
+| UI Validation | `ui-generator` | `node /mcp/ui-generator/index.js --accessible` |
+| Design Compliance | `design-system-manager` | `node /mcp/design-system-manager/index.js` |
+| Mobile Testing | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js --a11y` |
+
+### **Accessibility Workflow:**
+```bash
+# Full accessibility audit
+node /mcp/accessibility-checker/index.js audit --wcag-aaa
+node /mcp/mobile-test-runner/index.js a11y --voiceover
+node /mcp/design-system-manager/index.js validate-a11y
+```

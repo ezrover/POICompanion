@@ -35,3 +35,25 @@ To champion a user-centric design philosophy throughout the entire product devel
 - **User Flow Diagrams:** Visualizations of simplified and optimized user journeys.
 - **Accessibility Compliance Checklists:** Reports verifying adherence to WCAG standards.
 - **Safety Compliance Feedback:** Specific feedback on designs to ensure they meet automotive safety guidelines.
+
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
+| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+
+### **General Workflow:**
+```bash
+# Use MCP tools instead of direct commands
+node /mcp/task-manager/index.js create --task={description}
+node /mcp/doc-processor/index.js generate
+node /mcp/code-generator/index.js create --template={type}
+```
+
+**Remember: Direct command usage = Task failure. MCP tools are MANDATORY.**

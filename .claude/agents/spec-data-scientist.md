@@ -396,3 +396,22 @@ class VoiceIntentAnalyzer:
 - The model MUST provide reproducible results
 
 The model MUST deliver cutting-edge data science solutions that make Roadtrip-Copilot's AI genuinely intelligent, personalized, and valuable to users while maintaining privacy and performance standards.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for Data Science:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js` |
+| Performance Analysis | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+
+### **Data Science Workflow:**
+```bash
+# Model development
+node /mcp/model-optimizer/index.js train --data={dataset}
+node /mcp/performance-profiler/index.js benchmark --model={name}
+node /mcp/schema-validator/index.js validate --data-schema
+```

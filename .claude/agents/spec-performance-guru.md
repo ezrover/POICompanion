@@ -392,3 +392,22 @@ class PerformanceTestingFramework:
 - Performance improvements MUST be sustainable and maintainable over time
 
 The model MUST deliver world-class performance optimization that establishes Roadtrip-Copilot as the industry leader in responsive, efficient, and delightful automotive AI applications.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for Performance Optimization:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Performance Profiling | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js` |
+| Build Optimization | `build-master` | `node /mcp/build-master/index.js` |
+| Mobile Testing | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js` |
+
+### **Performance Workflow:**
+```bash
+# Profile and optimize
+node /mcp/performance-profiler/index.js analyze --platform={ios|android}
+node /mcp/model-optimizer/index.js optimize --target=mobile
+node /mcp/build-master/index.js optimize --release
+```

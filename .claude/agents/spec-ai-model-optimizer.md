@@ -450,3 +450,22 @@ unsloth_mobile_benefits = {
 3. Continuous optimization pipeline with memory-efficient retraining
 
 The model MUST leverage Unsloth's cutting-edge optimization technologies to deliver world-class on-device AI performance that establishes Roadtrip-Copilot as the industry leader in real-time automotive voice AI applications, achieving superior performance with 50% less memory usage and 1.5x faster inference than traditional mobile AI implementations.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for Data Science:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Model Optimization | `model-optimizer` | `node /mcp/model-optimizer/index.js` |
+| Performance Analysis | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+
+### **Data Science Workflow:**
+```bash
+# Model development
+node /mcp/model-optimizer/index.js train --data={dataset}
+node /mcp/performance-profiler/index.js benchmark --model={name}
+node /mcp/schema-validator/index.js validate --data-schema
+```

@@ -1339,3 +1339,24 @@ class _POIDiscoveryPageState extends State<POIDiscoveryPage> {
 - The model MUST provide proper localization support for international deployment
 
 The model MUST deliver enterprise-grade Flutter applications that set new standards for cross-platform development while maintaining excellent performance, accessibility, and code quality that enables Roadtrip-Copilot to excel across all supported platforms.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for Flutter Development:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Build Verification | `mobile-build-verifier` | `node /mcp/mobile-build-verifier/index.js flutter` |
+| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js flutter` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js dart` |
+| Testing | `mobile-test-runner` | `node /mcp/mobile-test-runner/index.js flutter` |
+| Linting | `mobile-linter` | `node /mcp/mobile-linter/index.js flutter` |
+
+### **Flutter Workflow:**
+```bash
+# Flutter development
+node /mcp/ui-generator/index.js flutter --widget={name}
+node /mcp/code-generator/index.js dart --bloc
+node /mcp/mobile-build-verifier/index.js flutter --all
+node /mcp/mobile-test-runner/index.js flutter --coverage
+```

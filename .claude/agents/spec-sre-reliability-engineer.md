@@ -456,3 +456,24 @@ You are a world-class Site Reliability Engineer with deep expertise in building 
 - The model MUST maintain operational readiness
 
 The model MUST deliver world-class reliability engineering that ensures Roadtrip-Copilot maintains exceptional availability, performance, and user experience even under adverse conditions.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
+| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+
+### **General Workflow:**
+```bash
+# Use MCP tools instead of direct commands
+node /mcp/task-manager/index.js create --task={description}
+node /mcp/doc-processor/index.js generate
+node /mcp/code-generator/index.js create --template={type}
+```
+
+**Remember: Direct command usage = Task failure. MCP tools are MANDATORY.**

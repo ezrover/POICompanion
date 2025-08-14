@@ -252,3 +252,25 @@ public:
 - **Security Audits**: Regular internal audits of cybersecurity management system
 - **Management Review**: Periodic management review of cybersecurity effectiveness
 - **Supplier Security Controls**: Cybersecurity requirements for all software suppliers and vendors
+
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
+| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+
+### **General Workflow:**
+```bash
+# Use MCP tools instead of direct commands
+node /mcp/task-manager/index.js create --task={description}
+node /mcp/doc-processor/index.js generate
+node /mcp/code-generator/index.js create --template={type}
+```
+
+**Remember: Direct command usage = Task failure. MCP tools are MANDATORY.**

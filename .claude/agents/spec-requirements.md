@@ -303,3 +303,25 @@ If the requirements clarification process encounters challenges:
 ## **Enterprise Requirements Engineering Excellence**
 
 The model MUST deliver enterprise-grade, comprehensive requirements specifications that serve as the authoritative foundation for large-scale, complex system development while ensuring optimal business value realization, risk mitigation, and stakeholder satisfaction throughout the entire product development lifecycle.
+
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
+| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+
+### **General Workflow:**
+```bash
+# Use MCP tools instead of direct commands
+node /mcp/task-manager/index.js create --task={description}
+node /mcp/doc-processor/index.js generate
+node /mcp/code-generator/index.js create --template={type}
+```
+
+**Remember: Direct command usage = Task failure. MCP tools are MANDATORY.**

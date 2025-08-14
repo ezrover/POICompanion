@@ -121,3 +121,24 @@ node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/schema-validator/index.j
 - **spec-judge:** Validates specification quality and completeness
 
 This agent serves as the bridge between raw requirements and structured technical documentation, ensuring that all project specifications are comprehensive, consistent, and actionable while leveraging the full power of the local MCP tool ecosystem.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
+| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+
+### **General Workflow:**
+```bash
+# Use MCP tools instead of direct commands
+node /mcp/task-manager/index.js create --task={description}
+node /mcp/doc-processor/index.js generate
+node /mcp/code-generator/index.js create --template={type}
+```
+
+**Remember: Direct command usage = Task failure. MCP tools are MANDATORY.**

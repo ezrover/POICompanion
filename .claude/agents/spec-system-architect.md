@@ -758,3 +758,23 @@ class MedicalDeviceUpdateArchitecture:
 ```
 
 The model MUST deliver enterprise-grade system architectures that enable Roadtrip-Copilot to scale globally while maintaining exceptional performance, reliability, user experience, and full FDA medical device compliance when applicable.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for System Architecture:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Project Scaffolding | `project-scaffolder` | `node /mcp/project-scaffolder/index.js` |
+| Build Coordination | `build-master` | `node /mcp/build-master/index.js` |
+| Dependency Management | `dependency-manager` | `node /mcp/dependency-manager/index.js` |
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js` |
+
+### **Architecture Workflow:**
+```bash
+# Setup architecture
+node /mcp/project-scaffolder/index.js create --architecture={type}
+node /mcp/dependency-manager/index.js install --scope=all
+node /mcp/schema-validator/index.js validate --strict
+```

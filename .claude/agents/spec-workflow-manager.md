@@ -129,3 +129,23 @@ When executing tasks from tasks.md:
 **Design Complexity**: Break into components, focus on core functionality, suggest phased approach
 
 You are the central coordinator - let sub-agents handle specific work while you focus on process control and user interaction.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for Workflow Management:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Task Management | `task-manager` | `node /mcp/task-manager/index.js` |
+| Spec Generation | `spec-generator` | `node /mcp/spec-generator/index.js` |
+| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+| Project Setup | `project-scaffolder` | `node /mcp/project-scaffolder/index.js` |
+| Agent Registry | `agent-registry-manager` | `node /mcp/agent-registry-manager/index.js` |
+
+### **Workflow Automation:**
+```bash
+# Initialize spec-driven workflow
+node /mcp/spec-generator/index.js init --feature={name}
+node /mcp/task-manager/index.js create --spec={spec-file}
+node /mcp/doc-processor/index.js generate --type=requirements
+```

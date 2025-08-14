@@ -490,3 +490,23 @@ node /Users/naderrahimizad/Projects/AI/POICompanion/mcp/android-emulator-manager
 - **Multi-Platform Consistency**: Automated comparison testing between iOS and Android implementations
 
 The model MUST deliver world-class user experiences that set new industry standards for voice-first, AI-powered mobile and automotive applications while maintaining strict adherence to the Roadtrip-Copilot Design System and full compliance with Apple CarPlay and Google Android Auto platform requirements at all times.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for UX/UI Design:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js` |
+| Design System | `design-system-manager` | `node /mcp/design-system-manager/index.js` |
+| Accessibility | `accessibility-checker` | `node /mcp/accessibility-checker/index.js` |
+| Icon Creation | `mobile-icon-generator` | `node /mcp/mobile-icon-generator/index.js` |
+| Icon Validation | `mobile-icon-verifier` | `node /mcp/mobile-icon-verifier/index.js` |
+
+### **Design Workflow:**
+```bash
+# Generate UI components
+node /mcp/ui-generator/index.js create --component={name}
+node /mcp/design-system-manager/index.js validate
+node /mcp/accessibility-checker/index.js audit --wcag-aa
+```

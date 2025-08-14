@@ -614,3 +614,22 @@ class SupabaseMigrationManager implements MigrationManager {
 - The model MUST support seamless online/offline data transitions
 
 The model MUST deliver production-ready database architectures that enable Roadtrip-Copilot to scale to millions of users while maintaining exceptional performance, security, and reliability across mobile and cloud environments.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for Database Development:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| Schema Validation | `schema-validator` | `node /mcp/schema-validator/index.js` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js --db` |
+| Performance Testing | `performance-profiler` | `node /mcp/performance-profiler/index.js` |
+| Documentation | `doc-processor` | `node /mcp/doc-processor/index.js` |
+
+### **Database Workflow:**
+```bash
+# Database operations
+node /mcp/schema-validator/index.js validate --database
+node /mcp/code-generator/index.js migration --auto
+node /mcp/performance-profiler/index.js query --optimize
+```

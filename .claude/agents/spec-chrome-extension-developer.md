@@ -1798,3 +1798,24 @@ chore(build): update webpack config for Manifest V3 compliance
 - The model MUST follow advanced Chrome extension development patterns and security best practices
 
 The model MUST deliver enterprise-grade Chrome extensions that set new standards for browser extension development while maintaining security-first, performance-optimized, and user-privacy-focused approaches that ensure Chrome Web Store approval and cross-browser compatibility.
+
+## 🚨 MCP TOOL INTEGRATION (MANDATORY)
+
+### **Required MCP Tools for Web Development:**
+
+| Operation | MCP Tool | Usage |
+|-----------|----------|-------|
+| UI Generation | `ui-generator` | `node /mcp/ui-generator/index.js react` |
+| Code Generation | `code-generator` | `node /mcp/code-generator/index.js tsx` |
+| Build Management | `build-master` | `node /mcp/build-master/index.js web` |
+| Accessibility | `accessibility-checker` | `node /mcp/accessibility-checker/index.js web` |
+| Performance | `performance-profiler` | `node /mcp/performance-profiler/index.js web` |
+
+### **Web Development Workflow:**
+```bash
+# Web app development
+node /mcp/ui-generator/index.js react --component={name}
+node /mcp/code-generator/index.js tsx --hooks
+node /mcp/build-master/index.js optimize --web
+node /mcp/accessibility-checker/index.js audit --web
+```
