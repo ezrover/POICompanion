@@ -85,8 +85,8 @@ fun SetDestinationScreen(
                 val discoveryInput = com.roadtrip.copilot.ai.DiscoveryInput(
                     latitude = 0.0,
                     longitude = 0.0,
-                    poiName = "test",
-                    category = "test",
+                    radius = 5.0,
+                    categories = listOf("test"),
                     context = "who are you?"
                 )
                 val testResult = gemmaProcessor.processDiscovery(discoveryInput)
@@ -579,8 +579,8 @@ private fun handleGemmaIntegrationAndNavigation(
                 val discoveryInput = com.roadtrip.copilot.ai.DiscoveryInput(
                     latitude = 0.0, // We don't have coordinates yet
                     longitude = 0.0,
-                    poiName = destination,
-                    category = "destination", 
+                    radius = 5.0,
+                    categories = listOf("destination"),
                     context = prompt
                 )
                 

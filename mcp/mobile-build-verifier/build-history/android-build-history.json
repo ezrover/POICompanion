@@ -1,33 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T01:21:15.874Z",
-      "platform": "android",
-      "success": true,
-      "duration": 1.464,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T01:22:33.238Z",
-      "platform": "android",
-      "success": true,
-      "duration": 1.39,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T01:25:33.055Z",
-      "platform": "android",
-      "success": true,
-      "duration": 1.395,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
       "timestamp": "2025-08-11T01:27:00.665Z",
       "platform": "android",
       "success": true,
@@ -1175,17 +1148,66 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T03:16:27.990Z",
+      "platform": "android",
+      "success": false,
+      "duration": 6.006,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T03:19:07.987Z",
+      "platform": "android",
+      "success": false,
+      "duration": 2.764,
+      "errors": [
+        "android-kotlin-compile"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T03:21:17.598Z",
+      "platform": "android",
+      "success": false,
+      "duration": 6.792,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {
-    "android-kotlin-compile": 20,
-    "missing-dependency": 19
+    "android-kotlin-compile": 23,
+    "missing-dependency": 21
   },
-  "successRate": 90,
-  "avgBuildTime": 10.007666666666672,
+  "successRate": 75,
+  "avgBuildTime": 5.942600000000001,
   "lastSuccessful": "2025-08-14T02:35:42.334Z",
   "trends": {
-    "improving": true,
-    "recentFailures": 0
+    "improving": false,
+    "recentFailures": 3
   }
 }

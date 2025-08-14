@@ -151,7 +151,7 @@ fun SplashScreen(
                         )
                         Spacer(modifier = Modifier.width(4.dp))
                         Text(
-                            text = "Gemma-3N ${modelVariant.modelName} ready",
+                            text = "Gemma-3N $modelVariant ready",
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )

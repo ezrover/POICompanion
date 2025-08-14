@@ -63,6 +63,10 @@ enum ModelError: LocalizedError {
     case modelPathNotFound
     case tokenizerNotFound
     case notImplemented(String)
+    case modelLoadFailed
+    case modelNotFound
+    case tokenizerLoadFailed
+    case modelNotInitialized
     
     var errorDescription: String? {
         switch self {
@@ -76,6 +80,14 @@ enum ModelError: LocalizedError {
             return "Tokenizer not found"
         case .notImplemented(let message):
             return "Not implemented: \(message)"
+        case .modelLoadFailed:
+            return "Failed to load model"
+        case .modelNotFound:
+            return "Model file not found"
+        case .tokenizerLoadFailed:
+            return "Failed to load tokenizer"
+        case .modelNotInitialized:
+            return "Model not initialized"
         }
     }
 }

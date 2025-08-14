@@ -1,53 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T04:32:30.055Z",
-      "platform": "ios",
-      "success": false,
-      "duration": 6.857,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
-      "timestamp": "2025-08-11T04:35:34.948Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 15.515,
-      "errors": [],
-      "fixes": [],
-      "warnings": 10,
-      "warningDetails": [
-        "warning: value 'ttsProcessor' was defined but never used; consider replacing with boolean test",
-        "warning: initialization of immutable value 'thermalImpact' was never used; consider replacing with assignment to '_' or removing it",
-        "warning: initialization of immutable value 'networkLatency' was never used; consider replacing with assignment to '_' or removing it",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: initialization of immutable value 'thermalImpact' was never used; consider replacing with assignment to '_' or removing it",
-        "warning: initialization of immutable value 'networkLatency' was never used; consider replacing with assignment to '_' or removing it",
-        "warning: value 'ttsProcessor' was defined but never used; consider replacing with boolean test"
-      ],
-      "warningSuggestions": [
-        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
-        "Remove unused functions, variables, and imports to clean up codebase."
-      ]
-    },
-    {
-      "timestamp": "2025-08-11T10:26:43.655Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 10.386,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
       "timestamp": "2025-08-11T10:30:48.049Z",
       "platform": "ios",
       "success": false,
@@ -1261,14 +1214,61 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T03:16:12.249Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 9.885,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T03:18:56.723Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 5.988,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T03:21:07.387Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 10.195,
+      "errors": [],
+      "fixes": [],
+      "warnings": 10,
+      "warningDetails": [
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: 'catch' block is unreachable because no errors are thrown in 'do' block",
+        "warning: value 'model' was defined but never used; consider replacing with boolean test",
+        "warning: capture of 'model' with non-sendable type 'MLModel' in a `@Sendable` closure",
+        "warning: add '@preconcurrency' to suppress 'Sendable'-related warnings from module 'CoreML'",
+        "warning: capture of 'input' with non-sendable type 'Gemma3NInput' in a `@Sendable` closure",
+        "warning: value 'model' was defined but never used; consider replacing with boolean test",
+        "warning: capture of 'model' with non-sendable type 'MLModel' in a `@Sendable` closure",
+        "warning: add '@preconcurrency' to suppress 'Sendable'-related warnings from module 'CoreML'",
+        "warning: capture of 'input' with non-sendable type 'Gemma3NInput' in a `@Sendable` closure"
+      ],
+      "warningSuggestions": [
+        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
+        "Remove unused functions, variables, and imports to clean up codebase."
+      ]
     }
   ],
   "commonErrors": {},
   "successRate": 60,
-  "avgBuildTime": 9.251916666666666,
-  "lastSuccessful": "2025-08-14T02:58:01.784Z",
+  "avgBuildTime": 9.01975,
+  "lastSuccessful": "2025-08-14T03:21:07.387Z",
   "trends": {
-    "improving": true,
-    "recentFailures": 0
+    "improving": false,
+    "recentFailures": 2
   }
 }
