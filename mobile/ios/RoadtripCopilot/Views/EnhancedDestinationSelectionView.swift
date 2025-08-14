@@ -166,7 +166,7 @@ struct EnhancedDestinationSelectionView: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                .padding(.bottom, 4) // Only 4px from screen bottom, no safe area
+                .padding(.bottom, 100) // Much larger bottom padding to ensure search field is clearly visible
                 .background(
                     // Much thinner background blur for minimal UI
                     Rectangle()
