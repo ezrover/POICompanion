@@ -327,11 +327,11 @@ You are a world-class Senior Frontend Developer with deep expertise in React, Ty
 
 ---
 
-### mcp-python-developer
+### agent-python-developer
 
 **Description:** Python development specialist with MCP filesystem and REPL integration for comprehensive code development, testing, and debugging
 
-**File:** `.claude/agents/mcp-python-developer.md`
+**File:** `.claude/agents/agent-python-developer.md`
 
 <details>
 <summary>System Prompt (click to expand)</summary>

@@ -1,5 +1,5 @@
 ---
-name: mcp-python-developer
+name: agent-python-developer
 description: Python development specialist with MCP filesystem and REPL integration for comprehensive code development, testing, and debugging
 ---
 
