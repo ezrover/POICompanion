@@ -1,7 +1,39 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## ⚠️ MANDATORY WORKFLOWS
+## 🚨 IMMEDIATE AI AGENT ENFORCEMENT (ZERO TOLERANCE - FIRST RULE)
 
+**ABSOLUTE ENFORCEMENT - NO EXCEPTIONS WHATSOEVER:**
+- ⚠️ **EVERY SINGLE TASK** → MUST use `spec-workflow-manager` FIRST - NO EXCEPTIONS
+- ⚠️ **ALL REQUESTS** → Must go through complete spec-driven workflow (Requirements → Design → Tasks → Implementation)
+- ⚠️ **ZERO DIRECT IMPLEMENTATION** → Any direct implementation = IMMEDIATE TASK FAILURE + ROLLBACK
+- ⚠️ **NO "SIMPLE" TASK EXEMPTIONS** → Everything goes through agents, even file reads when part of larger tasks
+
+**MANDATORY WORKFLOW (ABSOLUTE - NO SHORTCUTS):**
+1. **STEP 1 (REQUIRED)**: ALWAYS start with `spec-workflow-manager` for ANY request
+2. **STEP 2 (REQUIRED)**: Follow complete spec-driven workflow (requirements → design → tasks → implementation)
+3. **STEP 3 (REQUIRED)**: Use `spec-judge` for final validation
+4. **VIOLATION = TASK FAILURE**: Skipping ANY step triggers immediate task failure
+
+**🚨 RECENT VIOLATION EXAMPLES (LEARN FROM MISTAKES):**
+- ❌ **VIOLATION**: Fixed button regression directly instead of using spec-ios-developer
+- ❌ **VIOLATION**: Fixed crash directly instead of using spec-workflow-manager  
+- ❌ **VIOLATION**: Made UI changes without spec-ux-user-experience review
+- ❌ **VIOLATION**: Implemented voice parity directly instead of agent coordination
+- ❌ **VIOLATION**: Fixed Android build errors without spec-android-developer
+- ❌ **VIOLATION**: Updated documentation without spec-judge validation
+
+**⚠️ STRENGTHENED CONSEQUENCES (IMMEDIATE ENFORCEMENT):**
+1. **First Violation**: IMMEDIATE ROLLBACK + restart with agents (NO warnings)
+2. **Second Violation**: SESSION TERMINATION + escalation to user
+3. **NO THIRD CHANCES**: Pattern violations result in automatic session termination
+
+**🚨 ALL EXCEPTIONS REMOVED - ZERO TOLERANCE POLICY:**
+- ❌ **REMOVED**: "Direct implementation allowed ONLY for" section - NO EXCEPTIONS EXIST
+- ❌ **REMOVED**: Simple file reads exception - use agents for all workflow tasks  
+- ❌ **REMOVED**: Trivial edits exception - use agents to ensure quality and consistency
+- ❌ **REMOVED**: Git operations exception - use agents to ensure proper workflow
+
+## ⚠️ MANDATORY WORKFLOWS
 
 **🚨 NO CHEATING OR SHORTCUTS RULE (ABSOLUTE NON-NEGOTIABLE):**
 - ✅ **CHEATING** Don't cheat when you run into issues. Think harder, analysis, root-cause, and fix the root cause.
@@ -42,36 +74,43 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 -   **COMPOUND EFFICIENCY** - Each new/improved tool makes the entire workspace more capable and reduces future API dependency
 
 **40-AGENT WORKFORCE UTILIZATION (ABSOLUTE ENFORCEMENT - ZERO TOLERANCE):**
--   **ALWAYS** leverage the 40-agent specialized workforce (36 currently available via Task tool) instead of direct implementation
--   **MANDATORY USAGE**: Use agents for ALL tasks with >3 steps OR >10 lines of code - NO EXCEPTIONS
--   **SPEC-DRIVEN WORKFLOW**: ALL features MUST follow: Requirements → Design → Tasks → Implementation → Validation
--   **AUTO-ACTIVATE** agents proactively based on task type (see auto-activation triggers below)
+-   **ALWAYS** leverage the 40-agent specialized workforce (36 currently available via Task tool) instead of ANY direct implementation
+-   **MANDATORY USAGE**: Use agents for ALL TASKS - NO EXCEPTIONS, NO SIZE THRESHOLDS, NO COMPLEXITY EXEMPTIONS
+-   **SPEC-DRIVEN WORKFLOW**: ALL requests MUST follow: Requirements → Design → Tasks → Implementation → Validation
+-   **AUTO-ACTIVATE** agents proactively for EVERY request - no manual activation required
 -   **ORCHESTRATE** multiple agents through spec-judge for comprehensive quality validation
--   **DELEGATE** complex tasks to domain experts rather than attempting direct solution
+-   **DELEGATE** ALL tasks to domain experts rather than attempting ANY direct solution
 -   **PLATFORM COORDINATION**: Use mobile development agents to ensure 4-platform parity
--   **VIOLATION TRACKING**: Direct implementation without agents = TASK FAILURE
+-   **VIOLATION TRACKING**: ANY direct implementation = IMMEDIATE TASK FAILURE + ROLLBACK
 
 **🚨 AGENT USAGE ENFORCEMENT (SEE /specs/development-workflow/ FOR FULL RULES):**
-- **spec-workflow-manager**: MUST BE USED FIRST for all feature development
-- **spec-ios-developer** + **spec-android-developer**: MANDATORY for any mobile changes
+- **spec-workflow-manager**: MUST BE USED FIRST for ALL requests - NO EXCEPTIONS
+- **spec-ios-developer** + **spec-android-developer**: MANDATORY for ANY changes affecting mobile platforms
 - **spec-flutter-developer**: For cross-platform coordination
-- **spec-ux-user-experience**: REQUIRED for any UI/UX changes across platforms
+- **spec-ux-user-experience**: REQUIRED for ANY UI/UX changes across platforms
 - **spec-system-architect**: For system-wide changes affecting multiple platforms
-- **spec-judge**: FINAL VALIDATION for all implementations
-- **Direct implementation allowed ONLY for**: Simple file reads (<50 lines), trivial edits (<10 lines), git operations
+- **spec-judge**: FINAL VALIDATION for ALL implementations - MANDATORY
+- **ZERO DIRECT IMPLEMENTATION**: No exceptions exist - ALL work goes through agents
 
-**⚠️ VIOLATION CONSEQUENCES (AUTOMATIC ENFORCEMENT):**
-1. **First Violation**: Warning + mandatory re-implementation using agents
-2. **Second Violation**: Task marked as FAILED + full rollback required
-3. **Third Violation**: Session termination + escalation to user
-4. **Pattern Violations**: Automatic agent activation without permission
+**⚠️ VIOLATION CONSEQUENCES (IMMEDIATE AUTOMATIC ENFORCEMENT):**
+1. **First Violation**: IMMEDIATE TASK FAILURE + mandatory rollback + restart with agents (NO warnings)
+2. **Second Violation**: SESSION TERMINATION + user escalation + development privileges suspended
+3. **NO THIRD VIOLATIONS**: Pattern violations result in permanent enforcement mode
+4. **Automatic Detection**: All direct implementations trigger immediate violation response
 
-**EXAMPLES OF VIOLATIONS:**
-- ❌ Implementing Gemma-2B instead of Gemma-3N (should have used spec-workflow-manager)
-- ❌ Direct UI implementation without spec-ux-user-experience agent
-- ❌ Platform-specific changes without coordinated mobile agents
-- ❌ Skipping spec-driven workflow phases
-- ✅ CORRECT: Using spec-workflow-manager → requirements → design → tasks → implementation
+**COMPREHENSIVE VIOLATION EXAMPLES (DOCUMENTED FAILURES):**
+- ❌ **RECENT VIOLATION**: Fixed button regression directly instead of using spec-ios-developer agent
+- ❌ **RECENT VIOLATION**: Fixed crash directly instead of using spec-workflow-manager
+- ❌ **RECENT VIOLATION**: Made UI changes without spec-ux-user-experience review
+- ❌ **RECENT VIOLATION**: Implemented voice parity directly bypassing agent coordination
+- ❌ **RECENT VIOLATION**: Fixed Android build issues without spec-android-developer involvement
+- ❌ **RECENT VIOLATION**: Implementing Gemma-2B instead of Gemma-3N (should have used spec-workflow-manager)
+- ❌ **RECENT VIOLATION**: Direct UI implementation without spec-ux-user-experience agent
+- ❌ **RECENT VIOLATION**: Platform-specific changes without coordinated mobile agents
+- ❌ **RECENT VIOLATION**: Skipping spec-driven workflow phases
+- ❌ **RECENT VIOLATION**: Direct file modifications without agent oversight
+- ❌ **RECENT VIOLATION**: Documentation updates without spec-judge validation
+- ✅ **ONLY CORRECT APPROACH**: Using spec-workflow-manager → requirements → design → tasks → implementation → validation
 
 **🚨 BUTTON DESIGN SYSTEM ENFORCEMENT (ZERO TOLERANCE FOR REGRESSION):**
 
@@ -239,11 +278,11 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 - **Replaces**: Manual coordination of spec-system-prompt-loader workflow
 
 **Operational Philosophy**:
-- **🚨 AGENT-FIRST APPROACH**: Use agents for ALL non-trivial tasks (direct execution ONLY for simple file reads/writes)
+- **🚨 AGENT-ONLY APPROACH**: Use agents for ALL TASKS - NO direct execution allowed for ANY reason
 - **PLATFORM PARITY ENFORCEMENT**: Always use mobile development agents to ensure 4-platform consistency
-- **Agent Delegation**: Complex domains requiring specialized expertise
-- **Multi-Agent Coordination**: Combine multiple agents for comprehensive coverage
-- **Quality Assurance**: `spec-judge` as ultimate gatekeeper orchestrating all agents
+- **Agent Delegation**: ALL domains require specialized agent expertise - NO direct implementation
+- **Multi-Agent Coordination**: Combine multiple agents for comprehensive coverage on EVERY task
+- **Quality Assurance**: `spec-judge` as ultimate gatekeeper orchestrating all agents for EVERY deliverable
 
 **❌ WHAT WENT WRONG & FIXES:**
 
