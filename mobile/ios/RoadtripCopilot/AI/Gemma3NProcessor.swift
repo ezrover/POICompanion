@@ -113,7 +113,22 @@ class Gemma3NProcessor: ObservableObject {  // Keep class name for compatibility
     }
     
     private func locateModelFile() -> URL? {
-        // First check app bundle
+        // For TinyLlama, we have a real Core ML model
+        if modelVariant == .TinyLlama {
+            // Check for the actual Core ML model
+            if let bundleURL = Bundle.main.url(forResource: "TinyLlama", withExtension: "mlpackage") {
+                print("✅ Found TinyLlama Core ML model in bundle")
+                return bundleURL
+            }
+            
+            // Alternative: Check for .mlmodel format
+            if let bundleURL = Bundle.main.url(forResource: "TinyLlama", withExtension: "mlmodel") {
+                print("✅ Found TinyLlama Core ML model (.mlmodel) in bundle")
+                return bundleURL
+            }
+        }
+        
+        // Legacy Gemma model check
         if let bundleURL = Bundle.main.url(forResource: modelVariant.fileName, withExtension: "mlpackage") {
             return bundleURL
         }
