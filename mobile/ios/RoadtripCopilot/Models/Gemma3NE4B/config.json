@@ -1,0 +1,9 @@
+{
+  "model_type": "gemma-3n",
+  "variant": "e4b",
+  "tokenizer_path": "tokenizer.json",
+  "use_neural_engine": true,
+  "max_sequence_length": 4096,
+  "quantization": "int8",
+  "expected_size_mb": 750
+}

@@ -2,6 +2,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## ⚠️ MANDATORY WORKFLOWS
 
+
+**🚨 NO CHEATING OR SHORTCUTS RULE (ABSOLUTE NON-NEGOTIABLE):**
+- ✅ **CHEATING** Don't cheat when you run into issues. Think harder, analysis, root-cause, and fix the root cause.
+- ✅ **SHORTCUTS** Don't take shortcuts by commenting out features when you run into issues. Think harder, analysis, root-cause, and fix the root cause.
+
 **🚨 PLATFORM PARITY RULE (ABSOLUTE NON-NEGOTIABLE):**
 **ALL FEATURES AND FUNCTIONALITY MUST MAINTAIN 100% PARITY ACROSS ALL FOUR PLATFORMS:**
 - ✅ **iOS** (Swift/SwiftUI)
@@ -10,18 +15,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - ✅ **Android Auto** (Car App Templates)
 
 **ENFORCEMENT REQUIREMENTS:**
-1. **BEFORE** implementing ANY feature: Plan implementation for ALL four platforms
-2. **DURING** implementation: Implement features simultaneously across all platforms
-3. **AFTER** implementation: Verify and test parity across all platforms
+1. **BEFORE** implementing ANY feature: Plan implementation for ALL four platforms with our agents in ./claude/agents/spec-*.md
+2. **DURING** implementation: Implement features simultaneously across all platforms with our agents in ./claude/agents/spec-*.md
+3. **AFTER** implementation: Verify and test parity across all platforms with our agents in ./claude/agents/spec-*.md
 4. **NO EXCEPTIONS**: If a feature can't be implemented on one platform, it cannot be implemented on any platform
-5. **BUILD VERIFICATION**: All platforms must build successfully before considering task complete
+5. **BUILD VERIFICATION**: All platforms must build successfully before considering task complete with our agents in ./claude/agents/spec-*.md
 
 **PROMPT & RESULT RECORDING (NON-NEGOTIABLE):**
 1. **START**: Immediately append user prompt to `/prompts.md`
 2. **END**: Append summary prefixed with `CLAUDE:` to `/prompts.md`
 
 **🚨 GIT COMMIT WORKFLOW (ABSOLUTELY MANDATORY - NO EXCEPTIONS):**
-1. **IMMEDIATE COMMIT RULE**: After completing ANY task, you MUST commit changes after you have validated your changes. Afterwards, push to remote repository.
+1. **IMMEDIATE COMMIT RULE**: After completing ANY task, validate the results with our agents in ./claude/agents/spec-*.md , then you MUST commit changes. Afterwards, push to remote repository.
 2. **NO TASK IS COMPLETE** without a git commit - this is part of every task completion
 3. **ALWAYS commit workflow**:
    - Initial commit at task start for baseline establishment
@@ -31,7 +36,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 5. **If you forget to commit, you have FAILED the task - no exceptions**
 
 **MCP TOOL OPTIMIZATION & SELF-IMPROVEMENT (NON-NEGOTIABLE):**
--   **BEFORE** implementing any user request, ALWAYS evaluate if existing local project MCP tools can be improved or if new tools should be created to handle the task more efficiently
+-   **BEFORE** implementing any user request, ALWAYS evaluate if existing local project MCP tools in /mcp/ and the relevant agents in .claude/agents/spec-*.md can be improved or if new tools should be created to handle the task more efficiently
 -   **PRIORITIZE** building/enhancing local project MCP tools over direct implementation to reduce remote AI LLM API calls
 -   **SELF-IMPROVE** continuously by creating reusable tools that make future similar requests faster and more cost-effective
 -   **COMPOUND EFFICIENCY** - Each new/improved tool makes the entire workspace more capable and reduces future API dependency

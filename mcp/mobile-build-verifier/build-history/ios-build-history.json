@@ -1,36 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T10:30:48.049Z",
-      "platform": "ios",
-      "success": false,
-      "duration": 6.58,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
-      "timestamp": "2025-08-11T10:31:49.396Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 11.099,
-      "errors": [],
-      "fixes": [],
-      "warnings": 4,
-      "warningDetails": [
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used",
-        "warning: left side of nil coalescing operator '??' has non-optional type 'String', so the right side is never used"
-      ],
-      "warningSuggestions": [
-        "Remove unused variables or prefix with underscore (_) if intentionally unused.",
-        "Remove unused functions, variables, and imports to clean up codebase."
-      ]
-    },
-    {
       "timestamp": "2025-08-11T10:35:43.085Z",
       "platform": "ios",
       "success": false,
@@ -1261,12 +1231,34 @@
         "Remove unused variables or prefix with underscore (_) if intentionally unused.",
         "Remove unused functions, variables, and imports to clean up codebase."
       ]
+    },
+    {
+      "timestamp": "2025-08-14T03:24:29.896Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 4.622,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T14:39:35.803Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 11.955,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {},
-  "successRate": 60,
-  "avgBuildTime": 9.01975,
-  "lastSuccessful": "2025-08-14T03:21:07.387Z",
+  "successRate": 70,
+  "avgBuildTime": 8.915285714285714,
+  "lastSuccessful": "2025-08-14T14:39:35.803Z",
   "trends": {
     "improving": false,
     "recentFailures": 2

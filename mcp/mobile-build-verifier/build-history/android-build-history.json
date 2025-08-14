@@ -1,24 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T01:27:00.665Z",
-      "platform": "android",
-      "success": true,
-      "duration": 1.355,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-11T01:30:05.253Z",
-      "platform": "android",
-      "success": true,
-      "duration": 7.064,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
       "timestamp": "2025-08-11T01:37:23.238Z",
       "platform": "android",
       "success": true,
@@ -1197,15 +1179,37 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T03:24:34.519Z",
+      "platform": "android",
+      "success": true,
+      "duration": 7.081,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T14:39:47.762Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.667,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {
     "android-kotlin-compile": 23,
     "missing-dependency": 21
   },
-  "successRate": 75,
-  "avgBuildTime": 5.942600000000001,
-  "lastSuccessful": "2025-08-14T02:35:42.334Z",
+  "successRate": 80,
+  "avgBuildTime": 3.243,
+  "lastSuccessful": "2025-08-14T14:39:47.762Z",
   "trends": {
     "improving": false,
     "recentFailures": 3
