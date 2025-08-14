@@ -16,6 +16,8 @@ struct EnhancedDestinationSelectionView: View {
     @State private var shouldNavigate = false
     @State private var isMicrophoneMuted = false
     @State private var isProcessingNavigation = false
+    @State private var showPOIResult = false
+    @State private var gemmaResponse = ""
     
     // Search state management to prevent concurrent requests
     @State private var isSearching = false
@@ -198,6 +200,18 @@ struct EnhancedDestinationSelectionView: View {
                 handleNavigation()
             }
         }
+        .sheet(isPresented: $showPOIResult) {
+            if let destination = selectedDestination {
+                POIResultView(
+                    destination: destination,
+                    gemmaResponse: gemmaResponse,
+                    onComplete: {
+                        showPOIResult = false
+                        isProcessingNavigation = false
+                    }
+                )
+            }
+        }
     }
     
     private func setupInitialState() {
@@ -298,7 +312,7 @@ struct EnhancedDestinationSelectionView: View {
         
         if selectedDestination != nil {
             TimestampLogger.info("Navigating to selected destination: \(selectedDestination?.name ?? "Unknown")", category: "Navigation")
-            handleNavigation()
+            handleGemmaIntegrationAndNavigation()
         } else if !searchText.isEmpty {
             TimestampLogger.info("Searching for destination before navigation: \(searchText)", category: "Navigation")
             searchForDestinations()
@@ -306,7 +320,7 @@ struct EnhancedDestinationSelectionView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 if let firstResult = self.searchResults.first {
                     self.selectedDestination = firstResult
-                    self.handleNavigation()
+                    self.handleGemmaIntegrationAndNavigation()
                 }
                 self.isProcessingNavigation = false
             }
@@ -383,6 +397,57 @@ struct EnhancedDestinationSelectionView: View {
             // CRITICAL FIX: Enter key pressed without navigation words - show results but require user confirmation
             print("[DestinationView] Destination-only input, showing search results but requiring user confirmation")
             // No TTS feedback, no auto-navigation - just show search results
+        }
+    }
+    
+    private func handleGemmaIntegrationAndNavigation() {
+        guard let destination = selectedDestination else {
+            speechManager.speak("Please select a destination first")
+            isProcessingNavigation = false
+            return
+        }
+        
+        let destinationName = destination.name ?? "this location"
+        let prompt = "tell me about this place: \(destinationName)"
+        
+        TimestampLogger.info("Calling Gemma-3N with prompt: \(prompt)", category: "AI")
+        
+        Task {
+            do {
+                var response: String
+                
+                // Check iOS version and use appropriate model manager
+                if #available(iOS 16.0, *) {
+                    // Load model if not already loaded
+                    if !ModelManager.shared.isModelLoaded {
+                        try await ModelManager.shared.loadModel()
+                    }
+                    
+                    // Get response from Gemma-3N
+                    response = try await ModelManager.shared.predict(input: prompt, maxTokens: 150)
+                } else {
+                    // Use legacy model manager for iOS 15
+                    if !ModelManagerLegacy.shared.isModelLoaded {
+                        try await ModelManagerLegacy.shared.loadModel()
+                    }
+                    
+                    response = try await ModelManagerLegacy.shared.predict(input: prompt, maxTokens: 150)
+                }
+                
+                await MainActor.run {
+                    self.gemmaResponse = response
+                    self.showPOIResult = true
+                    TimestampLogger.info("Gemma response received, showing POI result", category: "AI")
+                }
+            } catch {
+                TimestampLogger.info("Gemma integration failed: \(error)", category: "AI")
+                
+                await MainActor.run {
+                    // Fallback response if Gemma fails
+                    self.gemmaResponse = "This destination looks interesting! It's a great place to explore and discover new experiences."
+                    self.showPOIResult = true
+                }
+            }
         }
     }
     

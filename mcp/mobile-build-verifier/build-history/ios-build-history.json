@@ -1,39 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-11T03:16:24.454Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 4.246,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
-      "timestamp": "2025-08-11T03:16:39.459Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 4.144,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
-      "timestamp": "2025-08-11T03:18:41.945Z",
-      "platform": "ios",
-      "success": true,
-      "duration": 6.139,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0,
-      "warningDetails": [],
-      "warningSuggestions": []
-    },
-    {
       "timestamp": "2025-08-11T03:19:15.186Z",
       "platform": "ios",
       "success": true,
@@ -1283,14 +1250,47 @@
         "Remove unused variables or prefix with underscore (_) if intentionally unused.",
         "Remove unused functions, variables, and imports to clean up codebase."
       ]
+    },
+    {
+      "timestamp": "2025-08-14T01:50:43.615Z",
+      "platform": "ios",
+      "success": false,
+      "duration": 2.4,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:57:07.906Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 9.705,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:59:02.112Z",
+      "platform": "ios",
+      "success": true,
+      "duration": 6.495,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {},
   "successRate": 60,
-  "avgBuildTime": 17.229499999999998,
-  "lastSuccessful": "2025-08-14T01:39:36.963Z",
+  "avgBuildTime": 16.62975,
+  "lastSuccessful": "2025-08-14T01:59:02.112Z",
   "trends": {
-    "improving": false,
-    "recentFailures": 4
+    "improving": true,
+    "recentFailures": 2
   }
 }

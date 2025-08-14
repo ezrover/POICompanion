@@ -1,33 +1,6 @@
 {
   "builds": [
     {
-      "timestamp": "2025-08-10T20:59:13.203Z",
-      "platform": "android",
-      "success": false,
-      "duration": 5.829,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-10T21:44:37.396Z",
-      "platform": "android",
-      "success": false,
-      "duration": 3.583,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
-      "timestamp": "2025-08-10T21:44:47.734Z",
-      "platform": "android",
-      "success": false,
-      "duration": 2.69,
-      "errors": [],
-      "fixes": [],
-      "warnings": 0
-    },
-    {
       "timestamp": "2025-08-10T21:52:12.591Z",
       "platform": "android",
       "success": false,
@@ -1151,17 +1124,56 @@
       "warnings": 0,
       "warningDetails": [],
       "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:54:41.816Z",
+      "platform": "android",
+      "success": false,
+      "duration": 11.587,
+      "errors": [
+        "android-kotlin-compile",
+        "missing-dependency"
+      ],
+      "fixes": [
+        "Check Kotlin syntax and imports in recently modified files",
+        "Install dependencies: ./gradlew build --refresh-dependencies"
+      ],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:57:17.614Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.526,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
+    },
+    {
+      "timestamp": "2025-08-14T01:59:08.610Z",
+      "platform": "android",
+      "success": true,
+      "duration": 1.55,
+      "errors": [],
+      "fixes": [],
+      "warnings": 0,
+      "warningDetails": [],
+      "warningSuggestions": []
     }
   ],
   "commonErrors": {
-    "android-kotlin-compile": 19,
-    "missing-dependency": 18
+    "android-kotlin-compile": 20,
+    "missing-dependency": 19
   },
-  "successRate": 85,
-  "avgBuildTime": 15.57876470588235,
-  "lastSuccessful": "2025-08-14T01:39:46.756Z",
+  "successRate": 90,
+  "avgBuildTime": 13.10955555555556,
+  "lastSuccessful": "2025-08-14T01:59:08.610Z",
   "trends": {
-    "improving": true,
-    "recentFailures": 0
+    "improving": false,
+    "recentFailures": 1
   }
 }
