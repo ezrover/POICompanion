@@ -54,133 +54,130 @@ struct EnhancedDestinationSelectionView: View {
             }
             .ignoresSafeArea(.all) // Full edge-to-edge
             
-            // Floating search bar at bottom
+            // Floating search bar at bottom using ZStack for proper layering
             VStack {
                 Spacer()
                 
-                // Search bar container - positioned within gray box
-                VStack(spacing: 16) {
-                    // CRITICAL FIX: Two-button layout matching Android platform parity
-                    HStack(spacing: 12) {
-                        // Search field
-                        TextField("Search destination...", text: $searchText)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.headline)
-                            .onSubmit {
-                                handleSearchSubmit()
-                            }
-                            .onChange(of: searchText) { newValue in
-                                if !newValue.isEmpty && newValue != speechManager.recognizedText {
-                                    searchForDestinations()
-                                }
-                            }
-                            .accessibilityIdentifier("destinationSearchField")
-                        
-                        // CRITICAL FIX: Voice-Animated Navigate Button (Primary Action) - RESTORED ANIMATION
-                        Button(action: handleNavigateAction) {
-                            ZStack {
-                                if speechManager.isVoiceDetected && speechManager.isListening {
-                                    // Voice wave animation
-                                    HStack(spacing: 2) {
-                                        ForEach(0..<5, id: \.self) { index in
-                                            RoundedRectangle(cornerRadius: 1.5)
-                                                .fill(Color.blue)
-                                                .frame(width: 3, height: 3 + CGFloat.random(in: 0...15))
-                                                .animation(
-                                                    .easeInOut(duration: 0.4)
-                                                    .repeatForever(autoreverses: true)
-                                                    .delay(Double(index) * 0.1),
-                                                    value: speechManager.isVoiceDetected
-                                                )
-                                        }
-                                    }
-                                } else if isProcessingNavigation {
-                                    // Processing spinner
-                                    ProgressView()
-                                        .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-                                        .scaleEffect(0.8)
-                                } else {
-                                    // Static arrow icon
-                                    Image(systemName: "arrow.right")
-                                        .font(.system(size: 24, weight: .semibold))
-                                        .foregroundColor(selectedDestination != nil || !searchText.isEmpty ? .blue : .gray)
-                                }
-                            }
-                            .frame(width: 56, height: 56)
-                        }
-                        .buttonStyle(.plain)
-                        .disabled(selectedDestination == nil && searchText.isEmpty)
-                        .accessibilityLabel("Start navigation")
-                        .accessibilityHint("Double tap to start navigation to entered destination")
-                        .accessibilityIdentifier("navigateButton")
-                        
-                        // CRITICAL FIX: Microphone Toggle Button (Secondary Action) - BORDERLESS DESIGN
-                        Button(action: handleMicrophoneToggle) {
-                            Image(systemName: isListening ? "mic.fill" : "mic")
-                                .font(.system(size: 24, weight: .medium))
-                                .foregroundColor(isListening ? .green : .primary)
-                                .frame(width: 56, height: 56)
-                        }
-                        .buttonStyle(.plain) // CRITICAL: Remove all default button styling
-                        .accessibilityLabel("Microphone")
-                        .accessibilityHint("Double tap to toggle microphone")
-                        .accessibilityIdentifier("microphoneButton")
-                    }
-                    
-                    // Selected destination info (if any)
-                    if let destination = selectedDestination {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(destination.name ?? "Selected Location")
-                                    .font(.headline)
-                                    .foregroundColor(.primary)
-                                    .lineLimit(1)
-                                    .accessibilityIdentifier("selectedDestinationName")
-                                
-                                if let address = destination.placemark.title {
-                                    Text(address)
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .lineLimit(2)
-                                        .accessibilityIdentifier("selectedDestinationAddress")
-                                }
-                            }
-                            
-                            Spacer()
-                            
-                            // Distance if available
-                            if let currentLocation = locationManager.currentLocation {
-                                let distance = currentLocation.distance(from: CLLocation(latitude: destination.placemark.coordinate.latitude, longitude: destination.placemark.coordinate.longitude))
-                                Text(formatDistance(distance))
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                                    .multilineTextAlignment(.trailing)
-                            }
-                        }
-                        .padding()
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color(.systemBackground))
-                                .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
-                        )
-                    }
-                }
-                .padding(.horizontal, 20)
-                .padding(.top, 26) // Increased top padding within gray box
-                .padding(.bottom, 20) // Reduced bottom padding to move gray box down
-                .background(
-                    // Gray box background properly positioned at bottom
+                // ZStack to properly layer gray background and content
+                ZStack(alignment: .bottom) {
+                    // Gray box background positioned at bottom with correct height
                     Rectangle()
                         .fill(.ultraThinMaterial)
-                        .mask(
-                            VStack {
-                                Spacer()
-                                Rectangle()
-                                    .frame(height: selectedDestination != nil ? 110 : 80) // Updated height: 80pt collapsed, 110pt expanded
+                        .frame(height: selectedDestination != nil ? 110 : 80)
+                        .ignoresSafeArea(.all, edges: .horizontal) // Edge-to-edge background
+                    
+                    // Content positioned within the gray box bounds
+                    VStack(spacing: 16) {
+                        // CRITICAL FIX: Two-button layout matching Android platform parity
+                        HStack(spacing: 12) {
+                            // Search field
+                            TextField("Search destination...", text: $searchText)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .font(.headline)
+                                .onSubmit {
+                                    handleSearchSubmit()
+                                }
+                                .onChange(of: searchText) { newValue in
+                                    if !newValue.isEmpty && newValue != speechManager.recognizedText {
+                                        searchForDestinations()
+                                    }
+                                }
+                                .accessibilityIdentifier("destinationSearchField")
+                            
+                            // CRITICAL FIX: Voice-Animated Navigate Button (Primary Action) - RESTORED ANIMATION
+                            Button(action: handleNavigateAction) {
+                                ZStack {
+                                    if speechManager.isVoiceDetected && speechManager.isListening {
+                                        // Voice wave animation
+                                        HStack(spacing: 2) {
+                                            ForEach(0..<5, id: \.self) { index in
+                                                RoundedRectangle(cornerRadius: 1.5)
+                                                    .fill(Color.blue)
+                                                    .frame(width: 3, height: 3 + CGFloat.random(in: 0...15))
+                                                    .animation(
+                                                        .easeInOut(duration: 0.4)
+                                                        .repeatForever(autoreverses: true)
+                                                        .delay(Double(index) * 0.1),
+                                                        value: speechManager.isVoiceDetected
+                                                    )
+                                            }
+                                        }
+                                    } else if isProcessingNavigation {
+                                        // Processing spinner
+                                        ProgressView()
+                                            .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                                            .scaleEffect(0.8)
+                                    } else {
+                                        // Static arrow icon
+                                        Image(systemName: "arrow.right")
+                                            .font(.system(size: 24, weight: .semibold))
+                                            .foregroundColor(selectedDestination != nil || !searchText.isEmpty ? .blue : .gray)
+                                    }
+                                }
+                                .frame(width: 56, height: 56)
                             }
-                        )
-                        .ignoresSafeArea(.all) // Edge-to-edge background
-                )
+                            .buttonStyle(.plain)
+                            .disabled(selectedDestination == nil && searchText.isEmpty)
+                            .accessibilityLabel("Start navigation")
+                            .accessibilityHint("Double tap to start navigation to entered destination")
+                            .accessibilityIdentifier("navigateButton")
+                            
+                            // CRITICAL FIX: Microphone Toggle Button (Secondary Action) - BORDERLESS DESIGN
+                            Button(action: handleMicrophoneToggle) {
+                                Image(systemName: isListening ? "mic.fill" : "mic")
+                                    .font(.system(size: 24, weight: .medium))
+                                    .foregroundColor(isListening ? .green : .primary)
+                                    .frame(width: 56, height: 56)
+                            }
+                            .buttonStyle(.plain) // CRITICAL: Remove all default button styling
+                            .accessibilityLabel("Microphone")
+                            .accessibilityHint("Double tap to toggle microphone")
+                            .accessibilityIdentifier("microphoneButton")
+                        }
+                        
+                        // Selected destination info (if any)
+                        if let destination = selectedDestination {
+                            HStack {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(destination.name ?? "Selected Location")
+                                        .font(.headline)
+                                        .foregroundColor(.primary)
+                                        .lineLimit(1)
+                                        .accessibilityIdentifier("selectedDestinationName")
+                                    
+                                    if let address = destination.placemark.title {
+                                        Text(address)
+                                            .font(.subheadline)
+                                            .foregroundColor(.secondary)
+                                            .lineLimit(2)
+                                            .accessibilityIdentifier("selectedDestinationAddress")
+                                    }
+                                }
+                                
+                                Spacer()
+                                
+                                // Distance if available
+                                if let currentLocation = locationManager.currentLocation {
+                                    let distance = currentLocation.distance(from: CLLocation(latitude: destination.placemark.coordinate.latitude, longitude: destination.placemark.coordinate.longitude))
+                                    Text(formatDistance(distance))
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                        .multilineTextAlignment(.trailing)
+                                }
+                            }
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(Color(.systemBackground))
+                                    .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
+                            )
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 26) // 26pt padding from top of gray box
+                    .padding(.bottom, 20) // Bottom padding within gray box
+                    .frame(height: selectedDestination != nil ? 110 : 80) // Match gray box height
+                }
             }
         }
         .onAppear {
