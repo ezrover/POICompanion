@@ -54,20 +54,12 @@ struct EnhancedDestinationSelectionView: View {
             }
             .ignoresSafeArea(.all) // Full edge-to-edge
             
-            // Floating search bar at bottom using ZStack for proper layering
+            // Floating search bar at bottom using VStack for proper layering
             VStack {
                 Spacer()
                 
-                // ZStack to properly layer gray background and content
-                ZStack(alignment: .bottom) {
-                    // Gray box background positioned at bottom with correct height
-                    Rectangle()
-                        .fill(.ultraThinMaterial)
-                        .frame(height: selectedDestination != nil ? 110 : 80)
-                        .ignoresSafeArea(.all, edges: .horizontal) // Edge-to-edge background
-                    
-                    // Content positioned within the gray box bounds
-                    VStack(spacing: 16) {
+                // Gray box background with content - positioned flush at bottom
+                VStack(spacing: 16) {
                         // CRITICAL FIX: Two-button layout matching Android platform parity
                         HStack(spacing: 12) {
                             // Search field
@@ -177,7 +169,11 @@ struct EnhancedDestinationSelectionView: View {
                     .padding(.top, 26) // 26pt padding from top of gray box
                     .padding(.bottom, 20) // Bottom padding within gray box
                     .frame(height: selectedDestination != nil ? 110 : 80) // Match gray box height
-                }
+                    .background(
+                        Rectangle()
+                            .fill(.ultraThinMaterial)
+                            .ignoresSafeArea(.all, edges: [.horizontal, .bottom]) // Edge-to-edge and flush with bottom
+                    )
             }
         }
         .onAppear {

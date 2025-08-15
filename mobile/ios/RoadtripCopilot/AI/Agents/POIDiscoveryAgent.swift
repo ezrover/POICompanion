@@ -11,6 +11,10 @@ class POIDiscoveryAgent: NSObject, AIAgent {
     private var lastDiscoveryTime: Date?
     private var cancellables = Set<AnyCancellable>()
     
+    // CRITICAL FIX: Use POIDiscoveryOrchestrator instead of mock data
+    @available(iOS 16.0, *)
+    private lazy var poiOrchestrator = POIDiscoveryOrchestrator.shared
+    
     // Discovery state
     private var discoveredPOIIDs = Set<String>()
     private var searchCriteria: LocationAnalysisData?
@@ -90,23 +94,80 @@ class POIDiscoveryAgent: NSObject, AIAgent {
     func discoverNearbyPOIs(at location: CLLocation) {
         print("[POIDiscoveryAgent] Discovering POIs near \(location.coordinate.latitude), \(location.coordinate.longitude)")
         
-        // Simulate POI discovery - replace with actual API calls
-        let mockPOIs = generateMockPOIs(near: location)
-        
-        for poi in mockPOIs {
-            // Check if we already discovered this POI
-            if !discoveredPOIIDs.contains(poi.id.uuidString) {
-                discoveredPOIIDs.insert(poi.id.uuidString)
-                
-                // Send discovery message
-                let message = AgentMessage(
-                    type: .poiDiscovered,
-                    source: "POIDiscoveryAgent",
-                    data: poi
-                )
-                communicator.send(message)
-                
-                print("[POIDiscoveryAgent] Discovered: \(poi.name)")
+        // CRITICAL FIX: Use real POI discovery instead of mock data
+        if #available(iOS 16.0, *) {
+            Task {
+                do {
+                    // Determine optimal category based on search criteria
+                    let category = searchCriteria?.nearbyCategories.first ?? "attraction"
+                    
+                    // Use POIDiscoveryOrchestrator for real POI discovery with hybrid LLM+API approach
+                    let discoveryResult = try await poiOrchestrator.discoverPOIs(
+                        near: location,
+                        category: category,
+                        preferredStrategy: .hybrid,
+                        maxResults: 8
+                    )
+                    
+                    print("[POIDiscoveryAgent] POI Discovery completed in \(String(format: "%.0f", discoveryResult.responseTime * 1000))ms using \(discoveryResult.strategyUsed)")
+                    print("[POIDiscoveryAgent] Found \(discoveryResult.pois.count) POIs, fallback used: \(discoveryResult.fallbackUsed)")
+                    
+                    // Process discovered POIs
+                    for poi in discoveryResult.pois {
+                        // Check if we already discovered this POI
+                        if !discoveredPOIIDs.contains(poi.id.uuidString) {
+                            discoveredPOIIDs.insert(poi.id.uuidString)
+                            
+                            // Send discovery message
+                            let message = AgentMessage(
+                                type: .poiDiscovered,
+                                source: "POIDiscoveryAgent",
+                                data: poi
+                            )
+                            communicator.send(message)
+                            
+                            print("[POIDiscoveryAgent] Discovered: \(poi.name) (\(poi.category)) - Rating: \(poi.rating)★")
+                        }
+                    }
+                    
+                } catch {
+                    print("[POIDiscoveryAgent] Real POI discovery failed: \(error.localizedDescription)")
+                    // Fallback to basic mock data if all else fails
+                    let fallbackPOIs = generateBasicFallbackPOIs(near: location)
+                    
+                    for poi in fallbackPOIs {
+                        if !discoveredPOIIDs.contains(poi.id.uuidString) {
+                            discoveredPOIIDs.insert(poi.id.uuidString)
+                            
+                            let message = AgentMessage(
+                                type: .poiDiscovered,
+                                source: "POIDiscoveryAgent",
+                                data: poi
+                            )
+                            communicator.send(message)
+                            
+                            print("[POIDiscoveryAgent] Fallback POI: \(poi.name)")
+                        }
+                    }
+                }
+            }
+        } else {
+            // iOS 15 fallback - use basic mock data
+            let fallbackPOIs = generateBasicFallbackPOIs(near: location)
+            
+            for poi in fallbackPOIs {
+                if !discoveredPOIIDs.contains(poi.id.uuidString) {
+                    discoveredPOIIDs.insert(poi.id.uuidString)
+                    
+                    let message = AgentMessage(
+                        type: .poiDiscovered,
+                        source: "POIDiscoveryAgent",
+                        data: poi
+                    )
+                    communicator.send(message)
+                    
+                    print("[POIDiscoveryAgent] iOS 15 Fallback POI: \(poi.name)")
+                }
             }
         }
         
