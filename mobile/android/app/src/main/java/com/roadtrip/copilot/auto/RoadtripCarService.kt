@@ -40,7 +40,7 @@ class RoadtripSession : Session(), DefaultLifecycleObserver {
     // Managers
     private lateinit var locationManager: LocationManager
     private lateinit var speechManager: SpeechManager
-    private lateinit var agentManager: AIAgentManager
+    private var agentManager: AIAgentManager? = null
     
     override fun onCreateScreen(intent: Intent): Screen {
         lifecycle.addObserver(this)
@@ -55,7 +55,7 @@ class RoadtripSession : Session(), DefaultLifecycleObserver {
         super.onCreate(owner)
         
         // Start background agents when CarPlay connects
-        agentManager.startBackgroundAgents()
+        agentManager?.startBackgroundAgents()
         
         // Enable background location updates
         locationManager.enableBackgroundLocationUpdates()
@@ -68,7 +68,7 @@ class RoadtripSession : Session(), DefaultLifecycleObserver {
         super.onDestroy(owner)
         
         // Stop background agents when CarPlay disconnects
-        agentManager.stopBackgroundAgents()
+        agentManager?.stopBackgroundAgents()
         locationManager.disableBackgroundLocationUpdates()
         
         coroutineScope.cancel()
@@ -78,13 +78,15 @@ class RoadtripSession : Session(), DefaultLifecycleObserver {
     private fun setupManagers() {
         locationManager = LocationManager(carContext)
         speechManager = SpeechManager().apply { initialize(carContext) }
-        agentManager = AIAgentManager()
+        // Note: AIAgentManager now requires Hilt injection for proper context
+        // For CarService, we can't use Hilt directly, so we'll handle POI discovery separately
+        // agentManager = AIAgentManager()  // Disabled for now - use activity-based discovery
     }
 }
 
 class MainCarScreen(
     carContext: CarContext,
-    private val agentManager: AIAgentManager,
+    private val agentManager: AIAgentManager?,
     private val speechManager: SpeechManager
 ) : Screen(carContext) {
     
@@ -142,7 +144,7 @@ class MainCarScreen(
     
     private fun observePOIUpdates() {
         coroutineScope.launch {
-            agentManager.currentPOI.collect { poi ->
+            agentManager?.currentPOI?.collect { poi ->
                 currentPOI = poi
                 poi?.let {
                     announcePOI(it)
@@ -199,7 +201,7 @@ class MainCarScreen(
                         ).build()
                     )
                     .setOnClickListener {
-                        agentManager.favoriteCurrentPOI()
+                        agentManager?.favoriteCurrentPOI()
                         showToast("Added to favorites!")
                     }
                     .build()
@@ -212,7 +214,7 @@ class MainCarScreen(
                         ).build()
                     )
                     .setOnClickListener {
-                        agentManager.likeCurrentPOI()
+                        agentManager?.likeCurrentPOI()
                         showToast("Liked!")
                     }
                     .build()
@@ -225,7 +227,7 @@ class MainCarScreen(
                         ).build()
                     )
                     .setOnClickListener {
-                        agentManager.dislikeCurrentPOI()
+                        agentManager?.dislikeCurrentPOI()
                         showToast("Finding next place...")
                     }
                     .build()
@@ -238,7 +240,7 @@ class MainCarScreen(
                         ).build()
                     )
                     .setOnClickListener {
-                        agentManager.nextPOI()
+                        agentManager?.nextPOI()
                     }
                     .build()
             )
@@ -250,7 +252,7 @@ class MainCarScreen(
                         ).build()
                     )
                     .setOnClickListener {
-                        agentManager.previousPOI()
+                        agentManager?.previousPOI()
                     }
                     .build()
             )
@@ -370,27 +372,27 @@ class MainCarScreen(
         
         when (action) {
             "save" -> {
-                agentManager.favoriteCurrentPOI()
+                agentManager?.favoriteCurrentPOI()
                 speechManager.speak("Saved to favorites")
             }
             "like" -> {
-                agentManager.likeCurrentPOI()
+                agentManager?.likeCurrentPOI()
                 speechManager.speak("Liked")
                 invalidate() // Refresh template
             }
             "dislike" -> {
-                agentManager.dislikeCurrentPOI()
-                agentManager.nextPOI()
+                agentManager?.dislikeCurrentPOI()
+                agentManager?.nextPOI()
                 speechManager.speak("Skipped to next place")
                 invalidate() // Refresh template
             }
             "next" -> {
-                agentManager.nextPOI()
+                agentManager?.nextPOI()
                 speechManager.speak("Next location")
                 invalidate() // Refresh template
             }
             "previous" -> {
-                agentManager.previousPOI()
+                agentManager?.previousPOI()
                 speechManager.speak("Previous location")
                 invalidate() // Refresh template
             }
@@ -609,7 +611,7 @@ class MainCarScreen(
         speechManager.speak("Starting roadtrip to $query")
         
         // Start background POI discovery
-        agentManager.startBackgroundAgents()
+        agentManager?.startBackgroundAgents()
         
         invalidate()
     }
@@ -622,7 +624,7 @@ class MainCarScreen(
         speechManager.speak("Exploring nearby places")
         
         // Start background POI discovery
-        agentManager.startBackgroundAgents()
+        agentManager?.startBackgroundAgents()
         
         invalidate()
     }
@@ -879,7 +881,7 @@ class MainCarScreen(
             speechManager.disableDestinationMode()
             
             // Start background POI discovery
-            agentManager.startBackgroundAgents()
+            agentManager?.startBackgroundAgents()
             
             invalidate()
         }
@@ -1007,7 +1009,7 @@ class MainCarScreen(
                         ).build()
                     )
                     .setOnClickListener {
-                        agentManager.favoriteCurrentPOI()
+                        agentManager?.favoriteCurrentPOI()
                         showToast("Added to favorites!")
                     }
                     .build()
@@ -1020,7 +1022,7 @@ class MainCarScreen(
                         ).build()
                     )
                     .setOnClickListener {
-                        agentManager.nextPOI()
+                        agentManager?.nextPOI()
                     }
                     .build()
             )

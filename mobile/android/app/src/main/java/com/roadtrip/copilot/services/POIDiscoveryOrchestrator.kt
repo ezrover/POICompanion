@@ -38,7 +38,7 @@ class POIDiscoveryOrchestrator(private val context: Context) {
     }
     
     private lateinit var gemmaLoader: Gemma3NE2BLoader
-    private val placesClient = GooglePlacesAPIClient.shared
+    private val placesClient = GooglePlacesAPIClient.getInstance(context)
     private val categories = POICategories
     
     var isProcessing = false

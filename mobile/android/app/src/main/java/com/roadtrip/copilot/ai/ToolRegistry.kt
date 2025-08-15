@@ -152,18 +152,18 @@ class ToolRegistry(private val context: Context) {
                         """.trimIndent()
                     } else if (placeId != null) {
                         // Use Google Places API for detailed information
-                        val details = GooglePlacesAPIClient.shared.getPOIDetails(placeId)
+                        val details = GooglePlacesAPIClient.getInstance(context).getPOIDetails(placeId)
                         
                         buildString {
                             appendLine("$poiName Details:")
                             appendLine("- Rating: ${details.rating}/5")
-                            details.phoneNumber?.let { appendLine("- Phone: $it") }
-                            details.website?.let { appendLine("- Website: $it") }
-                            details.isOpenNow?.let { 
-                                appendLine("- Currently: ${if (it) "Open" else "Closed"}")
+                            details.phoneNumber?.let { phone -> appendLine("- Phone: $phone") }
+                            details.website?.let { website -> appendLine("- Website: $website") }
+                            details.isOpenNow?.let { isOpen -> 
+                                appendLine("- Currently: ${if (isOpen) "Open" else "Closed"}")
                             }
-                            details.weekdayText?.take(3)?.forEach { 
-                                appendLine("- Hours: $it")
+                            details.weekdayText?.take(3)?.forEach { hours -> 
+                                appendLine("- Hours: $hours")
                             }
                             if (details.reviews.isNotEmpty()) {
                                 appendLine("- Recent Review: \"${details.reviews.first().text.take(100)}...\"")

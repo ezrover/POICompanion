@@ -1,5 +1,6 @@
 package com.roadtrip.copilot.managers
 
+import android.app.Application
 import androidx.lifecycle.ViewModel
 import com.roadtrip.copilot.models.POIData
 import com.roadtrip.copilot.services.POIDiscoveryOrchestrator
@@ -10,15 +11,19 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import android.location.Location
+import dagger.hilt.android.qualifiers.ApplicationContext
+import android.content.Context
 import javax.inject.Inject
 
 @HiltViewModel
-class AIAgentManager @Inject constructor() : ViewModel() {
+class AIAgentManager @Inject constructor(
+    @ApplicationContext private val context: Context
+) : ViewModel() {
     
     // CRITICAL FIX: POIDiscoveryOrchestrator is available but needs proper DI setup
     // For now, create instance directly - TODO: Set up proper Hilt dependency injection
     private val poiOrchestrator by lazy { 
-        POIDiscoveryOrchestrator()
+        POIDiscoveryOrchestrator(context)
     }
     
     private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
@@ -78,11 +83,11 @@ class AIAgentManager @Inject constructor() : ViewModel() {
                 latitude = location.latitude,
                 longitude = location.longitude,
                 category = category,
-                strategy = DiscoveryStrategy.HYBRID,
+                preferredStrategy = DiscoveryStrategy.HYBRID,
                 maxResults = 5
             )
             
-            println("[AIAgentManager] POI Discovery completed in ${discoveryResult.responseTime}ms using ${discoveryResult.strategyUsed}")
+            println("[AIAgentManager] POI Discovery completed in ${discoveryResult.responseTimeMs}ms using ${discoveryResult.strategyUsed}")
             println("[AIAgentManager] Found ${discoveryResult.pois.size} POIs, fallback used: ${discoveryResult.fallbackUsed}")
             
             // Add discovered POIs to our list (avoiding duplicates)
