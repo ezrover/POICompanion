@@ -166,7 +166,7 @@ struct EnhancedDestinationSelectionView: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                .padding(.top, 16) // Top padding within gray box
+                .padding(.top, 26) // Increased top padding within gray box
                 .padding(.bottom, 20) // Reduced bottom padding to move gray box down
                 .background(
                     // Gray box background properly positioned at bottom
