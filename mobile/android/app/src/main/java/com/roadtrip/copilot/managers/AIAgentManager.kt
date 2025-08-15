@@ -13,9 +13,13 @@ import android.location.Location
 import javax.inject.Inject
 
 @HiltViewModel
-class AIAgentManager @Inject constructor(
-    private val poiOrchestrator: POIDiscoveryOrchestrator
-) : ViewModel() {
+class AIAgentManager @Inject constructor() : ViewModel() {
+    
+    // CRITICAL FIX: POIDiscoveryOrchestrator is available but needs proper DI setup
+    // For now, create instance directly - TODO: Set up proper Hilt dependency injection
+    private val poiOrchestrator by lazy { 
+        POIDiscoveryOrchestrator()
+    }
     
     private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
     
@@ -71,7 +75,8 @@ class AIAgentManager @Inject constructor(
             val category = categories.random()
             
             val discoveryResult = poiOrchestrator.discoverPOIs(
-                location = location,
+                latitude = location.latitude,
+                longitude = location.longitude,
                 category = category,
                 strategy = DiscoveryStrategy.HYBRID,
                 maxResults = 5
