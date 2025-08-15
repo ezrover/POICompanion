@@ -113,8 +113,9 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         switch manager.authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
-            print("✅ Location permission granted - starting updates")
-            startLocationUpdates()
+            print("✅ Location permission granted - ready for updates when needed")
+            // PERFORMANCE FIX: Don't automatically start location updates
+            // Let views explicitly call startLocationUpdates() when needed
         case .denied, .restricted:
             print("❌ Location access denied or restricted - stopping updates")
             stopLocationUpdates()

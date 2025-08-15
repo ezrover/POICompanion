@@ -69,11 +69,8 @@ struct EnhancedDestinationSelectionView: View {
                                 .onSubmit {
                                     handleSearchSubmit()
                                 }
-                                .onChange(of: searchText) { newValue in
-                                    if !newValue.isEmpty && newValue != speechManager.recognizedText {
-                                        searchForDestinations()
-                                    }
-                                }
+                                // PERFORMANCE FIX: Remove onChange search trigger to prevent search while typing
+                                // Search will only occur on Submit (Enter key) or Go button tap
                                 .accessibilityIdentifier("destinationSearchField")
                             
                             // CRITICAL FIX: Voice-Animated Navigate Button (Primary Action) - RESTORED ANIMATION
@@ -231,9 +228,11 @@ struct EnhancedDestinationSelectionView: View {
     }
     
     private func setupInitialState() {
-        locationManager.startLocationUpdates()
+        // PERFORMANCE FIX: Don't automatically start location updates on view appear
+        // Location will be started when user actually needs it (Go button or voice command)
         userPreferences.setRegionBasedDefaults()
         
+        // Only use current location if already available from previous sessions
         if let location = locationManager.currentLocation {
             region = MKCoordinateRegion(
                 center: location.coordinate,
@@ -322,6 +321,12 @@ struct EnhancedDestinationSelectionView: View {
             }
             TimestampLogger.logNavigationEnd("Navigate Action", startTime: startTime)
             return
+        }
+        
+        // PERFORMANCE FIX: Start location updates only when navigation is actually triggered
+        if locationManager.authorizationStatus == .authorizedAlways || 
+           locationManager.authorizationStatus == .authorizedWhenInUse {
+            locationManager.startLocationUpdates()
         }
         
         isProcessingNavigation = true
@@ -502,6 +507,13 @@ struct EnhancedDestinationSelectionView: View {
             
             if selectedDestination != nil {
                 print("[DestinationView] Destination available, triggering navigation")
+                
+                // PERFORMANCE FIX: Start location updates only when voice navigation is triggered
+                if locationManager.authorizationStatus == .authorizedAlways || 
+                   locationManager.authorizationStatus == .authorizedWhenInUse {
+                    locationManager.startLocationUpdates()
+                }
+                
                 // TTS feedback for explicit navigation commands - prevent duplicates
                 if !speechManager.isSpeaking {
                     speechManager.speak("Starting roadtrip to \(selectedDestination?.name ?? "your destination")")
