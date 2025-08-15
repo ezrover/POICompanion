@@ -2,15 +2,20 @@ package com.roadtrip.copilot.managers
 
 import androidx.lifecycle.ViewModel
 import com.roadtrip.copilot.models.POIData
+import com.roadtrip.copilot.services.POIDiscoveryOrchestrator
+import com.roadtrip.copilot.services.DiscoveryStrategy
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import android.location.Location
 import javax.inject.Inject
 
 @HiltViewModel
-class AIAgentManager @Inject constructor() : ViewModel() {
+class AIAgentManager @Inject constructor(
+    private val poiOrchestrator: POIDiscoveryOrchestrator
+) : ViewModel() {
     
     private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
     
@@ -25,19 +30,25 @@ class AIAgentManager @Inject constructor() : ViewModel() {
     
     private var currentPOIIndex = 0
     private var backgroundJob: Job? = null
+    private var lastKnownLocation: Location? = null
     
     fun startBackgroundAgents() {
         _isDiscovering.value = true
         
         backgroundJob = coroutineScope.launch {
-            // Simulate continuous POI discovery
+            // CRITICAL FIX: Use real POI discovery instead of simulation
             while (isActive) {
                 delay(10000) // Discovery every 10 seconds
                 discoverNewPOI()
             }
         }
         
-        println("Background AI agents started")
+        println("Background AI agents started with real POI discovery")
+    }
+    
+    fun updateLocation(location: Location) {
+        lastKnownLocation = location
+        println("Location updated: ${location.latitude}, ${location.longitude}")
     }
     
     fun stopBackgroundAgents() {
@@ -47,66 +58,79 @@ class AIAgentManager @Inject constructor() : ViewModel() {
     }
     
     private suspend fun discoverNewPOI() {
-        // Simulate AI-discovered POI
-        val newPOI = generateSimulatedPOI()
-        
-        val updatedList = _discoveredPOIs.value.toMutableList()
-        updatedList.add(newPOI)
-        _discoveredPOIs.value = updatedList
-        
-        // Update current POI if none selected
-        if (_currentPOI.value == null) {
-            _currentPOI.value = newPOI
+        // CRITICAL FIX: Use real POI discovery instead of mock data
+        val location = lastKnownLocation
+        if (location == null) {
+            println("No location available for POI discovery")
+            return
         }
         
-        println("Discovered new POI: ${newPOI.name}")
+        try {
+            // Use POIDiscoveryOrchestrator for real POI discovery with hybrid LLM+API approach
+            val categories = listOf("restaurant", "attraction", "gas_station", "hotel", "shopping")
+            val category = categories.random()
+            
+            val discoveryResult = poiOrchestrator.discoverPOIs(
+                location = location,
+                category = category,
+                strategy = DiscoveryStrategy.HYBRID,
+                maxResults = 5
+            )
+            
+            println("[AIAgentManager] POI Discovery completed in ${discoveryResult.responseTime}ms using ${discoveryResult.strategyUsed}")
+            println("[AIAgentManager] Found ${discoveryResult.pois.size} POIs, fallback used: ${discoveryResult.fallbackUsed}")
+            
+            // Add discovered POIs to our list (avoiding duplicates)
+            val currentPOIs = _discoveredPOIs.value.toMutableList()
+            val existingIds = currentPOIs.map { it.id }.toSet()
+            
+            for (poi in discoveryResult.pois) {
+                if (!existingIds.contains(poi.id)) {
+                    currentPOIs.add(poi)
+                    println("[AIAgentManager] Discovered new POI: ${poi.name} (${poi.category}) - Rating: ${poi.rating}★")
+                }
+            }
+            
+            _discoveredPOIs.value = currentPOIs
+            
+            // Update current POI if none selected
+            if (_currentPOI.value == null && currentPOIs.isNotEmpty()) {
+                _currentPOI.value = currentPOIs.first()
+            }
+            
+        } catch (e: Exception) {
+            println("[AIAgentManager] Real POI discovery failed: ${e.message}")
+            // Fallback to basic discovery if all else fails
+            val fallbackPOI = generateBasicFallbackPOI(location)
+            
+            val updatedList = _discoveredPOIs.value.toMutableList()
+            updatedList.add(fallbackPOI)
+            _discoveredPOIs.value = updatedList
+            
+            // Update current POI if none selected
+            if (_currentPOI.value == null) {
+                _currentPOI.value = fallbackPOI
+            }
+            
+            println("[AIAgentManager] Using fallback POI: ${fallbackPOI.name}")
+        }
     }
     
-    private fun generateSimulatedPOI(): POIData {
-        val samplePOIs = listOf(
-            POIData(
-                id = "poi_${System.currentTimeMillis()}",
-                name = "Seaside Café",
-                description = "Charming beachside café with ocean views",
-                category = "restaurant",
-                latitude = 37.7749 + (Math.random() - 0.5) * 0.1,
-                longitude = -122.4194 + (Math.random() - 0.5) * 0.1,
-                distanceFromUser = Math.random() * 10.0,
-                rating = 4.0 + Math.random(),
-                imageURL = "https://example.com/cafe.jpg",
-                reviewSummary = "Great coffee and pastries with stunning ocean views",
-                couldEarnRevenue = Math.random() > 0.7
-            ),
-            POIData(
-                id = "poi_${System.currentTimeMillis()}",
-                name = "Hidden Waterfall",
-                description = "Secret waterfall accessible by short hiking trail",
-                category = "attraction",
-                latitude = 37.7749 + (Math.random() - 0.5) * 0.1,
-                longitude = -122.4194 + (Math.random() - 0.5) * 0.1,
-                distanceFromUser = Math.random() * 15.0,
-                rating = 4.5 + Math.random() * 0.5,
-                imageURL = "https://example.com/waterfall.jpg",
-                reviewSummary = "Beautiful hidden gem, perfect for nature lovers",
-                couldEarnRevenue = Math.random() > 0.8
-            ),
-            POIData(
-                id = "poi_${System.currentTimeMillis()}",
-                name = "Vintage Gas Station",
-                description = "Historic Route 66 gas station turned museum",
-                category = "gas_station",
-                latitude = 37.7749 + (Math.random() - 0.5) * 0.1,
-                longitude = -122.4194 + (Math.random() - 0.5) * 0.1,
-                distanceFromUser = Math.random() * 8.0,
-                rating = 4.2 + Math.random() * 0.8,
-                imageURL = "https://example.com/vintage_gas.jpg",
-                reviewSummary = "Nostalgic stop with great photo opportunities",
-                couldEarnRevenue = Math.random() > 0.6
-            )
-        )
+    private fun generateBasicFallbackPOI(location: Location): POIData {
+        println("[AIAgentManager] Using basic fallback POI (real discovery failed)")
         
-        return samplePOIs.random().copy(
-            id = "poi_${System.currentTimeMillis()}_${Math.random().hashCode()}"
+        return POIData(
+            id = "fallback_poi_${System.currentTimeMillis()}",
+            name = "Local Point of Interest",
+            description = "Local discovery unavailable - check connection",
+            category = "attraction",
+            latitude = location.latitude + (Math.random() - 0.5) * 0.01, // Small random offset
+            longitude = location.longitude + (Math.random() - 0.5) * 0.01,
+            distanceFromUser = 1.0,
+            rating = 4.0,
+            imageURL = null,
+            reviewSummary = "Local discovery unavailable - check connection",
+            couldEarnRevenue = false
         )
     }
     

@@ -20,7 +20,26 @@ class GooglePlacesAPIClient: ObservableObject {
     @Published var isProcessing = false
     @Published var lastError: Error?
     
-    private let apiKey = "YOUR_GOOGLE_PLACES_API_KEY" // Replace with actual API key
+    private let apiKey: String = {
+        // CRITICAL FIX: Use proper configuration system for API key
+        // Priority: Info.plist -> Environment -> Default placeholder
+        if let apiKey = Bundle.main.object(forInfoDictionaryKey: "GooglePlacesAPIKey") as? String,
+           !apiKey.isEmpty && apiKey != "YOUR_GOOGLE_PLACES_API_KEY" {
+            return apiKey
+        }
+        
+        // Check if there's a test API key for development
+        if let path = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist"),
+           let plist = NSDictionary(contentsOfFile: path),
+           let apiKey = plist["API_KEY"] as? String,
+           !apiKey.isEmpty {
+            return apiKey
+        }
+        
+        // For now, use placeholder - will be configured in Info.plist
+        print("⚠️ [PLACES API] No API key configured. Add GooglePlacesAPIKey to Info.plist")
+        return "CONFIGURE_GOOGLE_PLACES_API_KEY_IN_INFO_PLIST"
+    }()
     private let baseURL = "https://maps.googleapis.com/maps/api/place"
     private let session: URLSession
     private let logger = Logger(subsystem: "com.hmi2.roadtrip-copilot", category: "GooglePlacesAPI")
@@ -67,6 +86,14 @@ class GooglePlacesAPIClient: ObservableObject {
             try await Task.sleep(nanoseconds: UInt64(minimumRequestInterval * 1_000_000_000))
         }
         lastRequestTime = Date()
+        
+        // CRITICAL FIX: Check API key configuration before making requests
+        guard !apiKey.isEmpty && apiKey != "CONFIGURE_GOOGLE_PLACES_API_KEY_IN_INFO_PLIST" else {
+            let configError = PlacesAPIError.apiKeyNotConfigured
+            logger.error("❌ [PLACES API] API key not configured")
+            lastError = configError
+            throw configError
+        }
         
         isProcessing = true
         defer { 
@@ -325,6 +352,7 @@ struct OpeningHours: Codable {
 // MARK: - Error Handling
 
 enum PlacesAPIError: LocalizedError {
+    case apiKeyNotConfigured
     case invalidURL
     case invalidResponse
     case httpError(statusCode: Int)
@@ -334,6 +362,8 @@ enum PlacesAPIError: LocalizedError {
     
     var errorDescription: String? {
         switch self {
+        case .apiKeyNotConfigured:
+            return "Google Places API key not configured. Please add GooglePlacesAPIKey to Info.plist"
         case .invalidURL:
             return "Invalid Google Places API URL"
         case .invalidResponse:

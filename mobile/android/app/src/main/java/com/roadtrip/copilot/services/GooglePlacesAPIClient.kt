@@ -1,5 +1,7 @@
 package com.roadtrip.copilot.services
 
+import android.content.Context
+import android.content.pm.PackageManager
 import android.util.Log
 import com.roadtrip.copilot.models.POIData
 import kotlinx.coroutines.Dispatchers
@@ -16,11 +18,10 @@ import kotlin.math.*
  * Performance target: <1000ms response time
  * Equivalent to iOS GooglePlacesAPIClient.swift implementation
  */
-class GooglePlacesAPIClient {
+class GooglePlacesAPIClient(private val context: Context) {
     
     companion object {
         private const val TAG = "GooglePlacesAPI"
-        val shared = GooglePlacesAPIClient()
         
         // Performance monitoring
         private const val PERFORMANCE_THRESHOLD_MS = 1000L // 1000ms target
@@ -29,9 +30,49 @@ class GooglePlacesAPIClient {
         // Automotive safety limits
         private const val MAX_RADIUS_METERS = 50000 // Max 50km for safety
         private const val MAX_RESULTS = 20 // Max 20 results for automotive UI
+        
+        @Volatile
+        private var INSTANCE: GooglePlacesAPIClient? = null
+        
+        fun getInstance(context: Context): GooglePlacesAPIClient {
+            return INSTANCE ?: synchronized(this) {
+                INSTANCE ?: GooglePlacesAPIClient(context.applicationContext).also { INSTANCE = it }
+            }
+        }
     }
     
-    private val apiKey = "YOUR_GOOGLE_PLACES_API_KEY" // Replace with actual API key
+    // CRITICAL FIX: Use proper configuration system for API key
+    private val apiKey: String by lazy {
+        // Priority: BuildConfig -> Manifest meta-data -> Default placeholder
+        try {
+            // Check BuildConfig for API key (from gradle.properties or build.gradle)
+            val buildConfigApiKey = context.getString(context.resources.getIdentifier(
+                "google_places_api_key", "string", context.packageName
+            ))
+            if (buildConfigApiKey.isNotEmpty() && buildConfigApiKey != "YOUR_GOOGLE_PLACES_API_KEY") {
+                return@lazy buildConfigApiKey
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "Could not load API key from resources: ${e.message}")
+        }
+        
+        try {
+            // Check manifest meta-data
+            val appInfo = context.packageManager.getApplicationInfo(
+                context.packageName, PackageManager.GET_META_DATA
+            )
+            val manifestApiKey = appInfo.metaData?.getString("com.google.android.geo.API_KEY")
+            if (!manifestApiKey.isNullOrEmpty()) {
+                return@lazy manifestApiKey
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "Could not load API key from manifest: ${e.message}")
+        }
+        
+        // For now, use placeholder - will be configured in strings.xml or manifest
+        Log.w(TAG, "⚠️ No API key configured. Add google_places_api_key to strings.xml or manifest")
+        "CONFIGURE_GOOGLE_PLACES_API_KEY_IN_STRINGS_XML"
+    }
     private val baseURL = "https://maps.googleapis.com/maps/api/place"
     
     var isProcessing = false

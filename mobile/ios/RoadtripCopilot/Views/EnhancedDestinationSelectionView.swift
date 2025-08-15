@@ -168,7 +168,7 @@ struct EnhancedDestinationSelectionView: View {
                     .padding(.horizontal, 20)
                     .padding(.top, 26) // 26pt padding from top of gray box
                     .padding(.bottom, 20) // Bottom padding within gray box
-                    .frame(height: selectedDestination != nil ? 110 : 80) // Match gray box height
+                    .frame(height: selectedDestination != nil ? 100 : 70) // Reduced height for perfect fit
                     .background(
                         Rectangle()
                             .fill(.ultraThinMaterial)
