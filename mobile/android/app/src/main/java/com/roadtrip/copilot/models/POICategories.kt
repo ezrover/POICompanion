@@ -80,6 +80,18 @@ object POICategories {
         }
     }
     
+    fun getEssentialCategories(context: Context): List<String> {
+        return listOf(
+            "attraction",
+            "restaurant", 
+            "gas_station",
+            "hotel",
+            "park",
+            "museum",
+            "shopping"
+        )
+    }
+    
     fun matchCategoryFromVoiceKeywords(query: String, context: Context): String? {
         val lowercaseQuery = query.lowercase()
         

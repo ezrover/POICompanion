@@ -172,7 +172,7 @@ class FetchSocialReviewsTool {
 // Enhanced Tool Registry
 class EnhancedToolRegistry(context: Context) {
     
-    private val baseRegistry = ToolRegistry()
+    private val baseRegistry = ToolRegistry(context)
     private val exclusionManager = POIExclusionManager(context)
     
     init {
@@ -194,15 +194,67 @@ class EnhancedToolRegistry(context: Context) {
     
     // Apply exclusions to search results
     suspend fun executeSearchPOIWithExclusions(parameters: Map<String, Any>): String {
-        // Call the search_poi tool
+        // Call the search_poi tool (now with real POI discovery)
         val searchTool = baseRegistry.getTool("search_poi") ?: return "Error: search_poi tool not found"
         val resultString = searchTool.execute(parameters)
         
-        // Parse the result to filter excluded POIs
-        // For now, return the filtered result as string
-        Log.d("EnhancedRegistry", "🔍 Applying POI exclusions...")
+        Log.d("EnhancedRegistry", "🔍 Applying POI exclusions to real discovery results...")
         
-        // Check for chain exclusions in the result string
+        try {
+            // Extract JSON from the result string
+            val jsonStartIndex = resultString.indexOf("JSON: {")
+            if (jsonStartIndex == -1) {
+                // Fallback to string filtering for backwards compatibility
+                return applyStringExclusions(resultString)
+            }
+            
+            val jsonString = resultString.substring(jsonStartIndex + 6) // Skip "JSON: "
+            val jsonObject = JSONObject(jsonString)
+            val poisArray = jsonObject.optJSONArray("pois")
+            
+            if (poisArray != null) {
+                val filteredPOIs = JSONArray()
+                var excludedCount = 0
+                
+                for (i in 0 until poisArray.length()) {
+                    val poi = poisArray.getJSONObject(i)
+                    val poiName = poi.optString("name", "")
+                    val poiCategory = poi.optString("category", "")
+                    
+                    val testPOI = POIExclusion(
+                        name = poiName,
+                        category = poiCategory,
+                        location = null,
+                        distance = null
+                    )
+                    
+                    if (!exclusionManager.shouldExcludePOI(testPOI)) {
+                        filteredPOIs.put(poi)
+                    } else {
+                        excludedCount++
+                    }
+                }
+                
+                // Update the JSON with filtered results
+                jsonObject.put("pois", filteredPOIs)
+                jsonObject.put("pois_count", filteredPOIs.length())
+                jsonObject.put("excluded_count", excludedCount)
+                
+                // Rebuild human-readable format
+                val humanReadable = buildFilteredHumanReadable(jsonObject)
+                
+                return "$humanReadable\n\nJSON: $jsonObject"
+            }
+            
+        } catch (e: Exception) {
+            Log.w("EnhancedRegistry", "Failed to parse JSON for exclusions: ${e.message}")
+        }
+        
+        // Fallback to string filtering
+        return applyStringExclusions(resultString)
+    }
+    
+    private fun applyStringExclusions(resultString: String): String {
         val chainRestaurants = listOf("McDonald's", "Burger King", "Subway", "Starbucks")
         val gasStations = listOf("Shell", "Chevron", "Exxon", "BP")
         
@@ -210,7 +262,6 @@ class EnhancedToolRegistry(context: Context) {
         for (chain in chainRestaurants + gasStations) {
             if (filteredResult.contains(chain)) {
                 Log.d("EnhancedRegistry", "❌ Excluding: $chain")
-                // Remove lines containing the chain name
                 filteredResult = filteredResult.lines()
                     .filter { !it.contains(chain) }
                     .joinToString("\n")
@@ -218,6 +269,36 @@ class EnhancedToolRegistry(context: Context) {
         }
         
         return filteredResult
+    }
+    
+    private fun buildFilteredHumanReadable(jsonObject: JSONObject): String {
+        val location = jsonObject.optString("location", "unknown location")
+        val strategy = jsonObject.optString("strategy_used", "unknown")
+        val responseTime = jsonObject.optLong("response_time_ms", 0)
+        val poisArray = jsonObject.optJSONArray("pois")
+        val excludedCount = jsonObject.optInt("excluded_count", 0)
+        
+        return buildString {
+            if (poisArray != null) {
+                appendLine("Found ${poisArray.length()} POIs near $location ($strategy, ${responseTime}ms):")
+                if (excludedCount > 0) {
+                    appendLine("(Excluded $excludedCount chain/gas station POIs)")
+                }
+                
+                for (i in 0 until poisArray.length()) {
+                    val poi = poisArray.getJSONObject(i)
+                    val name = poi.optString("name", "Unknown")
+                    val category = poi.optString("category", "unknown")
+                    val rating = poi.optDouble("rating", 0.0)
+                    val distance = poi.optString("distance_miles", "?.? mi")
+                    val description = poi.optString("description", "")
+                    
+                    appendLine("${i + 1}. $name ($category) - ${rating}★ - $distance")
+                    appendLine("   $description")
+                    if (i < poisArray.length() - 1) appendLine()
+                }
+            }
+        }
     }
 }
 

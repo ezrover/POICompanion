@@ -60,7 +60,7 @@ class Gemma3NProcessor(private val context: Context) {  // Keep class name for c
     
     // MediaPipe LLM and tool registry
     private var llmInference: LlmInference? = null
-    private val toolRegistry = ToolRegistry()
+    private val toolRegistry = ToolRegistry(context)
     private val modelScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
     private var isInitialized = false
     
@@ -192,6 +192,7 @@ class Gemma3NProcessor(private val context: Context) {  // Keep class name for c
         updateLoadingStatus("Downloading AI model...")
         
         val modelUrl = when (variant) {
+            ModelVariant.TINYLLAMA -> "https://huggingface.co/microsoft/DialoGPT-medium/resolve/main/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
             ModelVariant.E2B -> "https://huggingface.co/google/gemma-3n-E2B-it-litert-preview/resolve/main/gemma-3n-e2b-it-int4.task"
             ModelVariant.E4B -> "https://huggingface.co/google/gemma-3n-E4B-it-litert-preview/resolve/main/gemma-3n-e4b-it-int4.task"
         }
