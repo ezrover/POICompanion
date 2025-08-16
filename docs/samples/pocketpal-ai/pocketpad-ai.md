@@ -43967,7 +43967,7 @@ const languageNames: Record<AvailableLanguage, string> = {
   en: 'English (EN)',
   //es: 'Español (ES)',
   //de: 'Deutsch (DE)',
-  ja: '日本語 (JA)',
+  ja: 'Japanese (JA)',
   //ko: '한국어 (KO)',
   //pl: 'Polski (PL)',
   //pt: 'Português (PT)',
@@ -43975,7 +43975,7 @@ const languageNames: Record<AvailableLanguage, string> = {
   //tr: 'Türkçe (TR)',
   //uk: 'Українська (UK)',
   //ca: 'Català (CA)',
-  zh: '中文 (ZH)',
+  zh: 'Chinese (ZH)',
 };
 
 export const SettingsScreen: React.FC = observer(() => {

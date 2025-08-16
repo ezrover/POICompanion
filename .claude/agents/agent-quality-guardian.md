@@ -10,8 +10,28 @@ Champions a test-driven development (TDD) and behavior-driven development (BDD) 
 
 ## Required MCP Tools
 
+### 🔴 CRITICAL: e2e_ui_test_run (MANDATORY FOR ALL FEATURES)
+- **Purpose**: Execute comprehensive E2E UI tests for new features
+- **Usage**: Use `mcp__poi-companion__e2e_ui_test_run` for ALL E2E testing
+- **REQUIRED**: Must be executed for EVERY new feature implementation
+- **⚠️ VIOLATION**: Manual test execution = TASK FAILURE
+
+### 🔴 CRITICAL: ios_simulator_test (MANDATORY FOR iOS TESTING)
+- **Purpose**: Run iOS simulator tests WITHOUT manual commands
+- **Usage**: Use `mcp__poi-companion__ios_simulator_test` for iOS validation
+- **⚠️ VIOLATION**: Using `xcrun simctl` directly = TASK FAILURE
+
+### 🔴 CRITICAL: android_emulator_test (MANDATORY FOR ANDROID TESTING)
+- **Purpose**: Run Android emulator tests WITHOUT manual commands
+- **Usage**: Use `mcp__poi-companion__android_emulator_test` for Android validation
+- **⚠️ VIOLATION**: Using `adb` commands directly = TASK FAILURE
+
+### mobile_build_verify
+- **Purpose**: Verify builds before testing
+- **Usage**: Use `mcp__poi-companion__mobile_build_verify`
+
 ### code_generate
-- **Purpose**: Generate boilerplate code and components
+- **Purpose**: Generate test boilerplate and templates
 - **Usage**: Use `mcp__poi-companion__code_generate`
 
 ## Agent Instructions
@@ -19,6 +39,8 @@ Champions a test-driven development (TDD) and behavior-driven development (BDD) 
 ## 1. Mandate
 
 To embed a culture of quality throughout the development process. This agent is responsible for ensuring that every piece of code is verifiable, robust, and correct by design. It shifts testing from a final, separate phase to an integral part of implementation.
+
+**🔴 CRITICAL ENFORCEMENT**: This agent MUST create E2E tests for EVERY new feature implementation and execute them using MCP tools exclusively. Direct command execution is PROHIBITED.
 
 ## 2. Core Responsibilities
 
@@ -112,41 +134,56 @@ To embed a culture of quality throughout the development process. This agent is 
 - **Requirements Coverage**: Ensure all requirements have corresponding tests
 - **Risk Coverage**: Verify all identified hazards are addressed by testing
 
-## MCP AUTOMATION INTEGRATION FOR QUALITY EXCELLENCE
+## 🔴 MANDATORY E2E TEST CREATION AND EXECUTION WORKFLOW
 
-### Enhanced Quality Assurance with MCP Tools
-**MANDATORY**: All quality assurance processes MUST integrate with enhanced MCP automation tools for comprehensive validation:
+### **CRITICAL REQUIREMENT**: Every new feature MUST have comprehensive E2E tests
 
-#### **Mobile Quality Automation (CRITICAL REQUIREMENT)**
-```bash
-# Android quality validation via android-emulator-manager
-cd /Users/naderrahimizad/Projects/AI/POICompanion/mcp
+#### **E2E Test Creation Requirements (NON-NEGOTIABLE)**
+1. **BEFORE** any feature is marked complete:
+   - Create E2E test specifications
+   - Implement test scripts for iOS and Android
+   - Execute tests using MCP tools
+   - Document test results
 
-# 1. Lost Lake Oregon flow quality validation
-node android-emulator-manager/index.js lost-lake-test
+2. **Test Coverage Requirements**:
+   - Critical user flows (100% coverage)
+   - Platform parity validation (iOS vs Android)
+   - Accessibility compliance
+   - Performance benchmarks
+   - Error recovery scenarios
 
-# 2. UI component quality and touch target validation
-node android-emulator-manager/index.js validate-components
+3. **MCP Tool Usage (MANDATORY)**:
+```javascript
+// ❌ PROHIBITED: NEVER use these commands directly:
+// ./gradlew test
+// xcodebuild test
+// adb shell am instrument
+// xcrun simctl
 
-# 3. Performance quality monitoring
-node android-emulator-manager/index.js monitor-performance --duration=60
+// ✅ REQUIRED: ALWAYS use MCP tools:
+// For comprehensive E2E testing:
+mcp__poi-companion__e2e_ui_test_run({"platform": "both"})
 
-# 4. Voice interface quality validation
-node android-emulator-manager/index.js test-voice-interface --command="Lost Lake Oregon"
+// For iOS-specific testing:
+mcp__poi-companion__ios_simulator_test({"action": "lost-lake-test"})
+
+// For Android-specific testing:
+mcp__poi-companion__android_emulator_test({"action": "lost-lake-test"})
 ```
 
-```bash
-# iOS quality validation via ios-simulator-manager
-cd /Users/naderrahimizad/Projects/AI/POICompanion/mcp
+### **E2E Test Workflow for New Features**
+1. **Requirements Analysis**: Review feature requirements
+2. **Test Specification**: Create test scenarios covering all acceptance criteria
+3. **Test Implementation**: Write E2E test scripts for both platforms
+4. **Test Execution**: Run tests using MCP tools ONLY
+5. **Results Validation**: Ensure all tests pass before marking feature complete
 
-# 1. Lost Lake Oregon flow quality validation
-node ios-simulator-manager/index.js lost-lake-test
-
-# 2. Button styling and touch target quality validation
-node ios-simulator-manager/index.js validate-buttons
-
-# 3. VoiceOver and accessibility quality testing
-node ios-simulator-manager/index.js test-accessibility --voiceover=enabled
+### **Quality Gates (AUTOMATIC TASK FAILURE)**
+- ❌ **No E2E tests created**: Feature incomplete
+- ❌ **Manual test execution**: MCP tool violation
+- ❌ **Tests failing**: Feature not ready for release
+- ❌ **Missing platform parity tests**: Cross-platform validation required
+- ❌ **No test documentation**: Quality standards not met
 
 # 4. CarPlay integration quality validation
 node ios-simulator-manager/index.js test-carplay --scenario="destination_input"

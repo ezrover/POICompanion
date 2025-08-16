@@ -33,7 +33,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Create directory structure for models, services, managers, and UI components
   - Define protocol interfaces for AutoDiscoverManager, POIRankingEngine, PhotoCyclingManager
   - Create shared constants and configuration files
-  - **Agent**: `spec-system-architect`
+  - **Agent**: `agent-system-architect`
   - **Time**: M (1-2 days)
   - **Dependencies**: None
   - **Requirements**: 11.1, 12.4
@@ -43,7 +43,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Create POIPhoto model with source, attribution, and quality metadata
   - Implement POIAIContent model for podcast scripts and audio content
   - Create AutoDiscoveryResult and AutoDiscoveryConfiguration models
-  - **Agent**: `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-ios-developer` + `agent-android-developer`
   - **Time**: M (1-2 days)  
   - **Dependencies**: Task 1
   - **Requirements**: 2.3, 8.1, 7.1
@@ -53,7 +53,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Create Core Data/Room entities for POI cache, discovery sessions, user preferences
   - Implement dislike persistence with GDPR-compliant data handling
   - Write unit tests for data models and persistence layer
-  - **Agent**: `spec-database-architect-developer`
+  - **Agent**: `agent-database-architect-developer`
   - **Time**: L (2-4 days)
   - **Dependencies**: Task 2
   - **Requirements**: 5.1, 5.3, 5.4, 11.5
@@ -65,7 +65,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Implement deduplication logic for POIs from multiple sources
   - Add geographic radius search with expansion capability
   - Write comprehensive unit tests for ranking algorithm accuracy
-  - **Agent**: `spec-data-scientist` + `spec-algorithm-specialist`
+  - **Agent**: `agent-data-scientist` + `agent-algorithm-specialist`
   - **Time**: L (2-4 days)
   - **Dependencies**: Task 3
   - **Requirements**: 2.1, 2.2, 2.3, 2.4, 2.5
@@ -75,7 +75,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Create intelligent photo caching with memory management and expiration
   - Add photo quality optimization and progressive loading
   - Write unit tests for photo discovery and caching reliability
-  - **Agent**: `spec-performance-guru` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-performance-guru` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: L (2-4 days)
   - **Dependencies**: Task 3
   - **Requirements**: 8.1, 8.2, 8.3, 8.4, 12.2, 12.4
@@ -86,7 +86,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Implement state management for current POI and photo indices
   - Create error handling and recovery mechanisms
   - Write integration tests for complete discovery workflow
-  - **Agent**: `spec-system-architect` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-system-architect` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: L (2-4 days)
   - **Dependencies**: Tasks 4, 5
   - **Requirements**: 1.4, 3.1, 3.2, 12.1
@@ -98,7 +98,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Create content prompts with location-specific information
   - Implement content caching to reduce repeated processing
   - Add fallback mechanisms for AI content failures
-  - **Agent**: `spec-ai-model-optimizer` + `spec-ai-performance-optimizer`
+  - **Agent**: `agent-ai-model-optimizer` + `agent-ai-performance-optimizer`
   - **Time**: L (2-4 days)
   - **Dependencies**: Task 2
   - **Requirements**: 7.1, 7.2, 7.3, 12.3
@@ -109,7 +109,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Add voice command processing for audio control (pause, resume, skip)
   - Create audio playback controls with automotive safety considerations
   - Write unit tests for TTS generation and audio playback
-  - **Agent**: `spec-ios-developer` + `spec-android-developer` + `spec-ai-model-optimizer`
+  - **Agent**: `agent-ios-developer` + `agent-android-developer` + `agent-ai-model-optimizer`
   - **Time**: M (1-2 days)
   - **Dependencies**: Task 7
   - **Requirements**: 7.4, 7.5, 4.5
@@ -121,7 +121,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Add automatic POI progression after all photos viewed
   - Implement smooth transitions and visual indicators
   - Add pause/resume functionality for user interaction
-  - **Agent**: `spec-ux-user-experience` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-ux-user-experience` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: M (1-2 days)
   - **Dependencies**: Tasks 5, 6
   - **Requirements**: 9.1, 9.2, 9.3, 9.4, 9.5
@@ -132,7 +132,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Create battery optimization with reduced cycling in low power mode
   - Handle device interruptions (calls, notifications) gracefully
   - Write performance tests for memory usage during extended cycling
-  - **Agent**: `spec-performance-guru` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-performance-guru` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: M (1-2 days)
   - **Dependencies**: Task 9
   - **Requirements**: 10.1, 10.3, 10.4, 10.5, 12.4
@@ -144,7 +144,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Add button to Select Destination screen as third navigation option
   - Implement button animations and accessibility features
   - Ensure identical styling across iOS and Android platforms
-  - **Agent**: `spec-ux-user-experience` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-ux-user-experience` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: S (4-8 hours)
   - **Dependencies**: Task 1
   - **Requirements**: 1.1, 1.2, 1.3, 11.1
@@ -154,7 +154,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Replace heart icon with search icon when in discovery mode
   - Implement search icon functionality as back button
   - Preserve app state when returning from discovery mode
-  - **Agent**: `spec-ux-user-experience` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-ux-user-experience` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: S (4-8 hours)
   - **Dependencies**: Task 6
   - **Requirements**: 6.1, 6.2, 6.3, 6.4
@@ -164,7 +164,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Implement button action to trigger AI podcast content playback
   - Add visual feedback for audio playing/paused states
   - Ensure button accessibility and voice command integration
-  - **Agent**: `spec-ux-user-experience` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-ux-user-experience` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: S (4-8 hours)
   - **Dependencies**: Tasks 7, 8
   - **Requirements**: 7.1, 7.2
@@ -174,7 +174,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Add photo loading states and error handling
   - Implement photo quality optimization for different network conditions
   - Add visual indicators for current photo position in set
-  - **Agent**: `spec-ux-user-experience` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-ux-user-experience` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: M (1-2 days)
   - **Dependencies**: Tasks 9, 10
   - **Requirements**: 8.1, 9.1, 9.4, 12.2
@@ -184,7 +184,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Add POI information overlay showing name and position
   - Create photo indicator dots showing current photo in set
   - Ensure controls work with both touch and voice commands
-  - **Agent**: `spec-ux-user-experience` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-ux-user-experience` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: M (1-2 days)
   - **Dependencies**: Tasks 6, 14
   - **Requirements**: 4.1, 4.3, 4.4
@@ -196,7 +196,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Add commands: "next POI", "previous POI", "dislike this place", "tell me about this place"
   - Implement voice command processing within 350ms response time
   - Create voice feedback for command confirmation
-  - **Agent**: `spec-ios-developer` + `spec-android-developer` + `spec-ai-model-optimizer`
+  - **Agent**: `agent-ios-developer` + `agent-android-developer` + `agent-ai-model-optimizer`
   - **Time**: M (1-2 days)
   - **Dependencies**: Tasks 6, 8
   - **Requirements**: 4.2, 4.5, 11.2
@@ -206,7 +206,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Add immediate skip to next POI when dislike is triggered
   - Ensure dislike preferences sync across all platforms
   - Create user feedback for successful dislike action
-  - **Agent**: `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-ios-developer` + `agent-android-developer`
   - **Time**: S (4-8 hours)
   - **Dependencies**: Tasks 3, 16
   - **Requirements**: 5.1, 5.2, 5.4
@@ -218,7 +218,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Adapt voice commands for CarPlay-specific interaction patterns
   - Implement audio-first experience with minimal visual elements
   - Ensure automotive safety compliance for all interactions
-  - **Agent**: `spec-ios-developer` + `spec-automotive-integration-specialist`
+  - **Agent**: `agent-ios-developer` + `agent-automotive-integration-specialist`
   - **Time**: L (2-4 days)
   - **Dependencies**: Tasks 11-17
   - **Requirements**: 11.1, 11.2, 4.5, 7.5
@@ -228,7 +228,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Implement voice command integration with Android Auto voice system
   - Add audio content delivery optimized for automotive environment
   - Ensure template compliance with Android Auto design guidelines
-  - **Agent**: `spec-android-developer` + `spec-automotive-integration-specialist`
+  - **Agent**: `agent-android-developer` + `agent-automotive-integration-specialist`
   - **Time**: L (2-4 days)
   - **Dependencies**: Tasks 11-17
   - **Requirements**: 11.1, 11.2, 4.5, 7.5
@@ -238,7 +238,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Implement Android-specific optimizations using NNAPI
   - Create platform-appropriate caching strategies and memory management
   - Add platform-specific error handling and recovery mechanisms
-  - **Agent**: `spec-performance-guru` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-performance-guru` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: M (1-2 days)
   - **Dependencies**: Tasks 7, 10
   - **Requirements**: 12.3, 12.4
@@ -250,7 +250,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Implement battery optimization with power-saving modes
   - Create network optimization for different connection types
   - Add performance monitoring and automatic quality adjustments
-  - **Agent**: `spec-performance-guru`
+  - **Agent**: `agent-performance-guru`
   - **Time**: L (2-4 days)
   - **Dependencies**: Tasks 5, 7, 10
   - **Requirements**: 12.1, 12.4, 12.5
@@ -260,7 +260,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Implement GDPR compliance with user consent and data deletion
   - Create privacy-first caching with automatic expiration
   - Add security measures for AI content and photo caching
-  - **Agent**: `spec-data-privacy-security-analyst`
+  - **Agent**: `agent-data-privacy-security-analyst`
   - **Time**: M (1-2 days)
   - **Dependencies**: Task 3
   - **Requirements**: 11.5
@@ -270,7 +270,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Add automatic recovery mechanisms for common failure scenarios
   - Create user-friendly error messages with recovery suggestions
   - Implement fallback modes for offline operation
-  - **Agent**: `spec-system-architect` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-system-architect` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: M (1-2 days)
   - **Dependencies**: All previous tasks
   - **Requirements**: 11.3
@@ -282,7 +282,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Test photo discovery and caching reliability
   - Validate AI content generation and TTS integration
   - Test state management and persistence layer
-  - **Agent**: `spec-test` + `spec-quality-guardian`
+  - **Agent**: `agent-test` + `agent-quality-guardian`
   - **Time**: L (2-4 days)
   - **Dependencies**: Tasks 4, 5, 7, 8
   - **Requirements**: All requirements validation
@@ -292,7 +292,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Validate photo cycling and POI navigation functionality
   - Test voice command integration and response times
   - Verify platform parity across iOS and Android
-  - **Agent**: `spec-test` + `spec-quality-guardian`
+  - **Agent**: `agent-test` + `agent-quality-guardian`
   - **Time**: L (2-4 days)
   - **Dependencies**: Tasks 11-17
   - **Requirements**: All requirements validation
@@ -302,7 +302,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Test accessibility features and voice command UI feedback
   - Validate CarPlay and Android Auto template functionality
   - Create performance tests for photo cycling and memory usage
-  - **Agent**: `spec-test` + `spec-ux-user-experience`
+  - **Agent**: `agent-test` + `agent-ux-user-experience`
   - **Time**: M (1-2 days)
   - **Dependencies**: Tasks 18, 19
   - **Requirements**: All requirements validation
@@ -312,7 +312,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Validate voice command response times across all platforms
   - Verify consistent user experience and visual design
   - Test data synchronization and preference persistence
-  - **Agent**: `spec-judge` (orchestrating all platform agents)
+  - **Agent**: `agent-judge` (orchestrating all platform agents)
   - **Time**: M (1-2 days)
   - **Dependencies**: All previous tasks
   - **Requirements**: 11.1, 11.2, 11.5
@@ -324,7 +324,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Ensure seamless integration with existing POI display system
   - Test integration with existing voice recognition system
   - Validate backward compatibility with existing features
-  - **Agent**: `spec-system-architect` + `spec-ios-developer` + `spec-android-developer`
+  - **Agent**: `agent-system-architect` + `agent-ios-developer` + `agent-android-developer`
   - **Time**: M (1-2 days)
   - **Dependencies**: Tasks 6, 11, 12
   - **Requirements**: 3.3, 6.4
@@ -334,7 +334,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Add performance monitoring for discovery times and photo loading
   - Create error tracking and automated alerting
   - Add user engagement metrics for photo cycling and POI interaction
-  - **Agent**: `spec-data-scientist` + `spec-performance-guru`
+  - **Agent**: `agent-data-scientist` + `agent-performance-guru`
   - **Time**: S (4-8 hours)
   - **Dependencies**: All previous tasks
   - **Requirements**: 12.1
@@ -344,7 +344,7 @@ This document provides a comprehensive, actionable implementation plan for the A
   - Perform memory leak detection and performance validation
   - Create deployment checklist and rollback procedures
   - Validate feature flags and gradual rollout capability
-  - **Agent**: `spec-judge` + `spec-sre-reliability-engineer`
+  - **Agent**: `agent-judge` + `agent-sre-reliability-engineer`
   - **Time**: S (4-8 hours)
   - **Dependencies**: All previous tasks
   - **Requirements**: All requirements final validation
@@ -491,17 +491,17 @@ flowchart TD
 
 | Agent | Tasks | Total Time | Focus Area |
 |-------|-------|------------|------------|
-| `spec-system-architect` | 1, 6, 23, 28 | 8 days | Architecture & Integration |
-| `spec-ios-developer` | 2, 6, 8, 9-20, 23, 28 | 20 days | iOS Implementation |
-| `spec-android-developer` | 2, 6, 8, 9-20, 23, 28 | 20 days | Android Implementation |
-| `spec-ux-user-experience` | 9, 11-15, 26 | 10 days | UI/UX Design & Testing |
-| `spec-performance-guru` | 5, 10, 20, 21 | 8 days | Performance & Optimization |
-| `spec-ai-model-optimizer` | 7, 8, 16, 20 | 7 days | AI & Voice Processing |
-| `spec-data-scientist` | 4, 29 | 3 days | Algorithms & Analytics |
-| `spec-database-architect-developer` | 3 | 3 days | Data Layer |
-| `spec-data-privacy-security-analyst` | 22 | 2 days | Security & Privacy |
-| `spec-test` | 24, 25, 26 | 7 days | Testing Implementation |
-| `spec-judge` | 27, 30 | 3 days | Final Validation |
+| `agent-system-architect` | 1, 6, 23, 28 | 8 days | Architecture & Integration |
+| `agent-ios-developer` | 2, 6, 8, 9-20, 23, 28 | 20 days | iOS Implementation |
+| `agent-android-developer` | 2, 6, 8, 9-20, 23, 28 | 20 days | Android Implementation |
+| `agent-ux-user-experience` | 9, 11-15, 26 | 10 days | UI/UX Design & Testing |
+| `agent-performance-guru` | 5, 10, 20, 21 | 8 days | Performance & Optimization |
+| `agent-ai-model-optimizer` | 7, 8, 16, 20 | 7 days | AI & Voice Processing |
+| `agent-data-scientist` | 4, 29 | 3 days | Algorithms & Analytics |
+| `agent-database-architect-developer` | 3 | 3 days | Data Layer |
+| `agent-data-privacy-security-analyst` | 22 | 2 days | Security & Privacy |
+| `agent-test` | 24, 25, 26 | 7 days | Testing Implementation |
+| `agent-judge` | 27, 30 | 3 days | Final Validation |
 
 ## Milestone Definitions
 
