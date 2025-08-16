@@ -38,7 +38,7 @@ The workspace includes 10 specialized MCP tools configured in `.claude/settings.
 
 **Project Management Tools:**
 - `task-manager`: Manages and tracks structured development tasks
-- `spec-generator`: Generates technical specifications from requirements
+- `agent-generator`: Generates technical specifications from requirements
 
 All tools are now unified in a single MCP server accessible via Claude Code MCP interface. Use mcp__poi-companion__* tools instead of direct node commands.
 
@@ -72,16 +72,16 @@ This project uses a 40-agent specialized workforce. Detailed specifications for 
 - Advanced Specializations (12)
 
 **Intelligent Agent Auto-Activation**:
-- **Legal docs** → `spec-legal-counsel`
-- **UI/UX** → `spec-ux-user-experience` + `spec-ux-guardian`
-- **Security** → `spec-security-sentinel`
-- **Performance** → `spec-performance-guru` + `spec-ai-model-optimizer`
-- **Market analysis** → `spec-analyst` + `spec-market-analyst`
-- **Requirements** → `spec-requirements`
-- **Quality validation** → `spec-judge` orchestrating relevant specialists
-- **Privacy & security** → `spec-data-privacy-security-analyst` + `spec-security-sentinel`
-- **AI performance** → `spec-ai-performance-optimizer` + `spec-performance-guru`
-- **AI-powered design** → `spec-ai-powered-ux-designer` + `spec-ux-user-experience`
+- **Legal docs** → `agent-legal-counsel`
+- **UI/UX** → `agent-ux-user-experience` + `agent-ux-guardian`
+- **Security** → `agent-security-sentinel`
+- **Performance** → `agent-performance-guru` + `agent-ai-model-optimizer`
+- **Market analysis** → `agent-analyst` + `agent-market-analyst`
+- **Requirements** → `agent-requirements`
+- **Quality validation** → `agent-judge` orchestrating relevant specialists
+- **Privacy & security** → `agent-data-privacy-security-analyst` + `agent-security-sentinel`
+- **AI performance** → `agent-ai-performance-optimizer` + `agent-performance-guru`
+- **AI-powered design** → `agent-ai-powered-ux-designer` + `agent-ux-user-experience`
 
 ## Project Overview
 

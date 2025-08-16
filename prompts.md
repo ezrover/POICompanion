@@ -11,7 +11,7 @@ We've had multiple instances where circular borders (clipShape(Circle())) keep r
 
 Replace mock POI data with real POI discovery system. Currently, iOS ToolRegistry.swift and Android ToolRegistry.kt return hardcoded mock responses instead of real POI data. Need to implement LLM-based local POI analysis using fully integrated Gemma model with online API failover when LLM lacks data. Maintain platform parity and automotive safety compliance.
 
-CLAUDE: Completed comprehensive spec-driven implementation plan for real POI discovery system. Created detailed requirements, technical design, and 14-task implementation plan spanning 4 weeks with 334 hours total effort. Plan addresses mock data elimination, Gemma-3N LLM integration, API failover system (Google Places/OSM/Yelp), platform parity enforcement, and automotive safety compliance. Key deliverables: POI Discovery Orchestrator, Enhanced Tool Registry upgrade, cache management, performance optimization, and comprehensive testing. Ready for implementation with specialized agent coordination. All specifications saved in /specs/real-poi-discovery/ directory.
+CLAUDE: Completed comprehensive agent-driven implementation plan for real POI discovery system. Created detailed requirements, technical design, and 14-task implementation plan spanning 4 weeks with 334 hours total effort. Plan addresses mock data elimination, Gemma-3N LLM integration, API failover system (Google Places/OSM/Yelp), platform parity enforcement, and automotive safety compliance. Key deliverables: POI Discovery Orchestrator, Enhanced Tool Registry upgrade, cache management, performance optimization, and comprehensive testing. Ready for implementation with specialized agent coordination. All specifications saved in /specs/real-poi-discovery/ directory.
 
 CRITICAL: Find and Fix iOS SetDestinationScreen Bordered Buttons
 
@@ -793,15 +793,15 @@ CLAUDE: ✅ COMPLETED - Successfully enforced Android button design system compl
 
 The Android app now achieves 100% button design system compliance with iOS, permanently eliminating the circular border regression issue. The implementation ensures consistent user experience across all platforms through centralized design tokens and validation mechanisms that prevent future violations.
 
-**2025-08-13**: Update the project requirements and tasks documentation to enforce mandatory use of AI agents and spec-driven workflow for all future development. 
+**2025-08-13**: Update the project requirements and tasks documentation to enforce mandatory use of AI agents and agent-driven workflow for all future development. 
 
 Key points to enforce:
 1. MANDATORY use of 40-agent workforce for ALL non-trivial tasks
 2. Direct implementation ONLY for simple file reads/edits
-3. Spec-driven workflow (requirements → design → tasks → implementation) for all features
+3. agent-driven workflow (requirements → design → tasks → implementation) for all features
 4. Platform parity enforcement through coordinated agents
 5. Automatic agent activation based on task type
-6. Quality validation through spec-judge orchestration
+6. Quality validation through agent-judge orchestration
 
 Create comprehensive requirements and tasks documents that make it impossible to bypass the AI agent workflow. Include:
 - Clear enforcement rules
@@ -824,7 +824,7 @@ CLAUDE: ✅ COMPLETED - Created comprehensive AI agent workflow enforcement docu
 - ✅ Comprehensive examples of correct vs incorrect approaches
 - ✅ Non-functional requirements covering performance, reliability, usability
 - ✅ Platform parity enforcement through coordinated mobile agents
-- ✅ Quality validation mandates through spec-judge orchestration
+- ✅ Quality validation mandates through agent-judge orchestration
 
 **2. Implementation Tasks (/specs/development-workflow/tasks.md):**
 - ✅ 11 comprehensive implementation tasks across 3 phases
@@ -838,17 +838,17 @@ CLAUDE: ✅ COMPLETED - Created comprehensive AI agent workflow enforcement docu
 **KEY ENFORCEMENT MECHANISMS:**
 - ✅ MANDATORY agent workflow for ALL non-trivial tasks (>3 steps, >10 lines)
 - ✅ Git pre-commit hooks blocking non-compliant commits
-- ✅ Platform parity validation enforced through spec-ios-developer + spec-android-developer
-- ✅ Spec-driven workflow: Requirements → Design → Tasks → Implementation
-- ✅ Quality validation through spec-judge orchestration
+- ✅ Platform parity validation enforced through agent-ios-developer + agent-android-developer
+- ✅ agent-driven workflow: Requirements → Design → Tasks → Implementation
+- ✅ Quality validation through agent-judge orchestration
 - ✅ Automatic violation detection with escalating consequences
 - ✅ Zero tolerance policy with immediate task rejection for violations
 
 **AGENT AUTO-ACTIVATION TRIGGERS:**
-- Mobile development → spec-ios-developer + spec-android-developer + spec-judge (MANDATORY)
-- UI/UX changes → spec-ux-user-experience + spec-ai-powered-ux-designer + spec-judge
-- System architecture → spec-system-architect + spec-cloud-architect + spec-judge
-- Security/compliance → spec-data-privacy-security-analyst + domain agents + spec-judge
+- Mobile development → agent-ios-developer + agent-android-developer + agent-judge (MANDATORY)
+- UI/UX changes → agent-ux-user-experience + agent-ai-powered-ux-designer + agent-judge
+- System architecture → agent-system-architect + agent-cloud-architect + agent-judge
+- Security/compliance → agent-data-privacy-security-analyst + domain agents + agent-judge
 
 **VIOLATION CONSEQUENCES:**
 - Level 1: Warning + mandatory correction
@@ -985,15 +985,15 @@ WORKFLOW TO EXECUTE:
 2. Design technical approach for button styling and voice auto-start
 3. Generate implementation tasks
 4. Coordinate mobile development agents for implementation
-5. Validate with spec-judge for platform parity
+5. Validate with agent-judge for platform parity
 
 Use the following agents:
-- spec-requirements: Document the parity requirements
-- spec-design: Design the technical solution
-- spec-android-developer: Implement Android fixes
-- spec-ios-developer: Verify iOS implementation matches
-- spec-ux-user-experience: Ensure consistent UX
-- spec-judge: Validate complete platform parity
+- agent-requirements: Document the parity requirements
+- agent-design: Design the technical solution
+- agent-android-developer: Implement Android fixes
+- agent-ios-developer: Verify iOS implementation matches
+- agent-ux-user-experience: Ensure consistent UX
+- agent-judge: Validate complete platform parity
 
 Output all specifications to /specs/platform-parity-voice-buttons/
 
@@ -1116,7 +1116,7 @@ ENFORCEMENT REQUIREMENTS:
 - These are now NON-NEGOTIABLE platform parity requirements
 - AI agent workforce MUST always enforce these across platforms
 - Violations should trigger automatic platform parity review
-- Include in spec-judge validation criteria
+- Include in agent-judge validation criteria
 
 Create clear, actionable documentation that ensures all future development maintains these requirements across iOS, Android, CarPlay, and Android Auto platforms.
 
@@ -1143,8 +1143,8 @@ CLAUDE: ✅ COMPLETED - Successfully updated cross-platform requirements documen
 
 **3. Enhanced Platform Parity Requirements (/specs/platform-parity-voice-buttons/requirements.md):**
 - ✅ Added FR005: AI Agent Workflow Enforcement for voice/button changes
-- ✅ Added FR006: Spec-Judge Platform Parity Validation requirements
-- ✅ Mandated agent orchestration through spec-ux-user-experience, mobile developers, and spec-judge
+- ✅ Added FR006: agent-Judge Platform Parity Validation requirements
+- ✅ Mandated agent orchestration through agent-ux-user-experience, mobile developers, and agent-judge
 - ✅ Established automatic task failure for direct implementation bypassing
 - ✅ Created comprehensive platform parity validation criteria
 
@@ -1173,9 +1173,9 @@ CLAUDE: ✅ COMPLETED - Successfully updated cross-platform requirements documen
 - Identical appearance across iOS and Android (100% platform parity)
 
 **AI Agent Workforce Enforcement:**
-- spec-ux-user-experience MUST review all voice interaction changes
-- spec-ios-developer + spec-android-developer MUST coordinate implementation
-- spec-judge MUST validate platform parity before completion
+- agent-ux-user-experience MUST review all voice interaction changes
+- agent-ios-developer + agent-android-developer MUST coordinate implementation
+- agent-judge MUST validate platform parity before completion
 - Direct implementation bypassing agents triggers automatic task failure
 
 **VALIDATION REQUIREMENTS:**
@@ -1291,7 +1291,7 @@ CLAUDE: **COMPREHENSIVE ANDROID PLATFORM PARITY VALIDATION REPORT**
 **CLAUDE.md Integration:**
 - ✅ **Enforcement Rules**: Platform parity rules integrated into development workflow
 - ✅ **Agent Requirements**: Mandatory agent usage for voice/button changes documented
-- ✅ **Validation Requirements**: spec-judge validation requirements clearly specified
+- ✅ **Validation Requirements**: agent-judge validation requirements clearly specified
 
 ## 5. BUILD SUCCESS VALIDATION ✅ PASS
 
@@ -1364,22 +1364,22 @@ CLAUDE: **COMPREHENSIVE ANDROID PLATFORM PARITY VALIDATION REPORT**
 1. Create requirements for animation platform parity
 2. Design technical solution for animation separation
 3. Generate implementation tasks
-4. **USE spec-ios-developer agent** to fix iOS MIC animation issues
-5. **USE spec-android-developer agent** to fix Android MIC animation issues
+4. **USE agent-ios-developer agent** to fix iOS MIC animation issues
+5. **USE agent-android-developer agent** to fix Android MIC animation issues
 6. Update documentation with mandatory animation rules
 7. Validate complete platform parity
 
 **CRITICAL**: This is a NON-NEGOTIABLE platform parity requirement. MIC button is ONLY for mute/unmute - NO animations allowed.
 
 **AGENT COORDINATION REQUIRED**:
-- spec-requirements: Document animation platform parity requirements
-- spec-design: Design animation separation solution
-- **spec-ios-developer**: Fix iOS SetDestinationView.swift MIC animation
-- **spec-android-developer**: Fix Android SetDestinationScreen.kt MIC animation  
-- spec-ux-user-experience: Ensure consistent UX
-- spec-judge: Validate complete platform parity
+- agent-requirements: Document animation platform parity requirements
+- agent-design: Design animation separation solution
+- **agent-ios-developer**: Fix iOS SetDestinationView.swift MIC animation
+- **agent-android-developer**: Fix Android SetDestinationScreen.kt MIC animation  
+- agent-ux-user-experience: Ensure consistent UX
+- agent-judge: Validate complete platform parity
 
-**DO NOT modify files directly** - delegate all iOS work to spec-ios-developer and all Android work to spec-android-developer.
+**DO NOT modify files directly** - delegate all iOS work to agent-ios-developer and all Android work to agent-android-developer.
 
 Output specs to: /specs/voice-animation-platform-parity/
 
@@ -1458,7 +1458,7 @@ All requirements fulfilled with perfect platform parity and successful build ver
 
 **2025-08-14**: Implement real Gemma-3N inference with tool-use and internet search for POI discovery in the Roadtrip Copilot app. Current State: The app currently has placeholder inference returning "Inference placeholder for: {input}" instead of real model responses. The Gemma-3N models (E2B and E4B variants) are downloaded in /models/llm/ but not properly integrated. Requirements: 1. Replace placeholder inference with REAL Gemma-3N model loading and inference 2. Add tool-use capabilities for POI discovery: search_poi(location, category), get_poi_details(poi_id), search_internet(query), get_directions(from, to) 3. Implement proper tokenization using tokenizer.json 4. Ensure model loads during splash screen animation 5. Process destination queries with "tell me about this place" prompt 6. Return actual POI recommendations with details Platform Requirements: iOS: Swift/SwiftUI with Core ML integration, Android: Kotlin with MediaPipe LLM Inference, Maintain 100% feature parity between platforms, Model test with "who are you?" on startup
 
-CLAUDE: Successfully analyzed current Gemma-3N implementation and identified comprehensive requirements for real inference with tool-use capabilities. Key findings: iOS has placeholder generateContextualResponse() method, Android has MockLlmInference class, both need MediaPipe integration. Implementation requires replacing all placeholders with real MediaPipe LlmInference, adding tool registry for POI discovery functions (search_poi, get_poi_details, search_internet, get_directions), proper tokenization using tokenizer.json, function calling with JSON parsing and ReAct pattern, internet search via DuckDuckGo API, startup testing with "who are you?" query, and 100% platform parity validation. Architecture patterns documented from gemma-travel-assistant.swift and gemma-ios-swift-implementation.swift reference files. Due to task complexity requiring >10 lines of code and multi-platform coordination, this implementation requires mandatory delegation to the 40-agent specialized workforce per CLAUDE.md enforcement rules, specifically: spec-workflow-manager for orchestration, spec-ios-developer + spec-android-developer for platform implementation, spec-ai-model-optimizer for performance optimization, spec-system-architect for tool registry design, and spec-judge for platform parity validation.
+CLAUDE: Successfully analyzed current Gemma-3N implementation and identified comprehensive requirements for real inference with tool-use capabilities. Key findings: iOS has placeholder generateContextualResponse() method, Android has MockLlmInference class, both need MediaPipe integration. Implementation requires replacing all placeholders with real MediaPipe LlmInference, adding tool registry for POI discovery functions (search_poi, get_poi_details, search_internet, get_directions), proper tokenization using tokenizer.json, function calling with JSON parsing and ReAct pattern, internet search via DuckDuckGo API, startup testing with "who are you?" query, and 100% platform parity validation. Architecture patterns documented from gemma-travel-assistant.swift and gemma-ios-swift-implementation.swift reference files. Due to task complexity requiring >10 lines of code and multi-platform coordination, this implementation requires mandatory delegation to the 40-agent specialized workforce per CLAUDE.md enforcement rules, specifically: agent-workflow-manager for orchestration, agent-ios-developer + agent-android-developer for platform implementation, agent-ai-model-optimizer for performance optimization, agent-system-architect for tool registry design, and agent-judge for platform parity validation.
 
 **2025-08-14**: CRITICAL: Strengthen CLAUDE.md to ENFORCE 100% AI Agent Workforce Usage
 
@@ -1467,14 +1467,14 @@ The current CLAUDE.md has good agent rules but they're NOT STRONG ENOUGH. We nee
 Please strengthen CLAUDE.md with the following:
 
 1. **🚨 IMMEDIATE AGENT ENFORCEMENT (ZERO TOLERANCE - FIRST RULE IN FILE):**
-   - ANY task = MUST use spec-workflow-manager FIRST
+   - ANY task = MUST use agent-workflow-manager FIRST
    - NO EXCEPTIONS for "simple" tasks - EVERYTHING goes through agents
    - Direct implementation = IMMEDIATE TASK FAILURE
 
 2. **MANDATORY WORKFLOW (NO SHORTCUTS):**
-   - STEP 1: ALWAYS start with spec-workflow-manager for ANY request
-   - STEP 2: Follow complete spec-driven workflow (requirements → design → tasks → implementation)
-   - STEP 3: Use spec-judge for final validation
+   - STEP 1: ALWAYS start with agent-workflow-manager for ANY request
+   - STEP 2: Follow complete agent-driven workflow (requirements → design → tasks → implementation)
+   - STEP 3: Use agent-judge for final validation
    - Skipping ANY step = TASK FAILURE
 
 3. **VIOLATION TRACKING:**
@@ -1493,9 +1493,9 @@ Please strengthen CLAUDE.md with the following:
    - NO third chances
 
 6. **ADD RECENT VIOLATION EXAMPLES:**
-   - "❌ Fixed button regression directly instead of using spec-ios-developer"
-   - "❌ Fixed crash directly instead of using spec-workflow-manager"
-   - "❌ Made UI changes without spec-ux-user-experience review"
+   - "❌ Fixed button regression directly instead of using agent-ios-developer"
+   - "❌ Fixed crash directly instead of using agent-workflow-manager"
+   - "❌ Made UI changes without agent-ux-user-experience review"
 
 Please update CLAUDE.md to make agent usage ABSOLUTELY MANDATORY with NO EXCEPTIONS. The goal is to make it IMPOSSIBLE to work without using the AI Agent Workforce.
 
@@ -1511,8 +1511,8 @@ CLAUDE: ✅ COMPLETED - Successfully strengthened CLAUDE.md to enforce 100% AI A
 
 **1. Agent Enforcement Moved to TOP of File:**
 - ✅ Created new "🚨 IMMEDIATE AI AGENT ENFORCEMENT (ZERO TOLERANCE - FIRST RULE)" section as the very first rule
-- ✅ Made spec-workflow-manager MANDATORY for ALL requests - NO EXCEPTIONS
-- ✅ Established complete spec-driven workflow requirement (Requirements → Design → Tasks → Implementation)
+- ✅ Made agent-workflow-manager MANDATORY for ALL requests - NO EXCEPTIONS
+- ✅ Established complete agent-driven workflow requirement (Requirements → Design → Tasks → Implementation)
 - ✅ Declared ZERO DIRECT IMPLEMENTATION policy with immediate task failure consequences
 
 **2. Removed ALL Exceptions (Zero Tolerance):**
@@ -1529,24 +1529,24 @@ CLAUDE: ✅ COMPLETED - Successfully strengthened CLAUDE.md to enforce 100% AI A
 - ✅ Automatic detection of all direct implementations with immediate violation response
 
 **4. Added Comprehensive Recent Violation Examples:**
-- ✅ Fixed button regression directly instead of using spec-ios-developer
-- ✅ Fixed crash directly instead of using spec-workflow-manager
-- ✅ Made UI changes without spec-ux-user-experience review
+- ✅ Fixed button regression directly instead of using agent-ios-developer
+- ✅ Fixed crash directly instead of using agent-workflow-manager
+- ✅ Made UI changes without agent-ux-user-experience review
 - ✅ Implemented voice parity directly bypassing agent coordination
-- ✅ Fixed Android build issues without spec-android-developer involvement
+- ✅ Fixed Android build issues without agent-android-developer involvement
 - ✅ Direct file modifications without agent oversight
-- ✅ Documentation updates without spec-judge validation
+- ✅ Documentation updates without agent-judge validation
 
 **5. Enhanced Operational Philosophy:**
 - ✅ Changed from "AGENT-FIRST APPROACH" to "AGENT-ONLY APPROACH"
 - ✅ Updated from "ALL non-trivial tasks" to "ALL TASKS - NO direct execution allowed"
-- ✅ Made spec-judge validation MANDATORY for EVERY deliverable
+- ✅ Made agent-judge validation MANDATORY for EVERY deliverable
 - ✅ Eliminated all loopholes and exemptions
 
 **6. Mandatory Workflow Enforcement:**
-- ✅ STEP 1 (REQUIRED): ALWAYS start with spec-workflow-manager for ANY request
-- ✅ STEP 2 (REQUIRED): Follow complete spec-driven workflow
-- ✅ STEP 3 (REQUIRED): Use spec-judge for final validation
+- ✅ STEP 1 (REQUIRED): ALWAYS start with agent-workflow-manager for ANY request
+- ✅ STEP 2 (REQUIRED): Follow complete agent-driven workflow
+- ✅ STEP 3 (REQUIRED): Use agent-judge for final validation
 - ✅ VIOLATION = TASK FAILURE: Skipping ANY step triggers immediate failure
 
 **POLICY TRANSFORMATION:**
@@ -1562,4 +1562,4 @@ CLAUDE: ✅ COMPLETED - Successfully strengthened CLAUDE.md to enforce 100% AI A
 - ✅ Enhanced both CLAUDE.md and prompts.md with strengthened rules
 - ✅ 113 insertions, 29 deletions - comprehensive enforcement overhaul
 
-The updated CLAUDE.md now makes it IMPOSSIBLE to work without using the AI Agent Workforce. Every request, regardless of size or complexity, must go through the complete spec-driven workflow with mandatory agent delegation. This prevents all future quality regressions, platform parity violations, and architectural inconsistencies through absolute agent enforcement.
+The updated CLAUDE.md now makes it IMPOSSIBLE to work without using the AI Agent Workforce. Every request, regardless of size or complexity, must go through the complete agent-driven workflow with mandatory agent delegation. This prevents all future quality regressions, platform parity violations, and architectural inconsistencies through absolute agent enforcement.

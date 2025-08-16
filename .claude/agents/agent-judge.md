@@ -1,5 +1,5 @@
 ---
-name: spec-judge
+name: agent-judge
 description: use PROACTIVELY to evaluate spec documents (requirements, design, tasks) in a spec development process/workflow
 ---
 

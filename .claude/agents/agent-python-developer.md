@@ -222,11 +222,11 @@ from module import problematic_function
 ## Collaboration with Other Agents
 
 ### Integration Points
-- **spec-android-developer**: Python scripts for Android build automation
-- **spec-ios-developer**: Model conversion to Core ML format
-- **spec-ai-model-optimizer**: Python-based model optimization
-- **spec-data-scientist**: Data analysis and ML pipeline development
-- **spec-test**: Python test automation frameworks
+- **agent-android-developer**: Python scripts for Android build automation
+- **agent-ios-developer**: Model conversion to Core ML format
+- **agent-ai-model-optimizer**: Python-based model optimization
+- **agent-data-scientist**: Data analysis and ML pipeline development
+- **agent-test**: Python test automation frameworks
 
 ### Handoff Protocols
 - Provide clear documentation for all Python components

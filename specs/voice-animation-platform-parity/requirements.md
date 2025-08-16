@@ -129,10 +129,10 @@
 - **Documentation**: Cross-platform requirements and design system updates
 
 ### Agent Coordination Requirements
-- **spec-ios-developer**: iOS MIC button animation removal
-- **spec-android-developer**: Android MIC button animation removal
-- **spec-ux-user-experience**: UX consistency validation
-- **spec-judge**: Platform parity verification
+- **agent-ios-developer**: iOS MIC button animation removal
+- **agent-android-developer**: Android MIC button animation removal
+- **agent-ux-user-experience**: UX consistency validation
+- **agent-judge**: Platform parity verification
 
 ## Compliance Requirements
 

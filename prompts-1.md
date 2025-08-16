@@ -10,26 +10,26 @@ Created 4-phase remediation plan with Day 1 critical fixes, Week 1 privacy enhan
 
 The location authorization failures stem from security architecture deficiencies that compromise both functionality and regulatory compliance, requiring systematic security-first redesign rather than simple permission adjustments.
 
-## USER PROMPT: "This is a test to verify that you are accessible through the Task tool. Please confirm you are the spec-security-sentinel agent and briefly describe your primary responsibility in one sentence."
+## USER PROMPT: "This is a test to verify that you are accessible through the Task tool. Please confirm you are the agent-security-sentinel agent and briefly describe your primary responsibility in one sentence."
 
-CLAUDE: I am the spec-security-sentinel agent specialized in continuous automated security scanning using `/security-review` on all code changes to detect and prevent vulnerabilities from being introduced into the Roadtrip-Copilot application before they reach production. Successfully confirmed agent accessibility through Task tool and noted availability status discrepancy in project documentation where 4 agents including myself are marked as missing from Task tool despite having proper YAML front matter format.
+CLAUDE: I am the agent-security-sentinel agent specialized in continuous automated security scanning using `/security-review` on all code changes to detect and prevent vulnerabilities from being introduced into the Roadtrip-Copilot application before they reach production. Successfully confirmed agent accessibility through Task tool and noted availability status discrepancy in project documentation where 4 agents including myself are marked as missing from Task tool despite having proper YAML front matter format.
 
-## USER PROMPT: "This is a test to verify that you are accessible through the Task tool. Please confirm you are the spec-quality-guardian agent and briefly describe your primary responsibility in one sentence."
+## USER PROMPT: "This is a test to verify that you are accessible through the Task tool. Please confirm you are the agent-quality-guardian agent and briefly describe your primary responsibility in one sentence."
 
-CLAUDE: I am **spec-quality-guardian**, the Test-First Quality Advocate responsible for embedding a culture of quality throughout development by generating failing test cases before implementation code, defining acceptance criteria using BDD principles, and ensuring comprehensive test coverage across the entire test pyramid while enforcing FDA medical device quality standards including ISO 13485, IEC 62304, and NIST 800-30 compliance.
+CLAUDE: I am **agent-quality-guardian**, the Test-First Quality Advocate responsible for embedding a culture of quality throughout development by generating failing test cases before implementation code, defining acceptance criteria using BDD principles, and ensuring comprehensive test coverage across the entire test pyramid while enforcing FDA medical device quality standards including ISO 13485, IEC 62304, and NIST 800-30 compliance.
 
 ## USER PROMPT: "Test your enhanced MCP tool integration by describing which local MCP tools you would use for implementing a new POI search feature for the Android app. Focus on the 24 MCP tools available and how you would orchestrate them during development."
 
-CLAUDE: Successfully demonstrated comprehensive MCP tool orchestration for Android POI search feature implementation. Created 6-phase development strategy utilizing all 24 available MCP tools: (1) Planning & Requirements using task-manager, spec-generator, market-analyzer for structured breakdown and competitive analysis, (2) Architecture & Design with design-system-manager, schema-validator, android-project-manager for consistent UI and data validation, (3) Code Generation & Implementation leveraging code-generator, ui-generator, model-optimizer for boilerplate creation and ML optimization, (4) Quality Assurance with mobile-test-runner, mobile-linter, accessibility-checker ensuring NHTSA automotive compliance, (5) Build & Integration using build-master, mobile-build-verifier for deployment readiness, (6) Deployment & Monitoring with performance-profiler for <350ms response optimization. Tool orchestration includes parallel execution (mobile-linter + accessibility-checker continuous), sequential dependencies (spec-generator → task-manager → android-project-manager), and continuous tools (mobile-file-manager, dependency-manager, agent-registry-manager). Expected benefits: 80% reduction in remote API calls, 40% faster development through parallel execution, automated quality enforcement, automotive compliance, and production-ready POI search implementation with comprehensive test coverage and performance optimization meeting Roadtrip-Copilot's enterprise-grade standards.
+CLAUDE: Successfully demonstrated comprehensive MCP tool orchestration for Android POI search feature implementation. Created 6-phase development strategy utilizing all 24 available MCP tools: (1) Planning & Requirements using task-manager, agent-generator, market-analyzer for structured breakdown and competitive analysis, (2) Architecture & Design with design-system-manager, schema-validator, android-project-manager for consistent UI and data validation, (3) Code Generation & Implementation leveraging code-generator, ui-generator, model-optimizer for boilerplate creation and ML optimization, (4) Quality Assurance with mobile-test-runner, mobile-linter, accessibility-checker ensuring NHTSA automotive compliance, (5) Build & Integration using build-master, mobile-build-verifier for deployment readiness, (6) Deployment & Monitoring with performance-profiler for <350ms response optimization. Tool orchestration includes parallel execution (mobile-linter + accessibility-checker continuous), sequential dependencies (agent-generator → task-manager → android-project-manager), and continuous tools (mobile-file-manager, dependency-manager, agent-registry-manager). Expected benefits: 80% reduction in remote API calls, 40% faster development through parallel execution, automated quality enforcement, automotive compliance, and production-ready POI search implementation with comprehensive test coverage and performance optimization meeting Roadtrip-Copilot's enterprise-grade standards.
 
 **2025-08-10**: Demonstrate how you would use the local MCP tools for developing a new Jetpack Compose screen for POI details. Specifically describe which MCP tools you would use and in what order.
 
 **2025-08-10**: Demonstrate how you would use local MCP tools to create comprehensive test coverage for a new mobile feature. Show the specific MCP tool workflow for TDD and accessibility testing.
 
-CLAUDE: Successfully demonstrated comprehensive Test-Driven Development (TDD) workflow using 24 local MCP tools for POI Voice Discovery feature. Created enterprise-grade test specification using spec-generator with comprehensive FDA medical device compliance (IEC 62304, ISO 14971, ISO 13485). Generated complete iOS XCTest suite (16 test cases) and Android JUnit 5 suite (18 test cases) covering voice trigger recognition, natural language processing, WCAG 2.1 AAA accessibility compliance, NHTSA automotive safety (2-second glance rule, 12-second task rule), performance targets (<350ms response time, <50MB memory), and FDA medical device standards with requirements traceability.
+CLAUDE: Successfully demonstrated comprehensive Test-Driven Development (TDD) workflow using 24 local MCP tools for POI Voice Discovery feature. Created enterprise-grade test specification using agent-generator with comprehensive FDA medical device compliance (IEC 62304, ISO 14971, ISO 13485). Generated complete iOS XCTest suite (16 test cases) and Android JUnit 5 suite (18 test cases) covering voice trigger recognition, natural language processing, WCAG 2.1 AAA accessibility compliance, NHTSA automotive safety (2-second glance rule, 12-second task rule), performance targets (<350ms response time, <50MB memory), and FDA medical device standards with requirements traceability.
 
 **MCP Tool Orchestration Strategy:**
-Phase 1: spec-generator + task-manager for structured test planning
+Phase 1: agent-generator + task-manager for structured test planning
 Phase 2: code-generator + mobile-file-manager for test infrastructure  
 Phase 3: accessibility-checker for WCAG/NHTSA compliance validation
 Phase 4: mobile-test-runner + mobile-build-verifier for execution pipeline
@@ -1316,34 +1316,34 @@ CLAUDE: ✅ **CRITICAL RULES ESTABLISHED & AGENT WORKFORCE RESTORED**
 
 ### ❌ **What Went Wrong:**
 1. **Lost Agent-First Focus**: During the complex voice implementation, I reverted to direct coding instead of delegating to specialized agents
-2. **Missed Mobile Coordination**: Didn't use platform-specific agents (spec-ios-developer, spec-android-developer) to ensure consistency
-3. **Bypassed Quality Gates**: Skipped spec-judge validation during implementation
+2. **Missed Mobile Coordination**: Didn't use platform-specific agents (agent-ios-developer, agent-android-developer) to ensure consistency
+3. **Bypassed Quality Gates**: Skipped agent-judge validation during implementation
 4. **Efficiency Loss**: Direct implementation was slower and more error-prone than agent delegation would have been
 
 ### ✅ **Corrective Actions Implemented:**
 1. **Added MANDATORY agent usage enforcement** to CLAUDE.md
 2. **Enhanced auto-activation triggers** for mobile development tasks
 3. **Established platform coordination requirements** using specialized agents
-4. **Added quality validation** through spec-judge orchestration
+4. **Added quality validation** through agent-judge orchestration
 5. **Made agent-first approach NON-NEGOTIABLE** for all complex tasks
 
 ### 📈 **Agent Workforce Validation (Post-Implementation):**
 
-Used **spec-judge** to validate the voice implementation:
+Used **agent-judge** to validate the voice implementation:
 - **Overall Parity Score: 8.8/10**
 - **100% Command Recognition Parity** across all platforms
 - **Consistent Voice Activity Detection** (-40dB threshold)
 - **Unified Audio Feedback System**
 - **Enterprise-grade quality** with automotive safety compliance
 
-Used **spec-ios-developer** for iOS review:
+Used **agent-ios-developer** for iOS review:
 - **Overall Quality: 9.2/10**
 - **Premium SwiftUI Implementation** with Apple-quality animations
 - **Expert SpeechManager Architecture** with proper lifecycle management
 - **Professional CarPlay Integration** following automotive guidelines
 - **Production-ready** with comprehensive error handling
 
-Used **spec-android-developer** for Android review:
+Used **agent-android-developer** for Android review:
 - **Overall Quality: 8.7/10**
 - **Enterprise-grade voice processing** with sophisticated Android Auto integration
 - **Modern Jetpack Compose patterns** with efficient animations
@@ -1353,16 +1353,16 @@ Used **spec-android-developer** for Android review:
 ### 🎯 **Agent Workforce Restoration Protocol:**
 
 **Future Implementation Requirements:**
-1. **ALWAYS** use spec-ios-developer + spec-android-developer for mobile changes
-2. **ALWAYS** use spec-ux-user-experience for UI/UX modifications
-3. **ALWAYS** use spec-judge for final validation and parity verification
+1. **ALWAYS** use agent-ios-developer + agent-android-developer for mobile changes
+2. **ALWAYS** use agent-ux-user-experience for UI/UX modifications
+3. **ALWAYS** use agent-judge for final validation and parity verification
 4. **NEVER** implement complex features directly - delegate to specialized agents
 5. **ORCHESTRATE** multiple agents for comprehensive coverage
 
 **Agent Auto-Activation Triggers (Updated):**
-- 🚨 **Mobile Development** → `spec-ios-developer` + `spec-android-developer` + `spec-flutter-developer` + `spec-judge`
-- 🚨 **UI/UX Changes** → `spec-ux-user-experience` + `spec-ai-powered-ux-designer` + `spec-accessibility-champion`
-- 🚨 **System Architecture** → `spec-system-architect` + `spec-cloud-architect` + `spec-performance-guru`
+- 🚨 **Mobile Development** → `agent-ios-developer` + `agent-android-developer` + `agent-flutter-developer` + `agent-judge`
+- 🚨 **UI/UX Changes** → `agent-ux-user-experience` + `agent-ai-powered-ux-designer` + `agent-accessibility-champion`
+- 🚨 **System Architecture** → `agent-system-architect` + `agent-cloud-architect` + `agent-performance-guru`
 
 ## ✨ **Outcome:**
 
@@ -1371,53 +1371,53 @@ Used **spec-android-developer** for Android review:
 2. ✅ **Agent Workforce**: Restored with mandatory usage protocols and quality validation
 
 **PROOF OF CORRECTION:**
-- Used spec-judge, spec-ios-developer, and spec-android-developer to validate the voice implementation
+- Used agent-judge, agent-ios-developer, and agent-android-developer to validate the voice implementation
 - Achieved 8.8/10 overall parity score with expert validation from specialized agents
 - Demonstrated proper agent orchestration for quality assurance
 - Established protocols to prevent future direct implementation
 
 **The 40-agent specialized workforce is now fully restored and will be used for all future complex implementations to ensure platform parity and enterprise-grade quality.**
 
-**USER REQUEST:** update spec-judge, spec-ios-developer, and spec-android-developer to ensure they reemphesize and help you enforce feature parity and consistent across all mobile and automotive platforms
+**USER REQUEST:** update agent-judge, agent-ios-developer, and agent-android-developer to ensure they reemphesize and help you enforce feature parity and consistent across all mobile and automotive platforms
 
 CLAUDE: ✅ **CRITICAL AGENTS ENHANCED WITH MANDATORY PLATFORM PARITY ENFORCEMENT**
 
 ## 🎯 **Agent Enhancement Summary:**
 
-### **1. spec-judge (Ultimate Platform Parity Gatekeeper)**
+### **1. agent-judge (Ultimate Platform Parity Gatekeeper)**
 **Enhanced with PRIMARY responsibility for platform parity enforcement:**
 - 🚨 **New Scoring System**: Platform Parity = 40% (was 0%)
 - ⚠️ **Rejection Authority**: <90% parity = AUTOMATIC REJECTION
 - 🔄 **Mandatory Validation**: All four platforms (iOS, CarPlay, Android, Android Auto)
-- 🤝 **Agent Orchestration**: Coordinates spec-ios-developer + spec-android-developer + spec-flutter-developer
+- 🤝 **Agent Orchestration**: Coordinates agent-ios-developer + agent-android-developer + agent-flutter-developer
 
-### **2. spec-ios-developer (iOS Platform Parity Coordinator)**
+### **2. agent-ios-developer (iOS Platform Parity Coordinator)**
 **Enhanced with DUAL critical requirements:**
 - 🚨 **Platform Parity FIRST**: Must verify Android compatibility before ANY iOS implementation
-- 🔄 **Mandatory Coordination**: Must collaborate with spec-android-developer on ALL features
+- 🔄 **Mandatory Coordination**: Must collaborate with agent-android-developer on ALL features
 - 🚗 **CarPlay Consistency**: Must ensure CarPlay matches main iOS app functionality
 - ❌ **Rejection Authority**: Can reject iOS features that can't achieve cross-platform parity
 
-### **3. spec-android-developer (Android Platform Parity Coordinator)**
+### **3. agent-android-developer (Android Platform Parity Coordinator)**
 **Enhanced with DUAL critical requirements:**
 - 🚨 **Platform Parity FIRST**: Must verify iOS compatibility before ANY Android implementation  
-- 🔄 **Mandatory Coordination**: Must collaborate with spec-ios-developer on ALL features
+- 🔄 **Mandatory Coordination**: Must collaborate with agent-ios-developer on ALL features
 - 🚗 **Android Auto Consistency**: Must ensure Android Auto matches main Android app functionality
 - ❌ **Rejection Authority**: Can reject Android features that can't achieve cross-platform parity
 
 ## 🧪 **Agent Validation Testing:**
 
-### **spec-judge Platform Parity Enforcement Test:**
+### **agent-judge Platform Parity Enforcement Test:**
 **Test Case**: "Advanced camera filters using iOS Core Image framework"
 **Result**: ❌ **REJECTED** (43.75% parity score < 70% threshold)
 **Validation**: ✅ Successfully prevented platform fragmentation, proposed platform-agnostic alternative
 
-### **spec-ios-developer Coordination Protocol Test:**
+### **agent-ios-developer Coordination Protocol Test:**
 **Test Case**: "SwiftUI voice waveform visualization with Core Animation"
 **Result**: ❌ **REJECTED** (25% parity score < 70% threshold)
 **Validation**: ✅ Platform parity analyzed FIRST, coordinated with Android team, proposed unified solution
 
-### **spec-android-developer Coordination Protocol Test:**
+### **agent-android-developer Coordination Protocol Test:**
 **Test Case**: "Jetpack Compose advanced gesture recognition system"
 **Result**: ❌ **REJECTED** (46.25% parity score < 70% threshold)  
 **Validation**: ✅ iOS compatibility checked FIRST, automotive constraints validated, proposed voice-first alternative
@@ -1427,15 +1427,15 @@ CLAUDE: ✅ **CRITICAL AGENTS ENHANCED WITH MANDATORY PLATFORM PARITY ENFORCEMEN
 ### **Platform Parity Enforcement Matrix:**
 | Agent | Platform Parity Priority | Cross-Platform Coordination | Rejection Authority | Alternative Solutions |
 |-------|-------------------------|----------------------------|-------------------|---------------------|
-| spec-judge | ✅ PRIMARY (40% score weight) | ✅ Orchestrates all mobile agents | ✅ <90% = Auto-reject | ✅ Synthesizes unified solutions |
-| spec-ios-developer | ✅ FIRST requirement | ✅ Mandatory with Android team | ✅ iOS-only features rejected | ✅ Platform-agnostic proposals |
-| spec-android-developer | ✅ FIRST requirement | ✅ Mandatory with iOS team | ✅ Android-only features rejected | ✅ Voice-first alternatives |
+| agent-judge | ✅ PRIMARY (40% score weight) | ✅ Orchestrates all mobile agents | ✅ <90% = Auto-reject | ✅ Synthesizes unified solutions |
+| agent-ios-developer | ✅ FIRST requirement | ✅ Mandatory with Android team | ✅ iOS-only features rejected | ✅ Platform-agnostic proposals |
+| agent-android-developer | ✅ FIRST requirement | ✅ Mandatory with iOS team | ✅ Android-only features rejected | ✅ Voice-first alternatives |
 
 ### **Collaboration Protocol Established:**
 1. **Before Implementation**: Cross-platform compatibility verification required
 2. **During Development**: Active coordination between iOS and Android agents  
 3. **After Completion**: Parity validation across all four platforms
-4. **Quality Gate**: spec-judge final approval with platform parity scoring
+4. **Quality Gate**: agent-judge final approval with platform parity scoring
 
 ### **Success Metrics:**
 - ✅ **100% Feature Parity Enforcement**: All three agents reject platform-exclusive features
@@ -1445,7 +1445,7 @@ CLAUDE: ✅ **CRITICAL AGENTS ENHANCED WITH MANDATORY PLATFORM PARITY ENFORCEMEN
 
 ## 🎆 **Outcome:**
 
-**MISSION ACCOMPLISHED** - The three critical agents (spec-judge, spec-ios-developer, spec-android-developer) have been successfully enhanced with mandatory platform parity enforcement as their PRIMARY responsibility. 
+**MISSION ACCOMPLISHED** - The three critical agents (agent-judge, agent-ios-developer, agent-android-developer) have been successfully enhanced with mandatory platform parity enforcement as their PRIMARY responsibility. 
 
 **Key Achievements:**
 1. ⚡ **Platform Parity = PRIMARY Criteria** (not secondary consideration)
@@ -1587,7 +1587,7 @@ CLAUDE: Successfully completed comprehensive iOS voice detection and CarPlay imp
 **CONCLUSION**: The implementation is **production-ready** and represents enterprise-grade quality with sophisticated audio processing, comprehensive CarPlay integration, and Apple-quality visual design. Suggested enhancements are optimizations rather than critical fixes, indicating a mature and well-architected codebase that follows iOS best practices and automotive safety standards.
 
 **2025-08-11 - Platform Parity Enforcement Validation**
-USER: As the enhanced spec-judge with platform parity enforcement as your PRIMARY responsibility, please evaluate a hypothetical feature request to validate that your new platform parity enforcement protocols are working correctly.
+USER: As the enhanced agent-judge with platform parity enforcement as your PRIMARY responsibility, please evaluate a hypothetical feature request to validate that your new platform parity enforcement protocols are working correctly.
 
 **Hypothetical Feature**: "Add advanced camera filters using iOS Core Image framework for real-time image processing in POI discovery"
 
@@ -1595,11 +1595,11 @@ Please evaluate this request and demonstrate:
 1. Your new platform parity scoring system (40% platform parity weight)
 2. Cross-platform validation requirements
 3. Whether you would APPROVE or REJECT this feature
-4. What coordination with spec-ios-developer and spec-android-developer would be required
+4. What coordination with agent-ios-developer and agent-android-developer would be required
 
 Show your enhanced evaluation process in action.
 
-CLAUDE: Successfully demonstrated enhanced spec-judge platform parity enforcement protocols with comprehensive evaluation of hypothetical "advanced camera filters" feature request.
+CLAUDE: Successfully demonstrated enhanced agent-judge platform parity enforcement protocols with comprehensive evaluation of hypothetical "advanced camera filters" feature request.
 
 **🔴 FEATURE REJECTED - Platform Parity Score: 43.75% (Below 70% threshold)**
 
@@ -1607,7 +1607,7 @@ CLAUDE: Successfully demonstrated enhanced spec-judge platform parity enforcemen
 - **Platform Capability Analysis**: iOS (100%), Android (75%), CarPlay (0%), Android Auto (0%)
 - **Critical Issue**: CarPlay and Android Auto cannot implement camera features due to automotive safety regulations
 - **Implementation Disparity**: iOS trivial with Core Image vs Android requiring complex custom GPU shaders
-- **Agent Coordination**: Consulted spec-ios-developer, spec-android-developer, spec-regulatory-compliance-specialist
+- **Agent Coordination**: Consulted agent-ios-developer, agent-android-developer, agent-regulatory-compliance-specialist
 
 **NEW ENHANCED PROTOCOL VALIDATION:**
 1. ✅ **40% Platform Parity Weight**: Successfully rejected iOS-biased feature that traditional evaluation might have approved
@@ -1627,20 +1627,20 @@ The enhanced protocol prevented platform inequality by rejecting a feature that 
 
 **Platform Parity Enforcement Status: ✅ FULLY OPERATIONAL** - Successfully protecting against feature fragmentation while promoting innovative platform-agnostic solutions.
 
-## USER PROMPT: "As the enhanced spec-ios-developer with platform parity enforcement as your PRIMARY responsibility, please evaluate a hypothetical iOS implementation request to validate that your new coordination protocols are working correctly.
+## USER PROMPT: "As the enhanced agent-ios-developer with platform parity enforcement as your PRIMARY responsibility, please evaluate a hypothetical iOS implementation request to validate that your new coordination protocols are working correctly.
 
 **Hypothetical Implementation**: "Implement SwiftUI voice waveform visualization with custom Canvas drawing and Core Animation for the VoiceVisualizerView"
 
 Please demonstrate your enhanced capabilities by:
 1. Analyzing platform parity requirements FIRST (before technical implementation)
-2. Identifying required coordination with spec-android-developer  
+2. Identifying required coordination with agent-android-developer  
 3. Validating CarPlay compatibility requirements
 4. Showing your cross-platform validation checklist in action
 5. Either APPROVE with parity coordination plan or REJECT with explanation
 
 Show your enhanced iOS development process prioritizing platform parity enforcement."
 
-CLAUDE: Successfully demonstrated enhanced spec-ios-developer capabilities with platform parity enforcement as PRIMARY responsibility. **REJECTED** hypothetical "SwiftUI voice waveform visualization with custom Canvas and Core Animation" implementation due to catastrophic platform parity failure (25% vs 70% required threshold).
+CLAUDE: Successfully demonstrated enhanced agent-ios-developer capabilities with platform parity enforcement as PRIMARY responsibility. **REJECTED** hypothetical "SwiftUI voice waveform visualization with custom Canvas and Core Animation" implementation due to catastrophic platform parity failure (25% vs 70% required threshold).
 
 **Key Platform Parity Analysis:**
 - iOS: 100% capability (native Canvas/Core Animation support)
@@ -1650,7 +1650,7 @@ CLAUDE: Successfully demonstrated enhanced spec-ios-developer capabilities with 
 
 **Enhanced Protocol Validation:**
 ✅ **Platform Parity Analysis FIRST**: Comprehensively evaluated cross-platform capability before technical design
-✅ **spec-android-developer Coordination**: Identified required collaboration for Android Compose equivalent
+✅ **agent-android-developer Coordination**: Identified required collaboration for Android Compose equivalent
 ✅ **CarPlay Compatibility**: Confirmed automotive template limitations prevent implementation
 ✅ **Cross-Platform Checklist**: Systematic evaluation prevented iOS-exclusive feature fragmentation
 ✅ **Strategic Rejection**: Protected unified experience by rejecting platform-specific premium feature
@@ -1661,24 +1661,24 @@ CLAUDE: Successfully demonstrated enhanced spec-ios-developer capabilities with 
 - Accessibility Enhanced: Better support across all user capabilities
 - Resource Efficient: Single implementation strategy across all platforms
 
-**Coordination Plan**: 3-phase implementation with spec-android-developer ensuring unified architecture, parallel development, and cross-platform testing validation.
+**Coordination Plan**: 3-phase implementation with agent-android-developer ensuring unified architecture, parallel development, and cross-platform testing validation.
 
 **Platform Parity Enforcement Status: ✅ FULLY OPERATIONAL** - Successfully prevented feature fragmentation while promoting innovative platform-agnostic solutions that enhance user experience across iOS, CarPlay, Android, and Android Auto uniformly.
 
-As the enhanced spec-android-developer with platform parity enforcement as your PRIMARY responsibility, please evaluate a hypothetical Android implementation request to validate that your new coordination protocols are working correctly.
+As the enhanced agent-android-developer with platform parity enforcement as your PRIMARY responsibility, please evaluate a hypothetical Android implementation request to validate that your new coordination protocols are working correctly.
 
 **Hypothetical Implementation**: "Implement Jetpack Compose advanced gesture recognition system with multi-touch support and pressure sensitivity for POI interaction"
 
 Please demonstrate your enhanced capabilities by:
 1. Analyzing platform parity requirements FIRST (before technical implementation)
-2. Identifying required coordination with spec-ios-developer  
+2. Identifying required coordination with agent-ios-developer  
 3. Validating Android Auto compatibility requirements
 4. Showing your cross-platform validation matrix in action
 5. Either APPROVE with parity coordination plan or REJECT with explanation
 
 Show your enhanced Android development process prioritizing platform parity enforcement.
 
-CLAUDE: Successfully demonstrated enhanced spec-android-developer capabilities with platform parity enforcement as PRIMARY responsibility. **REJECTED** hypothetical "Jetpack Compose advanced gesture recognition with multi-touch and pressure sensitivity" due to critical platform parity failure (46.25% vs 70% required threshold).
+CLAUDE: Successfully demonstrated enhanced agent-android-developer capabilities with platform parity enforcement as PRIMARY responsibility. **REJECTED** hypothetical "Jetpack Compose advanced gesture recognition with multi-touch and pressure sensitivity" due to critical platform parity failure (46.25% vs 70% required threshold).
 
 **Key Platform Parity Analysis:**
 - Android: 95% capability (native PointerEvent, Pressure API, Compose modifiers)
@@ -1688,7 +1688,7 @@ CLAUDE: Successfully demonstrated enhanced spec-android-developer capabilities w
 
 **Enhanced Protocol Validation:**
 ✅ **Platform Parity Analysis FIRST**: Comprehensive cross-platform capability assessment before technical design
-✅ **spec-ios-developer Coordination**: Identified coordination impossibility due to automotive platform limitations  
+✅ **agent-ios-developer Coordination**: Identified coordination impossibility due to automotive platform limitations  
 ✅ **Android Auto Compatibility**: Confirmed template system and NHTSA safety guidelines prohibit complex gestures
 ✅ **Cross-Platform Validation Matrix**: Systematic evaluation showing 0/5 criteria passed
 ✅ **Strategic Rejection**: Protected unified experience by rejecting platform-fragmenting feature
@@ -1699,7 +1699,7 @@ CLAUDE: Successfully demonstrated enhanced spec-android-developer capabilities w
 - Safety Compliant: NHTSA-approved interaction patterns across all platforms
 - Resource Efficient: Single voice-centric architecture works universally
 
-**Coordination Plan**: Voice-first implementation with spec-ios-developer ensuring unified voice command architecture, parallel haptic feedback development, and cross-platform audio confirmation system.
+**Coordination Plan**: Voice-first implementation with agent-ios-developer ensuring unified voice command architecture, parallel haptic feedback development, and cross-platform audio confirmation system.
 
 **USER REQUEST**: Please evaluate this Android Auto UI improvement request to ensure it achieves platform parity with iOS:
 
@@ -1732,7 +1732,7 @@ As the Android platform parity coordinator, please implement these critical fixe
 
 **COORDINATION REQUIREMENTS:**
 - Ensure Android Auto templates match CarPlay voice input patterns
-- Coordinate with spec-ios-developer to maintain visual consistency
+- Coordinate with agent-ios-developer to maintain visual consistency
 - Validate automotive safety compliance (NHTSA standards)
 
 **FILES TO UPDATE:**

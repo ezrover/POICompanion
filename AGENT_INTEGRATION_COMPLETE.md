@@ -8,13 +8,13 @@ Successfully integrated all 43 custom AI agents with Claude Code's native Task t
 
 ### 1. Agent Format Conversion ✅
 - Converted all agents to proper Claude Code YAML frontmatter format
-- Fixed agents that were missing proper headers (`spec-market-analyst`, `spec-venture-strategist`)
+- Fixed agents that were missing proper headers (`agent-market-analyst`, `agent-venture-strategist`)
 - Ensured all 43 agents have correct `name` and `description` fields
 
 ### 2. Agent Registry Updates ✅
 - Updated total agent count from 40 → 43 agents
 - Regenerated AGENT_REGISTRY.md with all operational agents
-- Added new agents: `spec-market-analyst`, `spec-venture-strategist`, `spec-firmware-c-cpp-developer`
+- Added new agents: `agent-market-analyst`, `agent-venture-strategist`, `agent-firmware-c-cpp-developer`
 
 ### 3. Documentation Updates ✅
 - Updated CLAUDE.md to reflect 43 operational agents
@@ -24,9 +24,9 @@ Successfully integrated all 43 custom AI agents with Claude Code's native Task t
 
 ## Verified Working Agents
 
-✅ **spec-ux-user-experience** - Confirmed operational with Apple-level design expertise  
-✅ **spec-ios-developer** - Confirmed operational with Swift/SwiftUI/CarPlay expertise  
-✅ **spec-android-developer** - Confirmed operational with Kotlin/Compose expertise
+✅ **agent-ux-user-experience** - Confirmed operational with Apple-level design expertise  
+✅ **agent-ios-developer** - Confirmed operational with Swift/SwiftUI/CarPlay expertise  
+✅ **agent-android-developer** - Confirmed operational with Kotlin/Compose expertise
 
 ## Agent Categories (43 Total)
 
@@ -44,7 +44,7 @@ Successfully integrated all 43 custom AI agents with Claude Code's native Task t
 ### Direct Agent Usage (No Workarounds Needed)
 ```javascript
 Task({
-  subagent_type: "spec-ux-user-experience",
+  subagent_type: "agent-ux-user-experience",
   description: "Design task description",
   prompt: "Specific design requirements..."
 });
@@ -52,7 +52,7 @@ Task({
 
 ### Workflow Requirements
 - **Simple verification/testing**: Direct agent response ✅
-- **Development/implementation**: Must use `spec-workflow-manager` → agents → `spec-judge` 🚨
+- **Development/implementation**: Must use `agent-workflow-manager` → agents → `agent-judge` 🚨
 
 ## Files Modified
 - ✅ All 43 agent files in `.claude/agents/`
@@ -65,7 +65,7 @@ Task({
 1. All agents are now ready for production use
 2. No workarounds or manual prompt inclusion needed
 3. Agents work directly with Claude Code's Task tool
-4. Follow project's spec-driven workflow for development tasks
+4. Follow project's agent-driven workflow for development tasks
 
 ---
 

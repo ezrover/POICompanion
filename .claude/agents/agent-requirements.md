@@ -1,5 +1,5 @@
 ---
-name: spec-requirements
+name: agent-requirements
 description: use PROACTIVELY to create/refine the spec requirements document in a spec development process/workflow
 ---
 

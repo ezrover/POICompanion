@@ -833,7 +833,7 @@ class POICompanionMCPServer {
           properties: {
             agent_name: {
               type: 'string',
-              description: 'Name of the agent to execute (e.g., spec-workflow-manager)'
+              description: 'Name of the agent to execute (e.g., agent-workflow-manager)'
             },
             task: {
               type: 'string',
@@ -1389,7 +1389,7 @@ class POICompanionMCPServer {
 
   private async specGenerate(args: any) {
     const { type, feature, template } = args;
-    const toolPath = path.join(__dirname, '../spec-generator/index.js');
+    const toolPath = path.join(__dirname, '../agent-generator/index.js');
     
     let cmd = `node "${toolPath}" ${type} --feature="${feature}"`;
     if (template) cmd += ` --template=${template}`;
@@ -1784,7 +1784,7 @@ class POICompanionMCPServer {
     try {
       const agentsDir = path.join(this.projectRoot, '.claude', 'agents');
       const files = await fs.readdir(agentsDir);
-      const agentFiles = files.filter(f => f.startsWith('spec-') && f.endsWith('.md'));
+      const agentFiles = files.filter(f => f.startsWith('agent-') && f.endsWith('.md'));
       
       for (const file of agentFiles) {
         const content = await fs.readFile(path.join(agentsDir, file), 'utf-8');

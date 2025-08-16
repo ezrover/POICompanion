@@ -312,17 +312,17 @@ Before ANY voice or button implementation is considered complete, ALL platforms 
 **🚨 CRITICAL MANDATE**: The following agents MUST validate platform parity:
 
 #### Required Agent Orchestration:
-- **spec-ux-user-experience**: MUST review all voice interaction and button changes
-- **spec-ios-developer**: MUST implement iOS voice and button requirements
-- **spec-android-developer**: MUST implement Android voice and button requirements
-- **spec-judge**: MUST validate complete platform parity before completion
+- **agent-ux-user-experience**: MUST review all voice interaction and button changes
+- **agent-ios-developer**: MUST implement iOS voice and button requirements
+- **agent-android-developer**: MUST implement Android voice and button requirements
+- **agent-judge**: MUST validate complete platform parity before completion
 
 #### Agent Validation Criteria:
-- [ ] spec-judge confirms voice auto-start behavior across all platforms
-- [ ] spec-judge validates mic button mute/unmute functionality
-- [ ] spec-judge verifies borderless button design compliance
-- [ ] spec-judge ensures CarPlay/Android Auto compatibility
-- [ ] spec-judge validates timing consistency across platforms
+- [ ] agent-judge confirms voice auto-start behavior across all platforms
+- [ ] agent-judge validates mic button mute/unmute functionality
+- [ ] agent-judge verifies borderless button design compliance
+- [ ] agent-judge ensures CarPlay/Android Auto compatibility
+- [ ] agent-judge validates timing consistency across platforms
 
 ---
 
@@ -344,7 +344,7 @@ Before ANY voice or button implementation is considered complete, ALL platforms 
 
 #### Level 2 Violations (Complete Re-implementation Required):
 - Bypassing AI agent orchestration for voice/button changes
-- Skipping spec-judge platform parity validation
+- Skipping agent-judge platform parity validation
 - Implementing features without 4-platform consideration
 
 #### Level 3 Violations (Session Termination):
@@ -407,7 +407,7 @@ fi
 2. **Mic Button Gate**: Mute/unmute toggle works without session interruption
 3. **Button Design Gate**: Borderless design applied consistently
 4. **Platform Parity Gate**: Identical behavior across iOS/Android/CarPlay/Auto
-5. **Agent Validation Gate**: spec-judge confirms complete compliance
+5. **Agent Validation Gate**: agent-judge confirms complete compliance
 
 ---
 
@@ -417,7 +417,7 @@ fi
 
 Any changes to these requirements must:
 - Maintain 100% platform parity
-- Be validated by spec-judge
+- Be validated by agent-judge
 - Include migration guide for existing implementations
 - Update all affected documentation
 

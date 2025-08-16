@@ -136,6 +136,19 @@ class AppStateManager: ObservableObject {
         print("Returned to destination selection screen")
     }
     
+    func enterDiscoveryMode() {
+        // Transition to main dashboard in discovery mode
+        currentScreen = .mainDashboard
+        print("Entered discovery mode")
+    }
+    
+    func setDestination(_ destinationName: String) {
+        // Create a basic destination for POI exploration
+        // In a full implementation, this would geocode the destination
+        print("Destination set to: \(destinationName)")
+        currentScreen = .mainDashboard
+    }
+    
     func onLoadingComplete() {
         // Called when LLM models are fully loaded in SplashScreenView
         currentScreen = .destinationSelection

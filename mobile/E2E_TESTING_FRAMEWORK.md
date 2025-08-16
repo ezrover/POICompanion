@@ -26,7 +26,7 @@ mobile/
 
 ## 🚨 MANDATORY AGENT WORKFLOW INTEGRATION
 
-### **For spec-ios-developer:**
+### **For agent-ios-developer:**
 ```bash
 # MANDATORY after ANY iOS feature implementation:
 cd /mobile/ios/e2e-ui-tests
@@ -36,7 +36,7 @@ cd /mobile/ios/e2e-ui-tests
 ./Scripts/run-critical-path.sh
 ```
 
-### **For spec-android-developer:**
+### **For agent-android-developer:**
 ```bash
 # MANDATORY after ANY Android feature implementation:
 cd /mobile/android/e2e-ui-tests
@@ -46,13 +46,13 @@ cd /mobile/android/e2e-ui-tests
 ./scripts/run-critical-path.sh
 ```
 
-### **For spec-test:**
+### **For agent-test:**
 - Create/update E2E test cases for every feature
 - Validate platform parity between iOS and Android tests
 - Ensure accessibility compliance testing
 - Generate comprehensive test documentation
 
-### **For spec-judge:**
+### **For agent-judge:**
 - REJECT any feature without E2E test execution proof
 - DEMAND platform parity validation evidence
 - ENFORCE 40% E2E testing weight in quality scoring
@@ -130,10 +130,10 @@ cd /mobile/android/e2e-ui-tests
 - ❌ Performance benchmarks not met
 
 ### Agent Compliance Requirements:
-- **spec-ios-developer**: Must run full iOS E2E test suite after every feature
-- **spec-android-developer**: Must run full Android E2E test suite + verify iOS parity
-- **spec-test**: Must create comprehensive E2E test documentation and validation
-- **spec-judge**: Must verify E2E test execution before ANY feature approval
+- **agent-ios-developer**: Must run full iOS E2E test suite after every feature
+- **agent-android-developer**: Must run full Android E2E test suite + verify iOS parity
+- **agent-test**: Must create comprehensive E2E test documentation and validation
+- **agent-judge**: Must verify E2E test execution before ANY feature approval
 
 ## 📊 Test Execution and Reporting
 

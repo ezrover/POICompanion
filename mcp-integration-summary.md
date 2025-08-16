@@ -1,8 +1,8 @@
 ## MCP Tool Integration Summary
 
 Total agents updated: 43
-- spec-* agents: 41
-- Special agents: 2 (general-purpose-agent, _spec-judge-prompt)
+- agent-* agents: 41
+- Special agents: 2 (general-purpose-agent, _agent-judge-prompt)
 
 Categories updated:
 1. Mobile Development (6 agents)

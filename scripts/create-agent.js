@@ -29,9 +29,9 @@ async function createAgent() {
   console.log('This wizard helps create new specialized agents when the current 40 are inadequate.\n');
   
   // Gather agent information
-  const name = await question('Agent name (format: spec-domain-specialization): ');
-  if (!name.startsWith('spec-')) {
-    console.error('❌ Agent name must start with "spec-"');
+  const name = await question('Agent name (format: agent-domain-specialization): ');
+  if (!name.startsWith('agent-')) {
+    console.error('❌ Agent name must start with "agent-"');
     process.exit(1);
   }
   

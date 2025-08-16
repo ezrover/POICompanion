@@ -6367,7 +6367,7 @@ export const mockHFModelFiles2: ModelFile[] = [
 ];
 
 export const mockGGUFSpecs1: GGUFSpecs = {
-  _id: 'spec-1',
+  _id: 'agent-1',
   id: 'owner/hf-model-name-1',
   gguf: {
     total: 7000000000, // 7B parameters
@@ -6382,7 +6382,7 @@ export const mockGGUFSpecs1: GGUFSpecs = {
 
 export const mockGGUFSpecs2: GGUFSpecs = {
   ...mockGGUFSpecs1,
-  _id: 'spec-2',
+  _id: 'agent-2',
   id: 'owner/hf-model-name-2',
   gguf: {
     ...mockGGUFSpecs1.gguf,

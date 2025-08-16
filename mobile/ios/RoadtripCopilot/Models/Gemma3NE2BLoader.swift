@@ -47,23 +47,17 @@ class Gemma3NE2BLoader {
     }
     
     private func initializeModel() async {
-        do {
-            logger.info("📥 Preparing to load Gemma-3N model")
-            
-            // For now, we'll use Core ML until MediaPipe is properly configured
-            // In production, this would load the actual Gemma model
-            await loadCoreMLModel()
-            
-            isInitialized = true
-            logger.info("✅ Gemma-3N E2B model loaded successfully!")
-            
-            // Test the model
-            await testModel()
-            
-        } catch {
-            logger.error("❌ Failed to initialize model: \(error.localizedDescription)")
-            // Don't throw - allow fallback to work
-        }
+        logger.info("📥 Preparing to load Gemma-3N model")
+        
+        // For now, we'll use Core ML until MediaPipe is properly configured
+        // In production, this would load the actual Gemma model
+        await loadCoreMLModel()
+        
+        isInitialized = true
+        logger.info("✅ Gemma-3N E2B model loaded successfully!")
+        
+        // Test the model
+        await testModel()
     }
     
     private func loadCoreMLModel() async {

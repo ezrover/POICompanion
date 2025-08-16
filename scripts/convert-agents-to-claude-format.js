@@ -51,7 +51,7 @@ async function main() {
   console.log('🔄 Converting agents to Claude Code format...\n');
   
   const files = fs.readdirSync(AGENTS_DIR);
-  const agentFiles = files.filter(f => f.startsWith('spec-') && f.endsWith('.md'));
+  const agentFiles = files.filter(f => f.startsWith('agent-') && f.endsWith('.md'));
   
   let converted = 0;
   
@@ -73,7 +73,7 @@ async function main() {
   console.log(`\n📋 Next steps:`);
   console.log(`1. Claude Code should now recognize all ${agentFiles.length} agents`);
   console.log(`2. Use Task tool with specific agent names directly`);
-  console.log(`3. Test with: Task(subagent_type: "spec-ux-user-experience", ...)`);
+  console.log(`3. Test with: Task(subagent_type: "agent-ux-user-experience", ...)`);
 }
 
 main().catch(console.error);

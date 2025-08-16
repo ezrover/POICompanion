@@ -3,7 +3,7 @@
 **Feature Name**: platform-parity-voice-buttons  
 **Version**: 1.0  
 **Date**: 2025-08-13  
-**Author**: spec-tasks (AI Agent)  
+**Author**: agent-tasks (AI Agent)  
 **Language Preference**: Clear, concise technical implementation tasks with precise specifications
 
 ## Implementation Overview

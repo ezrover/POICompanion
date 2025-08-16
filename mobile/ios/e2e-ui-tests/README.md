@@ -72,7 +72,7 @@ xcodebuild test -project ../RoadtripCopilot.xcodeproj -scheme RoadtripCopilot -d
 
 ## Agent Integration Instructions
 
-### For spec-ios-developer:
+### For agent-ios-developer:
 **MANDATORY**: After implementing ANY feature, you MUST:
 1. Create/update E2E tests in this directory
 2. Run the complete test suite
@@ -80,7 +80,7 @@ xcodebuild test -project ../RoadtripCopilot.xcodeproj -scheme RoadtripCopilot -d
 4. Update accessibility identifiers as needed
 5. Generate test report and include in your completion summary
 
-### For spec-test and spec-judge:
+### For agent-test and agent-judge:
 **MANDATORY**: Before approving ANY iOS feature:
 1. Review E2E test coverage
 2. Execute full test suite

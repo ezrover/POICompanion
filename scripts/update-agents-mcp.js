@@ -18,7 +18,7 @@ const AGENTS_DIR = path.join(__dirname, '../.claude/agents');
 
 // MCP tool mappings for different agent types
 const MCP_SECTIONS = {
-  'spec-workflow-manager': `
+  'agent-workflow-manager': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -27,20 +27,20 @@ const MCP_SECTIONS = {
 | Operation | MCP Tool | Usage |
 |-----------|----------|-------|
 | Task Management | \`task-manager\` | \`node /mcp/task-manager/index.js\` |
-| Spec Generation | \`spec-generator\` | \`node /mcp/spec-generator/index.js\` |
+| Spec Generation | \`agent-generator\` | \`node /mcp/agent-generator/index.js\` |
 | Documentation | \`doc-processor\` | \`node /mcp/doc-processor/index.js\` |
 | Project Setup | \`project-scaffolder\` | \`node /mcp/project-scaffolder/index.js\` |
 | Agent Registry | \`agent-registry-manager\` | \`node /mcp/agent-registry-manager/index.js\` |
 
 ### **Workflow Automation:**
 \`\`\`bash
-# Initialize spec-driven workflow
-node /mcp/spec-generator/index.js init --feature={name}
-node /mcp/task-manager/index.js create --spec={spec-file}
+# Initialize agent-driven workflow
+node /mcp/agent-generator/index.js init --feature={name}
+node /mcp/task-manager/index.js create --spec={agent-file}
 node /mcp/doc-processor/index.js generate --type=requirements
 \`\`\``,
 
-  'spec-ux-user-experience': `
+  'agent-ux-user-experience': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -62,7 +62,7 @@ node /mcp/design-system-manager/index.js validate
 node /mcp/accessibility-checker/index.js audit --wcag-aa
 \`\`\``,
 
-  'spec-performance-guru': `
+  'agent-performance-guru': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -83,7 +83,7 @@ node /mcp/model-optimizer/index.js optimize --target=mobile
 node /mcp/build-master/index.js optimize --release
 \`\`\``,
 
-  'spec-system-architect': `
+  'agent-system-architect': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -105,19 +105,19 @@ node /mcp/dependency-manager/index.js install --scope=all
 node /mcp/schema-validator/index.js validate --strict
 \`\`\``,
 
-  'spec-test': `
+  'agent-test': `
 
 ## 🚨 MCP TOOL INTEGRATION (ALREADY COMPREHENSIVE)
 
 This agent already has excellent MCP tool integration. No updates needed.`,
 
-  'spec-impl': `
+  'agent-impl': `
 
 ## 🚨 MCP TOOL INTEGRATION (ALREADY COMPREHENSIVE)
 
 This agent already has excellent MCP tool integration. No updates needed.`,
 
-  'spec-judge': `
+  'agent-judge': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -139,7 +139,7 @@ node /mcp/mobile-test-runner/index.js all --coverage
 node /mcp/accessibility-checker/index.js validate --strict
 \`\`\``,
 
-  'spec-accessibility-champion': `
+  'agent-accessibility-champion': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -160,7 +160,7 @@ node /mcp/mobile-test-runner/index.js a11y --voiceover
 node /mcp/design-system-manager/index.js validate-a11y
 \`\`\``,
 
-  'spec-data-scientist': `
+  'agent-data-scientist': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -181,7 +181,7 @@ node /mcp/performance-profiler/index.js benchmark --model={name}
 node /mcp/schema-validator/index.js validate --data-schema
 \`\`\``,
 
-  'spec-cloud-architect': `
+  'agent-cloud-architect': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -202,7 +202,7 @@ node /mcp/performance-profiler/index.js monitor --cloud
 node /mcp/dependency-manager/index.js update --security
 \`\`\``,
 
-  'spec-database-architect-developer': `
+  'agent-database-architect-developer': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -223,7 +223,7 @@ node /mcp/code-generator/index.js migration --auto
 node /mcp/performance-profiler/index.js query --optimize
 \`\`\``,
 
-  'spec-web-frontend-developer': `
+  'agent-web-frontend-developer': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -246,7 +246,7 @@ node /mcp/build-master/index.js optimize --web
 node /mcp/accessibility-checker/index.js audit --web
 \`\`\``,
 
-  'spec-flutter-developer': `
+  'agent-flutter-developer': `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
 
@@ -306,15 +306,15 @@ async function updateAgent(filepath, agentName) {
   let mcpSection = MCP_SECTIONS[agentName] || MCP_SECTIONS['default'];
   
   // Special handling for certain agents
-  if (agentName.includes('spec-ai-') || agentName.includes('model')) {
-    mcpSection = MCP_SECTIONS['spec-data-scientist'] || MCP_SECTIONS['default'];
-  } else if (agentName.includes('spec-chrome-extension')) {
-    mcpSection = MCP_SECTIONS['spec-web-frontend-developer'] || MCP_SECTIONS['default'];
-  } else if (agentName.includes('spec-firmware')) {
+  if (agentName.includes('agent-ai-') || agentName.includes('model')) {
+    mcpSection = MCP_SECTIONS['agent-data-scientist'] || MCP_SECTIONS['default'];
+  } else if (agentName.includes('agent-chrome-extension')) {
+    mcpSection = MCP_SECTIONS['agent-web-frontend-developer'] || MCP_SECTIONS['default'];
+  } else if (agentName.includes('agent-firmware')) {
     mcpSection = MCP_SECTIONS['default'];
-  } else if (agentName.includes('spec-legal') || agentName.includes('spec-regulatory')) {
+  } else if (agentName.includes('agent-legal') || agentName.includes('agent-regulatory')) {
     mcpSection = MCP_SECTIONS['default'];
-  } else if (agentName.includes('spec-market') || agentName.includes('spec-analyst')) {
+  } else if (agentName.includes('agent-market') || agentName.includes('agent-analyst')) {
     mcpSection = `
 
 ## 🚨 MCP TOOL INTEGRATION (MANDATORY)
@@ -326,14 +326,14 @@ async function updateAgent(filepath, agentName) {
 | Market Analysis | \`market-analyzer\` | \`node /mcp/market-analyzer/index.js\` |
 | Documentation | \`doc-processor\` | \`node /mcp/doc-processor/index.js\` |
 | Task Management | \`task-manager\` | \`node /mcp/task-manager/index.js\` |
-| Spec Generation | \`spec-generator\` | \`node /mcp/spec-generator/index.js\` |
+| Spec Generation | \`agent-generator\` | \`node /mcp/agent-generator/index.js\` |
 
 ### **Analysis Workflow:**
 \`\`\`bash
 # Market and competitive analysis
 node /mcp/market-analyzer/index.js research --competitor={name}
 node /mcp/doc-processor/index.js analyze --market-data
-node /mcp/spec-generator/index.js requirements --from-analysis
+node /mcp/agent-generator/index.js requirements --from-analysis
 \`\`\``;
   }
   
@@ -348,7 +348,7 @@ async function main() {
   console.log('🔍 Updating all agents with MCP tool integration...\n');
   
   const files = fs.readdirSync(AGENTS_DIR);
-  const agentFiles = files.filter(f => f.startsWith('spec-') && f.endsWith('.md'));
+  const agentFiles = files.filter(f => f.startsWith('agent-') && f.endsWith('.md'));
   
   let updatedCount = 0;
   let skippedCount = 0;

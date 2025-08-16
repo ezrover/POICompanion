@@ -76,7 +76,7 @@ cd /path/to/android/e2e-ui-tests
 
 ## Agent Integration Instructions
 
-### For spec-android-developer:
+### For agent-android-developer:
 **MANDATORY**: After implementing ANY feature, you MUST:
 1. Create/update E2E tests in this directory
 2. Run the complete test suite on multiple devices/API levels
@@ -85,7 +85,7 @@ cd /path/to/android/e2e-ui-tests
 5. Generate test report and include in your completion summary
 6. Verify platform parity with iOS equivalent functionality
 
-### For spec-test and spec-judge:
+### For agent-test and agent-judge:
 **MANDATORY**: Before approving ANY Android feature:
 1. Review E2E test coverage and platform parity
 2. Execute full test suite on representative devices

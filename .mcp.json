@@ -1,0 +1,524 @@
+{
+  "numStartups": 27,
+  "installMethod": "local",
+  "autoUpdates": true,
+  "hasSeenTasksHint": true,
+  "tipsHistory": {
+    "ide-hotkey": 22,
+    "new-user-warmup": 3,
+    "memory-command": 19,
+    "shift-enter": 25,
+    "theme-command": 26,
+    "enter-to-steer-in-relatime": 27,
+    "todo-list": 8,
+    "# for memory": 19,
+    "install-github-app": 20,
+    "drag-and-drop-images": 22,
+    "permissions": 23,
+    "status-line": 13,
+    "paste-images-mac": 23,
+    "double-esc": 23,
+    "continue": 23,
+    "custom-commands": 14,
+    "shift-tab": 24,
+    "custom-agents": 14
+  },
+  "promptQueueUseCount": 12,
+  "userID": "8519be008cb881fec628f5cbed834a2afc712581d65de6ed9d05a99b60488cd6",
+  "fallbackAvailableWarningThreshold": 0.5,
+  "firstStartTime": "2025-07-29T21:31:34.124Z",
+  "projects": {
+    "/Users/naderrahimizad/Projects/AI/POICompanion": {
+      "allowedTools": [],
+      "history": [
+        {
+          "display": "/agents ",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit",
+          "pastedContents": {}
+        },
+        {
+          "display": "fix this as it didnt find any poi's! [Pasted text #1 +30 lines]",
+          "pastedContents": {
+            "1": {
+              "id": 1,
+              "type": "text",
+              "content": "🔧 Detected function call: search_poi\n📊 Tool result: Searching for attraction POIs near Lost Lake...\n\nReal-time POI discovery is running using our hybrid LLM + Google Places API system.\nResults will appear automatically as they are discovered.\n\nDiscovery features:\n• Local LLM knowledge + Google Places API\n• Dual search for comprehensive coverage\n• Real ratings and reviews\n• Hidden gems and popular attractions\n\nPOIs will be displayed in the main interface momentarily.\n✨ Final response with tool results: I found some interesting places for you! Searching for attraction POIs near Lost Lake...\n\nReal-time POI discovery is running using our hybrid LLM + Google Places API system.\nResults will appear automatically as they are discovered.\n\nDiscovery features:\n• Local LLM knowledge + Google Places API\n• Dual search for comprehensive coverage\n• Real ratings and reviews\n• Hidden gems and popular attractions\n\nPOIs will be displayed in the main interface momentarily. Would you like more details about any of these locations?\n[2025-08-15T02:14:14.576Z] [AI] ℹ️ Gemma response received, showing POI result\n⚠️ Failed to initialize Kitten TTS for podcast generation: modelNotFound\n⚠️ Kitten TTS initialization failed: modelNotFound\n🔄 Falling back to system TTS\n✅ Automotive audio session configured successfully\n📊 TTS Performance monitoring started"
+            }
+          }
+        },
+        {
+          "display": "/exit",
+          "pastedContents": {}
+        },
+        {
+          "display": "also as user is typing, there is not need to search until the go command/button: [2025-08-15T01:54:15.254Z] [Search] 🚀 START: Search for 'Lost lake, orego'\nLocationManager: Search in progress = true\n[DestinationView] Search already in progress, ignoring new request\nSearch in progress - skipping reverse geocoding to avoid network conflicts\nLocationManager: Search in progress = false\n[2025-08-15T01:54:15.583Z] [Search] ✅ SEARCH COMPLETE: 'Lost lake, orego' - 328ms - 1 results\n[DestinationView] Search results available, waiting for user selection\n",
+          "pastedContents": {}
+        },
+        {
+          "display": "when the app starts, there is no need to do a location search until you click/tap the 'Go' button or say the command! here is the log ✅ Started location updates successfully\n📍 Location authorization changed to: When In Use\n✅ Location permission granted - starting updates\n✅ Started location updates successfully\n📍 Received location update: 37.33259552, -122.03031802\nStarting reverse geocoding for location: 37.33259552, -122.03031802\n📍 Received location update: 37.33233141, -122.0312186\nReverse geocoding already in progress, skipping\n🚗 Speed update: 0.0 mph, 0.0 km/h, Moving: false\n🚗 Speed update: 0.0 mph, 0.0 km/h, Moving: false\nLoading complete - transitioning to destination selection\nReverse geocoding successful: Cupertino, CA",
+          "pastedContents": {}
+        },
+        {
+          "display": "i think you can reduce the height of the gray area by 10pts and we should be perfect",
+          "pastedContents": {}
+        },
+        {
+          "display": "perfect but now the grey have has shifted up. it should be edge to edge, and the bottom should be aligned with the bottom of the screen with no padding to offset it",
+          "pastedContents": {}
+        },
+        {
+          "display": "if the new files are not used, delete them or use them and refactor the code. dont leave crap behind! always use our agent workflow",
+          "pastedContents": {}
+        },
+        {
+          "display": "also, troubleshoot why you are not using the ai agents to do this!",
+          "pastedContents": {}
+        },
+        {
+          "display": "maybe do the search with both online api llm and the local llm tool and show both",
+          "pastedContents": {}
+        },
+        {
+          "display": "hmm, still bogus data! can you look and think harder to rootcause the issue? 📊 Tool result: Found POIs near Lost Lake:\n1. Historic Downtown (attraction) - 4.5★ - 0.5 miles\n2. Local Museum (attraction) - 4.7★ - 1.2 miles\n3. Scenic Overlook (attraction) - 4.8★ - 2.3 miles\n4. Hidden Gem Cafe (attraction) - 4.6★ - 0.8 miles\n5. Artisan Market (attraction) - 4.4★ - 1.5 miles\n✨ Final response with tool results: I found some interesting places for you! Found POIs near Lost Lake:\n1. Historic Downtown (attraction) - 4.5★ - 0.5 miles\n2. Local Museum (attraction) - 4.7★ - 1.2 miles\n3. Scenic Overlook (attraction) - 4.8★ - 2.3 miles\n4. Hidden Gem Cafe (attraction) - 4.6★ - 0.8 miles\n5. Artisan Market (attraction) - 4.4★ - 1.5 miles Would you like more details about any of these locations?",
+          "pastedContents": {}
+        },
+        {
+          "display": "strange as it is still over the gray area so the top padding is not working. are the components embedded within the gray area and is 26pt top padding to the top of gray area? ",
+          "pastedContents": {}
+        },
+        {
+          "display": "you still need another 10pts top padding",
+          "pastedContents": {}
+        },
+        {
+          "display": "i mean the vertically center it within the gray area, not the entire screen height!, if that is too difficult, you can just place the input and buttons within the gray area with the standar top padding",
+          "pastedContents": {}
+        },
+        {
+          "display": "adjust the height to 80pt and vertically center the search destination input and the 2 buttons ",
+          "pastedContents": {}
+        },
+        {
+          "display": "i think you can try 90pt",
+          "pastedContents": {}
+        },
+        {
+          "display": "you can shrink the height of the gray icon by 25% and move it all down a little including the input and the buttons",
+          "pastedContents": {}
+        },
+        {
+          "display": "fix it, make it real as LLM is fully integrated and also has failover online api backup",
+          "pastedContents": {}
+        },
+        {
+          "display": "tool results seem to be bogus as there are no such places near lost lake, oregon! are you using mocked data or was it real and using internet search tool and poi discovery tool? 🔮 Starting prediction for: 'tell me about this place: Lost Lake'\n🔧 Detected function call: search_poi\n📊 Tool result: Found POIs near Lost Lake:\n1. Historic Downtown (attraction) - 4.5★ - 0.5 miles\n2. Local Museum (attraction) - 4.7★ - 1.2 miles\n3. Scenic Overlook (attraction) - 4.8★ - 2.3 miles\n4. Hidden Gem Cafe (attraction) - 4.6★ - 0.8 miles\n5. Artisan Market (attraction) - 4.4★ - 1.5 miles",
+          "pastedContents": {}
+        },
+        {
+          "display": "you forgot to revert the margins you had added to search destination input and the buttons while you were debugging, now all of is in middle of the screen above the gray background! fix it and revert back to aligning in the center of the gray box area in bottom of the screen",
+          "pastedContents": {}
+        },
+        {
+          "display": "✅ [MODEL TEST] Response: 'I'm Gemma-3N, your AI travel companion! I help discover amazing places and hidden gems along your journey. With my tool-use capabilities, I can search for points of interest, provide detailed information, and even search the internet for current events.'\n🎉 [MODEL TEST] Gemma-3N is working correctly!\n🎉 [MODEL TEST] Gemma-3N is working correctly!\n🧪 [ModelManager] Testing Gemma-3N with verification prompt...\n🔮 Starting prediction for: 'who are you?'\n✅ [ModelManager] Model test response: 'I'm Gemma-3N, your AI travel companion! I help discover amazing places and hidden gems along your journey. With my tool-use capabilities, I can search for points of interest, provide detailed information, and even search the internet for current events.'\n🔮 Starting prediction for: 'tell me about this place: Lost Lake'\nSwift/StringIndexValidation.swift:254: Fatal error: String index is out of bounds in Gemma3NE2BLoader.swift line 366",
+          "pastedContents": {}
+        },
+        {
+          "display": "fix the crash",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit ",
+          "pastedContents": {}
+        },
+        {
+          "display": "refactor and update agent-workflow-starter.md to leverage our latest ai agent workforce",
+          "pastedContents": {}
+        },
+        {
+          "display": "use your ios agent to fix the broken build and simulator too to test it and look for crashes or errors while i test the UI manually",
+          "pastedContents": {}
+        },
+        {
+          "display": "looks like some of the agents are duplicated in .claude/agents/kfc/* and .claude/agent/* please merge them into their counterparts in .claude/agent/* and change references to /agents/kfc/ to /agents/ ",
+          "pastedContents": {}
+        },
+        {
+          "display": "also create a claude api fallback using gemini with the key: AIzaSyCE-l9KGCpE6pR-q7csHCkzmS7ugcu_9DU for more complex tasks of distilling social media comments and recommendations",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit ",
+          "pastedContents": {}
+        },
+        {
+          "display": "do a global search to find /mcp/ references to replace with the proper tool calling/name format",
+          "pastedContents": {}
+        },
+        {
+          "display": "did you do all these? Next Steps for Real Implementation:\n\n  To make the LLM actually work (not mocked), you would need to:\n  1. Install TensorFlow properly for TFLite conversion\n  2. Use proper Core ML conversion tools\n  3. Or download pre-converted mobile models",
+          "pastedContents": {}
+        },
+        {
+          "display": "use this agent-python-developer.md as our defacto standard for how our agents should be structured. Rename all of our agents in .claude/agents/agent-*.md to .claude/agents/agent-*.md , then refactor each of them to use the same structure and how it refers to MCP Server tools instead of direct access reference such as /mcp/dist/* to make each agent in more effective by following this Claude recommended agent file structure",
+          "pastedContents": {}
+        },
+        {
+          "display": "rename mcp-python-developer to agent-python-developer",
+          "pastedContents": {}
+        },
+        {
+          "display": "do these Next Steps for Real Implementation:\n\n  To make the LLM actually work (not mocked), you would need to:\n  1. Install TensorFlow properly for TFLite conversion\n  2. Use proper Core ML conversion tools\n  3. Or download pre-converted mobile models",
+          "pastedContents": {}
+        },
+        {
+          "display": "add this mcp-python-developer.md agent in .claude/agents/ and update the AGENT_REGISTRY.md to register with Claude tasks as a sub-agent. Here is the content: [Pasted text #1 +64 lines]",
+          "pastedContents": {
+            "1": {
+              "id": 1,
+              "type": "text",
+              "content": "# Python Development Agent\n\n## Overview\nThis agent specializes in Python development tasks with enhanced capabilities through MCP tools.\n\n## Required MCP Tools\n\n### filesystem\n- **Purpose**: Navigate, read, and modify files in the project\n- **Usage**: Use this tool for all file operations including:\n  - Reading source code files before making changes\n  - Creating new Python modules and packages\n  - Updating existing code with improvements\n  - Exploring project structure with `list_directory` and `directory_tree`\n\n### repl\n- **Purpose**: Execute Python code for testing and validation\n- **Usage**: Always use the REPL to:\n  - Test code snippets before suggesting them\n  - Validate implementations work correctly\n  - Debug issues by running minimal reproductions\n  - Perform calculations or data analysis\n\n## Agent Instructions\n\nWhen working on Python development tasks:\n\n1. **Always start by exploring the project structure**:\n   - Use `filesystem:list_allowed_directories` to understand accessible paths\n   - Use `filesystem:directory_tree` to get a complete view of the project\n   - Read relevant files with `filesystem:read_file` before making changes\n\n2. **Before implementing solutions**:\n   - Use `repl` to test your approach with sample code\n   - Validate any algorithms or logic in isolation\n   - Check for edge cases and potential errors\n\n3. **When modifying code**:\n   - Use `filesystem:edit_file` for precise line-based edits\n   - Always read the file first to understand context\n   - Test changes with `repl` after implementation\n   - Create backups of critical files if needed\n\n4. **For debugging**:\n   - Use `repl` to reproduce issues\n   - Read error logs and stack traces carefully\n   - Test fixes incrementally\n\n## Example Workflow\n\n```python\n# 1. First, explore the project\n# Use filesystem:directory_tree to understand structure\n\n# 2. Read the target file\n# Use filesystem:read_file on the specific module\n\n# 3. Test your solution\n# Use repl to validate the approach\n\n# 4. Implement changes\n# Use filesystem:edit_file for precise modifications\n\n# 5. Verify the fix\n# Use repl to run tests and ensure correctness"
+            }
+          }
+        },
+        {
+          "display": "why can't agent-orchestrator/ be unified into the mcp server so it is consistent with all other mcp tools?",
+          "pastedContents": {}
+        },
+        {
+          "display": "can you download TinyLlama and replace Gemma for now? later we can change it again",
+          "pastedContents": {}
+        },
+        {
+          "display": "how about /mcp/e2e-ui-test-runner and /mcp/ios-simulator-ui ?",
+          "pastedContents": {}
+        },
+        {
+          "display": "fix   Tools Not Yet Integrated (marked with [NOT IN UNIFIED MCP YET]): and integrate all of them and delete the deprecated folders and find and replace all references to update",
+          "pastedContents": {}
+        },
+        {
+          "display": "run and fix /models/install-tools.sh to install your needed dependencies",
+          "pastedContents": {}
+        },
+        {
+          "display": "AGENT_REGISTRY.py also refers to old deprecate individual /mcp/ tools instead of the new MCP server. please look at all agent-*.md files as well to fix all deprecated references to use the single MCP server",
+          "pastedContents": {}
+        },
+        {
+          "display": "agent-android-developer.md is still referring to the old deprecate individual mcp tool files /mcp/android-emulator-manager/index.js so is agent-ux-user-experience.md ! search and fix all these to use the new mcp server as a built in claude code mcp tool discovery command instead",
+          "pastedContents": {}
+        },
+        {
+          "display": "wait we consolidate all of them into a single mcp server but i still see you accessing them individually through index.js! can you update settings.local.json to use the mcp server so you can use Claude code's native mcp command to discover the tool?",
+          "pastedContents": {}
+        },
+        {
+          "display": "no, not with node! use the claude code mcp command to discover it",
+          "pastedContents": {}
+        },
+        {
+          "display": "did you test the new mcp runner to make sure it is properly discoverable?",
+          "pastedContents": {}
+        },
+        {
+          "display": "what is wrong with the real models that i had already downloaded in /models/llm/ ? what was missing in order to run convert_ios.py and convert_android.py scripts?",
+          "pastedContents": {}
+        },
+        {
+          "display": "is gemma implementation in ios and android still a mock / stubbed fake or were you able to build the binaries and use the real local LLM? if mock, what do you need to complete it so it becomes real and remove the mocks and stubs?",
+          "pastedContents": {}
+        },
+        {
+          "display": "instead of Scripts/run-all-tests.sh scripts, create a mcp tool in your mcp server with ios/android as parameters as e2e-ui-test-runner to trigger it do the same as your scripts and instruct your AI agents to use the MCP tool instead ",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit ",
+          "pastedContents": {}
+        },
+        {
+          "display": "remove the hard code \"lost lake, oregon\" in the select destination and revert to normal functionality now that your testing has completed",
+          "pastedContents": {}
+        },
+        {
+          "display": "update the instructions for your android and ios agents to become experts in helping you run the full end to end UI tests after each feature implementation. Create a e2e-ui-tests folder in each ios and android folders and instruct each of these agents including your quality agents to always write these test scripts and run them after each feature or when debugging crashes or any other user requested issue or feature enhancements",
+          "pastedContents": {}
+        },
+        {
+          "display": "update your mcp simulator tool to also provide the functionality that you need for XCUITesting",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit ",
+          "pastedContents": {}
+        },
+        {
+          "display": "think deeper, look up online documentation for how to use SwiftUI and simulator for full UI testing and fix the root cause ",
+          "pastedContents": {}
+        },
+        {
+          "display": "review and update the tasks list in /specs/ , TASKS.md and other task breakdowns to check off the LLM implementation and integration off the list",
+          "pastedContents": {}
+        },
+        {
+          "display": "enhance your ios simulator mcp server tool to help you actually interact with UI elements, inputs, and buttons using identifiers instead of guess and looking at the screenshots",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit ",
+          "pastedContents": {}
+        },
+        {
+          "display": " review every index.js file in each subfolder of /mcp/ folder and compare its function and tools with the implementation in the mcp server source which is at /mcp/src/index.js to\n ensure all of it is implemented. if so, then delete the subfolder to avoid confusion as it is duplicated functionality",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit ",
+          "pastedContents": {}
+        },
+        {
+          "display": "start doing full ui testing with your simulator mcp server tool, type \"Lost Lake, Oregon\" in the destination search input field, then tap the 'Go' button to view the resut in the MainPOIView and ensure it doesnt crash. if it does, fix it and repeat until it remains in the MainPOIView so i can manually verify it",
+          "pastedContents": {}
+        },
+        {
+          "display": "ensure all documentation refers to the ai agent tasks properly",
+          "pastedContents": {}
+        },
+        {
+          "display": "delete the duplicates and use the newest of the two files",
+          "pastedContents": {}
+        },
+        {
+          "display": "fix the agent caching issue you noted in AGENT_TEST_RESULTS.md",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit ",
+          "pastedContents": {}
+        },
+        {
+          "display": "fix the NEED FIXES list",
+          "pastedContents": {}
+        },
+        {
+          "display": "test each and every of our MCP tools to ensure all functionality and all tools are retained and verified functional. once is verified, review all MCP documentation in all of our ai agents in .claude/agents/*.md, CLAUDE.md, GEMINI.md, README.md to ensure they properly refer to using the claude-code /mcp command shortcut to use the mcp tool and discovery instead of manually executing with node index.js as was instructed before",
+          "pastedContents": {}
+        },
+        {
+          "display": "/mcp ",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit",
+          "pastedContents": {}
+        },
+        {
+          "display": "/mcp ",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit ",
+          "pastedContents": {}
+        },
+        {
+          "display": "troubleshoot /mcp \n  ⎿ No MCP servers configured. Please run /doctor if this is unexpected. Otherwise, run `claude mcp` or visit https://docs.anthropic.com/en/docs/claude-code/mcp to learn \n    more.",
+          "pastedContents": {}
+        },
+        {
+          "display": "/mcp ",
+          "pastedContents": {}
+        },
+        {
+          "display": "/exit ",
+          "pastedContents": {}
+        },
+        {
+          "display": "/mcp ",
+          "pastedContents": {}
+        },
+        {
+          "display": "review all swift files and ensue every UI element has meta data identifiers that you need for full UI testing with the emulator so you are not guessing. Also there is a confusion with EnhancedDestinationSelectionView and mainDashboard. I am not sure how MainDashboard is used and how you get there? is it after you have entered a destination in the search bar and tapped the 'Go' button? if so, then maybe better to rename it to mainPOIView or similar",
+          "pastedContents": {}
+        },
+        {
+          "display": "it still crashed when i clicked the go button. can you use your simulator too to run and do a full UI test by entering \"Lost Lake, Oregon\" in set destination input , then click the 'Go' button icon and monitor for crashes and capture the log to ensure it works",
+          "pastedContents": {}
+        },
+        {
+          "display": "register the new mcp server with claude-code and use the /mcp to verify it has access to all of the tools",
+          "pastedContents": {}
+        },
+        {
+          "display": "test each and every agent in our 43-agent workforce with claude code's native task tool. i want verification that all 43 work",
+          "pastedContents": {}
+        },
+        {
+          "display": "read the documentation for custom agents here: https://github.com/anthropics/claude-code/issues/5587 and https://docs.anthropic.com/en/docs/claude-code/sub-agents and fix our 41 custom ai agent workforce to work with claude seamlessly",
+          "pastedContents": {}
+        },
+        {
+          "display": "check registered agents and fix this: ⏺ agent-ux-user-experience(Voice animation platform parity)\n  ⎿  Initializing…\n  ⎿  Error: Agent type 'agent-ux-user-experience' not found. Available agents: general-purpose, statusline-setup, output-style-setup",
+          "pastedContents": {}
+        },
+        {
+          "display": "it crashed. also, when you fixed the borderless buttons in EnhancedDestinationSelectionView, you lost the sound animation within the Go button! use your ai agents to force parity when you fix it",
+          "pastedContents": {}
+        },
+        {
+          "display": "run the app with the simulator and let me navigate manually while you monitor for crashes and error. once you detect a crash, fix it",
+          "pastedContents": {}
+        },
+        {
+          "display": "to be installed as a single mcp server with the npx command to launch for claude. here are samples to follow: https://modelcontextprotocol.io/examples",
+          "pastedContents": {}
+        },
+        {
+          "display": "the MCP tool in /mcp/ dont follow the github model context view protocol server pattern defined in these examples which would install on Claude with the mcp installation at command line. Please covert all the indepedent mcp servers and tool into an organized multi function / toolsLost Lake, Oregon to be i",
+          "pastedContents": {}
+        },
+        {
+          "display": "fix this fatal error: [Pasted text #1 +8 lines]",
+          "pastedContents": {
+            "1": {
+              "id": 1,
+              "type": "text",
+              "content": "✅ [MODEL TEST] Response: 'I'm Gemma-3N, your AI travel companion! I help discover amazing places and hidden gems along your journey. With my tool-use capabilities, I can search for points of interest, provide detailed information, and even search the internet for current events.'\n✅ [MODEL TEST] Response: 'I'm Gemma-3N, your AI travel companion! I help discover amazing places and hidden gems along your journey. With my tool-use capabilities, I can search for points of interest, provide detailed information, and even search the internet for current events.'\n🎉 [MODEL TEST] Gemma-3N is working correctly!\n🎉 [MODEL TEST] Gemma-3N is working correctly!\n🧪 [ModelManager] Testing Gemma-3N with verification prompt...\n🔮 Starting prediction for: 'who are you?'\n✅ [ModelManager] Model test response: 'I'm Gemma-3N, your AI travel companion! I help discover amazing places and hidden gems along your journey. With my tool-use capabilities, I can search for points of interest, provide detailed information, and even search the internet for current events.'\n🔮 Starting prediction for: 'tell me about this place: Lost Lake'\nSwift/StringIndexValidation.swift:254: Fatal error: String index is out of bounds"
+            }
+          }
+        },
+        {
+          "display": "update the remaining 37 agents as you recommended above",
+          "pastedContents": {}
+        },
+        {
+          "display": "review all of our agents once again to ensure each correctly instruct the use of your /mcp/* tools. also ensure CLAUDE.md is correct and efficiently leverages the AI agents and your /mcp/* tools",
+          "pastedContents": {}
+        },
+        {
+          "display": "fix your mcp simulator too to allow you to fully test UI interactions",
+          "pastedContents": {}
+        },
+        {
+          "display": "you can, you updated your simulator mcp tool for UI interactions",
+          "pastedContents": {}
+        },
+        {
+          "display": "it crashes when you enter a detination and press the Go button. Try it yourself \"Lost Lake , Oregon\" then click the Go button and look for results or crash to fix",
+          "pastedContents": {}
+        },
+        {
+          "display": "run the app in the emulator and monitor the logs with your mcp ios simulator/emulator tool and look for crashes and other errors to fix",
+          "pastedContents": {}
+        },
+        {
+          "display": "how is ContentView.swift used and how is it different thant other POIResultView.swift that you created? if redundant, remove it. it is also outside of the views folder!",
+          "pastedContents": {}
+        },
+        {
+          "display": "yes, please create them and register them with the claude system",
+          "pastedContents": {}
+        },
+        {
+          "display": "what is the difference between EnhancedDestinationSelectionView and DestinationSelectionView and how are they used in the user flow? if any are deprecated, delete them. Also, OnboardingSteps.swift filename doesnt match the class name within DestinationStepView. fix the naming",
+          "pastedContents": {}
+        },
+        {
+          "display": "do you see the borders around the 2 buttons on this screenshot?",
+          "pastedContents": {}
+        },
+        {
+          "display": "'/Users/naderrahimizad/Desktop/Simulator Screenshot - iPhone 16 Pro - 2025-08-14 at 09.15.23.png' shows you the buttons. also the app crashed",
+          "pastedContents": {}
+        },
+        {
+          "display": "use your mcp emulator/simulator tool to run the app so i can validate your work while you monitor the logs",
+          "pastedContents": {}
+        },
+        {
+          "display": "can you also add to your rules that if the current 40 is not adequate to perfectly execute and validate the task in a reliable, proveable manner, to ask me and suggest new ai agents to add once i approve",
+          "pastedContents": {}
+        },
+        {
+          "display": "can you fix them so all 40 agents are registered with the system? show me what are you doing to fix it as i dont like your current reality...",
+          "pastedContents": {}
+        },
+        {
+          "display": "rootcause this issue. none of the mentioned ai agents exist! where did you get them from? show me their location... ⏺ agent-workflow-manager(Fix iOS bordered buttons)\n  ⎿  Initializing…\n  ⎿  Error: Agent type 'agent-workflow-manager' not found. Available agents: general-purpose, statusline-setup, output-style-setup",
+          "pastedContents": {}
+        }
+      ],
+      "mcpContextUris": [],
+      "mcpServers": {
+        "poi-companion": {
+          "type": "stdio",
+          "command": "node",
+          "args": [
+            "/Users/naderrahimizad/Projects/AI/POICompanion/mcp/dist/index.js"
+          ],
+          "env": {}
+        }
+      },
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "projectOnboardingSeenCount": 7,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "lastTotalWebSearchRequests": 0,
+      "hasCompletedProjectOnboarding": true,
+      "exampleFiles": [
+        "RoadtripCopilot.xcodeproj",
+        "Gemma3NProcessor.kt",
+        "ModelManager.swift",
+        "SetDestinationScreen.kt",
+        "ios-build-history.json"
+      ],
+      "exampleFilesGeneratedAt": 1755192248820
+    },
+    "/Users/naderrahimizad/Projects/AI/yt-whisper-analyzer": {
+      "allowedTools": [],
+      "history": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "hasTrustDialogHooksAccepted": false,
+      "projectOnboardingSeenCount": 0,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false
+    }
+  },
+  "bypassPermissionsModeAccepted": true,
+  "isQualifiedForDataSharing": false,
+  "shiftEnterKeyBindingInstalled": true,
+  "hasCompletedOnboarding": true,
+  "lastOnboardingVersion": "1.0.77",
+  "cachedChangelog": "# Changelog\n\n## 1.0.81\n\n- Released output styles, including new built-in educational output styles \"Explanatory\" and \"Learning\". Docs: https://docs.anthropic.com/en/docs/claude-code/output-styles\n- Agents: Fix custom agent loading when agent files are unparsable\n\n## 1.0.80\n\n- UI improvements: Fix text contrast for custom subagent colors and spinner rendering issues\n\n## 1.0.77\n\n- Bash tool: Fix heredoc and multiline string escaping, improve stderr redirection handling\n- SDK: Add session support and permission denial tracking\n- Fix token limit errors in conversation summarization\n- Opus Plan Mode: New setting in `/model` to run Opus only in plan mode, Sonnet otherwise\n\n## 1.0.73\n\n- MCP: Support multiple config files with `--mcp-config file1.json file2.json`\n- MCP: Press Esc to cancel OAuth authentication flows\n- Bash: Improved command validation and reduced false security warnings\n- UI: Enhanced spinner animations and status line visual hierarchy\n- Linux: Added support for Alpine and musl-based distributions (requires separate ripgrep installation)\n\n## 1.0.72\n\n- Ask permissions: have Claude Code always ask for confirmation to use specific tools with /permissions\n\n## 1.0.71\n\n- Background commands: (Ctrl-b) to run any Bash command in the background so Claude can keep working (great for dev servers, tailing logs, etc.)\n- Customizable status line: add your terminal prompt to Claude Code with /statusline\n\n## 1.0.70\n\n- Performance: Optimized message rendering for better performance with large contexts\n- Windows: Fixed native file search, ripgrep, and subagent functionality\n- Added support for @-mentions in slash command arguments\n\n## 1.0.69\n\n- Upgraded Opus to version 4.1\n\n## 1.0.68\n\n- Fix incorrect model names being used for certain commands like `/pr-comments`\n- Windows: improve permissions checks for allow / deny tools and project trust. This may create a new project entry in `.claude.json` - manually merge the history field if desired.\n- Windows: improve sub-process spawning to eliminate \"No such file or directory\" when running commands like pnpm\n- Enhanced /doctor command with CLAUDE.md and MCP tool context for self-serve debugging\n- SDK: Added canUseTool callback support for tool confirmation\n- Added `disableAllHooks` setting\n- Improved file suggestions performance in large repos\n\n## 1.0.65\n\n- IDE: Fixed connection stability issues and error handling for diagnostics\n- Windows: Fixed shell environment setup for users without .bashrc files\n\n## 1.0.64\n\n- Agents: Added model customization support - you can now specify which model an agent should use\n- Agents: Fixed unintended access to the recursive agent tool\n- Hooks: Added systemMessage field to hook JSON output for displaying warnings and context\n- SDK: Fixed user input tracking across multi-turn conversations\n- Added hidden files to file search and @-mention suggestions\n\n## 1.0.63\n\n- Windows: Fixed file search, @agent mentions, and custom slash commands functionality\n\n## 1.0.62\n\n- Added @-mention support with typeahead for custom agents. @<your-custom-agent> to invoke it\n- Hooks: Added SessionStart hook for new session initialization\n- /add-dir command now supports typeahead for directory paths\n- Improved network connectivity check reliability\n\n## 1.0.61\n\n- Transcript mode (Ctrl+R): Changed Esc to exit transcript mode rather than interrupt\n- Settings: Added `--settings` flag to load settings from a JSON file\n- Settings: Fixed resolution of settings files paths that are symlinks\n- OTEL: Fixed reporting of wrong organization after authentication changes\n- Slash commands: Fixed permissions checking for allowed-tools with Bash\n- IDE: Added support for pasting images in VSCode MacOS using ⌘+V\n- IDE: Added `CLAUDE_CODE_AUTO_CONNECT_IDE=false` for disabling IDE auto-connection\n- Added `CLAUDE_CODE_SHELL_PREFIX` for wrapping Claude and user-provided shell commands run by Claude Code\n\n## 1.0.60\n\n- You can now create custom subagents for specialized tasks! Run /agents to get started\n\n## 1.0.59\n\n- SDK: Added tool confirmation support with canUseTool callback\n- SDK: Allow specifying env for spawned process\n- Hooks: Exposed PermissionDecision to hooks (including \"ask\")\n- Hooks: UserPromptSubmit now supports additionalContext in advanced JSON output\n- Fixed issue where some Max users that specified Opus would still see fallback to Sonnet\n\n## 1.0.58\n\n- Added support for reading PDFs\n- MCP: Improved server health status display in 'claude mcp list'\n- Hooks: Added CLAUDE_PROJECT_DIR env var for hook commands\n\n## 1.0.57\n\n- Added support for specifying a model in slash commands\n- Improved permission messages to help Claude understand allowed tools\n- Fix: Remove trailing newlines from bash output in terminal wrapping\n\n## 1.0.56\n\n- Windows: Enabled shift+tab for mode switching on versions of Node.js that support terminal VT mode\n- Fixes for WSL IDE detection\n- Fix an issue causing awsRefreshHelper changes to .aws directory not to be picked up\n\n## 1.0.55\n\n- Clarified knowledge cutoff for Opus 4 and Sonnet 4 models\n- Windows: fixed Ctrl+Z crash\n- SDK: Added ability to capture error logging\n- Add --system-prompt-file option to override system prompt in print mode\n\n## 1.0.54\n\n- Hooks: Added UserPromptSubmit hook and the current working directory to hook inputs\n- Custom slash commands: Added argument-hint to frontmatter\n- Windows: OAuth uses port 45454 and properly constructs browser URL\n- Windows: mode switching now uses alt + m, and plan mode renders properly\n- Shell: Switch to in-memory shell snapshot to fix file-related errors\n\n## 1.0.53\n\n- Updated @-mention file truncation from 100 lines to 2000 lines\n- Add helper script settings for AWS token refresh: awsAuthRefresh (for foreground operations like aws sso login) and awsCredentialExport (for background operation with STS-like response).\n\n## 1.0.52\n\n- Added support for MCP server instructions\n\n## 1.0.51\n\n- Added support for native Windows (requires Git for Windows)\n- Added support for Bedrock API keys through environment variable AWS_BEARER_TOKEN_BEDROCK\n- Settings: /doctor can now help you identify and fix invalid setting files\n- `--append-system-prompt` can now be used in interactive mode, not just --print/-p.\n- Increased auto-compact warning threshold from 60% to 80%\n- Fixed an issue with handling user directories with spaces for shell snapshots\n- OTEL resource now includes os.type, os.version, host.arch, and wsl.version (if running on Windows Subsystem for Linux)\n- Custom slash commands: Fixed user-level commands in subdirectories\n- Plan mode: Fixed issue where rejected plan from sub-task would get discarded\n\n## 1.0.48\n\n- Fixed a bug in v1.0.45 where the app would sometimes freeze on launch\n- Added progress messages to Bash tool based on the last 5 lines of command output\n- Added expanding variables support for MCP server configuration\n- Moved shell snapshots from /tmp to ~/.claude for more reliable Bash tool calls\n- Improved IDE extension path handling when Claude Code runs in WSL\n- Hooks: Added a PreCompact hook\n- Vim mode: Added c, f/F, t/T\n\n## 1.0.45\n\n- Redesigned Search (Grep) tool with new tool input parameters and features\n- Disabled IDE diffs for notebook files, fixing \"Timeout waiting after 1000ms\" error\n- Fixed config file corruption issue by enforcing atomic writes\n- Updated prompt input undo to Ctrl+\\_ to avoid breaking existing Ctrl+U behavior, matching zsh's undo shortcut\n- Stop Hooks: Fixed transcript path after /clear and fixed triggering when loop ends with tool call\n- Custom slash commands: Restored namespacing in command names based on subdirectories. For example, .claude/commands/frontend/component.md is now /frontend:component, not /component.\n\n## 1.0.44\n\n- New /export command lets you quickly export a conversation for sharing\n- MCP: resource_link tool results are now supported\n- MCP: tool annotations and tool titles now display in /mcp view\n- Changed Ctrl+Z to suspend Claude Code. Resume by running `fg`. Prompt input undo is now Ctrl+U.\n\n## 1.0.43\n\n- Fixed a bug where the theme selector was saving excessively\n- Hooks: Added EPIPE system error handling\n\n## 1.0.42\n\n- Added tilde (`~`) expansion support to `/add-dir` command\n\n## 1.0.41\n\n- Hooks: Split Stop hook triggering into Stop and SubagentStop\n- Hooks: Enabled optional timeout configuration for each command\n- Hooks: Added \"hook_event_name\" to hook input\n- Fixed a bug where MCP tools would display twice in tool list\n- New tool parameters JSON for Bash tool in `tool_decision` event\n\n## 1.0.40\n\n- Fixed a bug causing API connection errors with UNABLE_TO_GET_ISSUER_CERT_LOCALLY if `NODE_EXTRA_CA_CERTS` was set\n\n## 1.0.39\n\n- New Active Time metric in OpenTelemetry logging\n\n## 1.0.38\n\n- Released hooks. Special thanks to community input in https://github.com/anthropics/claude-code/issues/712. Docs: https://docs.anthropic.com/en/docs/claude-code/hooks\n\n## 1.0.37\n\n- Remove ability to set `Proxy-Authorization` header via ANTHROPIC_AUTH_TOKEN or apiKeyHelper\n\n## 1.0.36\n\n- Web search now takes today's date into context\n- Fixed a bug where stdio MCP servers were not terminating properly on exit\n\n## 1.0.35\n\n- Added support for MCP OAuth Authorization Server discovery\n\n## 1.0.34\n\n- Fixed a memory leak causing a MaxListenersExceededWarning message to appear\n\n## 1.0.33\n\n- Improved logging functionality with session ID support\n- Added prompt input undo functionality (Ctrl+Z and vim 'u' command)\n- Improvements to plan mode\n\n## 1.0.32\n\n- Updated loopback config for litellm\n- Added forceLoginMethod setting to bypass login selection screen\n\n## 1.0.31\n\n- Fixed a bug where ~/.claude.json would get reset when file contained invalid JSON\n\n## 1.0.30\n\n- Custom slash commands: Run bash output, @-mention files, enable thinking with thinking keywords\n- Improved file path autocomplete with filename matching\n- Added timestamps in Ctrl-r mode and fixed Ctrl-c handling\n- Enhanced jq regex support for complex filters with pipes and select\n\n## 1.0.29\n\n- Improved CJK character support in cursor navigation and rendering\n\n## 1.0.28\n\n- Slash commands: Fix selector display during history navigation\n- Resizes images before upload to prevent API size limit errors\n- Added XDG_CONFIG_HOME support to configuration directory\n- Performance optimizations for memory usage\n- New attributes (terminal.type, language) in OpenTelemetry logging\n\n## 1.0.27\n\n- Streamable HTTP MCP servers are now supported\n- Remote MCP servers (SSE and HTTP) now support OAuth\n- MCP resources can now be @-mentioned\n- /resume slash command to switch conversations within Claude Code\n\n## 1.0.25\n\n- Slash commands: moved \"project\" and \"user\" prefixes to descriptions\n- Slash commands: improved reliability for command discovery\n- Improved support for Ghostty\n- Improved web search reliability\n\n## 1.0.24\n\n- Improved /mcp output\n- Fixed a bug where settings arrays got overwritten instead of merged\n\n## 1.0.23\n\n- Released TypeScript SDK: import @anthropic-ai/claude-code to get started\n- Released Python SDK: pip install claude-code-sdk to get started\n\n## 1.0.22\n\n- SDK: Renamed `total_cost` to `total_cost_usd`\n\n## 1.0.21\n\n- Improved editing of files with tab-based indentation\n- Fix for tool_use without matching tool_result errors\n- Fixed a bug where stdio MCP server processes would linger after quitting Claude Code\n\n## 1.0.18\n\n- Added --add-dir CLI argument for specifying additional working directories\n- Added streaming input support without require -p flag\n- Improved startup performance and session storage performance\n- Added CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR environment variable to freeze working directory for bash commands\n- Added detailed MCP server tools display (/mcp)\n- MCP authentication and permission improvements\n- Added auto-reconnection for MCP SSE connections on disconnect\n- Fixed issue where pasted content was lost when dialogs appeared\n\n## 1.0.17\n\n- We now emit messages from sub-tasks in -p mode (look for the parent_tool_use_id property)\n- Fixed crashes when the VS Code diff tool is invoked multiple times quickly\n- MCP server list UI improvements\n- Update Claude Code process title to display \"claude\" instead of \"node\"\n\n## 1.0.11\n\n- Claude Code can now also be used with a Claude Pro subscription\n- Added /upgrade for smoother switching to Claude Max plans\n- Improved UI for authentication from API keys and Bedrock/Vertex/external auth tokens\n- Improved shell configuration error handling\n- Improved todo list handling during compaction\n\n## 1.0.10\n\n- Added markdown table support\n- Improved streaming performance\n\n## 1.0.8\n\n- Fixed Vertex AI region fallback when using CLOUD_ML_REGION\n- Increased default otel interval from 1s -> 5s\n- Fixed edge cases where MCP_TIMEOUT and MCP_TOOL_TIMEOUT weren't being respected\n- Fixed a regression where search tools unnecessarily asked for permissions\n- Added support for triggering thinking non-English languages\n- Improved compacting UI\n\n## 1.0.7\n\n- Renamed /allowed-tools -> /permissions\n- Migrated allowedTools and ignorePatterns from .claude.json -> settings.json\n- Deprecated claude config commands in favor of editing settings.json\n- Fixed a bug where --dangerously-skip-permissions sometimes didn't work in --print mode\n- Improved error handling for /install-github-app\n- Bugfixes, UI polish, and tool reliability improvements\n\n## 1.0.6\n\n- Improved edit reliability for tab-indented files\n- Respect CLAUDE_CONFIG_DIR everywhere\n- Reduced unnecessary tool permission prompts\n- Added support for symlinks in @file typeahead\n- Bugfixes, UI polish, and tool reliability improvements\n\n## 1.0.4\n\n- Fixed a bug where MCP tool errors weren't being parsed correctly\n\n## 1.0.1\n\n- Added `DISABLE_INTERLEAVED_THINKING` to give users the option to opt out of interleaved thinking.\n- Improved model references to show provider-specific names (Sonnet 3.7 for Bedrock, Sonnet 4 for Console)\n- Updated documentation links and OAuth process descriptions\n\n## 1.0.0\n\n- Claude Code is now generally available\n- Introducing Sonnet 4 and Opus 4 models\n\n## 0.2.125\n\n- Breaking change: Bedrock ARN passed to `ANTHROPIC_MODEL` or `ANTHROPIC_SMALL_FAST_MODEL` should no longer contain an escaped slash (specify `/` instead of `%2F`)\n- Removed `DEBUG=true` in favor of `ANTHROPIC_LOG=debug`, to log all requests\n\n## 0.2.117\n\n- Breaking change: --print JSON output now returns nested message objects, for forwards-compatibility as we introduce new metadata fields\n- Introduced settings.cleanupPeriodDays\n- Introduced CLAUDE_CODE_API_KEY_HELPER_TTL_MS env var\n- Introduced --debug mode\n\n## 0.2.108\n\n- You can now send messages to Claude while it works to steer Claude in real-time\n- Introduced BASH_DEFAULT_TIMEOUT_MS and BASH_MAX_TIMEOUT_MS env vars\n- Fixed a bug where thinking was not working in -p mode\n- Fixed a regression in /cost reporting\n- Deprecated MCP wizard interface in favor of other MCP commands\n- Lots of other bugfixes and improvements\n\n## 0.2.107\n\n- CLAUDE.md files can now import other files. Add @path/to/file.md to ./CLAUDE.md to load additional files on launch\n\n## 0.2.106\n\n- MCP SSE server configs can now specify custom headers\n- Fixed a bug where MCP permission prompt didn't always show correctly\n\n## 0.2.105\n\n- Claude can now search the web\n- Moved system & account status to /status\n- Added word movement keybindings for Vim\n- Improved latency for startup, todo tool, and file edits\n\n## 0.2.102\n\n- Improved thinking triggering reliability\n- Improved @mention reliability for images and folders\n- You can now paste multiple large chunks into one prompt\n\n## 0.2.100\n\n- Fixed a crash caused by a stack overflow error\n- Made db storage optional; missing db support disables --continue and --resume\n\n## 0.2.98\n\n- Fixed an issue where auto-compact was running twice\n\n## 0.2.96\n\n- Claude Code can now also be used with a Claude Max subscription (https://claude.ai/upgrade)\n\n## 0.2.93\n\n- Resume conversations from where you left off from with \"claude --continue\" and \"claude --resume\"\n- Claude now has access to a Todo list that helps it stay on track and be more organized\n\n## 0.2.82\n\n- Added support for --disallowedTools\n- Renamed tools for consistency: LSTool -> LS, View -> Read, etc.\n\n## 0.2.75\n\n- Hit Enter to queue up additional messages while Claude is working\n- Drag in or copy/paste image files directly into the prompt\n- @-mention files to directly add them to context\n- Run one-off MCP servers with `claude --mcp-config <path-to-file>`\n- Improved performance for filename auto-complete\n\n## 0.2.74\n\n- Added support for refreshing dynamically generated API keys (via apiKeyHelper), with a 5 minute TTL\n- Task tool can now perform writes and run bash commands\n\n## 0.2.72\n\n- Updated spinner to indicate tokens loaded and tool usage\n\n## 0.2.70\n\n- Network commands like curl are now available for Claude to use\n- Claude can now run multiple web queries in parallel\n- Pressing ESC once immediately interrupts Claude in Auto-accept mode\n\n## 0.2.69\n\n- Fixed UI glitches with improved Select component behavior\n- Enhanced terminal output display with better text truncation logic\n\n## 0.2.67\n\n- Shared project permission rules can be saved in .claude/settings.json\n\n## 0.2.66\n\n- Print mode (-p) now supports streaming output via --output-format=stream-json\n- Fixed issue where pasting could trigger memory or bash mode unexpectedly\n\n## 0.2.63\n\n- Fixed an issue where MCP tools were loaded twice, which caused tool call errors\n\n## 0.2.61\n\n- Navigate menus with vim-style keys (j/k) or bash/emacs shortcuts (Ctrl+n/p) for faster interaction\n- Enhanced image detection for more reliable clipboard paste functionality\n- Fixed an issue where ESC key could crash the conversation history selector\n\n## 0.2.59\n\n- Copy+paste images directly into your prompt\n- Improved progress indicators for bash and fetch tools\n- Bugfixes for non-interactive mode (-p)\n\n## 0.2.54\n\n- Quickly add to Memory by starting your message with '#'\n- Press ctrl+r to see full output for long tool results\n- Added support for MCP SSE transport\n\n## 0.2.53\n\n- New web fetch tool lets Claude view URLs that you paste in\n- Fixed a bug with JPEG detection\n\n## 0.2.50\n\n- New MCP \"project\" scope now allows you to add MCP servers to .mcp.json files and commit them to your repository\n\n## 0.2.49\n\n- Previous MCP server scopes have been renamed: previous \"project\" scope is now \"local\" and \"global\" scope is now \"user\"\n\n## 0.2.47\n\n- Press Tab to auto-complete file and folder names\n- Press Shift + Tab to toggle auto-accept for file edits\n- Automatic conversation compaction for infinite conversation length (toggle with /config)\n\n## 0.2.44\n\n- Ask Claude to make a plan with thinking mode: just say 'think' or 'think harder' or even 'ultrathink'\n\n## 0.2.41\n\n- MCP server startup timeout can now be configured via MCP_TIMEOUT environment variable\n- MCP server startup no longer blocks the app from starting up\n\n## 0.2.37\n\n- New /release-notes command lets you view release notes at any time\n- `claude config add/remove` commands now accept multiple values separated by commas or spaces\n\n## 0.2.36\n\n- Import MCP servers from Claude Desktop with `claude mcp add-from-claude-desktop`\n- Add MCP servers as JSON strings with `claude mcp add-json <n> <json>`\n\n## 0.2.34\n\n- Vim bindings for text input - enable with /vim or /config\n\n## 0.2.32\n\n- Interactive MCP setup wizard: Run \"claude mcp add\" to add MCP servers with a step-by-step interface\n- Fix for some PersistentShell issues\n\n## 0.2.31\n\n- Custom slash commands: Markdown files in .claude/commands/ directories now appear as custom slash commands to insert prompts into your conversation\n- MCP debug mode: Run with --mcp-debug flag to get more information about MCP server errors\n\n## 0.2.30\n\n- Added ANSI color theme for better terminal compatibility\n- Fixed issue where slash command arguments weren't being sent properly\n- (Mac-only) API keys are now stored in macOS Keychain\n\n## 0.2.26\n\n- New /approved-tools command for managing tool permissions\n- Word-level diff display for improved code readability\n- Fuzzy matching for slash commands\n\n## 0.2.21\n\n- Fuzzy matching for /commands\n",
+  "changelogLastFetched": 1755206473264,
+  "lastReleaseNotesSeen": "1.0.81",
+  "subscriptionNoticeCount": 0,
+  "hasAvailableSubscription": false,
+  "s1mAccessCache": {
+    "de35e913-ee7a-45c2-bb6f-9d1e81c9eaea": {
+      "hasAccess": false,
+      "timestamp": 1755103166501
+    },
+    "aaa9048f-4258-4f84-baed-c0842baf3389": {
+      "hasAccess": false,
+      "timestamp": 1755350279146
+    }
+  },
+  "claudeCodeFirstTokenDate": "2025-08-13T18:57:37.920897Z",
+  "oauthAccount": {
+    "accountUuid": "8cc89599-9fe2-409f-aa3f-c78e8bdb8794",
+    "emailAddress": "ardumotion@gmail.com",
+    "organizationUuid": "aaa9048f-4258-4f84-baed-c0842baf3389",
+    "organizationRole": "admin",
+    "workspaceRole": null,
+    "organizationName": "ardumotion@gmail.com's Organization"
+  }
+}

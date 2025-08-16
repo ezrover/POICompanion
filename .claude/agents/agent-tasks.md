@@ -1,5 +1,5 @@
 ---
-name: spec-tasks
+name: agent-tasks
 description: use PROACTIVELY to create/refine the spec tasks document in a spec development process/workflow. MUST BE USED AFTER spec design document is approved.
 ---
 

@@ -14,7 +14,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-001: Model File Preparation
 **Priority:** CRITICAL  
 **Effort:** 8 hours  
-**Assigned Agent:** `spec-ai-model-optimizer`  
+**Assigned Agent:** `agent-ai-model-optimizer`  
 **Dependencies:** None  
 
 **Description:** Prepare and deploy Gemma-3N model files for mobile platforms
@@ -43,7 +43,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-002: API Client Infrastructure  
 **Priority:** HIGH  
 **Effort:** 12 hours  
-**Assigned Agent:** `spec-ios-developer` + `spec-android-developer`  
+**Assigned Agent:** `agent-ios-developer` + `agent-android-developer`  
 **Dependencies:** None
 
 **Description:** Create robust API clients for external POI data sources
@@ -76,7 +76,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-003: POI Discovery Orchestrator
 **Priority:** HIGH  
 **Effort:** 16 hours  
-**Assigned Agent:** `spec-system-architect` + `spec-ios-developer` + `spec-android-developer`  
+**Assigned Agent:** `agent-system-architect` + `agent-ios-developer` + `agent-android-developer`  
 **Dependencies:** TASK-POI-002
 
 **Description:** Implement central orchestrator that coordinates LLM analysis and API failover
@@ -106,7 +106,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-004: Cache Management System
 **Priority:** MEDIUM  
 **Effort:** 10 hours  
-**Assigned Agent:** `spec-database-architect-developer`  
+**Assigned Agent:** `agent-database-architect-developer`  
 **Dependencies:** None
 
 **Description:** Implement efficient local caching for POI data
@@ -139,7 +139,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-005: Enhanced Tool Registry Upgrade
 **Priority:** CRITICAL  
 **Effort:** 12 hours  
-**Assigned Agent:** `spec-ai-model-optimizer` + `spec-ios-developer` + `spec-android-developer`  
+**Assigned Agent:** `agent-ai-model-optimizer` + `agent-ios-developer` + `agent-android-developer`  
 **Dependencies:** TASK-POI-001, TASK-POI-002
 
 **Description:** Replace mock data in ToolRegistry classes with real POI discovery
@@ -170,7 +170,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-006: LLM Analyzer Implementation
 **Priority:** HIGH  
 **Effort:** 14 hours  
-**Assigned Agent:** `spec-ai-model-optimizer` + `spec-performance-guru`  
+**Assigned Agent:** `agent-ai-model-optimizer` + `agent-performance-guru`  
 **Dependencies:** TASK-POI-001, TASK-POI-005
 
 **Description:** Implement Gemma-3N model integration for local POI knowledge analysis
@@ -201,7 +201,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-007: API Failover System
 **Priority:** HIGH  
 **Effort:** 10 hours  
-**Assigned Agent:** `spec-system-architect` + `spec-sre-reliability-engineer`  
+**Assigned Agent:** `agent-system-architect` + `agent-sre-reliability-engineer`  
 **Dependencies:** TASK-POI-002, TASK-POI-006
 
 **Description:** Implement intelligent failover system when LLM knowledge is insufficient
@@ -233,7 +233,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-008: POI Exclusion System Enhancement
 **Priority:** MEDIUM  
 **Effort:** 8 hours  
-**Assigned Agent:** `spec-ux-user-experience` + `spec-data-scientist`  
+**Assigned Agent:** `agent-ux-user-experience` + `agent-data-scientist`  
 **Dependencies:** TASK-POI-005
 
 **Description:** Enhance POI filtering to ensure high-quality, locally-relevant discoveries
@@ -264,7 +264,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-009: Data Enrichment Pipeline
 **Priority:** MEDIUM  
 **Effort:** 12 hours  
-**Assigned Agent:** `spec-data-scientist` + `spec-ios-developer` + `spec-android-developer`  
+**Assigned Agent:** `agent-data-scientist` + `agent-ios-developer` + `agent-android-developer`  
 **Dependencies:** TASK-POI-007
 
 **Description:** Implement real-time POI data enrichment with current information
@@ -294,7 +294,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-010: Performance Optimization
 **Priority:** HIGH  
 **Effort:** 10 hours  
-**Assigned Agent:** `spec-performance-guru` + `spec-ai-performance-optimizer`  
+**Assigned Agent:** `agent-performance-guru` + `agent-ai-performance-optimizer`  
 **Dependencies:** TASK-POI-006, TASK-POI-007
 
 **Description:** Optimize end-to-end POI discovery performance
@@ -326,7 +326,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-011: CarPlay Integration
 **Priority:** HIGH  
 **Effort:** 8 hours  
-**Assigned Agent:** `spec-ios-developer` + `spec-ux-user-experience`  
+**Assigned Agent:** `agent-ios-developer` + `agent-ux-user-experience`  
 **Dependencies:** TASK-POI-005
 
 **Description:** Ensure POI discovery works seamlessly in CarPlay environment
@@ -355,7 +355,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-012: Android Auto Integration
 **Priority:** HIGH  
 **Effort:** 8 hours  
-**Assigned Agent:** `spec-android-developer` + `spec-ux-user-experience`  
+**Assigned Agent:** `agent-android-developer` + `agent-ux-user-experience`  
 **Dependencies:** TASK-POI-005
 
 **Description:** Ensure POI discovery works seamlessly in Android Auto environment
@@ -384,7 +384,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-013: Platform Parity Validation
 **Priority:** CRITICAL  
 **Effort:** 12 hours  
-**Assigned Agent:** `spec-judge` + `spec-test` + `spec-ios-developer` + `spec-android-developer`  
+**Assigned Agent:** `agent-judge` + `agent-test` + `agent-ios-developer` + `agent-android-developer`  
 **Dependencies:** TASK-POI-011, TASK-POI-012
 
 **Description:** Comprehensive validation of 100% platform parity across all environments
@@ -414,7 +414,7 @@ This document provides a comprehensive, prioritized task breakdown for implement
 ### TASK-POI-014: Comprehensive Testing & Validation
 **Priority:** HIGH  
 **Effort:** 16 hours  
-**Assigned Agent:** `spec-test` + `spec-quality-guardian`  
+**Assigned Agent:** `agent-test` + `agent-quality-guardian`  
 **Dependencies:** TASK-POI-013
 
 **Description:** Implement comprehensive testing suite for production readiness
@@ -465,18 +465,18 @@ This document provides a comprehensive, prioritized task breakdown for implement
 
 | Agent | Tasks | Total Effort | Specialization |
 |-------|-------|--------------|----------------|
-| `spec-ai-model-optimizer` | POI-001, POI-005, POI-006 | 34h | Model integration, tool enhancement |
-| `spec-ios-developer` | POI-002, POI-003, POI-005, POI-009, POI-011, POI-013 | 68h | iOS implementation |
-| `spec-android-developer` | POI-002, POI-003, POI-005, POI-009, POI-012, POI-013 | 68h | Android implementation |
-| `spec-system-architect` | POI-003, POI-007 | 26h | System design, orchestration |
-| `spec-database-architect-developer` | POI-004 | 10h | Cache system design |
-| `spec-performance-guru` | POI-006, POI-010 | 24h | Performance optimization |
-| `spec-sre-reliability-engineer` | POI-007 | 10h | Reliability, failover systems |
-| `spec-ux-user-experience` | POI-008, POI-011, POI-012 | 24h | User experience, automotive UX |
-| `spec-data-scientist` | POI-008, POI-009 | 20h | Data quality, enrichment |
-| `spec-ai-performance-optimizer` | POI-010 | 10h | AI performance optimization |
-| `spec-test` | POI-013, POI-014 | 28h | Testing, validation |
-| `spec-judge` | POI-013 | 12h | Quality assurance, orchestration |
+| `agent-ai-model-optimizer` | POI-001, POI-005, POI-006 | 34h | Model integration, tool enhancement |
+| `agent-ios-developer` | POI-002, POI-003, POI-005, POI-009, POI-011, POI-013 | 68h | iOS implementation |
+| `agent-android-developer` | POI-002, POI-003, POI-005, POI-009, POI-012, POI-013 | 68h | Android implementation |
+| `agent-system-architect` | POI-003, POI-007 | 26h | System design, orchestration |
+| `agent-database-architect-developer` | POI-004 | 10h | Cache system design |
+| `agent-performance-guru` | POI-006, POI-010 | 24h | Performance optimization |
+| `agent-sre-reliability-engineer` | POI-007 | 10h | Reliability, failover systems |
+| `agent-ux-user-experience` | POI-008, POI-011, POI-012 | 24h | User experience, automotive UX |
+| `agent-data-scientist` | POI-008, POI-009 | 20h | Data quality, enrichment |
+| `agent-ai-performance-optimizer` | POI-010 | 10h | AI performance optimization |
+| `agent-test` | POI-013, POI-014 | 28h | Testing, validation |
+| `agent-judge` | POI-013 | 12h | Quality assurance, orchestration |
 
 ## Risk Mitigation Strategies
 
@@ -515,4 +515,4 @@ This document provides a comprehensive, prioritized task breakdown for implement
 **Document Status:** READY FOR IMPLEMENTATION  
 **Total Estimated Effort:** 334 hours (4-person team × 4 weeks)  
 **Next Step:** Agent coordination and implementation kickoff  
-**Review Required:** `spec-judge` final validation of implementation plan
+**Review Required:** `agent-judge` final validation of implementation plan

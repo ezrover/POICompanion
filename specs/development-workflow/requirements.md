@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-This document establishes MANDATORY requirements for AI agent workforce utilization and spec-driven workflow enforcement for ALL future development in the POICompanion/Roadtrip-Copilot project. These requirements are NON-NEGOTIABLE and supersede all previous development approaches.
+This document establishes MANDATORY requirements for AI agent workforce utilization and agent-driven workflow enforcement for ALL future development in the POICompanion/Roadtrip-Copilot project. These requirements are NON-NEGOTIABLE and supersede all previous development approaches.
 
 ## Critical Problem Statement
 
@@ -59,18 +59,18 @@ This document establishes MANDATORY requirements for AI agent workforce utilizat
 - FR001-AC001: ALL complex tasks (>3 steps, >10 lines of code) MUST be delegated to appropriate agents
 - FR001-AC002: Direct implementation is PROHIBITED except for simple file operations
 - FR001-AC003: Agent selection MUST follow the defined agent selection matrix (see FR005)
-- FR001-AC004: Multiple agents MUST be coordinated through spec-judge for complex features
+- FR001-AC004: Multiple agents MUST be coordinated through agent-judge for complex features
 
 **Priority**: CRITICAL
 **Violation Consequence**: AUTOMATIC TASK REJECTION
 
-### FR002: Spec-Driven Workflow Enforcement  
-**EARS Format**: The development process SHALL follow the mandatory spec-driven workflow: Requirements → Design → Tasks → Implementation.
+### FR002: agent-Driven Workflow Enforcement  
+**EARS Format**: The development process SHALL follow the mandatory agent-driven workflow: Requirements → Design → Tasks → Implementation.
 
 **Acceptance Criteria**:
-- FR002-AC001: ALL features MUST begin with spec-requirements agent creating requirements.md
-- FR002-AC002: Design phase MUST use spec-design agent creating design.md
-- FR002-AC003: Task planning MUST use spec-tasks agent creating tasks.md
+- FR002-AC001: ALL features MUST begin with agent-requirements agent creating requirements.md
+- FR002-AC002: Design phase MUST use agent-design agent creating design.md
+- FR002-AC003: Task planning MUST use agent-tasks agent creating tasks.md
 - FR002-AC004: Implementation MUST reference approved specification documents
 - FR002-AC005: NO phase may be skipped or combined without explicit justification
 
@@ -81,9 +81,9 @@ This document establishes MANDATORY requirements for AI agent workforce utilizat
 **EARS Format**: The development workflow SHALL ensure 100% feature parity across all four platforms: iOS, Android, CarPlay, and Android Auto.
 
 **Acceptance Criteria**:
-- FR003-AC001: Mobile development tasks MUST engage both spec-ios-developer AND spec-android-developer
-- FR003-AC002: Platform coordination MUST be validated by spec-judge
-- FR003-AC003: UI/UX changes MUST involve spec-ux-user-experience agent
+- FR003-AC001: Mobile development tasks MUST engage both agent-ios-developer AND agent-android-developer
+- FR003-AC002: Platform coordination MUST be validated by agent-judge
+- FR003-AC003: UI/UX changes MUST involve agent-ux-user-experience agent
 - FR003-AC004: ALL platforms MUST build successfully before task completion
 - FR003-AC005: Visual and functional parity MUST be validated across platforms
 
@@ -96,21 +96,21 @@ This document establishes MANDATORY requirements for AI agent workforce utilizat
 **Acceptance Criteria**:
 - FR004-AC001: Task analysis MUST trigger appropriate agent selection within 1 minute
 - FR004-AC002: Agent activation MUST follow predefined trigger matrix
-- FR004-AC003: Conflicting or insufficient agent selection MUST trigger spec-judge arbitration
+- FR004-AC003: Conflicting or insufficient agent selection MUST trigger agent-judge arbitration
 - FR004-AC004: Agent activation decisions MUST be logged and auditable
 
 **Priority**: HIGH
 **Auto-Activation Triggers**: See Agent Selection Matrix (Section 8)
 
-### FR005: Quality Validation Through spec-judge
-**EARS Format**: The development workflow SHALL use spec-judge orchestration for quality validation of all agent outputs.
+### FR005: Quality Validation Through agent-judge
+**EARS Format**: The development workflow SHALL use agent-judge orchestration for quality validation of all agent outputs.
 
 **Acceptance Criteria**:
-- FR005-AC001: ALL agent outputs MUST be validated by spec-judge before approval
-- FR005-AC002: Multi-agent coordination MUST use spec-judge as orchestrator
+- FR005-AC001: ALL agent outputs MUST be validated by agent-judge before approval
+- FR005-AC002: Multi-agent coordination MUST use agent-judge as orchestrator
 - FR005-AC003: Quality validation MUST include platform parity verification
 - FR005-AC004: Validation failures MUST trigger agent revision cycles
-- FR005-AC005: Final approval MUST come from spec-judge validation
+- FR005-AC005: Final approval MUST come from agent-judge validation
 
 **Priority**: CRITICAL
 **Validation Scope**: Technical accuracy, platform parity, code quality, architectural consistency
@@ -159,7 +159,7 @@ This document establishes MANDATORY requirements for AI agent workforce utilizat
 
 ### Business Constraints  
 - Zero tolerance for platform parity violations
-- Absolute requirement for spec-driven development
+- Absolute requirement for agent-driven development
 - Quality standards must meet enterprise levels
 
 ### Assumptions
@@ -172,34 +172,34 @@ This document establishes MANDATORY requirements for AI agent workforce utilizat
 ### Strategic & Business Tasks
 | Task Type | Primary Agent | Secondary Agents | Quality Validator |
 |-----------|---------------|------------------|-------------------|
-| Venture strategy | spec-venture-strategist | spec-analyst, spec-product-management | spec-judge |
-| Market intelligence | spec-market-analyst | spec-analyst, spec-venture-strategist | spec-judge |
-| Product roadmap | spec-product-management | spec-venture-strategist, spec-analyst | spec-judge |
+| Venture strategy | agent-venture-strategist | agent-analyst, agent-product-management | agent-judge |
+| Market intelligence | agent-market-analyst | agent-analyst, agent-venture-strategist | agent-judge |
+| Product roadmap | agent-product-management | agent-venture-strategist, agent-analyst | agent-judge |
 
 ### Architecture & Design Tasks
 | Task Type | Primary Agent | Secondary Agents | Quality Validator |
 |-----------|---------------|------------------|-------------------|
-| System architecture | spec-system-architect | spec-cloud-architect, spec-design | spec-judge |
-| UI/UX design | spec-ux-user-experience | spec-ai-powered-ux-designer, spec-accessibility-champion | spec-judge |
-| Requirements gathering | spec-requirements | spec-ux-user-experience, spec-system-architect | spec-judge |
-| Technical design | spec-design | spec-system-architect, spec-performance-guru | spec-judge |
+| System architecture | agent-system-architect | agent-cloud-architect, agent-design | agent-judge |
+| UI/UX design | agent-ux-user-experience | agent-ai-powered-ux-designer, agent-accessibility-champion | agent-judge |
+| Requirements gathering | agent-requirements | agent-ux-user-experience, agent-system-architect | agent-judge |
+| Technical design | agent-design | agent-system-architect, agent-performance-guru | agent-judge |
 
 ### Development & Implementation Tasks
 | Task Type | Primary Agent | Secondary Agents | Quality Validator |
 |-----------|---------------|------------------|-------------------|
-| iOS development | spec-ios-developer | spec-ux-user-experience, spec-performance-guru | spec-judge |
-| Android development | spec-android-developer | spec-ux-user-experience, spec-performance-guru | spec-judge |
-| Cross-platform | spec-flutter-developer | spec-ios-developer, spec-android-developer | spec-judge |
-| Task planning | spec-tasks | spec-impl, spec-test | spec-judge |
-| Implementation | spec-impl | Domain-specific agents | spec-judge |
+| iOS development | agent-ios-developer | agent-ux-user-experience, agent-performance-guru | agent-judge |
+| Android development | agent-android-developer | agent-ux-user-experience, agent-performance-guru | agent-judge |
+| Cross-platform | agent-flutter-developer | agent-ios-developer, agent-android-developer | agent-judge |
+| Task planning | agent-tasks | agent-impl, agent-test | agent-judge |
+| Implementation | agent-impl | Domain-specific agents | agent-judge |
 
 ### Quality & Security Tasks
 | Task Type | Primary Agent | Secondary Agents | Quality Validator |
 |-----------|---------------|------------------|-------------------|
-| Testing | spec-test | spec-accessibility-champion | spec-judge |
-| Security | spec-data-privacy-security-analyst | spec-legal-counsel | spec-judge |
-| Performance | spec-performance-guru | spec-ai-performance-optimizer | spec-judge |
-| Compliance | spec-regulatory-compliance-specialist | spec-data-privacy-security-analyst | spec-judge |
+| Testing | agent-test | agent-accessibility-champion | agent-judge |
+| Security | agent-data-privacy-security-analyst | agent-legal-counsel | agent-judge |
+| Performance | agent-performance-guru | agent-ai-performance-optimizer | agent-judge |
+| Compliance | agent-regulatory-compliance-specialist | agent-data-privacy-security-analyst | agent-judge |
 
 ## Workflow Decision Tree
 
@@ -211,26 +211,26 @@ START: New Development Task
 │  └─ NO → Continue to agent selection
 │
 ├─ Task involves multiple platforms?
-│  ├─ YES → MANDATORY: spec-ios-developer + spec-android-developer + spec-judge
+│  ├─ YES → MANDATORY: agent-ios-developer + agent-android-developer + agent-judge
 │  └─ NO → Continue to domain selection
 │
 ├─ Task involves UI/UX changes?
-│  ├─ YES → MANDATORY: spec-ux-user-experience + domain agents + spec-judge
+│  ├─ YES → MANDATORY: agent-ux-user-experience + domain agents + agent-judge
 │  └─ NO → Continue to domain selection
 │
 ├─ Task involves system architecture?
-│  ├─ YES → MANDATORY: spec-system-architect + domain agents + spec-judge
+│  ├─ YES → MANDATORY: agent-system-architect + domain agents + agent-judge
 │  └─ NO → Continue to domain selection
 │
 ├─ Task involves security/compliance?
-│  ├─ YES → MANDATORY: spec-data-privacy-security-analyst + domain agents + spec-judge
+│  ├─ YES → MANDATORY: agent-data-privacy-security-analyst + domain agents + agent-judge
 │  └─ NO → Continue to domain selection
 │
 ├─ Task involves AI/ML optimization?
-│  ├─ YES → MANDATORY: spec-ai-model-optimizer + spec-performance-guru + spec-judge
+│  ├─ YES → MANDATORY: agent-ai-model-optimizer + agent-performance-guru + agent-judge
 │  └─ NO → Continue to domain selection
 │
-└─ Select primary domain agent + relevant secondary agents + spec-judge validation
+└─ Select primary domain agent + relevant secondary agents + agent-judge validation
 ```
 
 ## Violation Consequences
@@ -241,14 +241,14 @@ START: New Development Task
 - **Resolution**: Immediate agent engagement
 
 ### Level 2: Moderate Violations  
-- **Trigger**: Workflow step skipping, incomplete spec-driven process
+- **Trigger**: Workflow step skipping, incomplete agent-driven process
 - **Consequence**: Task rejection + restart from appropriate phase
 - **Resolution**: Complete workflow from violation point
 
 ### Level 3: Major Violations
 - **Trigger**: Direct implementation of complex features, platform parity violations
 - **Consequence**: Complete task rejection + mandatory re-planning
-- **Resolution**: Full spec-driven workflow restart
+- **Resolution**: Full agent-driven workflow restart
 
 ### Level 4: Critical Violations
 - **Trigger**: Systematic agent bypass, repeated major violations
@@ -260,14 +260,14 @@ START: New Development Task
 ### Example 1: New Feature Development
 
 **CORRECT Approach:**
-1. Use spec-requirements agent → create requirements.md
+1. Use agent-requirements agent → create requirements.md
 2. Get user approval on requirements
-3. Use spec-design agent → create design.md  
+3. Use agent-design agent → create design.md  
 4. Get user approval on design
-5. Use spec-tasks agent → create tasks.md
+5. Use agent-tasks agent → create tasks.md
 6. Get user approval on tasks
-7. Use appropriate implementation agents (spec-ios-developer, spec-android-developer)
-8. Use spec-judge for quality validation
+7. Use appropriate implementation agents (agent-ios-developer, agent-android-developer)
+8. Use agent-judge for quality validation
 9. Ensure platform parity before completion
 
 **INCORRECT Approach:**
@@ -280,10 +280,10 @@ START: New Development Task
 
 **CORRECT Approach:**
 1. Analyze bug scope and impact
-2. Engage spec-ux-user-experience agent for design guidance
-3. Engage platform-specific agents (spec-ios-developer, spec-android-developer)
+2. Engage agent-ux-user-experience agent for design guidance
+3. Engage platform-specific agents (agent-ios-developer, agent-android-developer)
 4. Implement fixes with platform parity
-5. Use spec-judge for validation
+5. Use agent-judge for validation
 6. Test across all platforms
 
 **INCORRECT Approach:**
@@ -312,7 +312,7 @@ START: New Development Task
 
 ### Manual Validation
 - Code review checklist requiring agent workflow evidence  
-- Quality gates requiring spec-judge validation approval
+- Quality gates requiring agent-judge validation approval
 - Platform parity testing before merge approval
 
 ### Monitoring and Reporting
@@ -325,7 +325,7 @@ START: New Development Task
 ### Immediate Success (Week 1)
 - 100% agent workflow adoption for new tasks
 - Zero platform parity violations
-- Complete spec-driven process for all features
+- Complete agent-driven process for all features
 
 ### Short-term Success (Month 1)  
 - 50% reduction in quality regressions
@@ -340,7 +340,7 @@ START: New Development Task
 ## Risk Mitigation
 
 ### Risk: Agent Unavailability
-- **Mitigation**: Fallback to secondary agents, escalation to spec-judge
+- **Mitigation**: Fallback to secondary agents, escalation to agent-judge
 - **Contingency**: Manual expert review with documented justification
 
 ### Risk: Workflow Bottlenecks
@@ -356,7 +356,7 @@ START: New Development Task
 - `/specs/development-workflow/tasks.md` - Implementation tasks for workflow enforcement
 - `/specs/design/system-architecture.md` - Overall system design context
 - `/CLAUDE.md` - Project configuration and agent definitions
-- `/specs/design/button-design-system.md` - Example of proper spec-driven development
+- `/specs/design/button-design-system.md` - Example of proper agent-driven development
 
 ## Approval and Sign-off
 

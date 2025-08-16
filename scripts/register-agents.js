@@ -41,7 +41,7 @@ async function main() {
   console.log('🔍 Scanning agent specifications...\n');
   
   const files = fs.readdirSync(AGENTS_DIR);
-  const agentFiles = files.filter(f => f.startsWith('spec-') && f.endsWith('.md'));
+  const agentFiles = files.filter(f => f.startsWith('agent-') && f.endsWith('.md'));
   
   const agents = [];
   
@@ -66,9 +66,9 @@ async function main() {
   registry += `3. Provide your task description in the prompt\n\n`;
   registry += `### Example Usage:\n\n`;
   registry += `\`\`\`javascript\n`;
-  registry += `// To use spec-workflow-manager:\n`;
+  registry += `// To use agent-workflow-manager:\n`;
   registry += `// In Claude Code interface:\n`;
-  registry += `// Task tool → subagent_type: "spec-workflow-manager" → prompt: "Create requirements for user authentication feature"\n`;
+  registry += `// Task tool → subagent_type: "agent-workflow-manager" → prompt: "Create requirements for user authentication feature"\n`;
   registry += `\`\`\`\n\n`;
   registry += `---\n\n`;
   

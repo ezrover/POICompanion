@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-This document provides actionable implementation tasks for enforcing the mandatory AI agent workforce and spec-driven workflow requirements established in `requirements.md`. These tasks must be implemented immediately to prevent future workflow violations.
+This document provides actionable implementation tasks for enforcing the mandatory AI agent workforce and agent-driven workflow requirements established in `requirements.md`. These tasks must be implemented immediately to prevent future workflow violations.
 
 ## Task Categories
 
@@ -94,7 +94,7 @@ This document provides actionable implementation tasks for enforcing the mandato
    - `/templates/architecture-workflow.md`
    - `/templates/security-workflow.md`
 2. Define agent parameter templates
-3. Create spec-judge orchestration templates
+3. Create agent-judge orchestration templates
 4. Add platform parity validation checklists
 5. Include quality validation criteria
 
@@ -148,7 +148,7 @@ This document provides actionable implementation tasks for enforcing the mandato
 1. Create `/tools/agent-orchestrator.js` 
 2. Implement task analysis and categorization
 3. Add automatic agent selection based on requirements matrix
-4. Create spec-judge integration for quality validation
+4. Create agent-judge integration for quality validation
 5. Add parallel agent execution for complex tasks
 6. Implement result aggregation and conflict resolution
 
@@ -156,7 +156,7 @@ This document provides actionable implementation tasks for enforcing the mandato
 - [ ] Tool correctly analyzes task complexity and requirements
 - [ ] Agent selection follows the defined matrix accurately  
 - [ ] Multiple agents can be coordinated effectively
-- [ ] Spec-judge validation is integrated seamlessly
+- [ ] agent-judge validation is integrated seamlessly
 - [ ] Results are aggregated and conflicts resolved
 - [ ] Tool integrates with existing development workflow
 
@@ -188,19 +188,19 @@ This document provides actionable implementation tasks for enforcing the mandato
 
 **Definition of Done**: Platform parity is automatically validated and enforced
 
-### TASK-007: Implement Spec-Driven Workflow Automation  
+### TASK-007: Implement agent-Driven Workflow Automation  
 **Priority**: HIGH
 **Estimated Effort**: 10 hours
 **Dependencies**: TASK-005
 **Assignee**: Workflow Automation Engineer
 
-**Description**: Automate the spec-driven workflow process (Requirements → Design → Tasks → Implementation).
+**Description**: Automate the agent-driven workflow process (Requirements → Design → Tasks → Implementation).
 
 **Implementation Steps**:
-1. Create `/workflow/spec-automation.js`
-2. Implement requirements phase automation (spec-requirements agent)
-3. Add design phase automation (spec-design agent)
-4. Create task planning automation (spec-tasks agent)
+1. Create `/workflow/agent-automation.js`
+2. Implement requirements phase automation (agent-requirements agent)
+3. Add design phase automation (agent-design agent)
+4. Create task planning automation (agent-tasks agent)
 5. Implement approval workflow management
 6. Add phase transition validation and controls
 
@@ -212,7 +212,7 @@ This document provides actionable implementation tasks for enforcing the mandato
 - [ ] Implementation references approved specifications
 - [ ] Workflow state is tracked and auditable
 
-**Definition of Done**: Complete spec-driven workflow is automated and enforced
+**Definition of Done**: Complete agent-driven workflow is automated and enforced
 
 ### TASK-008: Create Quality Metrics Dashboard
 **Priority**: HIGH  
@@ -335,7 +335,7 @@ This document provides actionable implementation tasks for enforcing the mandato
 ### Week 2: Automation Development
 - **Day 3-4**: TASK-005 (Agent Orchestration Tool)
 - **Day 4-5**: TASK-006 (Platform Parity Validation)
-- **Day 5-6**: TASK-007 (Spec-Driven Workflow Automation)
+- **Day 5-6**: TASK-007 (agent-Driven Workflow Automation)
 - **Day 6**: TASK-008 (Quality Metrics Dashboard)
 
 ### Week 3: Advanced Features  
@@ -426,7 +426,7 @@ This document provides actionable implementation tasks for enforcing the mandato
 ### Phase 2 Quality Gate  
 - [ ] Agent orchestration fully automated
 - [ ] Platform parity automatically validated
-- [ ] Spec-driven workflow enforced
+- [ ] agent-driven workflow enforced
 - [ ] Quality metrics dashboard operational
 
 ### Phase 3 Quality Gate

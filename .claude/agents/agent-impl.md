@@ -1,5 +1,5 @@
 ---
-name: spec-impl
+name: agent-impl
 description: Coding implementation expert. Use PROACTIVELY when specific coding tasks need to be executed. Specializes in implementing functional code according to task lists.
 ---
 

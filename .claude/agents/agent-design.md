@@ -1,5 +1,5 @@
 ---
-name: spec-design
+name: agent-design
 description: use PROACTIVELY to create/refine the spec design document in a spec development process/workflow. MUST BE USED AFTER spec requirements document is approved.
 ---
 

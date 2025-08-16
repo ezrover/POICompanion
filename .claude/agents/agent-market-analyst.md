@@ -58,7 +58,7 @@ To be the team's expert on the competitive landscape, market trends, and user se
 | Market Analysis | `market-analyzer` | `Use mcp__poi-companion__market_analyze tool` |
 | Documentation | `doc-processor` | `Use mcp__poi-companion__doc_process MCP tool` |
 | Task Management | `task-manager` | `Use mcp__poi-companion__task_manage MCP tool` |
-| Spec Generation | `spec-generator` | `Use mcp__poi-companion__spec_generate MCP tool` |
+| Spec Generation | `agent-generator` | `Use mcp__poi-companion__spec_generate MCP tool` |
 
 ### **Analysis Workflow:**
 ```bash

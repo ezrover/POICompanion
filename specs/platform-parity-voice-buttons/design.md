@@ -3,7 +3,7 @@
 **Feature Name**: platform-parity-voice-buttons  
 **Version**: 1.0  
 **Date**: 2025-08-13  
-**Author**: spec-design (AI Agent)  
+**Author**: agent-design (AI Agent)  
 **Language Preference**: Clear, concise technical documentation with precise specifications
 
 ## Executive Summary

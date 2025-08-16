@@ -7,16 +7,36 @@ struct MainPOIView: View {
     @ObservedObject var locationManager = LocationManager.shared
     @StateObject private var speechManager = SpeechManager()
     @StateObject private var agentManager = AIAgentManager()
+    @StateObject private var autoDiscoverManager = AutoDiscoverManager.shared
     @EnvironmentObject var appStateManager: AppStateManager
     @EnvironmentObject var roadtripSession: RoadtripSession
     
     @State private var animatingButton: String? = nil
+    @State private var isDiscoveryMode = false
     
     var body: some View {
         ZStack {
-            // Fullscreen Background Image
+            // Fullscreen Background Image with Auto-Cycling Support
             Group {
-                if let currentPOI = agentManager.currentPOI {
+                if isDiscoveryMode, let currentPhoto = autoDiscoverManager.currentPhoto {
+                    // Discovery mode - show auto-cycling photos
+                    AsyncImage(url: currentPhoto) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .transition(.opacity)
+                    } placeholder: {
+                        Rectangle()
+                            .fill(Color.gray.opacity(0.3))
+                            .overlay(
+                                Image(systemName: "photo")
+                                    .font(.largeTitle)
+                                    .foregroundColor(.gray)
+                            )
+                    }
+                    .animation(.easeInOut(duration: 0.5), value: autoDiscoverManager.currentPhotoIndex)
+                } else if let currentPOI = agentManager.currentPOI {
+                    // Normal mode - single POI image
                     AsyncImage(url: currentPOI.imageURL) { image in
                         image
                             .resizable()
@@ -155,16 +175,30 @@ struct MainPOIView: View {
                 Spacer()
                 
                 // POI Name Overlay (if available)
-                if let currentPOI = agentManager.currentPOI {
+                if let currentPOI = (isDiscoveryMode ? autoDiscoverManager.currentPOI : agentManager.currentPOI) {
                     VStack {
                         HStack {
-                            Image(systemName: "location.fill")
+                            Image(systemName: isDiscoveryMode ? "location.magnifyingglass" : "location.fill")
                                 .foregroundColor(.white)
                             Text(currentPOI.name)
                                 .font(.headline)
                                 .foregroundColor(.white)
                                 .accessibilityIdentifier("currentPOIName")
+                            
                             Spacer()
+                            
+                            // Discovery mode indicators
+                            if isDiscoveryMode {
+                                // Photo indicator
+                                Text("\(autoDiscoverManager.currentPhotoIndex + 1)/\(autoDiscoverManager.currentPOIPhotos.count)")
+                                    .font(.caption)
+                                    .foregroundColor(.white.opacity(0.8))
+                                
+                                // POI position indicator
+                                Text("POI \(autoDiscoverManager.currentPOIIndex + 1)/\(autoDiscoverManager.discoveredPOIs.count)")
+                                    .font(.caption)
+                                    .foregroundColor(.white.opacity(0.8))
+                            }
                         }
                         .padding()
                         .background(Color.black.opacity(0.6))
@@ -178,7 +212,13 @@ struct MainPOIView: View {
                     HStack {
                     // Previous Button
                     VoiceAnimatedButton(
-                        action: { agentManager.previousPOI() },
+                        action: { 
+                            if isDiscoveryMode {
+                                autoDiscoverManager.previousPOI()
+                            } else {
+                                agentManager.previousPOI()
+                            }
+                        },
                         icon: "chevron.left.circle.fill",
                         label: "Previous",
                         color: .purple,
@@ -189,18 +229,50 @@ struct MainPOIView: View {
                     
                     Spacer()
                     
-                    // Save/Favorite Button
-                    VoiceAnimatedButton(
-                        action: { agentManager.favoriteCurrentPOI() },
-                        icon: "heart.fill",
-                        label: "Save",
-                        color: .red,
-                        actionKey: "save",
-                        isAnimating: animatingButton == "save"
-                    )
-                    .accessibilityIdentifier("savePOIButton")
+                    // Save/Favorite Button (Normal Mode) OR Search Button (Discovery Mode)
+                    if isDiscoveryMode {
+                        VoiceAnimatedButton(
+                            action: { 
+                                // Return to destination selection (back button functionality)
+                                autoDiscoverManager.stopAutoDiscovery()
+                                appStateManager.returnToDestinationSelection()
+                                roadtripSession.pauseSession()
+                            },
+                            icon: "magnifyingglass",
+                            label: "Search",
+                            color: .blue,
+                            actionKey: "search",
+                            isAnimating: animatingButton == "search"
+                        )
+                        .accessibilityIdentifier("searchButton")
+                    } else {
+                        VoiceAnimatedButton(
+                            action: { agentManager.favoriteCurrentPOI() },
+                            icon: "heart.fill",
+                            label: "Save",
+                            color: .red,
+                            actionKey: "save",
+                            isAnimating: animatingButton == "save"
+                        )
+                        .accessibilityIdentifier("savePOIButton")
+                    }
                     
                     Spacer()
+                    
+                    // Speak/Info Button (Discovery Mode Only)
+                    if isDiscoveryMode {
+                        VoiceAnimatedButton(
+                            action: { handleSpeakInfoAction() },
+                            icon: "speaker.wave.2.fill",
+                            label: "Speak",
+                            color: Color.purple,
+                            actionKey: "speak",
+                            isAnimating: animatingButton == "speak"
+                        )
+                        .accessibilityIdentifier("speakInfoButton")
+                        
+                        Spacer()
+                    }
                     
                     // Like Button
                     VoiceAnimatedButton(
@@ -217,7 +289,13 @@ struct MainPOIView: View {
                     
                     // Dislike Button
                     VoiceAnimatedButton(
-                        action: { agentManager.dislikeCurrentPOI() },
+                        action: { 
+                            if isDiscoveryMode {
+                                autoDiscoverManager.dislikeCurrentPOI()
+                            } else {
+                                agentManager.dislikeCurrentPOI()
+                            }
+                        },
                         icon: "hand.thumbsdown.fill",
                         label: "Dislike",
                         color: .orange,
@@ -273,7 +351,13 @@ struct MainPOIView: View {
                     
                     // Next Button (moved to last position)
                     VoiceAnimatedButton(
-                        action: { agentManager.nextPOI() },
+                        action: { 
+                            if isDiscoveryMode {
+                                autoDiscoverManager.nextPOI()
+                            } else {
+                                agentManager.nextPOI()
+                            }
+                        },
                         icon: "chevron.right.circle.fill",
                         label: "Next",
                         color: .purple,
@@ -305,10 +389,16 @@ struct MainPOIView: View {
             setupVoiceCommandObservers()
             setupAppLifecycleObservers()
             
+            // Check if we're in discovery mode
+            isDiscoveryMode = autoDiscoverManager.isDiscoveryActive
+            
             // Auto-start speech recognition when entering main screen
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 speechManager.startListening()
             }
+        }
+        .onReceive(autoDiscoverManager.$isDiscoveryActive) { active in
+            isDiscoveryMode = active
         }
     }
     
@@ -407,25 +497,91 @@ struct MainPOIView: View {
         case "dislike":
             agentManager.dislikeCurrentPOI()
         case "next":
-            agentManager.nextPOI()
+            if isDiscoveryMode {
+                autoDiscoverManager.nextPOI()
+            } else {
+                agentManager.nextPOI()
+            }
         case "previous":
-            agentManager.previousPOI()
+            if isDiscoveryMode {
+                autoDiscoverManager.previousPOI()
+            } else {
+                agentManager.previousPOI()
+            }
         case "navigate":
             handleNavigateAction()
         case "call":
             handleCallAction()
-        case "exit", "back": // CRITICAL FIX: Add back voice command support
-            print("[MainDashboardView] Back/Exit command received - returning to destination selection")
-            speechManager.speak("Going back to destination selection")
-            appStateManager.returnToDestinationSelection()
-            roadtripSession.pauseSession()
+        case "speak", "info":
+            if isDiscoveryMode {
+                handleSpeakInfoAction()
+            }
+        case "search", "back", "exit":
+            if isDiscoveryMode {
+                print("[MainPOIView] Search/Back command received in discovery mode - returning to destination selection")
+                autoDiscoverManager.stopAutoDiscovery()
+                speechManager.speak("Returning to destination selection")
+                appStateManager.returnToDestinationSelection()
+                roadtripSession.pauseSession()
+            } else {
+                print("[MainPOIView] Back/Exit command received - returning to destination selection")
+                speechManager.speak("Going back to destination selection")
+                appStateManager.returnToDestinationSelection()
+                roadtripSession.pauseSession()
+            }
+        case "dislike":
+            if isDiscoveryMode {
+                autoDiscoverManager.dislikeCurrentPOI()
+            } else {
+                agentManager.dislikeCurrentPOI()
+            }
         default:
             break
         }
     }
     
+    private func handleSpeakInfoAction() {
+        guard let currentPOI = (isDiscoveryMode ? autoDiscoverManager.currentPOI : agentManager.currentPOI) else {
+            print("No current POI available for speak info")
+            speechManager.speak("No location information available")
+            return
+        }
+        
+        // Generate AI podcast content about the current POI
+        let podcastContent = generatePOIPodcastContent(for: currentPOI)
+        speechManager.speak(podcastContent)
+        
+        print("[MainPOIView] Speaking info about \(currentPOI.name)")
+    }
+    
+    private func generatePOIPodcastContent(for poi: POI) -> String {
+        // Basic podcast content generation
+        // In a full implementation, this would use Gemma-3N to generate rich content
+        
+        var content = "Here's what I know about \(poi.name). "
+        
+        if !poi.description.isEmpty {
+            content += "\(poi.description) "
+        }
+        
+        if poi.rating > 0 {
+            let ratingDescription = poi.rating >= 4.5 ? "excellent" : poi.rating >= 4.0 ? "very good" : poi.rating >= 3.5 ? "good" : "average"
+            content += "This place has \(ratingDescription) reviews with a \(String(format: "%.1f", poi.rating)) star rating. "
+        }
+        
+        // Add category information
+        content += "It's categorized as \(poi.category.displayName). "
+        
+        // Add location context
+        content += "This location offers a unique experience for roadtrip explorers. "
+        
+        content += "Would you like to navigate there or continue exploring?"
+        
+        return content
+    }
+    
     private func handleNavigateAction() {
-        guard let currentPOI = agentManager.currentPOI else {
+        guard let currentPOI = (isDiscoveryMode ? autoDiscoverManager.currentPOI : agentManager.currentPOI) else {
             print("No current POI available for navigation")
             speechManager.speak("No destination selected for navigation")
             return

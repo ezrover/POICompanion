@@ -41,7 +41,7 @@ graph TD
 
 **Estimated Time**: 1.5 hours
 **Priority**: P0 (Critical)
-**Assignee**: spec-ios-developer
+**Assignee**: agent-ios-developer
 
 ---
 
@@ -65,7 +65,7 @@ graph TD
 
 **Estimated Time**: 1.5 hours
 **Priority**: P0 (Critical)
-**Assignee**: spec-android-developer
+**Assignee**: agent-android-developer
 
 ## Phase 2: iOS Implementation (6 hours)
 
@@ -138,7 +138,7 @@ struct MicToggleButton: View {
 
 **Estimated Time**: 3 hours
 **Priority**: P0 (Critical)
-**Assignee**: spec-ios-developer
+**Assignee**: agent-ios-developer
 
 ---
 
@@ -198,7 +198,7 @@ func updateVoiceActivity(_ isActive: Bool) {
 
 **Estimated Time**: 3 hours
 **Priority**: P0 (Critical)
-**Assignee**: spec-ios-developer
+**Assignee**: agent-ios-developer
 
 ## Phase 3: Android Implementation (6 hours)
 
@@ -282,7 +282,7 @@ fun MicToggleButton(
 
 **Estimated Time**: 3 hours
 **Priority**: P0 (Critical)
-**Assignee**: spec-android-developer
+**Assignee**: agent-android-developer
 
 ---
 
@@ -350,7 +350,7 @@ fun updateVoiceActivity(isActive: Boolean) {
 
 **Estimated Time**: 3 hours
 **Priority**: P0 (Critical)
-**Assignee**: spec-android-developer
+**Assignee**: agent-android-developer
 
 ## Phase 4: Platform Integration and Testing (4 hours)
 
@@ -378,7 +378,7 @@ fun updateVoiceActivity(isActive: Boolean) {
 3. **`CLAUDE.md`**:
    - Add VOICE ANIMATION PARITY ENFORCEMENT section
    - Update auto-activation triggers for animation changes
-   - Include spec-judge validation requirements
+   - Include agent-judge validation requirements
 
 **Documentation Requirements**:
 ```markdown
@@ -386,7 +386,7 @@ fun updateVoiceActivity(isActive: Boolean) {
 - GO/Navigate buttons: Voice animations REQUIRED during voice recognition
 - MIC buttons: Voice animations PROHIBITED - static mute/unmute icons only
 - Platform parity: Identical animation behavior across iOS, Android, CarPlay, Android Auto
-- Enforcement: Automatic validation through spec-judge agent coordination
+- Enforcement: Automatic validation through agent-judge agent coordination
 ```
 
 **Deliverables**:
@@ -402,7 +402,7 @@ fun updateVoiceActivity(isActive: Boolean) {
 
 **Estimated Time**: 2 hours
 **Priority**: P1 (High)
-**Assignee**: spec-ux-user-experience
+**Assignee**: agent-ux-user-experience
 
 ---
 
@@ -449,7 +449,7 @@ Use `mcp__poi-companion__mobile_build_verify` tool with platform: 'both'
 
 **Estimated Time**: 2 hours
 **Priority**: P0 (Critical)
-**Assignee**: spec-test
+**Assignee**: agent-test
 
 ## Phase 5: Validation and Approval (3 hours)
 
@@ -503,7 +503,7 @@ Use `mcp__poi-companion__mobile_build_verify` tool with platform: 'both'
 
 **Estimated Time**: 3 hours
 **Priority**: P0 (Critical)
-**Assignee**: spec-judge
+**Assignee**: agent-judge
 
 ## Implementation Timeline
 

@@ -220,4 +220,4 @@ Replace the current mocked POI data system with a comprehensive real POI discove
 
 **Document Status:** READY FOR DESIGN PHASE  
 **Next Phase:** Technical Design Document Creation  
-**Assigned Agent:** `spec-design` for system architecture
+**Assigned Agent:** `agent-design` for system architecture

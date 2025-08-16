@@ -55,7 +55,7 @@ To generate comprehensive, standardized technical specification documents from r
 ## 5. MCP Tool Integration
 
 ### Primary MCP Tools Utilized
-- **spec-generator**: Core specification generation from templates and requirements
+- **agent-generator**: Core specification generation from templates and requirements
 - **doc-processor**: Document analysis and processing for enhanced content
 - **schema-validator**: Validation of specification schemas and data structures
 - **task-manager**: Integration with project task management and tracking
@@ -119,7 +119,7 @@ Use mcp__poi-companion__schema_validate tool with action: "validate" requirement
 - **Process Documentation:** Guidelines for specification generation and maintenance
 - **MCP Integration Guides:** Documentation for leveraging local MCP tools in specification workflow
 
-## 9. Integration with Spec-Driven Development
+## 9. Integration with agent-Driven Development
 
 ### Workflow Integration
 - **Phase 1:** Requirements gathering and structuring
@@ -128,10 +128,10 @@ Use mcp__poi-companion__schema_validate tool with action: "validate" requirement
 - **Phase 4:** Task breakdown and implementation planning
 
 ### Collaboration with Other Agents
-- **spec-requirements:** Provides structured requirements input
-- **spec-design:** Consumes specifications for design document creation
-- **spec-tasks:** Uses specifications for task breakdown and planning
-- **spec-judge:** Validates specification quality and completeness
+- **agent-requirements:** Provides structured requirements input
+- **agent-design:** Consumes specifications for design document creation
+- **agent-tasks:** Uses specifications for task breakdown and planning
+- **agent-judge:** Validates specification quality and completeness
 
 This agent serves as the bridge between raw requirements and structured technical documentation, ensuring that all project specifications are comprehensive, consistent, and actionable while leveraging the full power of the local MCP tool ecosystem.
 

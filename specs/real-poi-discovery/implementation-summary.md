@@ -134,12 +134,12 @@ Comprehensive implementation plan created to replace mock POI data with real dis
 ## Resource Allocation
 
 ### Agent Assignments
-- **spec-ai-model-optimizer:** Model integration and optimization (34h)
-- **spec-ios-developer:** iOS implementation and parity (68h)
-- **spec-android-developer:** Android implementation and parity (68h)
-- **spec-system-architect:** System design and orchestration (26h)
-- **spec-performance-guru:** Performance optimization (24h)
-- **spec-test:** Comprehensive testing and validation (28h)
+- **agent-ai-model-optimizer:** Model integration and optimization (34h)
+- **agent-ios-developer:** iOS implementation and parity (68h)
+- **agent-android-developer:** Android implementation and parity (68h)
+- **agent-system-architect:** System design and orchestration (26h)
+- **agent-performance-guru:** Performance optimization (24h)
+- **agent-test:** Comprehensive testing and validation (28h)
 
 ### Total Effort Estimate
 - **334 hours** across 4-week implementation period
@@ -164,13 +164,13 @@ Comprehensive implementation plan created to replace mock POI data with real dis
 
 ## Conclusion
 
-This comprehensive implementation plan addresses all identified issues with the current mock POI system and provides a robust, scalable solution for real POI discovery. The spec-driven approach ensures thorough planning, platform parity, and production readiness.
+This comprehensive implementation plan addresses all identified issues with the current mock POI system and provides a robust, scalable solution for real POI discovery. The agent-driven approach ensures thorough planning, platform parity, and production readiness.
 
 The plan is **READY FOR IMPLEMENTATION** and requires coordination with specialized agents to execute the 4-week development timeline.
 
 ---
 
-**Created by:** spec-workflow-manager  
-**Reviewed by:** [Pending spec-judge validation]  
+**Created by:** agent-workflow-manager  
+**Reviewed by:** [Pending agent-judge validation]  
 **Status:** IMPLEMENTATION READY  
 **Next Action:** Agent coordination and development kickoff

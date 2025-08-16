@@ -22,7 +22,7 @@ Before creating a new agent, document:
 Use this template when proposing a new agent:
 
 ```markdown
-🆕 SUGGESTED NEW AGENT: spec-[domain]-[specialization]
+🆕 SUGGESTED NEW AGENT: agent-[domain]-[specialization]
 
 **Gap Identified:** [What current agents cannot do]
 **Proposed Expertise:** [Specific capabilities needed]
@@ -63,38 +63,38 @@ Use Claude Code Task tool with the new agent name directly:
 
 ## Examples of Good Agent Candidates
 
-### ✅ GOOD: spec-blockchain-smart-contract
+### ✅ GOOD: agent-blockchain-smart-contract
 - **Gap**: No current agent specializes in blockchain/Web3
 - **Expertise**: Solidity, smart contracts, DeFi protocols
 - **Validation**: Contract verification, gas optimization metrics
-- **Integration**: Works with spec-security-sentinel for audits
+- **Integration**: Works with agent-security-sentinel for audits
 
-### ✅ GOOD: spec-video-processing
+### ✅ GOOD: agent-video-processing
 - **Gap**: No agent for video/media processing
 - **Expertise**: FFmpeg, video codecs, streaming protocols
 - **Validation**: Output quality metrics, performance benchmarks
-- **Integration**: Works with spec-performance-guru for optimization
+- **Integration**: Works with agent-performance-guru for optimization
 
-### ❌ BAD: spec-button-maker
+### ❌ BAD: agent-button-maker
 - **Why Bad**: Too narrow - covered by existing UI/UX agents
-- **Better**: Enhance spec-ux-user-experience with button expertise
+- **Better**: Enhance agent-ux-user-experience with button expertise
 
-### ❌ BAD: spec-todo-list
+### ❌ BAD: agent-todo-list
 - **Why Bad**: Too simple - any agent can handle basic lists
-- **Better**: Use spec-tasks for project management
+- **Better**: Use agent-tasks for project management
 
 ## Agent Naming Convention
 
-Follow this pattern: `spec-[domain]-[specialization]`
+Follow this pattern: `agent-[domain]-[specialization]`
 
 - **Domain**: Primary area (e.g., mobile, web, data, security)
 - **Specialization**: Specific expertise (e.g., optimizer, architect, analyst)
 
 Examples:
-- `spec-mobile-performance`
-- `spec-data-pipeline`
-- `spec-security-penetration`
-- `spec-cloud-cost-optimizer`
+- `agent-mobile-performance`
+- `agent-data-pipeline`
+- `agent-security-penetration`
+- `agent-cloud-cost-optimizer`
 
 ## Quality Standards for New Agents
 
@@ -146,7 +146,7 @@ Total: 43 agents
 
 ### Check if agent exists:
 ```bash
-grep "spec-your-agent" .claude/AGENT_REGISTRY.md
+grep "agent-your-agent" .claude/AGENT_REGISTRY.md
 ```
 
 ### Create new agent:
@@ -163,7 +163,7 @@ node scripts/register-agents.js
 Use Claude Code Task tool with agent name:
 ```javascript
 // In Claude Code interface: 
-// Task tool → subagent_type: "spec-your-agent" → prompt: "[test task]"
+// Task tool → subagent_type: "agent-your-agent" → prompt: "[test task]"
 ```
 
 Remember: The goal is a comprehensive but focused workforce. Only add agents that provide unique, irreplaceable value.

@@ -203,13 +203,13 @@
 ## 🤖 Agent Infrastructure
 
 ### ✅ Completed Features
-- [x] **spec-ios-developer with Mandatory Validation** (P0) - *Completed 2025-08-10*
+- [x] **agent-ios-developer with Mandatory Validation** (P0) - *Completed 2025-08-10*
   - Implementation: Specialized iOS development agent
   - Status: Production ready
   - Dependencies: None
   - Notes: Enforces iOS best practices and parity
 
-- [x] **spec-android-developer with Equivalent Validation** (P0) - *Completed 2025-08-10*
+- [x] **agent-android-developer with Equivalent Validation** (P0) - *Completed 2025-08-10*
   - Implementation: Android development specialist agent
   - Status: Production ready
   - Dependencies: None
@@ -221,7 +221,7 @@
   - Dependencies: Platform-specific agents
   - Notes: Prevents platform feature drift
 
-- [x] **spec-judge Validation Capabilities** (P1) - *Completed 2025-08-10*
+- [x] **agent-judge Validation Capabilities** (P1) - *Completed 2025-08-10*
   - Implementation: Quality validation orchestration
   - Status: Production ready
   - Dependencies: All specialist agents

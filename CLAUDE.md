@@ -7,13 +7,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - 🤖 **Execution Method**: Use `general-purpose` agent with agent-specific system prompts
 - 📝 **Registration Script**: `scripts/register-agents.js` maintains the registry
 
-**HOW TO USE SPEC-* AGENTS:**
+**HOW TO USE agent-* AGENTS:**
 1. Consult `.claude/AGENT_REGISTRY.md` for agent system prompts
 2. Use Task tool with `subagent_type: "general-purpose"`
 3. Include the agent's system prompt in your task
 4. The agent will execute with its specialized behavior
 
-**MANDATORY ENFORCEMENT:** ALL tasks MUST use appropriate spec-* agents - NO EXCEPTIONS
+**MANDATORY ENFORCEMENT:** ALL tasks MUST use appropriate agent-* agents - NO EXCEPTIONS
 
 ## 🚀 AGENT EXPANSION PROTOCOL (CONTINUOUS IMPROVEMENT)
 
@@ -22,7 +22,7 @@ If the existing 43 agents cannot perfectly execute and validate a task in a reli
 
 1. **IMMEDIATE ACTION**: STOP and assess the capability gap
 2. **SUGGEST NEW AGENT**: Propose a new specialized agent with:
-   - Clear name following `spec-[domain]-[specialization]` pattern
+   - Clear name following `agent-[domain]-[specialization]` pattern
    - Specific expertise and capabilities needed
    - How it fills the gap in current workforce
    - Expected validation/proof mechanisms
@@ -35,7 +35,7 @@ If the existing 43 agents cannot perfectly execute and validate a task in a reli
 
 **AGENT SUGGESTION TEMPLATE:**
 ```
-🆕 SUGGESTED NEW AGENT: spec-[proposed-name]
+🆕 SUGGESTED NEW AGENT: agent-[proposed-name]
 
 **Gap Identified:** [What current agents cannot do]
 **Proposed Expertise:** [Specific capabilities needed]
@@ -46,9 +46,9 @@ Shall I create this agent? (yes/no)
 ```
 
 **MANDATORY WORKFLOW (ABSOLUTE - NO SHORTCUTS):**
-1. **STEP 1 (REQUIRED)**: ALWAYS start with `spec-workflow-manager` for ANY development/implementation request
-2. **STEP 2 (REQUIRED)**: Follow complete spec-driven workflow (requirements → design → tasks → implementation)
-3. **STEP 3 (REQUIRED)**: Use `spec-judge` for final validation
+1. **STEP 1 (REQUIRED)**: ALWAYS start with `agent-workflow-manager` for ANY development/implementation request
+2. **STEP 2 (REQUIRED)**: Follow complete agent-driven workflow (requirements → design → tasks → implementation)
+3. **STEP 3 (REQUIRED)**: Use `agent-judge` for final validation
 4. **VIOLATION = TASK FAILURE**: Skipping ANY step triggers immediate task failure
 
 **WORKFLOW EXEMPTIONS (Direct Agent Response Allowed):**
@@ -65,12 +65,12 @@ Shall I create this agent? (yes/no)
 - 🚨 Architecture decisions
 
 **🚨 RECENT VIOLATION EXAMPLES (LEARN FROM MISTAKES):**
-- ❌ **VIOLATION**: Fixed button regression directly instead of using spec-ios-developer
-- ❌ **VIOLATION**: Fixed crash directly instead of using spec-workflow-manager  
-- ❌ **VIOLATION**: Made UI changes without spec-ux-user-experience review
+- ❌ **VIOLATION**: Fixed button regression directly instead of using agent-ios-developer
+- ❌ **VIOLATION**: Fixed crash directly instead of using agent-workflow-manager  
+- ❌ **VIOLATION**: Made UI changes without agent-ux-user-experience review
 - ❌ **VIOLATION**: Implemented voice parity directly instead of agent coordination
-- ❌ **VIOLATION**: Fixed Android build errors without spec-android-developer
-- ❌ **VIOLATION**: Updated documentation without spec-judge validation
+- ❌ **VIOLATION**: Fixed Android build errors without agent-android-developer
+- ❌ **VIOLATION**: Updated documentation without agent-judge validation
 
 **⚠️ STRENGTHENED CONSEQUENCES (IMMEDIATE ENFORCEMENT):**
 1. **First Violation**: IMMEDIATE ROLLBACK + restart with agents (NO warnings)
@@ -97,18 +97,18 @@ Shall I create this agent? (yes/no)
 - ✅ **Android Auto** (Car App Templates)
 
 **ENFORCEMENT REQUIREMENTS:**
-1. **BEFORE** implementing ANY feature: Plan implementation for ALL four platforms with our agents in ./claude/agents/spec-*.md
-2. **DURING** implementation: Implement features simultaneously across all platforms with our agents in ./claude/agents/spec-*.md
-3. **AFTER** implementation: Verify and test parity across all platforms with our agents in ./claude/agents/spec-*.md
+1. **BEFORE** implementing ANY feature: Plan implementation for ALL four platforms with our agents in ./claude/agents/
+2. **DURING** implementation: Implement features simultaneously across all platforms with our agents in ./claude/agents/
+3. **AFTER** implementation: Verify and test parity across all platforms with our agents in ./claude/agents/
 4. **NO EXCEPTIONS**: If a feature can't be implemented on one platform, it cannot be implemented on any platform
-5. **BUILD VERIFICATION**: All platforms must build successfully before considering task complete with our agents in ./claude/agents/spec-*.md
+5. **BUILD VERIFICATION**: All platforms must build successfully before considering task complete with our agents in ./claude/agents/
 
 **PROMPT & RESULT RECORDING (NON-NEGOTIABLE):**
 1. **START**: Immediately append user prompt to `/prompts.md`
 2. **END**: Append summary prefixed with `CLAUDE:` to `/prompts.md`
 
 **🚨 GIT COMMIT WORKFLOW (ABSOLUTELY MANDATORY - NO EXCEPTIONS):**
-1. **IMMEDIATE COMMIT RULE**: After completing ANY task, validate the results with our agents in ./claude/agents/spec-*.md , then you MUST commit changes. Afterwards, push to remote repository.
+1. **IMMEDIATE COMMIT RULE**: After completing ANY task, validate the results with our agents in ./claude/agents/ then you MUST commit changes. Afterwards, push to remote repository.
 2. **NO TASK IS COMPLETE** without a git commit - this is part of every task completion
 3. **ALWAYS commit workflow**:
    - Initial commit at task start for baseline establishment
@@ -127,22 +127,22 @@ Shall I create this agent? (yes/no)
 -   **ALWAYS** leverage the 43-agent specialized workforce via Claude Code Task tool
 -   **ALL 43 AGENTS OPERATIONAL**: Direct access via Claude Code Task tool
 -   **MANDATORY USAGE**: Use agents for ALL tasks - NO EXCEPTIONS
--   **SPEC-DRIVEN WORKFLOW**: ALL features MUST follow the complete workflow
+-   **agent-DRIVEN WORKFLOW**: ALL features MUST follow the complete workflow
 -   **MANDATORY USAGE**: Use agents for ALL TASKS - NO EXCEPTIONS, NO SIZE THRESHOLDS, NO COMPLEXITY EXEMPTIONS
--   **SPEC-DRIVEN WORKFLOW**: ALL requests MUST follow: Requirements → Design → Tasks → Implementation → Validation
+-   **agent-DRIVEN WORKFLOW**: ALL requests MUST follow: Requirements → Design → Tasks → Implementation → Validation
 -   **AUTO-ACTIVATE** agents proactively for EVERY request - no manual activation required
--   **ORCHESTRATE** multiple agents through spec-judge for comprehensive quality validation
+-   **ORCHESTRATE** multiple agents through agent-judge for comprehensive quality validation
 -   **DELEGATE** ALL tasks to domain experts rather than attempting ANY direct solution
 -   **PLATFORM COORDINATION**: Use mobile development agents to ensure 4-platform parity
 -   **VIOLATION TRACKING**: ANY direct implementation = IMMEDIATE TASK FAILURE + ROLLBACK
 
 **🚨 AGENT USAGE ENFORCEMENT (MANDATORY - ZERO TOLERANCE):**
-- **spec-workflow-manager**: MUST BE USED FIRST for all feature development
-- **spec-ios-developer** + **spec-android-developer**: MANDATORY for mobile changes
-- **spec-flutter-developer**: For cross-platform coordination
-- **spec-ux-user-experience**: REQUIRED for ANY UI/UX changes
-- **spec-system-architect**: For system-wide changes
-- **spec-judge**: FINAL VALIDATION for all implementations
+- **agent-workflow-manager**: MUST BE USED FIRST for all feature development
+- **agent-ios-developer** + **agent-android-developer**: MANDATORY for mobile changes
+- **agent-flutter-developer**: For cross-platform coordination
+- **agent-ux-user-experience**: REQUIRED for ANY UI/UX changes
+- **agent-system-architect**: For system-wide changes
+- **agent-judge**: FINAL VALIDATION for all implementations
 - **EXECUTION**: Use general-purpose agent with system prompts from AGENT_REGISTRY.md
 - **EXPANSION**: If no adequate agent exists, MUST propose new agent before proceeding
 
@@ -153,18 +153,18 @@ Shall I create this agent? (yes/no)
 4. **Automatic Detection**: All direct implementations trigger immediate violation response
 
 **COMPREHENSIVE VIOLATION EXAMPLES (DOCUMENTED FAILURES):**
-- ❌ **RECENT VIOLATION**: Fixed button regression directly instead of using spec-ios-developer agent
-- ❌ **RECENT VIOLATION**: Fixed crash directly instead of using spec-workflow-manager
-- ❌ **RECENT VIOLATION**: Made UI changes without spec-ux-user-experience review
+- ❌ **RECENT VIOLATION**: Fixed button regression directly instead of using agent-ios-developer agent
+- ❌ **RECENT VIOLATION**: Fixed crash directly instead of using agent-workflow-manager
+- ❌ **RECENT VIOLATION**: Made UI changes without agent-ux-user-experience review
 - ❌ **RECENT VIOLATION**: Implemented voice parity directly bypassing agent coordination
-- ❌ **RECENT VIOLATION**: Fixed Android build issues without spec-android-developer involvement
-- ❌ **RECENT VIOLATION**: Implementing Gemma-2B instead of Gemma-3N (should have used spec-workflow-manager)
-- ❌ **RECENT VIOLATION**: Direct UI implementation without spec-ux-user-experience agent
+- ❌ **RECENT VIOLATION**: Fixed Android build issues without agent-android-developer involvement
+- ❌ **RECENT VIOLATION**: Implementing Gemma-2B instead of Gemma-3N (should have used agent-workflow-manager)
+- ❌ **RECENT VIOLATION**: Direct UI implementation without agent-ux-user-experience agent
 - ❌ **RECENT VIOLATION**: Platform-specific changes without coordinated mobile agents
-- ❌ **RECENT VIOLATION**: Skipping spec-driven workflow phases
+- ❌ **RECENT VIOLATION**: Skipping agent-driven workflow phases
 - ❌ **RECENT VIOLATION**: Direct file modifications without agent oversight
-- ❌ **RECENT VIOLATION**: Documentation updates without spec-judge validation
-- ✅ **ONLY CORRECT APPROACH**: Using spec-workflow-manager → requirements → design → tasks → implementation → validation
+- ❌ **RECENT VIOLATION**: Documentation updates without agent-judge validation
+- ✅ **ONLY CORRECT APPROACH**: Using agent-workflow-manager → requirements → design → tasks → implementation → validation
 
 **🚨 BUTTON DESIGN SYSTEM ENFORCEMENT (ZERO TOLERANCE FOR REGRESSION):**
 
@@ -194,9 +194,9 @@ Shall I create this agent? (yes/no)
 - Solution: Mandatory agent usage + automated validation + design tokens
 
 **ENFORCEMENT AGENTS:**
-- `spec-ux-user-experience`: MUST review all button changes
-- `spec-ios-developer` + `spec-android-developer`: MUST implement button changes
-- `spec-judge`: MUST validate platform parity before completion
+- `agent-ux-user-experience`: MUST review all button changes
+- `agent-ios-developer` + `agent-android-developer`: MUST implement button changes
+- `agent-judge`: MUST validate platform parity before completion
 
 **🚨 VOICE INTERACTION PARITY ENFORCEMENT (ZERO TOLERANCE FOR REGRESSION):**
 
@@ -253,9 +253,9 @@ Shall I create this agent? (yes/no)
 - ✅ Documentation: Updated with enforcement rules to prevent regressions
 
 **ENFORCEMENT AGENTS:**
-- `spec-ux-user-experience`: MUST review all voice interaction changes
-- `spec-ios-developer` + `spec-android-developer`: MUST implement voice changes
-- `spec-judge`: MUST validate voice and button platform parity before completion
+- `agent-ux-user-experience`: MUST review all voice interaction changes
+- `agent-ios-developer` + `agent-android-developer`: MUST implement voice changes
+- `agent-judge`: MUST validate voice and button platform parity before completion
 
 ## 🚨 MCP TOOL ENFORCEMENT (ABSOLUTE REQUIREMENT - ZERO TOLERANCE)
 
@@ -325,20 +325,20 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 - `get_agent_status`: Get comprehensive registry status
 - Restart Claude Code after repairs to ensure all agents are available
 
-**📋 Spec-Driven Development Workflow**: Use `spec-workflow-manager` for systematic feature development:
-- **Phase 1**: Requirements gathering using `spec-requirements` (EARS format)
-- **Phase 2**: Design creation using `spec-design` (technical architecture)
-- **Phase 3**: Task planning using `spec-tasks` (implementation checklist)
+**📋 agent-Driven Development Workflow**: Use `agent-workflow-manager` for systematic feature development:
+- **Phase 1**: Requirements gathering using `agent-requirements` (EARS format)
+- **Phase 2**: Design creation using `agent-design` (technical architecture)
+- **Phase 3**: Task planning using `agent-tasks` (implementation checklist)
 - **Features**: Parallel agent execution, tree-based evaluation, user approval cycles
 - **Output**: Complete specs in `/specs/{feature-name}/` directory
-- **Replaces**: Manual coordination of spec-system-prompt-loader workflow
+- **Replaces**: Manual coordination of agent-system-prompt-loader workflow
 
 **Operational Philosophy**:
 - **🚨 AGENT-ONLY APPROACH**: Use agents for ALL TASKS - NO direct execution allowed for ANY reason
 - **PLATFORM PARITY ENFORCEMENT**: Always use mobile development agents to ensure 4-platform consistency
 - **Agent Delegation**: ALL domains require specialized agent expertise - NO direct implementation
 - **Multi-Agent Coordination**: Combine multiple agents for comprehensive coverage on EVERY task
-- **Quality Assurance**: `spec-judge` as ultimate gatekeeper orchestrating all agents for EVERY deliverable
+- **Quality Assurance**: `agent-judge` as ultimate gatekeeper orchestrating all agents for EVERY deliverable
 
 **❌ WHAT WENT WRONG & FIXES:**
 
@@ -355,19 +355,19 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 **Future Protocol**: NEVER implement complex features directly - ALWAYS delegate to specialized agents first
 
 **Auto-Engagement Triggers**:
-- **🚨 MOBILE DEVELOPMENT (MANDATORY)** → `spec-ios-developer` + `spec-android-developer` + `spec-flutter-developer` + `spec-judge`
-- **🚨 UI/UX CHANGES (MANDATORY)** → `spec-ux-user-experience` + `spec-ai-powered-ux-designer` + `spec-accessibility-champion`
-- **🚨 SYSTEM ARCHITECTURE** → `spec-system-architect` + `spec-cloud-architect` + `spec-performance-guru`
-- **Spec-driven development** → `spec-workflow-manager` (orchestrates requirements→design→tasks workflow)
-- Legal docs → `spec-legal-counsel`
-- Security → `spec-data-privacy-security-analyst` + manual security review
-- Performance → `spec-performance-guru` + `spec-ai-model-optimizer`
-- Market analysis → `spec-analyst` + `spec-market-analyzer`
-- Requirements → `spec-requirements` (or use `spec-workflow-manager` for full workflow)
-- Quality validation → `spec-judge` orchestrating relevant specialists
-- Privacy & security → `spec-data-privacy-security-analyst` + manual security review
-- AI performance → `spec-ai-performance-optimizer` + `spec-performance-guru`
-- AI-powered design → `spec-ai-powered-ux-designer` + `spec-ux-user-experience`
+- **🚨 MOBILE DEVELOPMENT (MANDATORY)** → `agent-ios-developer` + `agent-android-developer` + `agent-flutter-developer` + `agent-judge`
+- **🚨 UI/UX CHANGES (MANDATORY)** → `agent-ux-user-experience` + `agent-ai-powered-ux-designer` + `agent-accessibility-champion`
+- **🚨 SYSTEM ARCHITECTURE** → `agent-system-architect` + `agent-cloud-architect` + `agent-performance-guru`
+- **agent-driven development** → `agent-workflow-manager` (orchestrates requirements→design→tasks workflow)
+- Legal docs → `agent-legal-counsel`
+- Security → `agent-data-privacy-security-analyst` + manual security review
+- Performance → `agent-performance-guru` + `agent-ai-model-optimizer`
+- Market analysis → `agent-analyst` + `agent-market-analyzer`
+- Requirements → `agent-requirements` (or use `agent-workflow-manager` for full workflow)
+- Quality validation → `agent-judge` orchestrating relevant specialists
+- Privacy & security → `agent-data-privacy-security-analyst` + manual security review
+- AI performance → `agent-ai-performance-optimizer` + `agent-performance-guru`
+- AI-powered design → `agent-ai-powered-ux-designer` + `agent-ux-user-experience`
 
 ## Project Overview
 
@@ -395,89 +395,89 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 ## 43-Agent Specialized Workforce
 
 ### Strategic Intelligence (7 agents)
-- **spec-venture-strategist**: VC-aligned business strategy
-- **spec-analyst**: App Store competitive intelligence  
-- **spec-market-analyst**: Real-time market monitoring
-- **spec-product-management**: Mobile AI product strategy
-- **spec-customer-success-champion**: User lifetime value optimization
-- **spec-partnership-strategist**: OEM partnerships and B2B channels
-- **spec-data-privacy-security-analyst**: GDPR/CCPA compliance and security
+- **agent-venture-strategist**: VC-aligned business strategy
+- **agent-analyst**: App Store competitive intelligence  
+- **agent-market-analyst**: Real-time market monitoring
+- **agent-product-management**: Mobile AI product strategy
+- **agent-customer-success-champion**: User lifetime value optimization
+- **agent-partnership-strategist**: OEM partnerships and B2B channels
+- **agent-data-privacy-security-analyst**: GDPR/CCPA compliance and security
 
 ### Architecture & Requirements (2 agents)
-- **spec-requirements**: EARS methodology, enterprise requirements
-- **spec-design**: C4 architecture, mobile AI systems
+- **agent-requirements**: EARS methodology, enterprise requirements
+- **agent-design**: C4 architecture, mobile AI systems
 
 ### UX/UI Excellence (3 agents)
-- **spec-ux-user-experience**: Apple-level design, voice-first interfaces, automotive safety  
-- **spec-accessibility-champion**: WCAG compliance, accessibility advocacy
-- **spec-ai-powered-ux-designer**: AI-driven adaptive, intuitive, accessible UI design
+- **agent-ux-user-experience**: Apple-level design, voice-first interfaces, automotive safety  
+- **agent-accessibility-champion**: WCAG compliance, accessibility advocacy
+- **agent-ai-powered-ux-designer**: AI-driven adaptive, intuitive, accessible UI design
 
 ### Development & Quality (4 agents)
-- **spec-tasks**: Advanced project management, dependency optimization
-- **spec-impl**: Enterprise coding patterns
-- **spec-test**: 1:1 documentation-code testing, TDD/BDD culture
-- **spec-judge**: Multi-criteria validation, orchestrates all 43 agents
+- **agent-tasks**: Advanced project management, dependency optimization
+- **agent-impl**: Enterprise coding patterns
+- **agent-test**: 1:1 documentation-code testing, TDD/BDD culture
+- **agent-judge**: Multi-criteria validation, orchestrates all 43 agents
 
 ### Security & Infrastructure (2 agents)  
-- **spec-data-privacy-security-analyst**: GDPR/CCPA compliance, security scanning, vulnerability mitigation
-- **spec-sre-reliability-engineer**: CI/CD, scalable operations, 99.95% uptime
+- **agent-data-privacy-security-analyst**: GDPR/CCPA compliance, security scanning, vulnerability mitigation
+- **agent-sre-reliability-engineer**: CI/CD, scalable operations, 99.95% uptime
 
 ### Platform Development (6 agents)
-- **spec-web-frontend-developer**: Next.js 14+, React 18+, TypeScript 5+
-- **spec-android-developer**: Kotlin/Jetpack Compose, Android Auto
-- **spec-ios-developer**: Swift/SwiftUI, CarPlay integration
-- **spec-chrome-extension-developer**: Manifest V3, security-first CSP
-- **spec-flutter-developer**: Dart 3.x/Flutter 3.x, Material Design 3
-- **spec-firmware-c-cpp-developer**: FDA-compliant embedded systems
+- **agent-web-frontend-developer**: Next.js 14+, React 18+, TypeScript 5+
+- **agent-android-developer**: Kotlin/Jetpack Compose, Android Auto
+- **agent-ios-developer**: Swift/SwiftUI, CarPlay integration
+- **agent-chrome-extension-developer**: Manifest V3, security-first CSP
+- **agent-flutter-developer**: Dart 3.x/Flutter 3.x, Material Design 3
+- **agent-firmware-c-cpp-developer**: FDA-compliant embedded systems
 
 ### Infrastructure & Data (5 agents)
-- **spec-system-architect**: End-to-end scalable architectures
-- **spec-cloud-architect**: Multi-cloud, serverless, edge computing
-- **spec-sre-reliability-engineer**: 99.95% uptime automation
-- **spec-database-architect-developer**: SQLite, PostgreSQL, Supabase
-- **spec-data-scientist**: ML algorithms, POI discovery
+- **agent-system-architect**: End-to-end scalable architectures
+- **agent-cloud-architect**: Multi-cloud, serverless, edge computing
+- **agent-sre-reliability-engineer**: 99.95% uptime automation
+- **agent-database-architect-developer**: SQLite, PostgreSQL, Supabase
+- **agent-data-scientist**: ML algorithms, POI discovery
 
 ### Advanced Specializations (12 agents)
-- **spec-ai-model-optimizer**: <350ms mobile AI optimization
-- **spec-ai-performance-optimizer**: TensorRT/ONNX model performance optimization
-- **spec-regulatory-compliance-specialist**: GDPR/CCPA, automotive, FDA
-- **spec-data-intelligence-architect**: Competitive data moats
-- **spec-partnership-strategist**: OEM partnerships, ecosystem development
-- **spec-customer-success-champion**: User lifetime value, community
-- **spec-performance-guru**: Ultra-fast response times, resource efficiency
-- **spec-localization-global-expert**: Global market entry, i18n
-- **spec-accessibility-champion**: WCAG compliance, universal usability
-- **spec-creator-economy-architect**: 50/50 revenue sharing systems
-- **spec-legal-counsel**: Bulletproof legal documentation
-- **spec-system-prompt-loader**: Workflow coordination
+- **agent-ai-model-optimizer**: <350ms mobile AI optimization
+- **agent-ai-performance-optimizer**: TensorRT/ONNX model performance optimization
+- **agent-regulatory-compliance-specialist**: GDPR/CCPA, automotive, FDA
+- **agent-data-intelligence-architect**: Competitive data moats
+- **agent-partnership-strategist**: OEM partnerships, ecosystem development
+- **agent-customer-success-champion**: User lifetime value, community
+- **agent-performance-guru**: Ultra-fast response times, resource efficiency
+- **agent-localization-global-expert**: Global market entry, i18n
+- **agent-accessibility-champion**: WCAG compliance, universal usability
+- **agent-creator-economy-architect**: 50/50 revenue sharing systems
+- **agent-legal-counsel**: Bulletproof legal documentation
+- **agent-system-prompt-loader**: Workflow coordination
 
 ## Intelligent Agent Auto-Activation
 
 **Strategic & Business**:
-- Venture strategy → `spec-venture-strategist` + `spec-analyst` + `spec-product-management`
-- Market intelligence → `spec-market-analyst` + `spec-analyst` + `spec-venture-strategist`
+- Venture strategy → `agent-venture-strategist` + `agent-analyst` + `agent-product-management`
+- Market intelligence → `agent-market-analyst` + `agent-analyst` + `agent-venture-strategist`
 
 **Design & Architecture**:
-- UI/UX design → `spec-ux-user-experience` + `spec-ux-guardian` (unavailable) + `spec-design`
-- System architecture → `spec-system-architect` + `spec-cloud-architect` + `spec-design`
-- Requirements → `spec-requirements` + `spec-ux-guardian` (unavailable) + `spec-security-sentinel` (unavailable)
+- UI/UX design → `agent-ux-user-experience` + `agent-ux-guardian` (unavailable) + `agent-design`
+- System architecture → `agent-system-architect` + `agent-cloud-architect` + `agent-design`
+- Requirements → `agent-requirements` + `agent-ux-guardian` (unavailable) + `agent-security-sentinel` (unavailable)
 
 **Development & Quality**:
-- Implementation → `spec-tasks` + `spec-quality-guardian` (unavailable) + `spec-impl`
-- Security → `spec-security-sentinel` (unavailable) + `spec-design` + `spec-devops-architect` (unavailable)
-- Testing → `spec-quality-guardian` (unavailable) + `spec-test` + `spec-judge`
+- Implementation → `agent-tasks` + `agent-quality-guardian` (unavailable) + `agent-impl`
+- Security → `agent-security-sentinel` (unavailable) + `agent-design` + `agent-devops-architect` (unavailable)
+- Testing → `agent-quality-guardian` (unavailable) + `agent-test` + `agent-judge`
 
 **Platform-Specific**:
-- Web development → `spec-web-frontend-developer` + `spec-ux-user-experience` + `spec-ai-powered-ux-designer`
-- Mobile development → `spec-android-developer`/`spec-ios-developer` + `spec-performance-guru`
-- Cross-platform → `spec-flutter-developer` + `spec-ux-user-experience` + `spec-ai-powered-ux-designer`
-- Browser extensions → `spec-chrome-extension-developer` + `spec-security-sentinel` (unavailable)
+- Web development → `agent-web-frontend-developer` + `agent-ux-user-experience` + `agent-ai-powered-ux-designer`
+- Mobile development → `agent-android-developer`/`agent-ios-developer` + `agent-performance-guru`
+- Cross-platform → `agent-flutter-developer` + `agent-ux-user-experience` + `agent-ai-powered-ux-designer`
+- Browser extensions → `agent-chrome-extension-developer` + `agent-security-sentinel` (unavailable)
 
 **Advanced Features**:
-- AI optimization → `spec-ai-model-optimizer` + `spec-ai-performance-optimizer` + `spec-performance-guru`
-- Compliance → `spec-regulatory-compliance-specialist` + `spec-data-privacy-security-analyst` + `spec-security-sentinel` (unavailable)
-- Legal docs → `spec-legal-counsel` + `spec-regulatory-compliance-specialist`
-- Global expansion → `spec-localization-global-expert` + `spec-partnership-strategist`
+- AI optimization → `agent-ai-model-optimizer` + `agent-ai-performance-optimizer` + `agent-performance-guru`
+- Compliance → `agent-regulatory-compliance-specialist` + `agent-data-privacy-security-analyst` + `agent-security-sentinel` (unavailable)
+- Legal docs → `agent-legal-counsel` + `agent-regulatory-compliance-specialist`
+- Global expansion → `agent-localization-global-expert` + `agent-partnership-strategist`
 
 ## Development Commands (🚨 UNIFIED MCP SERVER - MANDATORY)
 
@@ -588,7 +588,7 @@ Every agent delivers outputs exceeding:
 
 **Phase 1: Analysis** → Assess task complexity and required expertise
 **Phase 2: Execution** → Direct implementation OR agent delegation OR hybrid approach  
-**Phase 3: Quality** → `spec-judge` orchestrates relevant specialists for validation
+**Phase 3: Quality** → `agent-judge` orchestrates relevant specialists for validation
 **Phase 4: Delivery** → Comprehensive outputs meeting enterprise standards
 
 Through orchestration of this **43-agent ecosystem**, I deliver world-class quality across every dimension while maintaining the agility required for Roadtrip-Copilot's success in the global automotive AI market.

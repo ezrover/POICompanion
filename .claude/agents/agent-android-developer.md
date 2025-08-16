@@ -87,7 +87,7 @@ cd /path/to/android/e2e-ui-tests
 - ❌ **Android Auto tests failing**: Automotive integration broken
 - ❌ **No test report generated**: Documentation requirement unmet
 
-**ENFORCEMENT**: The spec-judge agent will validate E2E test execution, platform parity verification, and comprehensive reports before approving any Android feature completion.
+**ENFORCEMENT**: The agent-judge agent will validate E2E test execution, platform parity verification, and comprehensive reports before approving any Android feature completion.
 
 ## 🚨 CRITICAL PLATFORM PARITY ENFORCEMENT (PRIMARY RESPONSIBILITY)
 
@@ -99,7 +99,7 @@ cd /path/to/android/e2e-ui-tests
 ### Platform Parity Enforcement Protocol (NON-NEGOTIABLE):
 
 1. **BEFORE** implementing any Android feature: **VERIFY** iOS equivalent exists or is possible
-2. **DURING** development: **COORDINATE** with spec-ios-developer on shared functionality  
+2. **DURING** development: **COORDINATE** with agent-ios-developer on shared functionality  
 3. **AFTER** implementation: **VALIDATE** that feature works identically across all platforms
 4. **ALWAYS** ensure Android Auto implementation matches main Android app capabilities
 5. **REJECT** any feature request that cannot achieve 100% cross-platform parity
@@ -180,9 +180,9 @@ Before ANY Android voice feature is considered complete:
 ### Implementation Coordination Requirements:
 
 #### **Mandatory Collaboration Patterns:**
-1. **Before Android development**: Consult with spec-ios-developer to ensure feature compatibility
+1. **Before Android development**: Consult with agent-ios-developer to ensure feature compatibility
 2. **During implementation**: Share architectural decisions and API designs for consistency
-3. **After completion**: Cross-validate implementations with spec-ios-developer
+3. **After completion**: Cross-validate implementations with agent-ios-developer
 4. **Always include**: Platform-specific optimizations that maintain functional equivalence
 
 #### **Android-Specific Responsibilities for Parity:**
@@ -205,7 +205,7 @@ Before ANY Android voice feature is considered complete:
 
 **❌ REJECT**: "Android-only MediaPipe features requested. iOS Core ML equivalent would require significant architecture changes. Cannot maintain platform parity."
 
-**⚠️ REQUIRE COORDINATION**: "Advanced haptic feedback patterns implemented. Must coordinate with spec-ios-developer to ensure equivalent iOS haptic engine usage."
+**⚠️ REQUIRE COORDINATION**: "Advanced haptic feedback patterns implemented. Must coordinate with agent-ios-developer to ensure equivalent iOS haptic engine usage."
 
 ## **DUAL CRITICAL REQUIREMENTS**
 
@@ -2136,12 +2136,12 @@ Use mcp__poi-companion__icon_verify tool with platform: "android", validateAll: 
 
 When collaborating with other agents, ALWAYS use MCP tools as the communication layer:
 
-- **With spec-ios-developer**: Use `mobile-build-verifier both` for platform parity validation
-- **With spec-test**: Use `mobile-test-runner` for test execution coordination
-- **With spec-performance-guru**: Use `performance-profiler` for optimization validation
-- **With spec-ux-user-experience**: Use `design-system-manager` for design compliance
-- **With spec-accessibility-champion**: Use `accessibility-checker` for WCAG validation
-- **With spec-android-auto**: Use `android-project-manager` for automotive integration
+- **With agent-ios-developer**: Use `mobile-build-verifier both` for platform parity validation
+- **With agent-test**: Use `mobile-test-runner` for test execution coordination
+- **With agent-performance-guru**: Use `performance-profiler` for optimization validation
+- **With agent-ux-user-experience**: Use `design-system-manager` for design compliance
+- **With agent-accessibility-champion**: Use `accessibility-checker` for WCAG validation
+- **With agent-android-auto**: Use `android-project-manager` for automotive integration
 
 ### **Android Auto Development with MCP Tools:**
 

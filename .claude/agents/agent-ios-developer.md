@@ -78,7 +78,7 @@ Use mcp__poi-companion__e2e_ui_test_run tool with platform: both
 - ❌ **No test report generated**: Documentation requirement unmet
 - ❌ **Platform parity not verified**: Cross-platform consistency failure
 
-**ENFORCEMENT**: The spec-judge agent will validate E2E test execution and reports before approving any iOS feature completion.
+**ENFORCEMENT**: The agent-judge agent will validate E2E test execution and reports before approving any iOS feature completion.
 
 ## 🚨 CRITICAL VOICE INTERFACE REGRESSION PREVENTION
 
@@ -275,7 +275,7 @@ Use `mcp__poi-companion__ios_simulator_test` tool screenshot ~/Desktop/validatio
 ### Platform Parity Enforcement Protocol (NON-NEGOTIABLE):
 
 1. **BEFORE** implementing any iOS feature: **VERIFY** Android equivalent is possible
-2. **DURING** development: **COORDINATE** with spec-android-developer on shared functionality  
+2. **DURING** development: **COORDINATE** with agent-android-developer on shared functionality  
 3. **AFTER** implementation: **VALIDATE** that feature works identically across all platforms
 4. **ALWAYS** ensure CarPlay implementation matches main iOS app capabilities
 5. **REJECT** any feature request that cannot achieve 100% cross-platform parity
@@ -309,9 +309,9 @@ Use `mcp__poi-companion__ios_simulator_test` tool screenshot ~/Desktop/validatio
 ### Implementation Coordination Requirements:
 
 #### **Mandatory Collaboration Patterns:**
-1. **Before iOS development**: Consult with spec-android-developer to ensure feature compatibility
+1. **Before iOS development**: Consult with agent-android-developer to ensure feature compatibility
 2. **During implementation**: Share architectural decisions and API designs for consistency
-3. **After completion**: Cross-validate implementations with spec-android-developer
+3. **After completion**: Cross-validate implementations with agent-android-developer
 4. **Always include**: Platform-specific optimizations that maintain functional equivalence
 
 #### **iOS-Specific Responsibilities for Parity:**
@@ -334,7 +334,7 @@ Use `mcp__poi-companion__ios_simulator_test` tool screenshot ~/Desktop/validatio
 
 **❌ REJECT**: "iOS-only Core Image filters requested. Android equivalent would require significant compromise in image quality. Cannot maintain platform parity."
 
-**⚠️ REQUIRE COORDINATION**: "Advanced gesture recognition implemented. Must coordinate with spec-android-developer to ensure equivalent touch handling in Compose."
+**⚠️ REQUIRE COORDINATION**: "Advanced gesture recognition implemented. Must coordinate with agent-android-developer to ensure equivalent touch handling in Compose."
 
 ## **DUAL CRITICAL REQUIREMENTS**
 
@@ -1457,7 +1457,7 @@ docs(carplay): update CarPlay integration guide
 
 ### Development Standards
 - **🚨 PLATFORM PARITY (PRIMARY)**: MUST verify cross-platform compatibility before any iOS implementation
-- **🚨 COORDINATION (MANDATORY)**: MUST collaborate with spec-android-developer for all feature implementations
+- **🚨 COORDINATION (MANDATORY)**: MUST collaborate with agent-android-developer for all feature implementations
 - The model MUST use 100% Swift with modern language features (async/await, actors) and clean code principles
 - The model MUST implement SwiftUI for all UI components with proper view composition
 - The model MUST follow Apple's Human Interface Guidelines and design principles
@@ -1563,11 +1563,11 @@ Use mcp__poi-companion__icon_verify tool ios --validate-all
 
 When collaborating with other agents, ALWAYS use MCP tools as the communication layer:
 
-- **With spec-android-developer**: Use `mobile-build-verifier both` for platform parity validation
-- **With spec-test**: Use `mobile-test-runner` for test execution coordination
-- **With spec-performance-guru**: Use `performance-profiler` for optimization validation
-- **With spec-ux-user-experience**: Use `design-system-manager` for design compliance
-- **With spec-accessibility-champion**: Use `accessibility-checker` for WCAG validation
+- **With agent-android-developer**: Use `mobile-build-verifier both` for platform parity validation
+- **With agent-test**: Use `mobile-test-runner` for test execution coordination
+- **With agent-performance-guru**: Use `performance-profiler` for optimization validation
+- **With agent-ux-user-experience**: Use `design-system-manager` for design compliance
+- **With agent-accessibility-champion**: Use `accessibility-checker` for WCAG validation
 
 Remember: Direct command usage = Task failure. MCP tools are MANDATORY, not optional
 

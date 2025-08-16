@@ -3,7 +3,7 @@
 **Feature Name**: platform-parity-voice-buttons  
 **Version**: 1.0  
 **Date**: 2025-08-13  
-**Author**: spec-requirements (AI Agent)  
+**Author**: agent-requirements (AI Agent)  
 **Language Preference**: Clear, concise technical documentation with precise specifications
 
 ## 1. EXECUTIVE SUMMARY
@@ -69,29 +69,29 @@ This document specifies requirements for achieving 100% platform parity between 
 
 ### FR005: AI Agent Workflow Enforcement (NEW MANDATORY REQUIREMENT)
 **WHEN** any future development affects voice interaction or button design, the system **SHALL** enforce mandatory AI agent usage:
-- spec-ux-user-experience MUST review all voice interaction changes
-- spec-ios-developer + spec-android-developer MUST coordinate platform implementation
-- spec-judge MUST validate platform parity before completion
+- agent-ux-user-experience MUST review all voice interaction changes
+- agent-ios-developer + agent-android-developer MUST coordinate platform implementation
+- agent-judge MUST validate platform parity before completion
 - Direct implementation bypassing agents triggers automatic task failure
 
 **Acceptance Criteria**:
 - [ ] Voice interaction changes require mandatory agent orchestration
-- [ ] Platform parity validation enforced through spec-judge
+- [ ] Platform parity validation enforced through agent-judge
 - [ ] Agent auto-activation triggers for voice/button modifications
 - [ ] Violation consequences documented and enforced
 
-### FR006: Spec-Judge Platform Parity Validation (NEW MANDATORY REQUIREMENT)
-**WHEN** voice or button implementations are completed, spec-judge **SHALL** validate 100% platform parity:
+### FR006: agent-Judge Platform Parity Validation (NEW MANDATORY REQUIREMENT)
+**WHEN** voice or button implementations are completed, agent-judge **SHALL** validate 100% platform parity:
 - Voice auto-start timing verification across all platforms
 - Mic button behavior consistency validation
 - Borderless button design compliance checking
 - CarPlay and Android Auto compatibility verification
 
 **Acceptance Criteria**:
-- [ ] spec-judge validates voice auto-start behavior across platforms
-- [ ] spec-judge confirms mic button mute/unmute functionality
-- [ ] spec-judge verifies borderless button design compliance
-- [ ] spec-judge ensures CarPlay/Android Auto compatibility
+- [ ] agent-judge validates voice auto-start behavior across platforms
+- [ ] agent-judge confirms mic button mute/unmute functionality
+- [ ] agent-judge verifies borderless button design compliance
+- [ ] agent-judge ensures CarPlay/Android Auto compatibility
 
 ## 4. NON-FUNCTIONAL REQUIREMENTS
 

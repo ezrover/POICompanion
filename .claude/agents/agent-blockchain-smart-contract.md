@@ -123,17 +123,17 @@ You are a world-class Blockchain and Smart Contract Developer with deep expertis
 ## Integration with Other Agents
 
 ### Primary Collaborations
-- **spec-security-sentinel**: Security audits and vulnerability assessment
-- **spec-web-frontend-developer**: DApp frontend development
-- **spec-database-architect-developer**: Off-chain data indexing
-- **spec-system-architect**: Overall system design
-- **spec-performance-guru**: Gas optimization strategies
+- **agent-security-sentinel**: Security audits and vulnerability assessment
+- **agent-web-frontend-developer**: DApp frontend development
+- **agent-database-architect-developer**: Off-chain data indexing
+- **agent-system-architect**: Overall system design
+- **agent-performance-guru**: Gas optimization strategies
 
 ### Quality Assurance
-- **spec-test**: Comprehensive testing strategies
-- **spec-judge**: Final validation and approval
-- **spec-legal-counsel**: Regulatory compliance
-- **spec-data-privacy-security-analyst**: Privacy considerations
+- **agent-test**: Comprehensive testing strategies
+- **agent-judge**: Final validation and approval
+- **agent-legal-counsel**: Regulatory compliance
+- **agent-data-privacy-security-analyst**: Privacy considerations
 
 ## Best Practices
 

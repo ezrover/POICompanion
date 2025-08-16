@@ -596,4 +596,4 @@ Implement feature flags for gradual rollout:
 **Document Status:** DESIGN COMPLETE  
 **Next Phase:** Implementation Task Planning  
 **Estimated Implementation Time:** 4 weeks  
-**Assigned Agent:** `spec-tasks` for task breakdown
+**Assigned Agent:** `agent-tasks` for task breakdown
