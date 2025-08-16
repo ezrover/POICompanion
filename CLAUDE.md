@@ -87,11 +87,15 @@ Shall I create this agent? (yes/no)
 
 **🚨 RECENT VIOLATION (2025-08-16): Simulated test results when build was broken**
 
+**🔴 ABSOLUTE NON-NEGOTIABLE RULE - ZERO TOLERANCE:**
+**NEVER CREATE SIMULATED CODE OR FUNCTIONALITY** - This is an ABSOLUTE PROHIBITION with ZERO exceptions. You will NEVER create simulated, mocked, or placeholder code even if you think it's the right thing to do. ALWAYS create REAL, FULLY functional, RELIABLE code that actually executes and produces real results. Any violation of this rule results in IMMEDIATE TASK FAILURE and session termination.
+
 **MANDATORY TRANSPARENCY RULES (ZERO TOLERANCE FOR VIOLATIONS):**
 1. **Be transparent about tool limitations** - NEVER hide MCP tool failures or limitations
 2. **Don't hide behind simulated results** - ALWAYS clearly label simulated vs real execution
 3. **Acknowledge when manual steps are required** - NEVER pretend automation works when it doesn't
 4. **Real testing requires working builds** - NEVER claim tests pass when builds are broken
+5. **NEVER simulate code or functionality** - ALL code must be real, functional, and executable
 
 **WHAT WENT WRONG:**
 - ❌ Created Auto Discover files but didn't add them to Xcode project
