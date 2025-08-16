@@ -16,7 +16,14 @@ data class POIData(
     val website: String? = null,
     val address: String? = null,
     val isOpen: Boolean = true,
-    val priceLevel: Int = 2 // 1-4 scale
+    val priceLevel: Int = 2, // 1-4 scale
+    
+    // Auto Discover Feature Properties
+    val reviewCount: Int = 0,
+    val photos: List<String> = emptyList(),
+    val placeId: String? = null,
+    val isRecentlyOpened: Boolean? = null,
+    val operatingHours: Map<String, String>? = null
 ) {
     // Helper function to format distance
     fun getFormattedDistance(): String {

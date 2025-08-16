@@ -246,6 +246,65 @@ class GooglePlacesAPIClient(private val context: Context) {
         )
     }
     
+    /**
+     * Search for nearby POIs for Auto Discover feature
+     * Platform parity with iOS implementation
+     */
+    suspend fun searchNearbyPOIs(
+        latitude: Double,
+        longitude: Double,
+        radius: Double
+    ): List<POIData> = withContext(Dispatchers.IO) {
+        Log.i(TAG, "🔍 [AUTO DISCOVER] Starting nearby POI search")
+        
+        val pois = mutableListOf<POIData>()
+        
+        // Search multiple categories for diverse results
+        val categories = listOf(
+            "restaurant", "tourist_attraction", "park", "museum", 
+            "shopping_mall", "lodging", "gas_station"
+        )
+        
+        for (category in categories) {
+            try {
+                val categoryPOIs = searchPOIs(
+                    latitude = latitude,
+                    longitude = longitude,
+                    category = category,
+                    radiusMeters = radius,
+                    maxResults = 5 // Limit per category to avoid too many results
+                )
+                pois.addAll(categoryPOIs)
+                
+                // Small delay between requests to avoid rate limiting
+                delay(50)
+                
+            } catch (e: Exception) {
+                Log.w(TAG, "Failed to search category $category: ${e.message}")
+            }
+        }
+        
+        Log.i(TAG, "✅ [AUTO DISCOVER] Found ${pois.size} total POIs")
+        return@withContext pois
+    }
+    
+    /**
+     * Get photos for a specific POI
+     */
+    suspend fun getPhotosForPOI(placeId: String, maxPhotos: Int): List<String> = withContext(Dispatchers.IO) {
+        if (placeId.isEmpty()) return@withContext emptyList()
+        
+        try {
+            val details = getPOIDetails(placeId)
+            return@withContext details.photos.take(maxPhotos).map { photo ->
+                "$baseURL/photo?maxwidth=800&photoreference=${photo.photoReference}&key=$apiKey"
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "Failed to get photos for place $placeId: ${e.message}")
+            return@withContext emptyList()
+        }
+    }
+    
     // MARK: - Helper Methods
     
     private fun mapCategoryToGoogleType(category: String): String {
@@ -300,11 +359,25 @@ class GooglePlacesAPIClient(private val context: Context) {
             } else null
         } else null
         
-        // Get review summary
+        // Get review summary and count
         val reviews = place.optJSONArray("reviews")
         val reviewSummary = if (reviews != null && reviews.length() > 0) {
             reviews.getJSONObject(0).optString("text", null)
         } else null
+        val reviewCount = place.optInt("user_ratings_total", 0)
+        
+        // Get photo references for Auto Discover
+        val photoReferences = mutableListOf<String>()
+        if (photos != null) {
+            for (i in 0 until minOf(photos.length(), 5)) {
+                val photo = photos.getJSONObject(i)
+                val photoRef = photo.optString("photo_reference")
+                if (photoRef.isNotEmpty()) {
+                    val photoUrl = "$baseURL/photo?maxwidth=800&photoreference=$photoRef&key=$apiKey"
+                    photoReferences.add(photoUrl)
+                }
+            }
+        }
         
         return POIData(
             id = placeId.ifEmpty { generatePOIId(name, lat, lng) },
@@ -319,7 +392,14 @@ class GooglePlacesAPIClient(private val context: Context) {
             reviewSummary = reviewSummary,
             couldEarnRevenue = rating >= 4.0, // High-rated places more likely to earn revenue
             address = vicinity.ifEmpty { null },
-            priceLevel = place.optInt("price_level", 2)
+            priceLevel = place.optInt("price_level", 2),
+            
+            // Auto Discover Feature Properties
+            reviewCount = reviewCount,
+            photos = photoReferences,
+            placeId = placeId,
+            isRecentlyOpened = null, // Not available from basic search
+            operatingHours = null // Would need details call
         )
     }
     

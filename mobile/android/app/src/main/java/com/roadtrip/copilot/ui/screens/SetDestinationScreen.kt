@@ -36,6 +36,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.roadtrip.copilot.managers.SpeechManager
 import com.roadtrip.copilot.ai.Gemma3NProcessor
 import com.roadtrip.copilot.ui.components.VoiceAnimationComponent
+import com.roadtrip.copilot.domain.AutoDiscoverManager
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -44,11 +45,13 @@ import kotlinx.coroutines.launch
 fun SetDestinationScreen(
     onNavigate: (String) -> Unit,
     onShowPOIResult: (String, String?, String) -> Unit,
+    onShowMainPOIView: (() -> Unit)? = null,
     onCancel: (() -> Unit)? = null
 ) {
     val speechManager = remember { SpeechManager() }
     val context = LocalContext.current
     val gemmaProcessor = remember { Gemma3NProcessor(context) }
+    val autoDiscoverManager = remember { AutoDiscoverManager.getInstance(context) }
     val hapticFeedback = LocalHapticFeedback.current
     val accessibilityManager = LocalAccessibilityManager.current
     val coroutineScope = rememberCoroutineScope()
@@ -403,6 +406,66 @@ fun SetDestinationScreen(
             }
         }
         
+        // Auto Discover Button (NEW - Platform Parity with iOS)
+        Spacer(modifier = Modifier.height(24.dp))
+        
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable {
+                    hapticFeedback.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                    handleAutoDiscover(onShowMainPOIView, speechManager, autoDiscoverManager, coroutineScope)
+                }
+                .semantics {
+                    contentDescription = "Auto Discover - Find amazing places nearby"
+                    role = Role.Button
+                },
+            elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = Color(0xFFFF9800) // Orange color matching iOS
+            )
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(20.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Icon(
+                    Icons.Default.Search,
+                    contentDescription = "Auto Discover",
+                    modifier = Modifier.size(44.dp),
+                    tint = Color.White
+                )
+                
+                Column(
+                    modifier = Modifier.weight(1f),
+                    verticalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    Text(
+                        text = "Auto Discover",
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color.White
+                    )
+                    
+                    Text(
+                        text = "Find amazing places nearby",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = Color.White.copy(alpha = 0.9f)
+                    )
+                }
+                
+                Icon(
+                    Icons.AutoMirrored.Filled.ArrowForward,
+                    contentDescription = null,
+                    tint = Color.White.copy(alpha = 0.7f),
+                    modifier = Modifier.size(24.dp)
+                )
+            }
+        }
+
         // Cancel Button
         onCancel?.let { cancelAction ->
             Spacer(modifier = Modifier.height(16.dp))
@@ -604,6 +667,36 @@ private fun handleGemmaIntegrationAndNavigation(
         
         speechManager.disableDestinationMode()
     }
+}
+
+private fun handleAutoDiscover(
+    onShowMainPOIView: (() -> Unit)?,
+    speechManager: SpeechManager,
+    autoDiscoverManager: AutoDiscoverManager,
+    coroutineScope: kotlinx.coroutines.CoroutineScope
+) {
+    println("[SetDestinationScreen] Auto Discover initiated")
+    speechManager.speak("Finding amazing places nearby")
+    
+    coroutineScope.launch {
+        try {
+            // Start auto discovery process using AutoDiscoverManager
+            autoDiscoverManager.startAutoDiscovery()
+            
+            delay(1000) // Brief delay for voice feedback
+            
+            // Navigate to MainPOIView in discovery mode
+            onShowMainPOIView?.invoke()
+            
+            println("[SetDestinationScreen] Auto Discover started successfully")
+            
+        } catch (e: Exception) {
+            println("[SetDestinationScreen] Auto Discovery failed: ${e.message}")
+            speechManager.speak("Sorry, discovery is not available right now")
+        }
+    }
+    
+    speechManager.disableDestinationMode()
 }
 
 private fun handleNavigationCommand(
