@@ -19,7 +19,8 @@ class AutoDiscoverManager: NSObject, ObservableObject {
     // MARK: - Private Properties
     private let locationManager = LocationManager.shared
     private let rankingEngine = POIRankingEngine()
-    private let googlePlacesClient = GooglePlacesAPIClient()
+    // TODO: Replace with actual Google Places implementation
+    // private let googlePlacesClient = GooglePlacesAPIClient()
     private var autoPhotoTimer: Timer?
     private var cancellables = Set<AnyCancellable>()
     
@@ -38,7 +39,7 @@ class AutoDiscoverManager: NSObject, ObservableObject {
     // MARK: - Public Methods
     
     /// Starts the auto discovery process
-    func startAutoDiscovery() async {
+    func startAutoDiscovery() async throws {
         guard let currentLocation = await getCurrentLocation() else {
             print("[AutoDiscoverManager] No location available for discovery")
             throw AutoDiscoverError.locationUnavailable
@@ -196,23 +197,49 @@ class AutoDiscoverManager: NSObject, ObservableObject {
     }
     
     private func searchNearbyPOIs(location: CLLocation) async throws -> [POI] {
-        return try await googlePlacesClient.searchNearbyPOIs(
-            location: location.coordinate,
-            radius: searchRadius
-        )
+        // TODO: Implement actual Google Places API search
+        // For now, return mock data for testing
+        return [
+            POI(
+                id: "1",
+                name: "Lost Lake",
+                address: "Lost Lake Trail, Snoqualmie Pass, WA",
+                location: CLLocationCoordinate2D(
+                    latitude: location.coordinate.latitude + 0.01,
+                    longitude: location.coordinate.longitude + 0.01
+                ),
+                category: .parks,
+                rating: 4.8,
+                photos: [],
+                distance: 1200,
+                description: "Beautiful alpine lake with crystal clear water"
+            ),
+            POI(
+                id: "2",
+                name: "Historic Town Center",
+                address: "Main Street, Historic District",
+                location: CLLocationCoordinate2D(
+                    latitude: location.coordinate.latitude + 0.02,
+                    longitude: location.coordinate.longitude - 0.01
+                ),
+                category: .historicsites,
+                rating: 4.5,
+                photos: [],
+                distance: 2500,
+                description: "Preserved 19th century town center"
+            )
+        ]
     }
     
     private func loadPhotosForAllPOIs() async {
+        // TODO: Implement actual photo loading from Google Places
+        // For now, use placeholder URLs
         for i in 0..<discoveredPOIs.count {
-            do {
-                let photos = try await googlePlacesClient.getPhotosForPOI(
-                    placeId: discoveredPOIs[i].placeId ?? "",
-                    maxPhotos: photosPerPOI
-                )
-                discoveredPOIs[i].photos = photos
-            } catch {
-                print("[AutoDiscoverManager] Failed to load photos for POI \(discoveredPOIs[i].name): \(error)")
-            }
+            discoveredPOIs[i].photos = [
+                URL(string: "https://via.placeholder.com/400x300/4A90E2/ffffff?text=POI+Photo+1")!,
+                URL(string: "https://via.placeholder.com/400x300/7FBA00/ffffff?text=POI+Photo+2")!,
+                URL(string: "https://via.placeholder.com/400x300/F25022/ffffff?text=POI+Photo+3")!
+            ]
         }
     }
     

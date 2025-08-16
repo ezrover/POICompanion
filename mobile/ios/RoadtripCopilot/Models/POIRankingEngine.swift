@@ -30,8 +30,8 @@ class POIRankingEngine {
         
         // Calculate max distance for normalization
         let maxDistance = pois.map { poi in
-            let poiLocation = CLLocation(latitude: poi.location.coordinate.latitude,
-                                       longitude: poi.location.coordinate.longitude)
+            let poiLocation = CLLocation(latitude: poi.location.latitude,
+                                       longitude: poi.location.longitude)
             return userLocation.distance(from: poiLocation)
         }.max() ?? 1.0
         
@@ -114,8 +114,8 @@ class POIRankingEngine {
     }
     
     private func calculateProximityScore(_ poi: POI, userLocation: CLLocation, maxDistance: Double) -> Double {
-        let poiLocation = CLLocation(latitude: poi.location.coordinate.latitude,
-                                   longitude: poi.location.coordinate.longitude)
+        let poiLocation = CLLocation(latitude: poi.location.latitude,
+                                   longitude: poi.location.longitude)
         let distance = userLocation.distance(from: poiLocation)
         
         // Inverse proximity - closer locations get higher scores
@@ -126,8 +126,8 @@ class POIRankingEngine {
         // Logarithmic scale for review count to prevent outliers from dominating
         if reviewCount <= 0 { return 0 }
         
-        let logReviews = log(Double(reviewCount) + 1)
-        let maxLogReviews = log(1001) // Assume max of 1000 reviews
+        let logReviews = Foundation.log(Double(reviewCount) + 1)
+        let maxLogReviews = Foundation.log(1001) // Assume max of 1000 reviews
         
         return min(logReviews / maxLogReviews, 1.0)
     }
@@ -235,8 +235,8 @@ class POIRankingEngine {
     /// Filters POIs by maximum distance
     func filterByDistance(_ pois: [POI], userLocation: CLLocation, maxDistance: CLLocationDistance) -> [POI] {
         return pois.filter { poi in
-            let poiLocation = CLLocation(latitude: poi.location.coordinate.latitude,
-                                       longitude: poi.location.coordinate.longitude)
+            let poiLocation = CLLocation(latitude: poi.location.latitude,
+                                       longitude: poi.location.longitude)
             let distance = userLocation.distance(from: poiLocation)
             return distance <= maxDistance
         }
@@ -297,15 +297,6 @@ extension POI {
             objc_setAssociatedObject(self, &AssociatedKeys.reviewCount, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    
-    var placeId: String? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.placeId) as? String
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.placeId, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
 }
 
 private struct AssociatedKeys {
@@ -313,5 +304,4 @@ private struct AssociatedKeys {
     static var hasPhotos = "hasPhotos"
     static var operatingHours = "operatingHours"
     static var reviewCount = "reviewCount"
-    static var placeId = "placeId"
 }

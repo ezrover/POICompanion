@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - POI Categories
 
-enum POICategory: String, CaseIterable, Identifiable {
+enum POICategory: String, CaseIterable, Identifiable, Codable {
     case restaurants = "restaurants"
     case gasstations = "gas_stations" 
     case attractions = "attractions"

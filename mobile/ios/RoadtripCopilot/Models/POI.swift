@@ -17,6 +17,8 @@ struct POI: Identifiable, Codable, Equatable {
     
     // Auto Discover specific properties
     var distance: CLLocationDistance?
+    var photos: [URL] = []
+    var placeId: String?
     
     init(id: String = UUID().uuidString,
          name: String,
@@ -28,7 +30,9 @@ struct POI: Identifiable, Codable, Equatable {
          phoneNumber: String? = nil,
          website: String? = nil,
          address: String? = nil,
-         distance: CLLocationDistance? = nil) {
+         distance: CLLocationDistance? = nil,
+         photos: [URL] = [],
+         placeId: String? = nil) {
         self.id = id
         self.name = name
         self.description = description
@@ -40,6 +44,8 @@ struct POI: Identifiable, Codable, Equatable {
         self.website = website
         self.address = address
         self.distance = distance
+        self.photos = photos
+        self.placeId = placeId
     }
     
     // MARK: - Codable Implementation
@@ -138,7 +144,7 @@ extension POI {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = name
         mapItem.phoneNumber = phoneNumber
-        mapItem.url = website
+        mapItem.url = website.flatMap { URL(string: $0) }
         return mapItem
     }
     
@@ -196,7 +202,7 @@ extension POI {
             rating: rating,
             imageURL: imageURL,
             phoneNumber: phoneNumber,
-            website: website.flatMap { URL(string: $0)?.absoluteString },
+            website: website,
             address: address
         )
     }

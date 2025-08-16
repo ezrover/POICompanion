@@ -83,11 +83,36 @@ Shall I create this agent? (yes/no)
 - ✅ **NO WORKAROUNDS NEEDED**: Agents work directly with Claude Code
 - ✅ **ZERO TOLERANCE FOR DIRECT IMPLEMENTATION**: All tasks must use specialized agents
 
+## 🔴 CRITICAL LESSONS LEARNED - TRANSPARENCY AND HONESTY (ABSOLUTE ENFORCEMENT)
+
+**🚨 RECENT VIOLATION (2025-08-16): Simulated test results when build was broken**
+
+**MANDATORY TRANSPARENCY RULES (ZERO TOLERANCE FOR VIOLATIONS):**
+1. **Be transparent about tool limitations** - NEVER hide MCP tool failures or limitations
+2. **Don't hide behind simulated results** - ALWAYS clearly label simulated vs real execution
+3. **Acknowledge when manual steps are required** - NEVER pretend automation works when it doesn't
+4. **Real testing requires working builds** - NEVER claim tests pass when builds are broken
+
+**WHAT WENT WRONG:**
+- ❌ Created Auto Discover files but didn't add them to Xcode project
+- ❌ Claimed tests passed when iOS build was broken
+- ❌ Provided simulated success when real execution failed
+- ❌ Didn't use ios_project_manage MCP tool properly
+- ❌ Misled about actual capabilities of MCP tools
+
+**ENFORCEMENT PROTOCOL:**
+- **BEFORE** claiming any success: Verify actual build status
+- **BEFORE** reporting test results: Ensure tests actually ran
+- **ALWAYS** use MCP tools for project management (ios_project_manage, android_project_manage)
+- **ALWAYS** verify files are added to project, not just filesystem
+- **NEVER** simulate success when real execution fails
+
 ## ⚠️ MANDATORY WORKFLOWS
 
 **🚨 NO CHEATING OR SHORTCUTS RULE (ABSOLUTE NON-NEGOTIABLE):**
 - ✅ **CHEATING** Don't cheat when you run into issues. Think harder, analysis, root-cause, and fix the root cause.
 - ✅ **SHORTCUTS** Don't take shortcuts by commenting out features when you run into issues. Think harder, analysis, root-cause, and fix the root cause.
+- ✅ **HONESTY** Always be transparent about what works and what doesn't. Never simulate success.
 
 **🚨 PLATFORM PARITY RULE (ABSOLUTE NON-NEGOTIABLE):**
 **ALL FEATURES AND FUNCTIONALITY MUST MAINTAIN 100% PARITY ACROSS ALL FOUR PLATFORMS:**
@@ -139,10 +164,19 @@ Shall I create this agent? (yes/no)
 **🚨 AGENT USAGE ENFORCEMENT (MANDATORY - ZERO TOLERANCE):**
 - **agent-workflow-manager**: MUST BE USED FIRST for all feature development
 - **agent-ios-developer** + **agent-android-developer**: MANDATORY for mobile changes
+  - MUST use `ios_project_manage` to add files to Xcode
+  - MUST use `android_project_manage` to add files to Android Studio
+  - MUST verify builds actually work before claiming success
 - **agent-flutter-developer**: For cross-platform coordination
 - **agent-ux-user-experience**: REQUIRED for ANY UI/UX changes
 - **agent-system-architect**: For system-wide changes
 - **agent-judge**: FINAL VALIDATION for all implementations
+  - MUST verify actual build status, not simulated
+  - MUST run real tests, not simulated results
+- **agent-quality-guardian**: MUST create and execute real E2E tests
+  - MUST use `ios_simulator_test` for real iOS testing
+  - MUST use `android_emulator_test` for real Android testing
+  - NEVER accept simulated test results as real
 - **EXECUTION**: Use general-purpose agent with system prompts from AGENT_REGISTRY.md
 - **EXPANSION**: If no adequate agent exists, MUST propose new agent before proceeding
 

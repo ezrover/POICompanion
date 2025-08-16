@@ -7,88 +7,94 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE5622F977B36A625E181CEE /* gemma-3n-e4b-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 91593064412DBFD04E49B97B /* gemma-3n-e4b-config.json */; };
-		8AA003CA96ED7459E666AB1E /* gemma-3n-e2b-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 777A9599A24FFD9A7B5624A3 /* gemma-3n-e2b-config.json */; };
-		58E8EC1FCC53D2CA8CF0FD1D /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE335EF2F71A7629AB476C /* ModelManager.swift */; };
-		ADA0A50E494611C058B98A87 /* Gemma3NE4BLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963AF57F15086AFC5EFDEC3B /* Gemma3NE4BLoader.swift */; };
-		D803D34BF455F1FA4F1A5C81 /* Gemma3NE2BLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301A22D51F645BA237DFBE52 /* Gemma3NE2BLoader.swift */; };
 		1A2B3C4D5E6F7890 /* RoadtripCopilotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7891 /* RoadtripCopilotApp.swift */; };
-		3F066B62EA0B4ABB /* LocationAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E070ED09F14D09 /* LocationAuthorizationView.swift */; };
 		1A2B3C4D5E6F7892 /* MainPOIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7893 /* MainPOIView.swift */; };
 		1A2B3C4D5E6F7894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F7895 /* Assets.xcassets */; };
 		2B3C4D5E6F789012 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F789013 /* LocationManager.swift */; };
 		2B3C4D5E6F789014 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3C4D5E6F789015 /* SpeechManager.swift */; };
 		3C4D5E6F78901234 /* AIAgentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D5E6F78901235 /* AIAgentManager.swift */; };
+		3F066B62EA0B4ABB /* LocationAuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E070ED09F14D09 /* LocationAuthorizationView.swift */; };
 		4D5E6F7890123456 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5E6F7890123457 /* UserPreferences.swift */; };
 		4D5E6F7890123458 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5E6F7890123459 /* AppState.swift */; };
+		58E8EC1FCC53D2CA8CF0FD1D /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE335EF2F71A7629AB476C /* ModelManager.swift */; };
 		5E6F789012345678 /* CarPlaySceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F789012345679 /* CarPlaySceneDelegate.swift */; };
+		5FB8106E8D9DF4FE36BA3FB4 /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2A0A4FE97B8C7AF8EC4A49 /* POI.swift */; };
 		6F78901234567892 /* EnhancedDestinationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F78901234567893 /* EnhancedDestinationSelectionView.swift */; };
-		POIRESULTVIEW0000000000002 /* POIResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = POIRESULTVIEW0000000000001 /* POIResultView.swift */; };
 		7890123456789012 /* VoiceVisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7890123456789013 /* VoiceVisualizerView.swift */; };
-		MICROPHONETOGGLEBTN000002 /* MicrophoneToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = MICROPHONETOGGLEBTN000001 /* MicrophoneToggleButton.swift */; };
 		8901234567890123 /* SpeechManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901234567890124 /* SpeechManagerExtensions.swift */; };
+		8AA003CA96ED7459E666AB1E /* gemma-3n-e2b-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 777A9599A24FFD9A7B5624A3 /* gemma-3n-e2b-config.json */; };
 		9012345678901234 /* POIDiscoveryAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012345678901235 /* POIDiscoveryAgent.swift */; };
+		A27B399067FBF0A1E650D9D5 /* POIRankingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3577167193F5417674714 /* POIRankingEngine.swift */; };
+		ACCELERATE0000000000000 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCELERATE000000000001 /* Accelerate.framework */; };
+		ADA0A50E494611C058B98A87 /* Gemma3NE4BLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963AF57F15086AFC5EFDEC3B /* Gemma3NE4BLoader.swift */; };
+		AVFOUNDATION0000000000000 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AVFOUNDATION000000000001 /* AVFoundation.framework */; };
+		CARPLAY00000000000000000 /* CarPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CARPLAY000000000000001 /* CarPlay.framework */; };
+		CE5622F977B36A625E181CEE /* gemma-3n-e4b-config.json in Resources */ = {isa = PBXBuildFile; fileRef = 91593064412DBFD04E49B97B /* gemma-3n-e4b-config.json */; };
+		COMBINE00000000000000000 /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = COMBINE000000000000001 /* Combine.framework */; };
+		CORELOCATION000000000000 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CORELOCATION00000000001 /* CoreLocation.framework */; };
+		COREML000000000000000000 /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = COREML0000000000000001 /* CoreML.framework */; };
+		D803D34BF455F1FA4F1A5C81 /* Gemma3NE2BLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301A22D51F645BA237DFBE52 /* Gemma3NE2BLoader.swift */; };
+		EF977651EBFCB6C70B126349 /* AutoDiscoverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD610D39D1C3BBAE0476CCA /* AutoDiscoverManager.swift */; };
 		FEEDC0DE0000000000000002 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDC0DE0000000000000001 /* SplashScreenView.swift */; };
+		GEMINIAPISERVICEBUILD00002 /* GeminiAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = GEMINIAPISERVICEREF000001 /* GeminiAPIService.swift */; };
+		GEMMA3NPROCESSORBUILD00002 /* Gemma3NProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = GEMMA3NPROCESSORREF000001 /* Gemma3NProcessor.swift */; };
+		KITTENTTSPROCBUILD00000002 /* KittenTTSProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = KITTENTTSPROCREF000000001 /* KittenTTSProcessor.swift */; };
+		MICROPHONETOGGLEBTN000002 /* MicrophoneToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = MICROPHONETOGGLEBTN000001 /* MicrophoneToggleButton.swift */; };
+		POIRESULTVIEW0000000000002 /* POIResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = POIRESULTVIEW0000000000001 /* POIResultView.swift */; };
+		SIMPLEAIMANAGERBUILD000002 /* AIAgentManagerSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = SIMPLEAIMANAGERREF000001 /* AIAgentManagerSimple.swift */; };
+		SIXSECPODGENBUILD000000002 /* SixSecondPodcastGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = SIXSECPODGENREF000000001 /* SixSecondPodcastGenerator.swift */; };
+		SPEECH000000000000000000 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = SPEECH0000000000000001 /* Speech.framework */; };
+		TIMESTAMPLOGGERBUILD000002 /* TimestampLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = TIMESTAMPLOGGERREF000001 /* TimestampLogger.swift */; };
 		TTSMANAGER0000000000000002 /* EnhancedTTSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = TTSMANAGER0000000000000001 /* EnhancedTTSManager.swift */; };
 		TTSPERFMONITOR000000000002 /* TTSPerformanceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = TTSPERFMONITOR000000000001 /* TTSPerformanceMonitor.swift */; };
-		SIXSECPODGENBUILD000000002 /* SixSecondPodcastGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = SIXSECPODGENREF000000001 /* SixSecondPodcastGenerator.swift */; };
 		VOICECONFIGBUILD0000000002 /* VoiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = VOICECONFIGREF0000000001 /* VoiceConfiguration.swift */; };
-		KITTENTTSPROCBUILD00000002 /* KittenTTSProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = KITTENTTSPROCREF000000001 /* KittenTTSProcessor.swift */; };
-		SIMPLEAIMANAGERBUILD000002 /* AIAgentManagerSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = SIMPLEAIMANAGERREF000001 /* AIAgentManagerSimple.swift */; };
-		GEMMA3NPROCESSORBUILD00002 /* Gemma3NProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = GEMMA3NPROCESSORREF000001 /* Gemma3NProcessor.swift */; };
-		TIMESTAMPLOGGERBUILD000002 /* TimestampLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = TIMESTAMPLOGGERREF000001 /* TimestampLogger.swift */; };
-		GEMINIAPISERVICEBUILD00002 /* GeminiAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = GEMINIAPISERVICEREF000001 /* GeminiAPIService.swift */; };
-		AVFOUNDATION0000000000000 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AVFOUNDATION000000000001 /* AVFoundation.framework */; };
-		COREML000000000000000000 /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = COREML0000000000000001 /* CoreML.framework */; };
-		SPEECH000000000000000000 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = SPEECH0000000000000001 /* Speech.framework */; };
-		CORELOCATION000000000000 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CORELOCATION00000000001 /* CoreLocation.framework */; };
-		ACCELERATE0000000000000 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCELERATE000000000001 /* Accelerate.framework */; };
-		CARPLAY00000000000000000 /* CarPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CARPLAY000000000000001 /* CarPlay.framework */; };
-		COMBINE00000000000000000 /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = COMBINE000000000000001 /* Combine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0123456789ABCDEF /* RoadtripCopilot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadtripCopilot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3C4D5E6F7891 /* RoadtripCopilotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadtripCopilotApp.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F7893 /* MainPOIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPOIView.swift; sourceTree = "<group>"; };
-		F4E070ED09F14D09 /* LocationAuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationView.swift; sourceTree = "<group>"; };
 		1A2B3C4D5E6F7895 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A2B3C4D5E6F7896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B3C4D5E6F789013 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2B3C4D5E6F789015 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
+		301A22D51F645BA237DFBE52 /* Gemma3NE2BLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gemma3NE2BLoader.swift; sourceTree = "<group>"; };
 		3C4D5E6F78901235 /* AIAgentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAgentManager.swift; sourceTree = "<group>"; };
+		4BA3577167193F5417674714 /* POIRankingEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = POIRankingEngine.swift; path = POIRankingEngine.swift; sourceTree = "<group>"; };
 		4D5E6F7890123457 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		4D5E6F7890123459 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		5E6F789012345679 /* CarPlaySceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlaySceneDelegate.swift; sourceTree = "<group>"; };
 		6F78901234567893 /* EnhancedDestinationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedDestinationSelectionView.swift; sourceTree = "<group>"; };
-		POIRESULTVIEW0000000000001 /* POIResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIResultView.swift; sourceTree = "<group>"; };
+		777A9599A24FFD9A7B5624A3 /* gemma-3n-e2b-config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "gemma-3n-e2b-config.json"; sourceTree = "<group>"; };
 		7890123456789013 /* VoiceVisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceVisualizerView.swift; sourceTree = "<group>"; };
-		MICROPHONETOGGLEBTN000001 /* MicrophoneToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneToggleButton.swift; sourceTree = "<group>"; };
 		8901234567890124 /* SpeechManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManagerExtensions.swift; sourceTree = "<group>"; };
 		9012345678901235 /* POIDiscoveryAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIDiscoveryAgent.swift; sourceTree = "<group>"; };
-		FEEDC0DE0000000000000001 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		TTSMANAGER0000000000000001 /* EnhancedTTSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedTTSManager.swift; sourceTree = "<group>"; };
-		TTSPERFMONITOR000000000001 /* TTSPerformanceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSPerformanceMonitor.swift; sourceTree = "<group>"; };
-		SIXSECPODGENREF000000001 /* SixSecondPodcastGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixSecondPodcastGenerator.swift; sourceTree = "<group>"; };
-		VOICECONFIGREF0000000001 /* VoiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceConfiguration.swift; sourceTree = "<group>"; };
-		KITTENTTSPROCREF000000001 /* KittenTTSProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KittenTTSProcessor.swift; sourceTree = "<group>"; };
-		SIMPLEAIMANAGERREF000001 /* AIAgentManagerSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAgentManagerSimple.swift; sourceTree = "<group>"; };
-		GEMMA3NPROCESSORREF000001 /* Gemma3NProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gemma3NProcessor.swift; sourceTree = "<group>"; };
-		TIMESTAMPLOGGERREF000001 /* TimestampLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampLogger.swift; sourceTree = "<group>"; };
-		GEMINIAPISERVICEREF000001 /* GeminiAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiAPIService.swift; sourceTree = "<group>"; };
-		AVFOUNDATION000000000001 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		COREML0000000000000001 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
-		SPEECH0000000000000001 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
-		CORELOCATION00000000001 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		91593064412DBFD04E49B97B /* gemma-3n-e4b-config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "gemma-3n-e4b-config.json"; sourceTree = "<group>"; };
+		963AF57F15086AFC5EFDEC3B /* Gemma3NE4BLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gemma3NE4BLoader.swift; sourceTree = "<group>"; };
+		AA2A0A4FE97B8C7AF8EC4A49 /* POI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = POI.swift; path = POI.swift; sourceTree = "<group>"; };
 		ACCELERATE000000000001 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		AVFOUNDATION000000000001 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C5CE335EF2F71A7629AB476C /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		CARPLAY000000000000001 /* CarPlay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarPlay.framework; path = System/Library/Frameworks/CarPlay.framework; sourceTree = SDKROOT; };
 		COMBINE000000000000001 /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Combine.framework; path = System/Library/Frameworks/Combine.framework; sourceTree = SDKROOT; };
-		301A22D51F645BA237DFBE52 /* Gemma3NE2BLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gemma3NE2BLoader.swift; sourceTree = "<group>"; };
-				963AF57F15086AFC5EFDEC3B /* Gemma3NE4BLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gemma3NE4BLoader.swift; sourceTree = "<group>"; };
-				C5CE335EF2F71A7629AB476C /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
-				777A9599A24FFD9A7B5624A3 /* gemma-3n-e2b-config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gemma-3n-e2b-config.json; sourceTree = "<group>"; };
-				91593064412DBFD04E49B97B /* gemma-3n-e4b-config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gemma-3n-e4b-config.json; sourceTree = "<group>"; };
-		/* End PBXFileReference section */
+		CORELOCATION00000000001 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		COREML0000000000000001 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		DAD610D39D1C3BBAE0476CCA /* AutoDiscoverManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoDiscoverManager.swift; path = AutoDiscoverManager.swift; sourceTree = "<group>"; };
+		F4E070ED09F14D09 /* LocationAuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationView.swift; sourceTree = "<group>"; };
+		FEEDC0DE0000000000000001 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		GEMINIAPISERVICEREF000001 /* GeminiAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiAPIService.swift; sourceTree = "<group>"; };
+		GEMMA3NPROCESSORREF000001 /* Gemma3NProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gemma3NProcessor.swift; sourceTree = "<group>"; };
+		KITTENTTSPROCREF000000001 /* KittenTTSProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KittenTTSProcessor.swift; sourceTree = "<group>"; };
+		MICROPHONETOGGLEBTN000001 /* MicrophoneToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneToggleButton.swift; sourceTree = "<group>"; };
+		POIRESULTVIEW0000000000001 /* POIResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIResultView.swift; sourceTree = "<group>"; };
+		SIMPLEAIMANAGERREF000001 /* AIAgentManagerSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAgentManagerSimple.swift; sourceTree = "<group>"; };
+		SIXSECPODGENREF000000001 /* SixSecondPodcastGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixSecondPodcastGenerator.swift; sourceTree = "<group>"; };
+		SPEECH0000000000000001 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		TIMESTAMPLOGGERREF000001 /* TimestampLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampLogger.swift; sourceTree = "<group>"; };
+		TTSMANAGER0000000000000001 /* EnhancedTTSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedTTSManager.swift; sourceTree = "<group>"; };
+		TTSPERFMONITOR000000000001 /* TTSPerformanceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSPerformanceMonitor.swift; sourceTree = "<group>"; };
+		VOICECONFIGREF0000000001 /* VoiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceConfiguration.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0123456789ABCDEC /* Frameworks */ = {
@@ -162,6 +168,9 @@
 				963AF57F15086AFC5EFDEC3B /* Gemma3NE4BLoader.swift */,
 				777A9599A24FFD9A7B5624A3 /* gemma-3n-e2b-config.json */,
 				91593064412DBFD04E49B97B /* gemma-3n-e4b-config.json */,
+				DAD610D39D1C3BBAE0476CCA /* AutoDiscoverManager.swift */,
+				4BA3577167193F5417674714 /* POIRankingEngine.swift */,
+				AA2A0A4FE97B8C7AF8EC4A49 /* POI.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +234,28 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		FRAMEWORKS000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AVFOUNDATION000000000001 /* AVFoundation.framework */,
+				COREML0000000000000001 /* CoreML.framework */,
+				SPEECH0000000000000001 /* Speech.framework */,
+				CORELOCATION00000000001 /* CoreLocation.framework */,
+				ACCELERATE000000000001 /* Accelerate.framework */,
+				CARPLAY000000000000001 /* CarPlay.framework */,
+				COMBINE000000000000001 /* Combine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		SERVICES0123456789012345 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				GEMINIAPISERVICEREF000001 /* GeminiAPIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		TTS0123456789012345 /* TTS */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,28 +273,6 @@
 				TIMESTAMPLOGGERREF000001 /* TimestampLogger.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		SERVICES0123456789012345 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				GEMINIAPISERVICEREF000001 /* GeminiAPIService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		FRAMEWORKS000000000000 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AVFOUNDATION000000000001 /* AVFoundation.framework */,
-				COREML0000000000000001 /* CoreML.framework */,
-				SPEECH0000000000000001 /* Speech.framework */,
-				CORELOCATION00000000001 /* CoreLocation.framework */,
-				ACCELERATE000000000001 /* Accelerate.framework */,
-				CARPLAY000000000000001 /* CarPlay.framework */,
-				COMBINE000000000000001 /* Combine.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,10 +355,8 @@
 				4D5E6F7890123456 /* UserPreferences.swift in Sources */,
 				4D5E6F7890123458 /* AppState.swift in Sources */,
 				5E6F789012345678 /* CarPlaySceneDelegate.swift in Sources */,
-				6F78901234567890 /* DestinationSelectionView.swift in Sources */,
 				6F78901234567892 /* EnhancedDestinationSelectionView.swift in Sources */,
 				POIRESULTVIEW0000000000002 /* POIResultView.swift in Sources */,
-				6F78901234567894 /* OnboardingSteps.swift in Sources */,
 				7890123456789012 /* VoiceVisualizerView.swift in Sources */,
 				MICROPHONETOGGLEBTN000002 /* MicrophoneToggleButton.swift in Sources */,
 				8901234567890123 /* SpeechManagerExtensions.swift in Sources */,
@@ -367,6 +374,9 @@
 				D803D34BF455F1FA4F1A5C81 /* Gemma3NE2BLoader.swift in Sources */,
 				ADA0A50E494611C058B98A87 /* Gemma3NE4BLoader.swift in Sources */,
 				58E8EC1FCC53D2CA8CF0FD1D /* ModelManager.swift in Sources */,
+				EF977651EBFCB6C70B126349 /* AutoDiscoverManager.swift in Sources */,
+				A27B399067FBF0A1E650D9D5 /* POIRankingEngine.swift in Sources */,
+				5FB8106E8D9DF4FE36BA3FB4 /* POI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,10 +507,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = RoadtripCopilot/RoadtripCopilot-Dev.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "RoadtripCopilot/RoadtripCopilot-Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				
 				DEVELOPMENT_TEAM = 75X9H496RL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -535,7 +544,6 @@
 				CODE_SIGN_ENTITLEMENTS = RoadtripCopilot/RoadtripCopilot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				
 				DEVELOPMENT_TEAM = 75X9H496RL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;

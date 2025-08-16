@@ -986,30 +986,167 @@ class POICompanionMCPServer {
   // Tool Implementation Methods
   private async mobileBuildVerify(args: any) {
     const { platform, clean = false, autoFix = false, detailed = false } = args;
-    const toolPath = path.join(__dirname, '../mobile-build-verifier/index.js');
+    const results: string[] = [];
+    let hasErrors = false;
     
-    let cmd = `node "${toolPath}" ${platform}`;
-    if (clean) cmd += ' --clean';
-    if (autoFix) cmd += ' --fix';
-    if (detailed) cmd += ' --detailed';
-
     try {
-      const { stdout, stderr } = await execAsync(cmd, { 
-        cwd: this.projectRoot,
-        timeout: 300000 // 5 minute timeout
-      });
+      // iOS Build
+      if (platform === 'ios' || platform === 'both') {
+        const iosPath = path.join(this.projectRoot, 'mobile', 'ios');
+        results.push('🔨 Building iOS...\n');
+        
+        // Clean if requested
+        if (clean) {
+          try {
+            await execAsync('xcodebuild clean', { cwd: iosPath });
+            results.push('✅ iOS clean completed\n');
+          } catch (e) {
+            results.push('⚠️ iOS clean failed (non-critical)\n');
+          }
+        }
+        
+        // Build for simulator to avoid provisioning issues
+        const buildCmd = 'xcodebuild -project RoadtripCopilot.xcodeproj -scheme RoadtripCopilot -configuration Debug -sdk iphonesimulator build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO';
+        
+        try {
+          const { stdout, stderr } = await execAsync(buildCmd, { 
+            cwd: iosPath,
+            timeout: 300000 
+          });
+          
+          // Check for success
+          if (stdout.includes('BUILD SUCCEEDED')) {
+            results.push('✅ iOS build succeeded!\n');
+          } else {
+            hasErrors = true;
+            results.push('❌ iOS build failed\n');
+            
+            // Extract errors if detailed mode
+            if (detailed) {
+              const errorLines = stdout.split('\n').filter(line => 
+                line.includes('error:') || line.includes('warning:')
+              );
+              if (errorLines.length > 0) {
+                results.push('\nErrors/Warnings:\n');
+                errorLines.slice(0, 20).forEach(line => results.push(`  ${line}\n`));
+              }
+            }
+          }
+          
+          // Auto-fix common issues if requested
+          if (autoFix && hasErrors) {
+            results.push('\n🔧 Attempting auto-fixes...\n');
+            
+            // Check for missing dependencies
+            if (stdout.includes('No such module')) {
+              results.push('  → Installing CocoaPods dependencies...\n');
+              try {
+                await execAsync('pod install', { cwd: iosPath });
+                results.push('  ✅ Pod install completed\n');
+              } catch (e) {
+                results.push('  ❌ Pod install failed\n');
+              }
+            }
+            
+            // Check for derived data issues
+            if (stdout.includes('DerivedData')) {
+              results.push('  → Cleaning derived data...\n');
+              try {
+                await execAsync('rm -rf ~/Library/Developer/Xcode/DerivedData/*', { cwd: iosPath });
+                results.push('  ✅ Derived data cleaned\n');
+              } catch (e) {
+                results.push('  ⚠️ Could not clean derived data\n');
+              }
+            }
+          }
+        } catch (buildError: any) {
+          hasErrors = true;
+          results.push(`❌ iOS build failed: ${buildError.message}\n`);
+          
+          if (detailed && buildError.stdout) {
+            const errorLines = buildError.stdout.split('\n').filter((line: string) => 
+              line.includes('error:') || line.includes('warning:')
+            );
+            if (errorLines.length > 0) {
+              results.push('\nBuild Errors:\n');
+              errorLines.slice(0, 20).forEach((line: string) => results.push(`  ${line}\n`));
+            }
+          }
+        }
+      }
+      
+      // Android Build
+      if (platform === 'android' || platform === 'both') {
+        const androidPath = path.join(this.projectRoot, 'mobile', 'android');
+        results.push('\n🔨 Building Android...\n');
+        
+        // Clean if requested
+        if (clean) {
+          try {
+            await execAsync('./gradlew clean', { cwd: androidPath });
+            results.push('✅ Android clean completed\n');
+          } catch (e) {
+            results.push('⚠️ Android clean failed (non-critical)\n');
+          }
+        }
+        
+        // Build debug APK
+        const buildCmd = './gradlew assembleDebug';
+        
+        try {
+          const { stdout, stderr } = await execAsync(buildCmd, { 
+            cwd: androidPath,
+            timeout: 300000 
+          });
+          
+          // Check for success
+          if (stdout.includes('BUILD SUCCESSFUL')) {
+            results.push('✅ Android build succeeded!\n');
+          } else {
+            hasErrors = true;
+            results.push('❌ Android build failed\n');
+            
+            if (detailed) {
+              const errorLines = stdout.split('\n').filter(line => 
+                line.includes('error:') || line.includes('FAILED')
+              );
+              if (errorLines.length > 0) {
+                results.push('\nErrors:\n');
+                errorLines.slice(0, 20).forEach(line => results.push(`  ${line}\n`));
+              }
+            }
+          }
+        } catch (buildError: any) {
+          hasErrors = true;
+          results.push(`❌ Android build failed: ${buildError.message}\n`);
+          
+          if (detailed && buildError.stdout) {
+            const errorLines = buildError.stdout.split('\n').filter((line: string) => 
+              line.includes('error:') || line.includes('FAILED')
+            );
+            if (errorLines.length > 0) {
+              results.push('\nBuild Errors:\n');
+              errorLines.slice(0, 20).forEach((line: string) => results.push(`  ${line}\n`));
+            }
+          }
+        }
+      }
+      
+      // Summary
+      results.push('\n' + '='.repeat(50) + '\n');
+      results.push(hasErrors ? '❌ Build Verification Failed\n' : '✅ Build Verification Succeeded\n');
       
       return {
         content: [{
           type: 'text',
-          text: `Mobile Build Verification Results:\n\n${stdout}${stderr ? `\nErrors: ${stderr}` : ''}`
+          text: results.join('')
         }]
       };
     } catch (error: any) {
       return {
         content: [{
           type: 'text',
-          text: `Build verification failed: ${error.message}\n${error.stdout || ''}\n${error.stderr || ''}`
+          text: `Build verification error: ${error.message}`
         }]
       };
     }
